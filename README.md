@@ -20,7 +20,7 @@ Pattern | Description
 <kbd>${var^^}</kbd><br><kbd>${var^^pattern}</kbd> | Convert all character to uppercase.
 ## Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
-See the info pages for Bash for more information on pattern matching with the "(( EXPRESSION ))" and "[[ EXPRESSION ]]" constructs. [https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html | tldr]
+See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html](TLDR)
 
 ## Zsh Globbing
 ```
