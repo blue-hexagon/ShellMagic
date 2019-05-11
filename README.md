@@ -23,7 +23,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [TLDR](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
 
 ## Zsh Globbing
-```
+```shell
     /      directories
     .      plain files
     @      symbolic links
