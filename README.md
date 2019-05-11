@@ -1,4 +1,18 @@
 # Advanced Shell Notes
+## Commands
+The following descriptional table will take outline in the following command which invokes a zsh subshell (that it is a subshell is not important, but it is spawned from within a shell, unavoidably:
+~$(zsh --exec "echo hello world")~
+
+|Command | Desc.                                             | Example                      |
+|--------|---------------------------------------------------|------------------------------|
+| `$0`   | Command name                                      | `> zsh`                      |
+| `$-`   | Current options                                   | `> 035679BCDEJNOPRXYZgiks`   |
+| `$$`   | Process id                                        | `> 4667`                     |
+| `$?`   | Exit status of the most recently executed command`| `> 0`                        |
+| `"$@"` | Array expansion: All arguments as separate words .| `> Hello World!`             |
+| `$#`   | Number of arguments                               | `> lala`
+                        
+
 ## Variable Manipulation
 ```bash
 ${parameter:-defaultValue}              # Get default shell variables value                     
