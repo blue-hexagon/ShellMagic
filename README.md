@@ -13,10 +13,10 @@ ${var##pattern}                         # Remove from longest front pattern
 ${var/pattern/string}                   # Find and replace (only replace first occurrence)      
 ${var//pattern/string}                  # Find and replace all occurrences
 ${!prefix*}                             # Expands to the names of variables whose names begin with prefix.
-${var,} OR ${var,pattern}    		    # Convert first character to lowercase.                 
-${var,,} OR ${var,,pattern}  		    # Convert all characters to lowercase.                  
-${var^} OR ${var^pattern}   		    # Convert first character to uppercase.                 
-${var^^} OR ${var^^pattern}  		    # Convert all character to uppercase.
+${var,} OR ${var,pattern}    		# Convert first character to lowercase.                 
+${var,,} OR ${var,,pattern}  		# Convert all characters to lowercase.                  
+${var^} OR ${var^pattern}   		# Convert first character to uppercase.                 
+${var^^} OR ${var^^pattern}  		# Convert all character to uppercase.
 ```
 ## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
@@ -45,17 +45,18 @@ See the info pages for Bash for more information on pattern matching with the `(
     s      setuid files (04000)
     S      setgid files (02000)
     t      files with the sticky bit (01000)
-  print *(m-1)          # Files modified up to a day ago
-  print *(a1)           # Files accessed a day ago
-  print *(@)            # Just symlinks
-  print *(Lk+50)        # Files bigger than 50 kilobytes
-  print *(Lk-50)        # Files smaller than 50 kilobytes
-  print **/*.c          # All *.c files recursively starting in $PWD
-  print **/*.c~file.c   # Same as above, but excluding 'file.c'
-  print (foo|bar).*     # Files starting with 'foo' or 'bar'
-  print *~*.*           # All Files that do not contain a dot
-  chmod 644 *(.^x)      # make all plain non-executable files publically readable
-  print -l *(.c|.h)     # Lists *.c and *.h
-  print **/*(g:users:)  # Recursively match all files that are owned by group 'users'
-  echo /proc/*/cwd(:h:t:s/self//) # Analogous to >ps ax | awk '{print }'<
+    
+  print *(m-1)                      # Files modified up to a day ago
+  print *(a1)                       # Files accessed a day ago
+  print *(@)                        # Just symlinks
+  print *(Lk+50)                    # Files bigger than 50 kilobytes
+  print *(Lk-50)                    # Files smaller than 50 kilobytes
+  print **/*.c                      # All *.c files recursively starting in $PWD
+  print **/*.c~file.c               # Same as above, but excluding 'file.c'
+  print (foo|bar).*                 # Files starting with 'foo' or 'bar'
+  print *~*.*                       # All Files that do not contain a dot
+  chmod 644 *(.^x)                  # make all plain non-executable files publically readable
+  print -l *(.c|.h)                 # Lists *.c and *.h
+  print **/*(g:users:)              # Recursively match all files that are owned by group 'users'
+  echo /proc/*/cwd(:h:t:s/self//)   # Analogous to >ps ax | awk '{print }'<
 ```
