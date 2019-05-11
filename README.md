@@ -1,24 +1,23 @@
 # Advanced Shell Notes
 ## Variable Manipulation
-|Pattern | Description|
-|--------|:-----------|
-|<kbd>${parameter:-defaultValue}</kbd>              | Get default shell variables value                     |
-|<kbd>${parameter:=defaultValue}</kbd>              | Set default shell variables value                     |
-|<kbd>${parameter:?"Error Message"}</kbd>           | Display an error message if parameter is not set      |
-|<kbd>${#var}</kbd>                                 | Find the length of the string                         |
-|<kbd>${var%pattern}</kbd>                          | Remove from shortest rear (end) pattern               |
-|<kbd>${var%%pattern}</kbd>                         | Remove from longest rear (end) pattern                |
-|<kbd>${var:num1:num2}</kbd>                        | Substring                                             |
-|<kbd>${var#pattern}</kbd>                          | Remove from shortest front pattern                    |
-|<kbd>${var##pattern}</kbd>                         | Remove from longest front pattern                     |
-|<kbd>${var/pattern/string}</kbd>                   | Find and replace (only replace first occurrence)      |
-|<kbd>${var//pattern/string}</kbd>                  | Find and replace all occurrences|
-|<kbd>${!prefix*}</kbd>                             | Expands to the names of variables whose names begin with prefix.|
-|<kbd>${var,}</kbd><br><kbd>${var,pattern}</kbd>    | Convert first character to lowercase.                 |
-|<kbd>${var,,}</kbd><br><kbd>${var,,pattern}</kbd>  | Convert all characters to lowercase.                  |
-|<kbd>${var^}</kbd><br><kbd>${var^pattern}</kbd>    | Convert first character to uppercase.                 |
-|<kbd>${var^^}</kbd><br><kbd>${var^^pattern}</kbd>  | Convert all character to uppercase.                   |
-
+```bash
+${parameter:-defaultValue}              # Get default shell variables value                     
+${parameter:=defaultValue}              # Set default shell variables value                     
+${parameter:?"Error Message"}           # Display an error message if parameter is not set      
+${#var}                                 # Find the length of the string                         
+${var%pattern}                          # Remove from shortest rear (end) pattern               
+${var%%pattern}                         # Remove from longest rear (end) pattern                
+${var:num1:num2}                        # Substring                                             
+${var#pattern}                          # Remove from shortest front pattern                    
+${var##pattern}                         # Remove from longest front pattern                     
+${var/pattern/string}                   # Find and replace (only replace first occurrence)      
+${var//pattern/string}                  # Find and replace all occurrences
+${!prefix*}                             # Expands to the names of variables whose names begin with prefix.
+${var,} OR ${var,pattern}    		    # Convert first character to lowercase.                 
+${var,,} OR ${var,,pattern}  		    # Convert all characters to lowercase.                  
+${var^} OR ${var^pattern}   		    # Convert first character to uppercase.                 
+${var^^} OR ${var^^pattern}  		    # Convert all character to uppercase.
+```
 ## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
 See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [TLDR](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
