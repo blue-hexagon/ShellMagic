@@ -1,5 +1,5 @@
-# Advanced Shell Notes{: #top-entry}
-## Variable Manipulation{: #variable-manipulation}
+# Advanced Shell Notes
+## Variable Manipulation
 ```bash
 ${parameter:-defaultValue}              # Get default shell variables value                     
 ${parameter:=defaultValue}              # Set default shell variables value                     
@@ -18,11 +18,11 @@ ${var,,} OR ${var,,pattern}  		# Convert all characters to lowercase.
 ${var^} OR ${var^pattern}   		# Convert first character to uppercase.                 
 ${var^^} OR ${var^^pattern}  		# Convert all character to uppercase.
 ```
-## Short on Subshells{: #subshells}
+## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
 See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [TLDR](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
 
-## Zsh Globbing{: #globbing}
+## Zsh Globbing
 ```shell
     /      directories
     .      plain files
