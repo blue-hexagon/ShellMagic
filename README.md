@@ -1,7 +1,7 @@
 # Advanced Shell Notes
 ## Shell Vars
 Pattern | Description
-------------|------------
+-|-
 <kbd>${parameter:-defaultValue}</kbd> | Get default shell variables value
 <kbd>${parameter:=defaultValue}</kbd> | Set default shell variables value
 <kbd>${parameter:?"Error Message"}</kbd> | Display an error message if parameter is not set
