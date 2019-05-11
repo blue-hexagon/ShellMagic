@@ -4,14 +4,16 @@
 The following descriptional table will take outline in the following command which invokes a zsh subshell (that it is a subshell is not important, but it is spawned from within a shell, unavoidably:
 ~$(zsh --exec "echo hello world")~
 
-| Command | Desc.                                             | Example Command     | Example Output              |
-|---------|---------------------------------------------------|---------------------|-----------------------------|
-| `$0`    | Command name                                      | `$ `                |`> zsh`                      |
-| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   |
-| `$$`    | Process id                                        | `$ `                |`> 4667`                     |
-| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        |
-| `"$@"`  | Array expansion: All arguments as separate words .| `$ `                |`> Hello World!`             |
-| `$#`    | Number of arguments                               | `$ `                |`> lala`                     |
+**Last column suspect to inaccuracy: not examined.**
+| Command | Desc.                                             | Example Command     | Example Output              | Shell compatibility |
+|---------|---------------------------------------------------|---------------------|-----------------------------|---------------|
+| `$0`    | Command name                                      | `$ `                |`> zsh`                      | sh, bash, ksh, zsh |
+| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   | sh, bash, ksh, zsh |
+| `$$`    | Process id                                        | `$ `                |`> 4667`                     | sh, bash, ksh, zsh |
+| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        | sh, bash, ksh, zsh |
+| `"$@"`  | Array expansion: All arguments as separate words .| `$ `                |`> Hello World!`             | sh, bash, ksh, zsh |
+| `$#`    | Number of arguments                               | `$ mv file1 file2`                |`> 2`                     | sh, bash, ksh, zsh |
+| `$!`    | PID of most recently backgrounded process         | `$ bash& && echo "$\!"`                |`> 17454`                     | sh, bash, ksh, zsh |
                         
 
 ## Variable Manipulation
