@@ -1,7 +1,11 @@
 # Advanced Shell Notes
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
 
+**Always use quotes in your regex to avoid globbing**
+
 I recommend you read the quoted article above if you are still confused about any basic difference regards the two.
+
+Now that we have the basics down, lets get to the good stuff.
 
 ## Commands
 The following descriptional table will take outline in the following command which invokes a zsh subshell (that it is a subshell is not important, but it is spawned from within a shell, unavoidably:
