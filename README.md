@@ -1,17 +1,17 @@
 # Advanced Shell Notes
 
 ## Commands
-The following descriptional table will take outline in the following command which invokes a zsh subshell printing the text **Hello World!**: `$(zsh --exec "echo hello world")`
+Below a descriptional table which takes outline in the following command **Hello World!**: `$(zsh --exec "echo hello world")` (we only invoke a subshell to illustrate we are working in zsh). Now, from then on zsh will store some shell variables which are based on the command previously invoked, read on below.
 
-| Command | Desc.                                             | Example Command     | Example Output              | Shell compatibility |
-|---------|---------------------------------------------------|---------------------|-----------------------------|---------------|
-| `$0`    | Command name                                      | `$ `                |`> zsh`                      | sh, bash, ksh |
-| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   | sh, bash, ksh |
-| `$$`    | Process id                                        | `$ `                |`> 4667`                     | sh, bash, ksh |
-| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        | sh, bash, ksh |
-| `"$@"`  | All arguments as separate words .                 | `$ `                |`> Hello World!`             | sh, bash, ksh |
-| `$#`    | Number of arguments                               | `$                  |`> 2`                     | sh, bash, ksh, zsh |
-| `$!`    | PID of most recently backgrounded process         | `$ bash& ; echo "$\!"`|`> 17454`              | sh, bash, ksh |
+| Command | Desc.                                             | Example Command     | Example Output              |
+|---------|---------------------------------------------------|---------------------|-----------------------------|
+| `$0`    | Command name                                      | `$ `                |`> zsh`                      |
+| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   |
+| `$$`    | Process id                                        | `$ `                |`> 4667`                     |
+| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        |
+| `"$@"`  | All arguments as separate words .                 | `$ `                |`> Hello World!`             |
+| `$#`    | Number of arguments                               | `$                  |`> 2`                        |
+| `$!`    | PID of most recently backgrounded process         | `$ bash& ; echo "$\!"`|`> 17454`                  |
                         
 
 ## Variable Manipulation
