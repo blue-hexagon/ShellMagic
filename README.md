@@ -1,19 +1,17 @@
 # Advanced Shell Notes
 
 ## Commands
-The following descriptional table will take outline in the following command which invokes a zsh subshell (that it is a subshell is not important, but it is spawned from within a shell, unavoidably:
-~$(zsh --exec "echo hello world")~
+The following descriptional table will take outline in the following command which invokes a zsh subshell printing the text **Hello World!**: `$(zsh --exec "echo hello world")`
 
-**Last column suspect to inaccuracy: not examined.**
 | Command | Desc.                                             | Example Command     | Example Output              | Shell compatibility |
 |---------|---------------------------------------------------|---------------------|-----------------------------|---------------|
-| `$0`    | Command name                                      | `$ `                |`> zsh`                      | sh, bash, ksh, zsh |
-| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   | sh, bash, ksh, zsh |
-| `$$`    | Process id                                        | `$ `                |`> 4667`                     | sh, bash, ksh, zsh |
-| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        | sh, bash, ksh, zsh |
-| `"$@"`  | Array expansion: All arguments as separate words .| `$ `                |`> Hello World!`             | sh, bash, ksh, zsh |
-| `$#`    | Number of arguments                               | `$ mv file1 file2`                |`> 2`                     | sh, bash, ksh, zsh |
-| `$!`    | PID of most recently backgrounded process         | `$ bash& && echo "$\!"`                |`> 17454`                     | sh, bash, ksh, zsh |
+| `$0`    | Command name                                      | `$ `                |`> zsh`                      | sh, bash, ksh |
+| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   | sh, bash, ksh |
+| `$$`    | Process id                                        | `$ `                |`> 4667`                     | sh, bash, ksh |
+| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        | sh, bash, ksh |
+| `"$@"`  | All arguments as separate words .                 | `$ `                |`> Hello World!`             | sh, bash, ksh |
+| `$#`    | Number of arguments                               | `$                  |`> 2`                     | sh, bash, ksh, zsh |
+| `$!`    | PID of most recently backgrounded process         | `$ bash& ; echo "$\!"`|`> 17454`              | sh, bash, ksh |
                         
 
 ## Variable Manipulation
@@ -38,7 +36,7 @@ The following descriptional table will take outline in the following command whi
 
 ## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
-See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [TLDR](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [The Linux Documentation Project](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
 
 ## Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
