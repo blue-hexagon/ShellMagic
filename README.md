@@ -25,17 +25,16 @@
 <!--te-->
 ## Quick References
 ### Commands Parameters
-Below a descriptional table which takes outline in the following command **Hello World!**: `$(zsh --exec "echo hello world")` (we only invoke a subshell to illustrate we are working in zsh). Now, from then on zsh will store some shell variables which are based on the command previously invoked, read on below.
-
-| Command | Desc.                                             | Example Command     | Example Output              |
-|---------|---------------------------------------------------|---------------------|-----------------------------|
-| `$0`    | Command name                                      | `$ `                |`> zsh`                      |
-| `$-`    | Current options                                   | `$ `                |`> 035679BCDEJNOPRXYZgiks`   |
-| `$$`    | Process id                                        | `$ `                |`> 4667`                     |
-| `$?`    | Exit status of the most recently executed command`| `$ `                |`> 0`                        |
-| `"$@"`  | All arguments as separate words .                 | `$ `                |`> Hello World!`             |
-| `$#`    | Number of arguments                               | `$                  |`> 2`                        |
-| `$!`    | PID of most recently backgrounded process         | `$ bash& ; echo "$\!"`|`> 17454`                  |
+| Command | Desc.                                             | 
+|---------|---------------------------------------------------|
+| `$0`    | Command name                                      | 
+| `$1..n` | Parameter 1, 2, 3, 4...n                          | 
+| `$-`    | Current options                                   | 
+| `$$`    | Process id                                        | 
+| `$?`    | Exit status of the most recently executed command`| 
+| `"$@"`  | All arguments as separate words                   | 
+| `$#`    | Number of arguments                               | 
+| `$!`    | PID of most recently backgrounded process         | 
                         
 ### Variable Manipulation
 |Pattern | Description|
@@ -92,8 +91,8 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 	1. `i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
 
 * Notes
-	1. Note: Strings inside gets considering 'zero'.
-	2. Note: This is not valid ~~`a=(( 3 + 4))`~~
+	1. Strings inside gets considering 'zero'.
+	2. This is not valid ~~`a=(( 3 + 4))`~~
 
 ### $( DollarSingleParentheses ) 
 *Used to retrieve output of commands ran in subshells.*
