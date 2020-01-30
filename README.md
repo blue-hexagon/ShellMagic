@@ -72,8 +72,18 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 ### Double Dollar Parentheses $(( ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
+#### Examples
+
+
+#### Notes
+
+
 ### Single Square Brackets [ ]
 *Used for testing. Alternate version of the built-in `test`.*
+#### Examples
+
+
+#### Notes
 1. Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
 2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
 3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
@@ -81,20 +91,67 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 ### Double Square Brackets [[ ]]
 *Supports extended regex.*
 
+#### Examples
+
+
+#### Notes
 1. You may use quotes around the second argument to force a raw, instead of a regex match.
 
 ### Single Curly Braces { }
 *Used for expansion.*
+
+#### Examples
 1. `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
 2. You can also do sequences `printf "%s " {a..f}{0..9}` will print all the 2-digit base-16 numbers.
 
+#### Notes
+
 ### Dollar Braces ${ }
+*Use to manipulate variables or when normal string interpolation could get weird.*
+
+#### Examples
+See: [Variable manipulation](#Variable-Manipulation) for examples on that.
+
+#### Notes
+1. No spaces around the content/variables.
 
 ### Angle Parenthteses <( )
 
+
+#### Examples
+
+
+#### Notes
+
+
 ### Double Angle Heredocs <<
+*A "here document" is a special-purpose codeblock that uses a form of I/O redirection to feed a command list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.*
+#### Examples
+```bash
+cat << 'THEEND'
+It never ceases to amaze me :O
+we all love ourselves <3 more than other people,
+but care more about their opinions [OH NO!] than our own.
+	- Marcus Aurelius  &"&!(£"*_*str4n3__SYMBOLS!
+THEEND
+
+```
+> It never ceases to amaze me :O
+> we all love ourselves <3 more than other people,
+> but care more about their opinions [OH NO!] than our own.
+> 	- Marcus Aurelius  &"&!(£"*_*str4n3__SYMBOLS!
+
+A more useful example would be to use sed for removing all symbols, say you want to create an array with all words for example. We can replace `cat ` with `sed 's/[^[:alpha:]]/ /gi'` which removes all symbols.
+
+#### Notes
+There exists a couple of variations and rules to the heredoc.
+1. To suppres leading tabs on any lines, use `<<-` (dash at the end).
+2. You may quote, or chose not to quote your "magic word", i.e. THEEND.
+3. Your magic word can be more or less anything you chose.
 
 ### Functions
+
+#### Examples
 ```bash
 function hello() {
 	echo "Hi $1"
@@ -110,6 +167,8 @@ function hello {
 ```
 * Q: What's the difference between the three examples above?
 * A: None, what-so-ever.... :)
+
+#### Notes
 
 ## Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
