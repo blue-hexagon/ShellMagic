@@ -104,7 +104,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 * Notes
 	1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
-### : (( DoubleParentheses ))
+### (( DoubleParentheses ))
 *Used for integer arithmetic and modifying variables. HOWEVER, will not output any variables!! Variables modified inside the parentheses will stick however.*
 
 * Examples
@@ -114,71 +114,71 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 	1. Note: Strings inside gets considering 'zero'.
 	2. Note: This is not valid ~~`a=(( 3 + 4))`~~
 
-### Dollar Single Parentheses $( ) 
+### $( Dollar Single Parentheses ) 
 *Used to retrieve output of commands ran in subshells.*
 
-#### Examples
-1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
+* Examples
+	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### Double Dollar Parentheses $(( ))
+### $(( Double Dollar Parentheses ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
-#### Examples
-1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
+* Examples
+	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### Single Square Brackets [ ]
+### [ Single Square Brackets ]
 *Used for testing. Alternate version of the built-in `test`.*
 
-#### Examples
+* Examples
 
-#### Notes
-1. Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
-2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
-3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
+* Notes
+	1. Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
+	2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
+	3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
 
-### Double Square Brackets [[ ]]
-*Supports extended regex.*
+### [[ Double Square Brackets ]]
+*Used for testing and supports extended regex but isn't a shell built-in.*
 
-#### Examples
+* Examples
 
 
-#### Notes
-1. You may use quotes around the second argument to force a raw, instead of a regex match.
+* Notes
+	1. You may use quotes around the second argument to force a raw, instead of a regex match.
 
-### Single Curly Braces { }
-*Used for expansion.*
+### {SingleCurlyBraces}
+*Used for expansion of sequences.*
 
-#### Examples
-1. `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
-2. You can also do sequences `printf "%s " {a..f}{0..9}` will print a bunch of hex numbers.
-3. `echo {z..a..2}` will print every second letter starting from `z` and working backwards toward `a`.
-4. To save all 2-letter permutations of the alphabet to an array: `letter_combos=({a..z}{a..z})` boom!
+* Examples
+	1. `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
+	2. You can also do sequences `printf "%s " {a..f}{0..9}` will print a bunch of hex numbers.
+	3. `echo {z..a..2}` will print every second letter starting from `z` and working backwards toward `a`.
+	4. To save all 2-letter permutations of the alphabet to an array: `letter_combos=({a..z}{a..z})` boom!
 
-#### Notes
+* Notes
 
-### Dollar Braces ${ }
+### ${DollarBraces}
 *Use to manipulate variables or when normal string interpolation could get weird.*
 
-#### Examples
+* Examples
 *When string interpolation could get weird*
 ``
 See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 
-#### Gotchas
+* Gotchas
 1. No spaces around the content/variables.
 
-### Angle Parenthteses <( )
+### <( AngleParenthteses )
 
 
-#### Examples
+* Examples
 
 
-#### Notes
+* Notes
 
 
-### Double Angle Heredocs <<
+### <<- 'DOUBLEANGLEHEREDOCS' 
 *A "here document" is a special-purpose codeblock that uses a form of I/O redirection to feed a command list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.*
-#### Examples
+* Examples
 ```bash
 cat << 'THEEND'
 It never ceases to amaze me :O
@@ -195,7 +195,7 @@ THEEND
 
 A more useful example would be to use sed for removing all symbols, say you want to create an array with all words for example. We can replace `cat ` with `sed 's/[^[:alpha:]]/ /gi'` which removes all symbols.
 
-#### Notes
+* Notes
 There exists a couple of variations and rules to the heredoc.
 1. To suppres leading tabs on any lines, use `<<-` (dash at the end).
 2. You may quote, or chose not to quote your "magic word", i.e. THEEND.
@@ -203,7 +203,7 @@ There exists a couple of variations and rules to the heredoc.
 
 ### Functions
 
-#### Examples
+* Examples
 ```bash
 function hello() {
 	echo "Hi $1"
