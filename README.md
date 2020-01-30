@@ -36,44 +36,57 @@ Below a descriptional table which takes outline in the following command **Hello
 
 ## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
-See the info pages for Bash for more information on pattern matching with the `(( EXPRESSION ))` and `[[ EXPRESSION ]]` constructs. - [The Linux Documentation Project](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
 
-## Braces & Brackets
+## Parentheses, Brackets & Braces!
+I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide short examples and important notes on the use and misuse of these symbols.
+
 ### Single Parenthese ( )
-Use 1: Running commands inside a subshell
-	- Example: `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
-Use 2: Declaring arrays
-	- Example: `colors=(green yellow purple gray black white magenta)`
-	- Example: `coordinates=('16.491838, 28.164997' '-55.594198, -13.051657' '-94.274509, 42.953203')`
-	- Note: Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
+*Used for running commands inside a subshell and declaring arrays*
+
+#### Examples
+1. `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
+2. `colors=(green yellow purple gray black white magenta)`
+3. `coordinates=('16.491838, 28.164997' '-55.594198, -13.051657' '-94.274509, 42.953203')`
+
+#### Notes
+1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
 ### Double Parentheses: (( ))
-Use 1: Used for integer arithmetic and modifying variables. HOWEVER, you it does not output any variables!! Variables modified inside the parentheses will stick however.
-	- Example: `i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
-	- Note: Strings inside gets considering 'zero'.
-	- Note: This is not valid ~~`a=(( 3 + 4))`~~
+*Used for integer arithmetic and modifying variables. HOWEVER, you it does not output any variables!! Variables modified inside the parentheses will stick however.*
 
+#### Examples
+`i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
+
+#### Notes
+1. Note: Strings inside gets considering 'zero'.
+2. Note: This is not valid ~~`a=(( 3 + 4))`~~
 
 ### Dollar Single Parentheses $( ) 
-Use 1: Used to retrieve output of commands ran in subshells.
-	- Example: `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
+*Used to retrieve output of commands ran in subshells.*
+
+#### Examples
+1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
+
+#### Notes
 
 ### Double Dollar Parentheses $(( ))
-Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.
+*Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
 ### Single Square Brackets [ ]
-Alternate version of the built-in `test` 
-Note: Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
-Note: `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
-Note: Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
+*Used for testing. Alternate version of the built-in `test`.*
+1. Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
+2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
+3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
 
 ### Double Square Brackets [[ ]]
-Additionally these bad boys support extended regex. You may use quotes around the second argument to force a raw, instead of a regex match.
+*Supports extended regex.*
+
+1. You may use quotes around the second argument to force a raw, instead of a regex match.
 
 ### Single Curly Braces { }
-Used for expansion.
-Example: `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
-Example: You can also do sequences `printf "%s " {a..f}{0..9}` will print all the 2-digit base-16 numbers.
+*Used for expansion.*
+1. `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
+2. You can also do sequences `printf "%s " {a..f}{0..9}` will print all the 2-digit base-16 numbers.
 
 ### Dollar Braces ${ }
 
@@ -82,22 +95,21 @@ Example: You can also do sequences `printf "%s " {a..f}{0..9}` will print all th
 ### Double Angle Heredocs <<
 
 ### Functions
-`function hello() {
+```bash
+function hello() {
 	echo "Hi $1"
 }
-`
-`
+
 hello() {
 	echo "Hi $1"
 }
-`
-`
+
 function hello {
 	echo "Hi $1"
 }
-`
-Q: What's the difference between the three examples above?
-A: None, what-so-ever.... :)
+```
+* Q: What's the difference between the three examples above?
+* A: None, what-so-ever.... :)
 
 ## Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
