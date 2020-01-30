@@ -25,7 +25,7 @@
 <!--te-->
 ## Quick References
 ### Commands Parameters
-| Command | Desc.                                             | 
+| Command | Description                                       | 
 |---------|---------------------------------------------------|
 | `$0`    | Command name                                      | 
 | `$1..n` | Parameter 1, 2, 3, 4...n                          | 
@@ -35,7 +35,69 @@
 | `"$@"`  | All arguments as separate words                   | 
 | `$#`    | Number of arguments                               | 
 | `$!`    | PID of most recently backgrounded process         | 
-                        
+
+### File Test Operator
+| Flag | Description 										  |
+|----|--------------------------------------------------------------------------------------------|
+| -e | File exists										  |
+| -a | File exists (identical to -e but is deprecated and outdated) 				  |
+| -f | File is a regular file (not a directory or device file) 					  |
+| -s | file is not zero size 									  |
+| -d | file is a directory 									  |
+| -b | file is a block device 									  |
+| -c | file is a character device 								  |
+| -p | file is a pipe 										  |
+| -h | file is a symbolic link									  |
+| -L | file is a symbolic link  								  |
+| -S | file is a socket  									  |
+| -t | file (descriptor) is associated with a terminal device; this test option may be used to check whether the stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal  |
+| -r | file has read permission (for the user running the test)  				  |
+| -w | file has write permission (for the user running the test)  				  |
+| -x | file has execute permission (for the user running the test) 				  |
+| -g | set-group-id (sgid) flag set on file or directory  					  |
+| -u | set-user-id (suid) flag set on file.  							  |
+| -k | sticky bit set. 										  |
+| -O | you are owner of file  									  |
+| -G | group-id of file same as yours  								  |
+| -N | file modified since it was last read  							  |
+| f1 -nt f2 |  file f1 is newer than f2  							  |
+| f1 -ot f2 | file f1 is older than f2   							  |
+| f1 -ef f2 | files f1 and f2 are hard links to the same file 				  	  |
+| !  | "not" -- reverses the sense of the tests above (returns true if condition absent).	  |
+
+### Other Comparison Operators
+#### Integer Comparison
+| Flag		| Description									|
+|---------------|-------------------------------------------------------------------------------|
+| -eq		|										|
+| -ne		|										|
+| -gt		|										|
+| -ge		|										|
+| -lt		|										|
+| -le		|										|
+| <		|										|
+| <=		|										|
+| >		|										|
+| >=		|										|
+| -		|										|
+
+#### String Comparison
+| Flag		| Description									|
+|---------------|-------------------------------------------------------------------------------|
+| =		|										|
+| ==		|										|
+| !=		|										|
+| <		|										|
+| >		|										|
+| -z		|										|
+| -n		|										|
+
+#### Compound Comparison
+| Flag		| Description									|
+|---------------|-------------------------------------------------------------------------------|
+| -a		|										|
+| -o		|										|
+
 ### Variable Manipulation
 |Pattern | Description|
 |--------|:-----------|
