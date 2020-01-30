@@ -1,4 +1,47 @@
 # Advanced Shell Notes
+<!--ts-->
+   * [Advanced Shell Notes](#advanced-shell-notes)
+      * [Quick References](#quick-references)
+         * [Commands Parameters](#commands-parameters)
+         * [Variable Manipulation](#variable-manipulation)
+      * [Parentheses, Brackets &amp; Braces!](#parentheses-brackets--braces)
+      * [Short on Subshells](#short-on-subshells)
+      * [Quick Overview](#quick-overview)
+         * [Single Parentheses ( )](#single-parentheses--)
+            * [Examples](#examples)
+            * [Notes](#notes)
+         * [Double Parentheses: (( ))](#double-parentheses--)
+            * [Examples](#examples-1)
+            * [Notes](#notes-1)
+         * [Dollar Single Parentheses $( )](#dollar-single-parentheses--)
+            * [Examples](#examples-2)
+         * [Double Dollar Parentheses $(( ))](#double-dollar-parentheses--)
+            * [Examples](#examples-3)
+         * [Single Square Brackets [ ]](#single-square-brackets--)
+            * [Examples](#examples-4)
+            * [Notes](#notes-2)
+         * [Double Square Brackets [[ ]]](#double-square-brackets--)
+            * [Examples](#examples-5)
+            * [Notes](#notes-3)
+         * [Single Curly Braces { }](#single-curly-braces--)
+            * [Examples](#examples-6)
+            * [Notes](#notes-4)
+         * [Dollar Braces ${ }](#dollar-braces--)
+            * [Examples](#examples-7)
+            * [Gotchas](#gotchas)
+         * [Angle Parenthteses &lt;( )](#angle-parenthteses--)
+            * [Examples](#examples-8)
+            * [Notes](#notes-5)
+         * [Double Angle Heredocs &lt;&lt;](#double-angle-heredocs-)
+            * [Examples](#examples-9)
+            * [Notes](#notes-6)
+         * [Functions](#functions)
+            * [Examples](#examples-10)
+      * [Zsh Globbing](#zsh-globbing)
+
+<!-- Added by: user221, at: Thu 30 Jan 2020 05:24:13 PM CET -->
+
+<!--te-->
 ## Quick References
 ### Commands Parameters
 Below a descriptional table which takes outline in the following command **Hello World!**: `$(zsh --exec "echo hello world")` (we only invoke a subshell to illustrate we are working in zsh). Now, from then on zsh will store some shell variables which are based on the command previously invoked, read on below.
