@@ -1,6 +1,6 @@
 # Advanced Shell Notes
-
-## Commands
+## Quick References
+### Commands Parameters
 Below a descriptional table which takes outline in the following command **Hello World!**: `$(zsh --exec "echo hello world")` (we only invoke a subshell to illustrate we are working in zsh). Now, from then on zsh will store some shell variables which are based on the command previously invoked, read on below.
 
 | Command | Desc.                                             | Example Command     | Example Output              |
@@ -13,8 +13,7 @@ Below a descriptional table which takes outline in the following command **Hello
 | `$#`    | Number of arguments                               | `$                  |`> 2`                        |
 | `$!`    | PID of most recently backgrounded process         | `$ bash& ; echo "$\!"`|`> 17454`                  |
                         
-
-## Variable Manipulation
+### Variable Manipulation
 |Pattern | Description|
 |--------|:-----------|
 |<kbd>${parameter:-defaultValue}</kbd>              | Get default shell variables value                     |
@@ -34,13 +33,24 @@ Below a descriptional table which takes outline in the following command **Hello
 |<kbd>${var^}</kbd><br><kbd>${var^pattern}</kbd>    | Convert first character to uppercase.                 |
 |<kbd>${var^^}</kbd><br><kbd>${var^^pattern}</kbd>  | Convert all character to uppercase.                   |
 
-## Short on Subshells
-If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
-
 ## Parentheses, Brackets & Braces!
 I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide short examples and important notes on the use and misuse of these symbols.
 
-### Single Parenthese ( )
+## Short on Subshells
+If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
+
+## Quick Overview
+* `( )` is used for running commands in a subshell.
+* `$( )` is used for saving output of commands that are send to run in a subshell.
+* `(( ))` is used for arithmetic.
+* `$(( ))` is used for saving the output of arithmetic.
+* `[ ]` is used for testing and is a built-in. Is useful in some cases for filename expansion and string manipulation.
+* `[[ ]]` is used for testing. This is the one you should use unless you can think of a reason not to.
+* `<( )` Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.
+* `{ }` is used for expansion of sequences
+* `${ }` is used for variable interpolation and string manipulation.
+
+### Single Parentheses ( )
 *Used for running commands inside a subshell and declaring arrays*
 
 #### Examples
@@ -52,7 +62,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
 ### Double Parentheses: (( ))
-*Used for integer arithmetic and modifying variables. HOWEVER, you it does not output any variables!! Variables modified inside the parentheses will stick however.*
+*Used for integer arithmetic and modifying variables. HOWEVER, will not output any variables!! Variables modified inside the parentheses will stick however.*
 
 #### Examples
 `i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
@@ -67,21 +77,16 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 #### Examples
 1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-#### Notes
-
 ### Double Dollar Parentheses $(( ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
 #### Examples
-
-
-#### Notes
-
+1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
 ### Single Square Brackets [ ]
 *Used for testing. Alternate version of the built-in `test`.*
-#### Examples
 
+#### Examples
 
 #### Notes
 1. Strings of zero length are `false` and greater than one length (even if its whitespace) is `true`.
@@ -102,7 +107,9 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 
 #### Examples
 1. `a{bsenti,cademi,lgebr,mmoni,mnesi}a` expands into `absentia academia algebra ammonia amnesia`
-2. You can also do sequences `printf "%s " {a..f}{0..9}` will print all the 2-digit base-16 numbers.
+2. You can also do sequences `printf "%s " {a..f}{0..9}` will print a bunch of hex numbers.
+3. `echo {z..a..2}` will print every second letter starting from `z` and working backwards toward `a`.
+4. To save all 2-letter permutations of the alphabet to an array: `letter_combos=({a..z}{a..z})` boom!
 
 #### Notes
 
@@ -110,9 +117,11 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 *Use to manipulate variables or when normal string interpolation could get weird.*
 
 #### Examples
+*When string interpolation could get weird*
+``
 See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 
-#### Notes
+#### Gotchas
 1. No spaces around the content/variables.
 
 ### Angle Parenthteses <( )
@@ -167,8 +176,6 @@ function hello {
 ```
 * Q: What's the difference between the three examples above?
 * A: None, what-so-ever.... :)
-
-#### Notes
 
 ## Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
