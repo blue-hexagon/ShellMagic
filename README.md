@@ -62,7 +62,8 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 ## Short on Subshells
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
 
-## Quick Overview
+## Overview of Bash Symbols
+* `$`
 * `( )` is used for running commands in a subshell.
 * `$( )` is used for saving output of commands that are send to run in a subshell.
 * `(( ))` is used for arithmetic.
@@ -72,6 +73,17 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 * `<( )` Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.
 * `{ }` is used for expansion of sequences
 * `${ }` is used for variable interpolation and string manipulation.
+* `|` is a pipe which is used for chaining commands together.
+* `<`
+* `>`
+* `<<`
+* `>>`
+* `.`
+* `..`
+* `~`
+* \`\``
+
+### $DollarSign
 
 ### ( SingleParentheses )
 *Used for running commands inside a subshell and declaring arrays*
@@ -199,6 +211,23 @@ function hello {
 ```
 * Q: What's the difference between the three examples above?
 * A: None, what-so-ever.... :)
+
+### | Pipes
+
+### < Redirection
+
+### > Redirection
+
+### >> 
+
+### . Dot
+
+### .. DotDot
+
+### ~ Tilde
+
+### \`BackTicks\`
+For running commands in a subshell; equivalent to `$( command )` but is deprecated and should not be used. Causes a lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.
 
 ## Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
