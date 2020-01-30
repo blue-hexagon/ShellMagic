@@ -8,20 +8,19 @@
       * [Short on Subshells](#short-on-subshells)
       * [Quick Overview](#quick-overview)
          * [( SingleParentheses )](#-singleparentheses-)
-            * [Examples](#examples)
          * [(( DoubleParentheses ))](#-doubleparentheses-)
-         * [$( Dollar Single Parentheses )](#-dollar-single-parentheses-)
-         * [$(( Double Dollar Parentheses ))](#-double-dollar-parentheses-)
-         * [[ Single Square Brackets ]](#-single-square-brackets-)
-         * [[[ Double Square Brackets ]]](#-double-square-brackets-)
+         * [$( DollarSingleParentheses )](#-dollarsingleparentheses-)
+         * [$(( DoubleDollarParentheses ))](#-doubledollarparentheses-)
+         * [[ SingleSquareBrackets ]](#-singlesquarebrackets-)
+         * [[[ DoubleSquareBrackets ]]](#-doublesquarebrackets-)
          * [{SingleCurlyBraces}](#singlecurlybraces)
          * [${DollarBraces}](#dollarbraces)
-         * [&lt;( AngleParenthteses )](#-angleparenthteses-)
+         * [&lt;( AngleParentheses )](#-angleparentheses-)
          * [&lt;&lt;- 'DOUBLEANGLEHEREDOCS'](#--doubleangleheredocs)
-         * [Functions](#functions)
+         * [Functions () { ... }](#functions----)
       * [Zsh Globbing](#zsh-globbing)
 
-<!-- Added by: user221, at: Thu 30 Jan 2020 05:33:25 PM CET -->
+<!-- Added by: user221, at: Thu 30 Jan 2020 05:35:54 PM CET -->
 
 <!--te-->
 ## Quick References
@@ -78,10 +77,10 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 ### ( SingleParentheses )
 *Used for running commands inside a subshell and declaring arrays*
 
-#### Examples
-1. `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
-2. `colors=(green yellow purple gray black white magenta)`
-3. `coordinates=('16.491838, 28.164997' '-55.594198, -13.051657' '-94.274509, 42.953203')`
+* Examples
+	1. `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
+	2. `colors=(green yellow purple gray black white magenta)`
+	3. `coordinates=('16.491838, 28.164997' '-55.594198, -13.051657' '-94.274509, 42.953203')`
 
 * Notes
 	1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
@@ -96,19 +95,19 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 	1. Note: Strings inside gets considering 'zero'.
 	2. Note: This is not valid ~~`a=(( 3 + 4))`~~
 
-### $( Dollar Single Parentheses ) 
+### $( DollarSingleParentheses ) 
 *Used to retrieve output of commands ran in subshells.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### $(( Double Dollar Parentheses ))
+### $(( DoubleDollarParentheses ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### [ Single Square Brackets ]
+### [ SingleSquareBrackets ]
 *Used for testing. Alternate version of the built-in `test`.*
 
 * Examples
@@ -118,7 +117,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 	2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
 	3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
 
-### [[ Double Square Brackets ]]
+### [[ DoubleSquareBrackets ]]
 *Used for testing and supports extended regex but isn't a shell built-in.*
 
 * Examples
@@ -149,7 +148,7 @@ See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 * Gotchas
 1. No spaces around the content/variables.
 
-### <( AngleParenthteses )
+### <( AngleParentheses )
 
 
 * Examples
@@ -183,7 +182,7 @@ There exists a couple of variations and rules to the heredoc.
 2. You may quote, or chose not to quote your "magic word", i.e. THEEND.
 3. Your magic word can be more or less anything you chose.
 
-### Functions
+### Functions () { ... }
 
 * Examples
 ```bash
