@@ -93,7 +93,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 * `{ }` is used for expansion of sequences
 * `${ }` is used for variable interpolation and string manipulation.
 
-### Single Parentheses ( )
+### ( SingleParentheses )
 *Used for running commands inside a subshell and declaring arrays*
 
 #### Examples
@@ -101,18 +101,18 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 2. `colors=(green yellow purple gray black white magenta)`
 3. `coordinates=('16.491838, 28.164997' '-55.594198, -13.051657' '-94.274509, 42.953203')`
 
-#### Notes
-1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
+* Notes
+	1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
-### Double Parentheses: (( ))
+### : (( DoubleParentheses ))
 *Used for integer arithmetic and modifying variables. HOWEVER, will not output any variables!! Variables modified inside the parentheses will stick however.*
 
-#### Examples
-`i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
+* Examples
+	1. `i=4 ; (( i += 4 )) ; echo "${i}"` will output `8`.
 
-#### Notes
-1. Note: Strings inside gets considering 'zero'.
-2. Note: This is not valid ~~`a=(( 3 + 4))`~~
+* Notes
+	1. Note: Strings inside gets considering 'zero'.
+	2. Note: This is not valid ~~`a=(( 3 + 4))`~~
 
 ### Dollar Single Parentheses $( ) 
 *Used to retrieve output of commands ran in subshells.*
