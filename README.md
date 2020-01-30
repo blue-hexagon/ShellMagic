@@ -3,10 +3,16 @@
    * [Advanced Shell Notes](#advanced-shell-notes)
       * [Quick References](#quick-references)
          * [Commands Parameters](#commands-parameters)
+         * [File Test Operator](#file-test-operator)
+         * [Other Comparison Operators](#other-comparison-operators)
+            * [Integer Comparison](#integer-comparison)
+            * [String Comparison](#string-comparison)
+            * [Compound Comparison](#compound-comparison)
          * [Variable Manipulation](#variable-manipulation)
       * [Parentheses, Brackets &amp; Braces!](#parentheses-brackets--braces)
       * [Short on Subshells](#short-on-subshells)
-      * [Quick Overview](#quick-overview)
+      * [Overview of Bash Symbols](#overview-of-bash-symbols)
+         * [$DollarSign](#dollarsign)
          * [( SingleParentheses )](#-singleparentheses-)
          * [(( DoubleParentheses ))](#-doubleparentheses-)
          * [$( DollarSingleParentheses )](#-dollarsingleparentheses-)
@@ -18,9 +24,16 @@
          * [&lt;( AngleParentheses )](#-angleparentheses-)
          * [&lt;&lt;- 'DOUBLEANGLEHEREDOCS'](#--doubleangleheredocs)
          * [Functions () { ... }](#functions----)
+         * [| Pipes](#-pipes)
+         * [&lt; Redirection](#-redirection)
+         * [&gt; Redirection](#-redirection-1)
+         * [. Dot](#-dot)
+         * [.. DotDot](#-dotdot)
+         * [~ Tilde](#-tilde)
+         * [`BackTicks`](#backticks)
       * [Zsh Globbing](#zsh-globbing)
 
-<!-- Added by: user221, at: Thu 30 Jan 2020 05:35:54 PM CET -->
+<!-- Added by: user221, at: Thu 30 Jan 2020 10:57:50 PM CET -->
 
 <!--te-->
 ## Quick References
