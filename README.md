@@ -151,7 +151,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 | `<( )` 	| Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.							  |
 | `{ }` 	| is used for expansion of sequences							|
 | `${ }`	| is used for variable interpolation and string manipulation.				|
-| `|` 		| is a pipe which is used for chaining commands together.				|
+| `\|` 		| is a pipe which is used for chaining commands together.				|
 | `<` 		| used for feeding input to commands from a file					|
 | `>` 		| used for sending output to a file and erasing any previous content in that file.	|
 | `<<WORD` 	| is used for heredocs.									|
@@ -159,7 +159,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 | `.`  		| expands to the current directory.							|
 | `..` 		| expands to parent directory.								|
 | `~`  		| expands to home directory.								|
-| ``backtick``	| is deprecated and should not be used. Read further in its respective section.		|
+| `\`backticks\`` | is deprecated and should not be used. Read further in its respective section.	|
 
 ### $DollarSign
 
