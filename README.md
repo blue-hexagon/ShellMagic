@@ -139,25 +139,27 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
 
 ## Overview of Bash Symbols
-* `$` used for parameters and variables. Has a bunch of edge cases.
-* `( )` is used for running commands in a subshell.
-* `$( )` is used for saving output of commands that are send to run in a subshell.
-* `(( ))` is used for arithmetic.
-* `$(( ))` is used for saving the output of arithmetic.
-* `[ ]` is used for testing and is a built-in. Is useful in some cases for filename expansion and string manipulation.
-* `[[ ]]` is used for testing. This is the one you should use unless you can think of a reason not to.
-* `<( )` Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.
-* `{ }` is used for expansion of sequences
-* `${ }` is used for variable interpolation and string manipulation.
-* `|` is a pipe which is used for chaining commands together.
-* `<` used for feeding input to commands from a file
-* `>` used for sending output to a file and erasing any previous content in that file.
-* `<<WORD` is used for heredocs.
-* `>>` Is used to append output to a file.
-* `.` expands to the current directory.
-* `..` expands to parent directory.
-* `~` expands to home directory.
-* ```` is deprecated and should not be used. Read further in its respective section.
+| Symbol	| Quick Reference									|
+|---------------|---------------------------------------------------------------------------------------|
+| `$` 		| used for parameters and variables. Has a bunch of edge cases.				|
+| `( )` 	| is used for running commands in a subshell.						|
+| `$( )` 	| is used for saving output of commands that are send to run in a subshell.		|
+| `(( ))` 	| is used for arithmetic.								|
+| `$(( ))` 	| is used for saving the output of arithmetic.						|
+| `[ ]` 	| is used for testing and is a built-in. Is useful in some cases for filename expansion and string manipulation.										  |
+| `[[ ]]` 	| is used for testing. This is the one you should use unless you can think of a reason not to.													  |
+| `<( )` 	| Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.							  |
+| `{ }` 	| is used for expansion of sequences							|
+| `${ }`	| is used for variable interpolation and string manipulation.				|
+| `|` 		| is a pipe which is used for chaining commands together.				|
+| `<` 		| used for feeding input to commands from a file					|
+| `>` 		| used for sending output to a file and erasing any previous content in that file.	|
+| `<<WORD` 	| is used for heredocs.									|
+| `>>` 		| Is used to append output to a file.							|
+| `.`  		| expands to the current directory.							|
+| `..` 		| expands to parent directory.								|
+| `~`  		| expands to home directory.								|
+| ``backtick``	| is deprecated and should not be used. Read further in its respective section.		|
 
 ### $DollarSign
 
