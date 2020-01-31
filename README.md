@@ -53,6 +53,7 @@
 <table>
 <tr><th>File Test Operators</th><th>Other Comparison Operators</th>
 <tr><td>
+
 | Flag | Description 										  |
 |----|--------------------------------------------------------------------------------------------|
 | -e | File exists										  |
@@ -80,6 +81,7 @@
 | f1 -ot f2 | file f1 is older than f2   							  |
 | f1 -ef f2 | files f1 and f2 are hard links to the same file 				  	  |
 | !  | "not" -- reverses the sense of the tests above (returns true if condition absent).	  |
+
 </td><td>
 
 | Flag		| Integer Comparison								|
@@ -95,6 +97,7 @@
 | >		|										|
 | >=		|										|
 | -		|										|
+
 | Flag		| String Comparison								|
 |---------------|-------------------------------------------------------------------------------|
 | =		|										|
@@ -104,6 +107,7 @@
 | >		|										|
 | -z		|										|
 | -n		|										|
+
 | Flag		| Compound Comparison								|
 |---------------|-------------------------------------------------------------------------------|
 | -a		|										|
