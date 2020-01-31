@@ -6,7 +6,9 @@
   Advanced Shell Notes
   <br>
 </h1>
+<p align="center">
 :star: Star us on GitHub — it helps!
+
 **So you wish to learn the dark arts of shell scripting and throw some slick bash scripts together to impress your wife, but keep on forgetting the ridicilous arcane syntax and rules for which it applies?**
 
 The following document is a collection of my own journey into the territory of shell scripting, mainly bash.
@@ -14,6 +16,7 @@ The following document is a collection of my own journey into the territory of s
 The document starts out with a TOC for easy navigation followed by a quick reference, again followed by more in depth explanation and examples.
 
 *Please bear in mind that the project is still very much a WIP -- should you wish so, contributions is gladly accepted!*
+</p>
 <hr>
 <h4 align="center"> Quick Navigation </h4>
 <p align="center">
@@ -26,7 +29,9 @@ The document starts out with a TOC for easy navigation followed by a quick refer
 </p>
 <!--ts-->
 <!--te-->
+
 # Quick References
+
 ## Commands Parameters
 | Command | Description                                       | 
 |---------|---------------------------------------------------|
