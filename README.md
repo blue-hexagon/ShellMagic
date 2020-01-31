@@ -50,6 +50,9 @@
 | `$!`    | PID of most recently backgrounded process         | 
 
 ### File Test Operator
+<table>
+<tr><th>File Test Operators</th><th>Other Comparison Operators</th>
+<tr><td>
 | Flag | Description 										  |
 |----|--------------------------------------------------------------------------------------------|
 | -e | File exists										  |
@@ -77,10 +80,9 @@
 | f1 -ot f2 | file f1 is older than f2   							  |
 | f1 -ef f2 | files f1 and f2 are hard links to the same file 				  	  |
 | !  | "not" -- reverses the sense of the tests above (returns true if condition absent).	  |
+</td><td>
 
-### Other Comparison Operators
-#### Integer Comparison
-| Flag		| Description									|
+| Flag		| Integer Comparison								|
 |---------------|-------------------------------------------------------------------------------|
 | -eq		|										|
 | -ne		|										|
@@ -93,9 +95,7 @@
 | >		|										|
 | >=		|										|
 | -		|										|
-
-#### String Comparison
-| Flag		| Description									|
+| Flag		| String Comparison								|
 |---------------|-------------------------------------------------------------------------------|
 | =		|										|
 | ==		|										|
@@ -104,13 +104,11 @@
 | >		|										|
 | -z		|										|
 | -n		|										|
-
-#### Compound Comparison
-| Flag		| Description									|
+| Flag		| Compound Comparison								|
 |---------------|-------------------------------------------------------------------------------|
 | -a		|										|
 | -o		|										|
-
+</td></tr> </table>
 ### Variable Manipulation
 |Pattern | Description|
 |--------|:-----------|
