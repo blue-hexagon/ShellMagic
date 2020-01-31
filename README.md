@@ -43,7 +43,7 @@
 | `$0`    | Command name                                      | 
 | `$1..n` | Parameter 1, 2, 3, 4...n                          | 
 | `$-`    | Current options                                   | 
-| `$$`    | Process id                                        | 
+| `$$`    | Process id of the shell                           | 
 | `$?`    | Exit status of the most recently executed command`| 
 | `"$@"`  | All arguments as separate words                   | 
 | `$#`    | Number of arguments                               | 
@@ -140,7 +140,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
 
 ## Overview of Bash Symbols
-* `$`
+* `$` used for parameters and variables. Has a bunch of edge cases.
 * `( )` is used for running commands in a subshell.
 * `$( )` is used for saving output of commands that are send to run in a subshell.
 * `(( ))` is used for arithmetic.
@@ -151,14 +151,14 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 * `{ }` is used for expansion of sequences
 * `${ }` is used for variable interpolation and string manipulation.
 * `|` is a pipe which is used for chaining commands together.
-* `<`
-* `>`
-* `<<`
-* `>>`
-* `.`
-* `..`
-* `~`
-* \`\``
+* `<` used for feeding input to commands from a file
+* `>` used for sending output to a file and erasing any previous content in that file.
+* `<<WORD` is used for heredocs.
+* `>>` Is used to append output to a file.
+* `.` expands to the current directory.
+* `..` expands to parent directory.
+* `~` expands to home directory.
+* `\`\`` is deprecated and should not be used. Read further in its respective section.
 
 ### $DollarSign
 
@@ -247,6 +247,7 @@ See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 
 ### <<- 'DOUBLEANGLEHEREDOCS' 
 *A "here document" is a special-purpose codeblock that uses a form of I/O redirection to feed a command list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.*
+
 * Examples
 ```bash
 cat << 'THEEND'
@@ -257,11 +258,12 @@ but care more about their opinions [OH NO!] than our own.
 THEEND
 
 ```
-> It never ceases to amaze me :O
-> we all love ourselves <3 more than other people,
-> but care more about their opinions [OH NO!] than our own.
-> 	- Marcus Aurelius  &"&!(£"*_*str4n3__SYMBOLS!
-
+```text
+It never ceases to amaze me :O
+we all love ourselves <3 more than other people,
+but care more about their opinions [OH NO!] than our own.
+	- Marcus Aurelius  &"&!(£"*_*str4n3__SYMBOLS!
+```
 A more useful example would be to use sed for removing all symbols, say you want to create an array with all words for example. We can replace `cat ` with `sed 's/[^[:alpha:]]/ /gi'` which removes all symbols.
 
 * Notes
@@ -271,6 +273,7 @@ There exists a couple of variations and rules to the heredoc.
 3. Your magic word can be more or less anything you chose.
 
 ### Functions () { ... }
+*Functions used to execute code blocks, retrieve exit status for code blocks and retrieve output of a code block.*
 
 * Examples
 ```bash
@@ -290,18 +293,25 @@ function hello {
 * A: None, what-so-ever.... :)
 
 ### | Pipes
+Chain commands together.
 
 ### < Redirection
+Use command input.
 
 ### > Redirection
+Output to file and overwrite.
 
 ### >> 
+Append to file.
 
 ### . Dot
+Current directory.
 
 ### .. DotDot
+Parent directory.
 
 ### ~ Tilde
+Home directory.
 
 ### \`BackTicks\`
 For running commands in a subshell; equivalent to `$( command )` but is deprecated and should not be used. Causes a lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.
