@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/smokingcuke/Advanced-Shell-Notes/logo.png" alt="AdvancedShellNotesLogo" width="200">
+  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.PNG" alt="AdvancedShellNotesLogo" width="200">
   <br>
   Advanced Shell Notes
   <br>
