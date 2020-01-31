@@ -3,33 +3,32 @@
    * [Advanced Shell Notes](#advanced-shell-notes)
       * [Quick References](#quick-references)
          * [Commands Parameters](#commands-parameters)
-         * [File Test Operator](#file-test-operator)
+         * [Comparison Operators](#comparison-operators)
          * [Variable Manipulation](#variable-manipulation)
       * [Parentheses, Brackets &amp; Braces!](#parentheses-brackets--braces)
-      * [Short on Subshells](#short-on-subshells)
       * [Overview of Bash Symbols](#overview-of-bash-symbols)
-         * [$DollarSign](#dollarsign)
-         * [( SingleParentheses )](#-singleparentheses-)
-         * [(( DoubleParentheses ))](#-doubleparentheses-)
-         * [$( DollarSingleParentheses )](#-dollarsingleparentheses-)
-         * [$(( DoubleDollarParentheses ))](#-doubledollarparentheses-)
-         * [[ SingleSquareBrackets ]](#-singlesquarebrackets-)
-         * [[[ DoubleSquareBrackets ]]](#-doublesquarebrackets-)
-         * [{SingleCurlyBraces}](#singlecurlybraces)
-         * [${DollarBraces}](#dollarbraces)
+         * [( )](#-)
+         * [(( ))](#--1)
+         * [$( )](#--2)
+         * [$(( ))](#--3)
+         * [[ ]](#--4)
+         * [[[ ]]](#--5)
+         * [{}](#-1)
+         * [${}](#-2)
          * [&lt;( AngleParentheses )](#-angleparentheses-)
          * [&lt;&lt;- 'DOUBLEANGLEHEREDOCS'](#--doubleangleheredocs)
-         * [Functions () { ... }](#functions----)
-         * [| Pipes](#-pipes)
-         * [&lt; Redirection](#-redirection)
-         * [&gt; Redirection](#-redirection-1)
-         * [. Dot](#-dot)
-         * [.. DotDot](#-dotdot)
-         * [~ Tilde](#-tilde)
+         * [Function () { ... }](#function----)
+         * [|](#-3)
+         * [&lt;](#-4)
+         * [&gt;](#-5)
+         * [&gt;&gt;](#-6)
+         * [.](#-7)
+         * [..](#-8)
+         * [~](#-9)
          * [`BackTicks`](#backticks)
       * [Zsh Globbing](#zsh-globbing)
 
-<!-- Added by: user221, at: Fri 31 Jan 2020 11:44:10 AM CET -->
+<!-- Added by: user221, at: Fri 31 Jan 2020 01:00:24 PM CET -->
 
 <!--te-->
 ## Quick References
@@ -159,12 +158,12 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 | `~`  		| expands to home directory.								|
 | ``` ` ``` 	| is deprecated and should not be used. Read further in its respective section.	|
 
-### $DollarSign
+### $
 * Notes
 	- When declaring or setting a variable you omit the `$` and when retrieving the value of a variable you *use* the `$`.
 	- 
 
-### ( SingleParentheses )
+### ( )
 *Used for running commands inside a subshell and declaring arrays*
 
 * Examples
@@ -175,7 +174,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 * Notes
 	1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
-### (( DoubleParentheses ))
+### (( ))
 *Used for integer arithmetic and modifying variables. HOWEVER, will not output any variables!! Variables modified inside the parentheses will stick however.*
 
 * Examples
@@ -185,19 +184,19 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 	1. Strings inside gets considering 'zero'.
 	2. This is not valid ~~`a=(( 3 + 4))`~~
 
-### $( DollarSingleParentheses ) 
+### $( ) 
 *Used to retrieve output of commands ran in subshells.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### $(( DoubleDollarParentheses ))
+### $(( ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### [ SingleSquareBrackets ]
+### [ ]
 *Used for testing. Alternate version of the built-in `test`.*
 
 * Examples
@@ -207,7 +206,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 	2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
 	3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
 
-### [[ DoubleSquareBrackets ]]
+### [[ ]]
 *Used for testing and supports extended regex but isn't a shell built-in.*
 
 * Examples
@@ -216,7 +215,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 * Notes
 	1. You may use quotes around the second argument to force a raw, instead of a regex match.
 
-### {SingleCurlyBraces}
+### {}
 *Used for expansion of sequences.*
 
 * Examples
@@ -227,7 +226,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 
 * Notes
 
-### ${DollarBraces}
+### ${}
 *Use to manipulate variables or when normal string interpolation could get weird.*
 
 * Examples
@@ -274,7 +273,7 @@ There exists a couple of variations and rules to the heredoc.
 2. You may quote, or chose not to quote your "magic word", i.e. THEEND.
 3. Your magic word can be more or less anything you chose.
 
-### Functions () { ... }
+### Function () { ... }
 *Functions used to execute code blocks, retrieve exit status for code blocks and retrieve output of a code block.*
 
 * Examples
@@ -294,25 +293,25 @@ function hello {
 * Q: What's the difference between the three examples above?
 * A: None, what-so-ever.... :)
 
-### | Pipes
+### | 
 Chain commands together.
 
-### < Redirection
+### < 
 Use command input.
 
-### > Redirection
+### > 
 Output to file and overwrite.
 
 ### >> 
 Append to file.
 
-### . Dot
+### . 
 Current directory.
 
-### .. DotDot
+### .. 
 Parent directory.
 
-### ~ Tilde
+### ~ 
 Home directory.
 
 ### \`BackTicks\`
