@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.PNG" alt="AdvancedShellNotesLogo" width="200">
+  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.PNG" alt="AdvancedShellNotesLogo" width="600">
   <br>
   Advanced Shell Notes
   <br>
@@ -9,15 +9,8 @@
 <p align="center">
 :star: Star us on GitHub — it helps!
 
-**So you wish to learn the dark arts of shell scripting and throw some slick bash scripts together to impress your wife, but keep on forgetting the ridicilous arcane syntax and rules for which it applies?**
-
-The following document is a collection of my own journey into the territory of shell scripting, mainly bash.
-
-The document starts out with a TOC for easy navigation followed by a quick reference, again followed by more in depth explanation and examples.
-
-*Please bear in mind that the project is still very much a WIP -- should you wish so, contributions is gladly accepted!*
+**So you wish to master the dark arts of shell scripting?**
 </p>
-<hr>
 <h4 align="center"> Quick Navigation </h4>
 <p align="center">
   <a href="#quick-references">Quick Reference</a> •
