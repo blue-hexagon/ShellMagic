@@ -1,4 +1,16 @@
-# Advanced Shell Notes
+```text
+
+    |          '||                                                 '||   .|'''.|  '||              '||  '||  '|.   '|'           .                  
+   |||       .. ||  .... ...  ....   .. ...     ....    ....     .. ||   ||..  '   || ..     ....   ||   ||   |'|   |    ...   .||.    ....   ....  
+  |  ||    .'  '||   '|.  |  '' .||   ||  ||  .|   '' .|...||  .'  '||    ''|||.   ||' ||  .|...||  ||   ||   | '|. |  .|  '|.  ||   .|...|| ||. '  
+ .''''|.   |.   ||    '|.|   .|' ||   ||  ||  ||      ||       |.   ||  .     '||  ||  ||  ||       ||   ||   |   |||  ||   ||  ||   ||      . '|.. 
+.|.  .||.  '|..'||.    '|    '|..'|' .||. ||.  '|...'  '|...'  '|..'||. |'....|'  .||. ||.  '|...' .||. .||. .|.   '|   '|..|'  '|.'  '|...' |'..|' 
+                                                                                                                                                    
+```
+**So you wish to learn the dark arts of shell scripting and throw some slick bash scripts together to impress your wife, but keep on forgetting the ridicilous arcane syntax and rules for which it applies?**
+The following document is a collection of my own journey into the territory of shell scripting, mainly bash.
+The document starts out with a TOC for easy navigation followed by a quick reference, again followed by more in depth explanation and examples.
+*Please bear in mind that the project is still very much a WIP -- should you wish so, contributions is gladly accepted!*
 <!--ts-->
    * [Advanced Shell Notes](#advanced-shell-notes)
       * [Quick References](#quick-references)
@@ -31,8 +43,8 @@
 <!-- Added by: user221, at: Fri 31 Jan 2020 01:00:24 PM CET -->
 
 <!--te-->
-## Quick References
-### Commands Parameters
+# Quick References
+## Commands Parameters
 | Command | Description                                       | 
 |---------|---------------------------------------------------|
 | `$0`    | Command name                                      | 
@@ -46,7 +58,7 @@
 | `$#`    | Number of arguments                               | 
 | `$!`    | PID of most recently backgrounded process         | 
 
-### Comparison Operators
+## Comparison Operators
 <table>
 <tr><th>File Test Operators</th><th>Other Comparison Operators</th>
 <tr><td>
@@ -109,7 +121,7 @@
 | `-o`		| logical or									|
 </td></tr> </table>
 
-### Variable Manipulation
+## Variable Manipulation
 |Pattern | Description|
 |--------|:-----------|
 |<kbd>${parameter:-defaultValue}</kbd>              | Get default shell variables value                     |
@@ -129,10 +141,10 @@
 |<kbd>${var^}</kbd><br><kbd>${var^pattern}</kbd>    | Convert first character to uppercase.                 |
 |<kbd>${var^^}</kbd><br><kbd>${var^^pattern}</kbd>  | Convert all character to uppercase.                   |
 
-## Parentheses, Brackets & Braces!
+# Parentheses, Brackets & Braces!
 I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide short examples and important notes on the use and misuse of these symbols.
 
-## Overview of Bash Symbols
+# Overview of Bash Symbols
 | Symbol	| Quick Reference									|
 |---------------|---------------------------------------------------------------------------------------|
 | `$` 		| used for parameters and variables. Has a bunch of edge cases.				|
@@ -158,12 +170,12 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 | `~`  		| expands to home directory.								|
 | ``` ` ``` 	| is deprecated and should not be used. Read further in its respective section.	|
 
-### $
+## $
 * Notes
 	- When declaring or setting a variable you omit the `$` and when retrieving the value of a variable you *use* the `$`.
 	- 
 
-### ( )
+## ( )
 *Used for running commands inside a subshell and declaring arrays*
 
 * Examples
@@ -174,7 +186,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 * Notes
 	1. Bash uses the enviromental variable `$IFS` to determine the delimiter which by default is set to whitespace.
 
-### (( ))
+## (( ))
 *Used for integer arithmetic and modifying variables. HOWEVER, will not output any variables!! Variables modified inside the parentheses will stick however.*
 
 * Examples
@@ -184,19 +196,19 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 	1. Strings inside gets considering 'zero'.
 	2. This is not valid ~~`a=(( 3 + 4))`~~
 
-### $( ) 
+## $( ) 
 *Used to retrieve output of commands ran in subshells.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### $(( ))
+## $(( ))
 *Same rules apply as double parentheses without the dollar and in addition you can store the output in varibales.*
 
 * Examples
 	1. `you_are_here="You working directory is: $( pwd )" ; echo ${you_are_here}`
 
-### [ ]
+## [ ]
 *Used for testing. Alternate version of the built-in `test`.*
 
 * Examples
@@ -206,7 +218,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 	2. `test` and `[` are built-ins, aka. part of the shell language itself aka. programs -- this means that stuff inside is not treated as arguments and thus rendering single square brackets useful for stuff like word splitting or filename expansion.
 	3. Has a bunch of gotchas and you're best off sticking to double square brackets, generally.
 
-### [[ ]]
+## [[ ]]
 *Used for testing and supports extended regex but isn't a shell built-in.*
 
 * Examples
@@ -215,7 +227,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 * Notes
 	1. You may use quotes around the second argument to force a raw, instead of a regex match.
 
-### {}
+## {}
 *Used for expansion of sequences.*
 
 * Examples
@@ -226,7 +238,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 
 * Notes
 
-### ${}
+## ${}
 *Use to manipulate variables or when normal string interpolation could get weird.*
 
 * Examples
@@ -237,7 +249,7 @@ See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 * Gotchas
 1. No spaces around the content/variables.
 
-### <( AngleParentheses )
+## <( )
 
 
 * Examples
@@ -246,7 +258,7 @@ See: [Variable manipulation](#Variable-Manipulation) for examples on that.
 * Notes
 
 
-### <<- 'DOUBLEANGLEHEREDOCS' 
+## <<- 'MAGIC' 
 *A "here document" is a special-purpose codeblock that uses a form of I/O redirection to feed a command list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.*
 
 * Examples
@@ -273,7 +285,7 @@ There exists a couple of variations and rules to the heredoc.
 2. You may quote, or chose not to quote your "magic word", i.e. THEEND.
 3. Your magic word can be more or less anything you chose.
 
-### Function () { ... }
+## Function () { ... }
 *Functions used to execute code blocks, retrieve exit status for code blocks and retrieve output of a code block.*
 
 * Examples
@@ -293,31 +305,31 @@ function hello {
 * Q: What's the difference between the three examples above?
 * A: None, what-so-ever.... :)
 
-### | 
+## | 
 Chain commands together.
 
-### < 
+## < 
 Use command input.
 
-### > 
+## > 
 Output to file and overwrite.
 
-### >> 
+## >> 
 Append to file.
 
-### . 
+## . 
 Current directory.
 
-### .. 
+## .. 
 Parent directory.
 
-### ~ 
+## ~ 
 Home directory.
 
-### \`BackTicks\`
+## \`BackTicks\`
 For running commands in a subshell; equivalent to `$( command )` but is deprecated and should not be used. Causes a lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.
 
-## Zsh Globbing
+# Zsh Globbing
 > Globbing is done to filenames by the shell, and regex is used for searching text. [Globbing and regex, so similar yet so different](https://www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)
 
 **Always use quotes in your regex to avoid globbing**
