@@ -1,11 +1,10 @@
 
 <h1 align="center">
-  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.PNG" alt="AdvancedShellNotesLogo" width="600">
+  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.png" alt="AdvancedShellNotesLogo" width="600">
 </h1>
 
 <p align="center">
 :star: Star us on GitHub — it helps!
-**So you wish to master the dark arts of shell scripting?**
 </p>
 <h4 align="center"> Quick Navigation </h4>
 <p align="center">
