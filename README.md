@@ -38,29 +38,31 @@
 |---------|---------------------------------------------------|
 | `$0`    | Command name                                      | 
 | `$1..n` | Parameter 1, 2, 3, 4...n                          | 
+|  `$\*`    | Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, it expands to a single word with the value of each parameter seperated by the first of the IFS environment variable |
 | `$-`    | Current options                                   | 
+| `$_`    | The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. It is also set to the full pathname of each command executed and placed in the environment exported to that command. When checking mail, this parameter holds the name of the mail file. |
 | `$$`    | Process id of the shell                           | 
 | `$?`    | Exit status of the most recently executed command`| 
-| `"$@"`  | All arguments as separate words                   | 
+| `$@`  | All arguments as separate words                   | 
 | `$#`    | Number of arguments                               | 
 | `$!`    | PID of most recently backgrounded process         | 
 
-### File Test Operator
+### Comparison Operators
 <table>
 <tr><th>File Test Operators</th><th>Other Comparison Operators</th>
 <tr><td>
 
-| Flag | Description 										  |
+| Flag | File Test Operators									  |
 |----|--------------------------------------------------------------------------------------------|
 | `-e` | File exists										  |
-| `-a` | File exists (identical to -e but is deprecated and outdated) 				  |
-| `-f` | File is a regular file (not a directory or device file) 					  |
+| `-a` | File exists (identical to -e but is deprecated and outdated)				  |
+| `-f` | File is a regular file (not a directory or device file) 				  |
 | `-s` | file is not zero size 									  |
 | `-d` | file is a directory 									  |
-| `-b` | file is a block device 									  |
+| `-b` | file is a block device 								  |
 | `-c` | file is a character device 								  |
-| `-p` | file is a pipe 										  |
-| `-h` | file is a symbolic link									  |
+| `-p` | file is a pipe 									  |
+| `-h` | file is a symbolic link								  |
 | `-L` | file is a symbolic link  								  |
 | `-S` | file is a socket  									  |
 | `-t` | file (descriptor) is associated with a terminal device; this test option may be used to check whether the stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal  |
@@ -69,43 +71,43 @@
 | `-x` | file has execute permission (for the user running the test) 				  |
 | `-g` | set-group-id (sgid) flag set on file or directory  					  |
 | `-u` | set-user-id (suid) flag set on file.  							  |
-| `-k` | sticky bit set. 										  |
-| `-O` | you are owner of file  									  |
-| `-G` | group-id of file same as yours  								  |
+| `-k` | sticky bit set. 									  |
+| `-O` | you are owner of file  								  |
+| `-G` | group-id of file same as yours  							  |
 | `-N` | file modified since it was last read  							  |
 | `f1 -nt f2` |  file f1 is newer than f2  							  |
 | `f1 -ot f2` | file f1 is older than f2   							  |
-| `f1 -ef f2` | files f1 and f2 are hard links to the same file 				  	  |
+| `f1 -ef f2` | files f1 and f2 are hard links to the same file 			  	  |
 | `!`  | "not" -- reverses the sense of the tests above (returns true if condition absent).	  |
 </td><td>
 
 | Flag		| Integer Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `-eq`		| is equal to										|
-| `-ne`		| is not equal to										|
-| `-gt`		| is greater than										|
-| `-ge`		| is greater than or equal to										|
-| `-lt`		| is less than										|
-| `-le`		| is less than or equal to										|
-| `<`		| is less than (within double parentheses, i.e. `(( ))`)										|
-| `<=`		| is less than or equal to (same rule as before)										|
-| `>`		| is greater than (same rule as before)										|
-| `>=`		| is greater than or equal to (same rule as before)										|
+| `-eq`		| is equal to									|
+| `-ne`		| is not equal to								|
+| `-gt`		| is greater than								|
+| `-ge`		| is greater than or equal to							|
+| `-lt`		| is less than									|
+| `-le`		| is less than or equal to							|
+| `<`		| is less than (within double parentheses, i.e. `(( ))`)			|
+| `<=`		| is less than or equal to (same rule as before)				|
+| `>`		| is greater than (same rule as before)						|
+| `>=`		| is greater than or equal to (same rule as before)				|
 
 | Flag		| String Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `=`		| is equal to										|
-| `==`		| is equal to (synonym for `=`)										|
-| `!=`		| is not equal to										|
-| `<`		| is less than ASCII alphabetical order										|
-| `>`		| is greater than ASCII alphabetical order										|
-| `-z`		| string is null (i.e. zero length)										|
-| `-n`		| string is not null (i.e. !zero length)										|
+| `=`		| is equal to									|
+| `==`		| is equal to (synonym for `=`)							|
+| `!=`		| is not equal to								|
+| `<`		| is less than ASCII alphabetical order						|
+| `>`		| is greater than ASCII alphabetical order					|
+| `-z`		| string is null (i.e. zero length)						|
+| `-n`		| string is not null (i.e. !zero length)					|
 
 | Flag		| Compound Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `-a`		| logical and 										|
-| `-o`		| logical or										|
+| `-a`		| logical and 									|
+| `-o`		| logical or									|
 </td></tr> </table>
 
 ### Variable Manipulation
@@ -131,9 +133,6 @@
 ## Parentheses, Brackets & Braces!
 I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide short examples and important notes on the use and misuse of these symbols.
 
-## Short on Subshells
-If you invoke the *exit* in a subshell, it will not pass variables to the parent. Use `{` and `}` instead of `(` and `)` if you do not want Bash to fork a subshell.
-
 ## Overview of Bash Symbols
 | Symbol	| Quick Reference									|
 |---------------|---------------------------------------------------------------------------------------|
@@ -151,13 +150,19 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 | `<` 		| used for feeding input to commands from a file					|
 | `>` 		| used for sending output to a file and erasing any previous content in that file.	|
 | `<<WORD` 	| is used for heredocs.									|
-| `>>` 		| Is used to append output to a file.							|
+| `>>` 		| is used to append output to a file.							|
+| `' '`		| single quotes are used to preserve the literal value 
+| `" "`		| double quotes are used to preserve the literal value of all characters except `$`, `backticks` and `\` |
+| `\`		| backslash is used to escape otherwise interpreted symbols/characters which has a special meaning	 |
 | `.`  		| expands to the current directory.							|
 | `..` 		| expands to parent directory.								|
 | `~`  		| expands to home directory.								|
 | ``` ` ``` 	| is deprecated and should not be used. Read further in its respective section.	|
 
 ### $DollarSign
+* Notes
+	- When declaring or setting a variable you omit the `$` and when retrieving the value of a variable you *use* the `$`.
+	- 
 
 ### ( SingleParentheses )
 *Used for running commands inside a subshell and declaring arrays*
