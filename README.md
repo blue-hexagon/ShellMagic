@@ -38,7 +38,7 @@
 |---------|---------------------------------------------------|
 | `$0`    | Command name                                      | 
 | `$1..n` | Parameter 1, 2, 3, 4...n                          | 
-|  `$\*`    | Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, it expands to a single word with the value of each parameter seperated by the first of the IFS environment variable |
+|  `$*`    | Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, it expands to a single word with the value of each parameter seperated by the first of the IFS environment variable |
 | `$-`    | Current options                                   | 
 | `$_`    | The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. It is also set to the full pathname of each command executed and placed in the environment exported to that command. When checking mail, this parameter holds the name of the mail file. |
 | `$$`    | Process id of the shell                           | 
