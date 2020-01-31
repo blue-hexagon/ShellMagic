@@ -85,32 +85,31 @@
 
 | Flag		| Integer Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `-eq`		|										|
-| `-ne`		|										|
-| `-gt`		|										|
-| `-ge`		|										|
-| `-lt`		|										|
-| `-le`		|										|
-| `<`		|										|
-| `<=`		|										|
-| `>`		|										|
-| `>=`		|										|
-| `-`		|										|
+| `-eq`		| is equal to										|
+| `-ne`		| is not equal to										|
+| `-gt`		| is greater than										|
+| `-ge`		| is greater than or equal to										|
+| `-lt`		| is less than										|
+| `-le`		| is less than or equal to										|
+| `<`		| is less than (within double parentheses, i.e. `(( ))`)										|
+| `<=`		| is less than or equal to (same rule as before)										|
+| `>`		| is greater than (same rule as before)										|
+| `>=`		| is greater than or equal to (same rule as before)										|
 
 | Flag		| String Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `=`		|										|
-| `==`		|										|
-| `!=`		|										|
-| `<`		|										|
-| `>`		|										|
-| `-z`		|										|
-| `-n`		|										|
+| `=`		| is equal to										|
+| `==`		| is equal to (synonym for `=`)										|
+| `!=`		| is not equal to										|
+| `<`		| is less than ASCII alphabetical order										|
+| `>`		| is greater than ASCII alphabetical order										|
+| `-z`		| string is null (i.e. zero length)										|
+| `-n`		| string is not null (i.e. !zero length)										|
 
 | Flag		| Compound Comparison								|
 |---------------|-------------------------------------------------------------------------------|
-| `-a`		|										|
-| `-o`		|										|
+| `-a`		| logical and 										|
+| `-o`		| logical or										|
 </td></tr> </table>
 
 ### Variable Manipulation
@@ -158,7 +157,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 * `.` expands to the current directory.
 * `..` expands to parent directory.
 * `~` expands to home directory.
-* `\`\`` is deprecated and should not be used. Read further in its respective section.
+* ```` is deprecated and should not be used. Read further in its respective section.
 
 ### $DollarSign
 
