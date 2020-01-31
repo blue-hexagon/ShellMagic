@@ -162,11 +162,6 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 
 ## ( )
 *Used for running commands inside a subshell and declaring arrays*
-<ul style="list-style-type:none;">
-	<li>Test 1</li>
-	<li>Test 2</li>
-	<li>Test 333</li>
-</ul>
 * Examples
 	1. `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
 	2. `colors=(green yellow purple gray black white magenta)`
@@ -365,7 +360,7 @@ Now that we have the basics down, lets get to the good stuff.
   echo /proc/*/cwd(:h:t:s/self//)   # Analogous to >ps ax | awk '{print }'<
 ```
 # How to Contribute
-Send a pull request.
+Make a pull request.
 
 # Resources
 [TLDP Advanced Bash-Script Guide](https://tldp.org/LDP/abs/html/index.html)
