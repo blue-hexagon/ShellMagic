@@ -6,9 +6,13 @@
 /_/  |_\__,_/ |___/\__,_/_/ /_/\___/\___/\__,_//____/_/ /_/\___/_/_/_/ |_/\____/\__/\___/____/  
 ```
 **So you wish to learn the dark arts of shell scripting and throw some slick bash scripts together to impress your wife, but keep on forgetting the ridicilous arcane syntax and rules for which it applies?**
+
 The following document is a collection of my own journey into the territory of shell scripting, mainly bash.
+
 The document starts out with a TOC for easy navigation followed by a quick reference, again followed by more in depth explanation and examples.
+
 *Please bear in mind that the project is still very much a WIP -- should you wish so, contributions is gladly accepted!*
+
 <!--ts-->
    * [Quick References](#quick-references)
       * [Commands Parameters](#commands-parameters)
@@ -376,5 +380,7 @@ Now that we have the basics down, lets get to the good stuff.
 
 # Resources
 [https://tldp.org/LDP/abs/html/index.html](The Linux Documentation Project - Advanced Bash-Scripting Guide)
+
 [https://mywiki.wooledge.org/BashGuide](Wooledge's Bash Wiki)
+
 [https://linux.die.net](Die.Net's Linux Docs)
