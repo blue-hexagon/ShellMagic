@@ -4,10 +4,6 @@
       * [Quick References](#quick-references)
          * [Commands Parameters](#commands-parameters)
          * [File Test Operator](#file-test-operator)
-         * [Other Comparison Operators](#other-comparison-operators)
-            * [Integer Comparison](#integer-comparison)
-            * [String Comparison](#string-comparison)
-            * [Compound Comparison](#compound-comparison)
          * [Variable Manipulation](#variable-manipulation)
       * [Parentheses, Brackets &amp; Braces!](#parentheses-brackets--braces)
       * [Short on Subshells](#short-on-subshells)
@@ -33,7 +29,7 @@
          * [`BackTicks`](#backticks)
       * [Zsh Globbing](#zsh-globbing)
 
-<!-- Added by: user221, at: Thu 30 Jan 2020 10:57:50 PM CET -->
+<!-- Added by: user221, at: Fri 31 Jan 2020 11:44:10 AM CET -->
 
 <!--te-->
 ## Quick References
@@ -151,7 +147,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 | `<( )` 	| Used for process substitution and is similar to a pipe. Can be used whenever a command expects a file and you can use multiple at once.							  |
 | `{ }` 	| is used for expansion of sequences							|
 | `${ }`	| is used for variable interpolation and string manipulation.				|
-| `\|` 		| is a pipe which is used for chaining commands together.				|
+| ``` | ```	| is a pipe which is used for chaining commands together.				|
 | `<` 		| used for feeding input to commands from a file					|
 | `>` 		| used for sending output to a file and erasing any previous content in that file.	|
 | `<<WORD` 	| is used for heredocs.									|
@@ -159,7 +155,7 @@ If you invoke the *exit* in a subshell, it will not pass variables to the parent
 | `.`  		| expands to the current directory.							|
 | `..` 		| expands to parent directory.								|
 | `~`  		| expands to home directory.								|
-| `\`backticks\`` | is deprecated and should not be used. Read further in its respective section.	|
+| ``` ` ``` 	| is deprecated and should not be used. Read further in its respective section.	|
 
 ### $DollarSign
 
