@@ -1,10 +1,12 @@
-```text
-    ___       __                                _______ __         _____   __      __           
-   /   | ____/ /   ______ _____  ________  ____/ / ___// /_  ___  / / / | / /___  / /____  _____
-  / /| |/ __  / | / / __ `/ __ \/ ___/ _ \/ __  /\__ \/ __ \/ _ \/ / /  |/ / __ \/ __/ _ \/ ___/
- / ___ / /_/ /| |/ / /_/ / / / / /__/  __/ /_/ /___/ / / / /  __/ / / /|  / /_/ / /_/  __(__  ) 
-/_/  |_\__,_/ |___/\__,_/_/ /_/\___/\___/\__,_//____/_/ /_/\___/_/_/_/ |_/\____/\__/\___/____/  
-```
+
+<h1 align="center">
+  <br>
+  <img src="https://raw.githubusercontent.com/smokingcuke/Advanced-Shell-Notes/logo.png" alt="AdvancedShellNotesLogo" width="200">
+  <br>
+  Advanced Shell Notes
+  <br>
+</h1>
+:star: Star us on GitHub — it helps!
 **So you wish to learn the dark arts of shell scripting and throw some slick bash scripts together to impress your wife, but keep on forgetting the ridicilous arcane syntax and rules for which it applies?**
 
 The following document is a collection of my own journey into the territory of shell scripting, mainly bash.
@@ -12,38 +14,17 @@ The following document is a collection of my own journey into the territory of s
 The document starts out with a TOC for easy navigation followed by a quick reference, again followed by more in depth explanation and examples.
 
 *Please bear in mind that the project is still very much a WIP -- should you wish so, contributions is gladly accepted!*
-
+<hr>
+<h4 align="center"> Quick Navigation </h4>
+<p align="center">
+  <a href="#quick-references">Quick Reference</a> •
+  <a href="#commands-parameters">Command Parameters</a> •
+  <a href="#comparison-operators">Comparison Operators</a> •
+  <a href="#variable-manipulation">Variable Manipulation</a> •
+  <a href="#overview-of-bash-symbols">Overview of Bash Symbols</a> •
+  <a href="#resources">Resources</a>
+</p>
 <!--ts-->
-   * [Quick References](#quick-references)
-      * [Commands Parameters](#commands-parameters)
-      * [Comparison Operators](#comparison-operators)
-      * [Variable Manipulation](#variable-manipulation)
-   * [Parentheses, Brackets &amp; Braces!](#parentheses-brackets--braces)
-   * [Overview of Bash Symbols](#overview-of-bash-symbols)
-      * [( )](#-)
-      * [(( ))](#--1)
-      * [$( )](#--2)
-      * [$(( ))](#--3)
-      * [[ ]](#--4)
-      * [[[ ]]](#--5)
-      * [{}](#-1)
-      * [${}](#-2)
-      * [&lt;( )](#--6)
-      * [&lt;&lt;- 'MAGIC'](#--magic)
-      * [Function () { ... }](#function----)
-      * [|](#-3)
-      * [&lt;](#-4)
-      * [&gt;](#-5)
-      * [&gt;&gt;](#-6)
-      * [.](#-7)
-      * [..](#-8)
-      * [~](#-9)
-      * [`BackTicks`](#backticks)
-   * [Zsh Globbing](#zsh-globbing)
-   * [Resources](#resources)
-
-<!-- Added by: user221, at: Fri 31 Jan 2020 01:35:48 PM CET -->
-
 <!--te-->
 # Quick References
 ## Commands Parameters
@@ -149,7 +130,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 # Overview of Bash Symbols
 | Symbol	| Quick Reference									|
 |---------------|---------------------------------------------------------------------------------------|
-| `$` 		| used for parameters and variables. Has a bunch of edge cases.				|
+| [`$`] 		| used for parameters and variables. Has a bunch of edge cases.				|
 | `( )` 	| is used for running commands in a subshell.						|
 | `$( )` 	| is used for saving output of commands that are send to run in a subshell.		|
 | `(( ))` 	| is used for arithmetic.								|
@@ -167,6 +148,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 | `' '`		| single quotes are used to preserve the literal value 
 | `" "`		| double quotes are used to preserve the literal value of all characters except `$`, `backticks` and `\` |
 | `\`		| backslash is used to escape otherwise interpreted symbols/characters which has a special meaning	 |
+| `;`		| Used to seperate commands intended to run sequentally.			        |
 | `.`  		| expands to the current directory.							|
 | `..` 		| expands to parent directory.								|
 | `~`  		| expands to home directory.								|
@@ -377,10 +359,12 @@ Now that we have the basics down, lets get to the good stuff.
   print **/*(g:users:)              # Recursively match all files that are owned by group 'users'
   echo /proc/*/cwd(:h:t:s/self//)   # Analogous to >ps ax | awk '{print }'<
 ```
+# How to Contribute
+Send a pull request.
 
 # Resources
-[https://tldp.org/LDP/abs/html/index.html](The Linux Documentation Project - Advanced Bash-Scripting Guide)
+[TLDP Advanced Bash-Script Guide](https://tldp.org/LDP/abs/html/index.html)
 
-[https://mywiki.wooledge.org/BashGuide](Wooledge's Bash Wiki)
+[Wooledge's Bash Wiki](https://mywiki.wooledge.org/BashGuide)
 
-[https://linux.die.net](Die.Net's Linux Docs)
+[Die.Net's Linux Docs](https://linux.die.net)
