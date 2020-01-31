@@ -375,3 +375,8 @@ Now that we have the basics down, lets get to the good stuff.
   print **/*(g:users:)              # Recursively match all files that are owned by group 'users'
   echo /proc/*/cwd(:h:t:s/self//)   # Analogous to >ps ax | awk '{print }'<
 ```
+
+# Resources
+[https://tldp.org/LDP/abs/html/index.html](The Linux Documentation Project - Advanced Bash-Scripting Guide)
+[https://mywiki.wooledge.org/BashGuide](Wooledge's Bash Wiki)
+[https://linux.die.net](Die.Net's Linux Docs)
