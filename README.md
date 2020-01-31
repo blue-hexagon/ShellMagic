@@ -43,7 +43,7 @@
 
 ## Comparison Operators
 <table>
-<tr><th>File Test Operators</th><th>Other Comparison Operators</th>
+<tr>
 <tr><td>
 
 | Flag | File Test Operators									  |
@@ -73,7 +73,8 @@
 | `f1 -ot f2` | file f1 is older than f2   							  |
 | `f1 -ef f2` | files f1 and f2 are hard links to the same file 			  	  |
 | `!`  | "not" -- reverses the sense of the tests above (returns true if condition absent).	  |
-</td><td>
+</td>
+<td>
 
 | Flag		| Integer Comparison								|
 |---------------|-------------------------------------------------------------------------------|
@@ -130,7 +131,7 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 # Overview of Bash Symbols
 | Symbol	| Quick Reference									|
 |---------------|---------------------------------------------------------------------------------------|
-| [`$`] 		| used for parameters and variables. Has a bunch of edge cases.				|
+| `$` 		| used for parameters and variables. Has a bunch of edge cases.				|
 | `( )` 	| is used for running commands in a subshell.						|
 | `$( )` 	| is used for saving output of commands that are send to run in a subshell.		|
 | `(( ))` 	| is used for arithmetic.								|
@@ -161,7 +162,11 @@ I will explain all the various rules of braces, brackets and parentheses in the 
 
 ## ( )
 *Used for running commands inside a subshell and declaring arrays*
-
+<ul style="list-style-type:none;">
+	<li>Test 1</li>
+	<li>Test 2</li>
+	<li>Test 333</li>
+</ul>
 * Examples
 	1. `( echo "Hello" ; variable="This variable resides in this subshell ; echo "\n") ; echo ${variable}`
 	2. `colors=(green yellow purple gray black white magenta)`
