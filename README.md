@@ -1,10 +1,14 @@
-Testing outpit <samp>This is command output!</samp>
 <h1 align="center">
-  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/logo.png" alt="AdvancedShellNotesLogo" width="600">
+  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
 </h1>
-
 <p align="center">
-:star: Star us on GitHub — it helps!
+:star: Star us on GitHub it helps!
+
+Link to website: [Shell Magic](smokingcuke.github.io/ShellMagic/index.html)
+
+Link to website: [Shell Magic](www.shellmagic.xyz)
+
+Link to website: [Shell Magic](www.shellmagic.info)
 
 [![GitHub Issues](https://img.shields.io/github/issues/smokingcuke/Advanced-Shell-Notes.svg)](https://github.com/smokingcuke/Advanced-Shell-Notes/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
@@ -15,10 +19,3 @@ Testing outpit <samp>This is command output!</samp>
 
 # How to Contribute
 Make a pull request.
-
-# Resources
-[TLDP Advanced Bash-Script Guide](https://tldp.org/LDP/abs/html/index.html)
-
-[Wooledge's Bash Wiki](https://mywiki.wooledge.org/BashGuide)
-
-[Die.Net's Linux Docs](https://linux.die.net)
