@@ -4,7 +4,7 @@
 <p align="center">
 :star: Star us on GitHub it helps!
 
-Link to website: [Shell Magic](https://www.smokingcuke.github.io/ShellMagic/index.html)
+Link to website: [Shell Magic](http://www.smokingcuke.github.io/ShellMagic/index.html)
 
 Link to website: [Shell Magic](http://www.shellmagic.xyz)
 
