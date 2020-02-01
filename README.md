@@ -4,11 +4,13 @@
 <p align="center">
 :star: Star us on GitHub it helps!
 
-Link to website: [Shell Magic](http://www.smokingcuke.github.io/ShellMagic/index.html)
+Link to website: [Shell Magic](http://smokingcuke.github.io/ShellMagic/index.html)
 
-Link to website: [Shell Magic](http://www.shellmagic.xyz)
+Setting up these two domains [in progress]
 
-Link to website: [Shell Magic](http://www.shellmagic.info)
+http://www.shellmagic.xyz
+
+http://www.shellmagic.info
 
 [![GitHub Issues](https://img.shields.io/github/issues/smokingcuke/Advanced-Shell-Notes.svg)](https://github.com/smokingcuke/Advanced-Shell-Notes/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
