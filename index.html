@@ -33,31 +33,16 @@
 </h1>
 
 <p>
-    <span style='font-size:32px;'>&#11088;Star us on GitHub — it helps!</span>
+    <span style='font-size:32px;'>&#11088;Star us on <a href="https://github.com/smokingcuke/ShellMagic">GitHub</a> — it helps!</span>
 </p>
-
 <hr>
-
-<p>
-    <a href="https://github.com/smokingcuke/Advanced-Shell-Notes/issues"><img
-            src="https://img.shields.io/github/issues/smokingcuke/Advanced-Shell-Notes.svg" alt="GitHub Issues"></a>
-    <img src="https://img.shields.io/badge/contributions-welcome-orange.svg" alt="Contributions welcome">
-    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"
-                                                       alt="License"></a>
-    <a href="https://github.com/smokingcuke/Advanced-Shell-Notes/stargazers"><img alt="Shield_starts"
-                                                                                  src="https://img.shields.io/github/stars/smokingcuke/Advanced-Shell-Notes.svg?style=plasticr"/></a>
-    <a href="https://github.com/smokingcuke/Advanced-Shell-Notes/commits/master"><img alt="shield_commits"
-                                                                                      src="https://img.shields.io/github/last-commit/smokingcuke/Advanced-Shell-Notes.svg?style=plasticr"/></a>
-</p>
-
-<h4> Quick Navigation </h4>
 <p>
     <a href="#quick-references">Quick Reference</a> •
     <a href="#commands-parameters">Command Parameters</a> •
     <a href="#comparison-operators">Comparison Operators</a> •
     <a href="#variable-manipulation">Variable Manipulation</a> •
     <a href="#overview-of-bash-symbols">Overview of Bash Symbols</a> •
-    <a href="#resources">Resources</a>
+    <a href="#resources">Recommended Books</a>
 </p>
 
 <h1>Quick References</h1>
@@ -631,7 +616,7 @@
 <p><em>Use to manipulate variables or when normal string interpolation could get weird.</em></p>
 <h5>Examples</h5>
 <ul>
-    See: <a href="#Variable-Manipulation">Variable manipulation</a> for examples on that.</p>
+    <li>See: <a href="#variable-manipulation">Variable manipulation</a> for examples on that.</li>
 </ul>
 <h5>Notes</h5>
 <ul>
@@ -644,25 +629,23 @@
 <p><em>A &quot;here document&quot; is a special-purpose codeblock that uses a form of I/O redirection to feed a command
     list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.</em></p>
 <h5>Examples</h5>
-```bash
+<pre><code class="bash">
 cat &lt;&lt; &#39;THEEND&#39;
-It never ceases to amaze me :O
-we all love ourselves &lt;3 more than other people,
-but care more about their opinions [OH NO!] than our own.
-<ul>
-    <li>Marcus Aurelius &amp;&quot;&amp;!(£&quot;<em>_</em>str4n3__SYMBOLS!
+    It..neve!r cease{}!s to am?aze me :O
+    we all love ourselves....more than other people,
+    but care more about their!!!!!!! opinions than our own.
+        -.Marcus Aurelius  *_*_!
         THEEND
-    </li>
-</ul>
-<pre><code>```<span class="hljs-built_in">text</span>
-    It never ceases <span class="hljs-keyword">to</span> amaze <span class="hljs-keyword">me</span> :O
-    we all love ourselves &lt;<span class="hljs-number">3</span> more than other people,
-    <span class="hljs-keyword">but</span> care more <span class="hljs-keyword">about</span> their opinions [OH NO!] than our own.
-        - Marcus Aurelius  &amp;<span class="hljs-string">"&amp;!(£"</span>*_*str4n3__SYMBOLS!
     </code></pre>
+<pre><samp>
+    It..neve!r cease{}!s to am?aze me :O
+    we all love ourselves....more than other people,
+    but care more about their!!!!!!! opinions than our own.
+        -.Marcus Aurelius  *_*_!
+    </samp></pre>
 <p>A more useful example would be to use sed for removing all symbols, say you want to create an array with all words
     for example. We can replace <code>cat</code> with <code>sed &#39;s/[^[:alpha:]]/ /gi&#39;</code> which removes all
-    symbols.</p>
+    symbols.</p> <!-- TODO: Finish sed example -->
 <h5>Notes</h5>
 <ul>
     There exists a couple of variations and rules to the heredoc.
@@ -689,48 +672,54 @@ echo &quot;Hi $1&quot;
     echo &quot;Hi $1&quot;
     }</code>
     </pre>
-<pre><code><span class="hljs-comment">* Q: What's the difference between the three examples above?</span>
-    <span class="hljs-comment">* A: None, what-so-ever.... :)</span>
 
-    ## |
-    Chain commands together.
+<p>* Q: What's the difference between the three examples above?</p>
+<p>* A: None, what-so-ever.... :)</p>
 
-    ## &lt;
-    Use command input.
+<h2> | </h2>
+<p><em>Chain commands together.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## &gt;
-    Output to <span class="hljs-keyword">file</span> <span class="hljs-keyword">and</span> overwrite.
+<h2> < </h2>
+<p><em>Use file for command input.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## &gt;&gt;
-    Append to <span class="hljs-keyword">file</span>.
+<h2> > </h2>
+<p><em>Output to file and overwrite.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## .
-    Current directory.
+<h2> >> </h2>
+<p><em>Append to file.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## ..
-    Parent directory.
+<h2> . </h2>
+<p><em>Current directory.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## ~
-    Home directory.
+<h2> .. </h2>
+<p><em>Parent directory.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    ## \`BackTicks\`
-    <span class="hljs-keyword">For</span> running commands in a subshell; equivalent to `<span
-            class="hljs-symbol">$</span>( command )` but is deprecated <span
-            class="hljs-keyword">and</span> should <span class="hljs-keyword">not</span> be used. Causes a lot of confusion <span
-            class="hljs-keyword">and</span> gotchas when nesting the backticks which quickly becomes a PITA.
+<h2> ~ </h2>
+<p><em>Home directory.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    # Zsh Globbing
-    &gt; Globbing is done to filenames by the shell, <span class="hljs-keyword">and</span> regex is used <span
-            class="hljs-keyword">for</span> searching text. [Globbing <span class="hljs-keyword">and</span> regex, so similar yet so different](https:<span
-            class="hljs-comment">//www.linuxjournal.com/content/globbing-and-regex-so-similar-so-different)</span>
+<h2> ` ` </h2>
+<p><em>For running commands in a subshell; equivalent to $( command ) but is deprecated and should not be used. Causes a lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.</em></p>
+<h5>Examples</h5>
+<h5>Notes</h5>
 
-    <span class="hljs-comment">**Always use quotes in your regex to avoid globbing**</span>
-
-    I recommend you read the quoted article above <span class="hljs-keyword">if</span> you are still confused about any basic difference regards the two.
-
-    Now that we have the basics down, lets get to the good stuff.
-
-    ```shell
+    <h2> Zsh Globbing </h2>
+    Globbing is done to filenames by the shell, and regex is used for searching text.
+    <span>**Always use quotes in your regex to avoid globbing**</span>
+<pre><code class="zsh">
         /      directories
         .      plain <span class="hljs-keyword">files</span>
         @      symbolic links
@@ -774,11 +763,7 @@ echo &quot;Hi $1&quot;
       echo /proc/*/</span>cwd(:h:t:s/self<span
             class="hljs-comment">//)   # Analogous to &gt;ps ax | awk '{print }'&lt;</span>
     </code></pre>
-<h1 id="how-to-contribute">How to Contribute</h1>
-<p>Make a pull request.</p>
-<h1 id="resources">Resources</h1>
-<p><a href="https://tldp.org/LDP/abs/html/index.html">TLDP Advanced Bash-Script Guide</a></p>
-<p><a href="https://mywiki.wooledge.org/BashGuide">Wooledge&#39;s Bash Wiki</a></p>
-<p><a href="https://linux.die.net">Die.Net&#39;s Linux Docs</a>
+<h1 id="resources">Recommended Books</h1>
+
 </body>
 </html>
