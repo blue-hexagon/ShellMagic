@@ -17,7 +17,7 @@
 - Links
 - Buttons
 - Forms
-- Liss
+- List
 - Code
 - Tables
 - Spacing
@@ -129,10 +129,68 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; }
 
+/* Nav
+ ------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  font-family: system-ui, sans-serif;
 
+  /* this breaks position sticky in Firefox */
+  /* overflow-x: hidden; */
+}
+header {
+  grid-column: 1 / 3;
+  background: #727372;
+  color: white;
+  padding: 4rem;
+  text-align: center;
+}
+nav {
+  white-space: nowrap;
+  background: #dedfde;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Only stick if you can fit */
+@media (min-height: 300px) {
+  nav ul {
+    position: sticky;
+    top: 0;
+  }
+}
+nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #3d3d3d;
+  text-decoration: none;
+}
+nav ul li a.current {
+  background: black;
+}
+main {
+  padding-bottom: 40rem;
+}
+section {
+  padding: 2rem;
+  margin: 0 0 2rem 0;
+}
+footer {
+  grid-column: 1 / 3;
+  background: #BFBFBF;
+  padding: 0.625rem 1rem;
+}
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
+  color: #252626;
   margin-top: 0;
   margin-bottom: 0.25rem;
   font-weight: 300;
@@ -303,8 +361,8 @@ ol {
   list-style: upper-roman ; }
 ol, ul {
   padding-left: 0;
-  margin-top: 0;
-  margin: auto;
+/*  margin-top: 0;
+  margin: auto;*/
   width: 50%; }
 ul ul,
 ul ol,
@@ -414,7 +472,7 @@ hr {
 p, h1, h2, h3, h4, h5, h6, table {
   margin: auto auto;
   width: 50%;
-  padding: 10px 0px;
+  padding: 10px 0;
   text-align: center;
 }
 

@@ -24,10 +24,52 @@
             });
         });
     </script>
+    <script>
+        let mainNavLinks = document.querySelectorAll("nav ul li a");
+        let mainSections = document.querySelectorAll("main section");
+        let lastId;
+        let cur = [];
+        // This should probably be throttled.
+        // Especially because it triggers during smooth scrolling.
+        // https://lodash.com/docs/4.17.10#throttle
+        window.addEventListener("scroll", () => {
+          _.throttle(doThatStuff, 100);
+         });
+        //
+        window.addEventListener("scroll", event => {
+            let fromTop = window.scrollY;
+
+            mainNavLinks.forEach(link => {
+                let section = document.querySelector(link.hash);
+
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add("current");
+                } else {
+                    link.classList.remove("current");
+                }
+            });
+        });
+
+    </script>
     <noscript></noscript>
 </head>
 
 <body>
+<nav>
+    <ul>
+        <li><a href="#command-parameters">Command Parameters</a></li>
+        <li><a href="#file-test-operators">File Test Operators</a></li>
+        <li><a href="#integer-comparison-operators">Integer Comparison Operators</a></li>
+        <li><a href="#string-comparison-operators">String Comparison Operators</a></li>
+        <li><a href="#compound-operators">Compound Operators</a></li>
+        <li><a href="#variable-manipulation">Variable Manipulation</a></li>
+        <li><a href="#bash-globbing">Bash Globbing</a></li>
+        <li><a href="#overview-of-symbols">Overview of Symbols</a></li>
+    </ul>
+</nav>
 <!--
 <h1>
     <img src="./graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
@@ -38,6 +80,7 @@
     <span style='font-size:32px;'>&#11088;Star us on <a href="https://github.com/smokingcuke/ShellMagic">GitHub</a> — it helps!</span>
 </p>
 -->
+<main>
 <h1>Bash Quick References</h1>
 <hr>
 <!--
@@ -51,7 +94,8 @@
 </p>
 
 -->
-<h2>Commands Parameters</h2>
+    <section>
+<h2 id="command-parameters">Command Parameters</h2>
 <table>
     <thead>
     <tr>
@@ -112,9 +156,10 @@
     </tr>
     </tbody>
 </table>
-
-<h2>Comparison Operators</h2>
-<h3>File Test Operators</h3>
+    </section>
+    <section>
+<h2 id="comparison-operators">Comparison Operators</h2>
+<h3 id="file-test-operators">File Test Operators</h3>
 <table>
     <thead>
     <tr>
@@ -227,7 +272,7 @@
     </tr>
     </tbody>
 </table>
-
+        <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
 <table>
     <thead>
     <tr>
@@ -278,6 +323,7 @@
     </tr>
     </tbody>
 </table>
+        <h3 id="string-comparison-operators">String Comparison Operators</h3>
 <table>
     <thead>
     <tr>
@@ -316,11 +362,12 @@
     </tr>
     </tbody>
 </table>
+        <h3 id="compound-operators">Compound Operators</h3>
 <table>
     <thead>
     <tr>
         <th>Flag</th>
-        <th>Compound Comparison</th>
+        <th>Compound Operators</th>
     </tr>
     </thead>
     <tbody>
@@ -334,7 +381,8 @@
     </tr>
     </tbody>
 </table>
-
+    </section>
+    <section>
 <h2 id="variable-manipulation">Variable Manipulation</h2>
 <table>
     <thead>
@@ -410,7 +458,9 @@
     </tr>
     </tbody>
 </table>
-<h2>Bash Globbing</h2>
+    </section>
+    <section>
+<h2 id="bash-globbing">Bash Globbing</h2>
 <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em></p>
 <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
 <table>
@@ -453,12 +503,14 @@
     </tr>
     </tbody>
 </table>
+    </section>
 <!--
 <h1 id="parentheses-brackets-braces-">Parentheses, Brackets &amp; Braces!</h1>
 <p>I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide
     short examples and important notes on the use and misuse of these symbols.</p>
     -->
-<h1 id="overview-of-bash-symbols">Overview of Bash Symbols</h1>
+    <section>
+<h1 id="overview-of-symbols">Overview of Bash Symbols</h1>
 <table>
     <thead>
     <tr>
@@ -617,6 +669,7 @@
     </tr>
     </tbody>
 </table>
+    </section>
 <!--
 <h2>$</h2>
 <ul>
@@ -874,5 +927,10 @@ echo &quot;Hi $1&quot;
     </code></pre>
 <h1 id="resources">Recommended Books</h1>
 -->
+</main>
+
+<footer>
+    &copy;2020
+</footer>
 </body>
 </html>
