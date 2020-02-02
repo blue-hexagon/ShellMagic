@@ -28,14 +28,19 @@
 </head>
 
 <body>
+<!--
 <h1>
     <img src="./graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
 </h1>
-
+-->
+<!--
 <p>
     <span style='font-size:32px;'>&#11088;Star us on <a href="https://github.com/smokingcuke/ShellMagic">GitHub</a> — it helps!</span>
 </p>
+-->
+<h1>Bash Quick References</h1>
 <hr>
+<!--
 <p>
     <a href="#quick-references">Quick Reference</a> •
     <a href="#commands-parameters">Command Parameters</a> •
@@ -45,7 +50,7 @@
     <a href="#resources">Recommended Books</a>
 </p>
 
-<h1>Quick References</h1>
+-->
 <h2>Commands Parameters</h2>
 <table>
     <thead>
@@ -405,9 +410,54 @@
     </tr>
     </tbody>
 </table>
+<h2>Bash Globbing</h2>
+<p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em></p>
+<p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
+<table>
+    <thead>
+    <tr>
+        <th>Glob</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>*</code></td>
+        <td>Matches zero or more occurences of a given pattern</td>
+    </tr>
+    <tr>
+        <td><code>?</code></td>
+        <td>Matches zero or one occurences of a given pattern</td>
+    </tr>
+    <tr>
+        <td><code>+</code></td>
+        <td>Matches one or more occurences of a given pattern</td>
+    </tr>
+    <tr>
+        <td><code>@</code></td>
+        <td>Matches exactly one of a given pattern</td>
+    </tr>
+    <tr>
+        <td><code>!</code></td>
+        <td>Negates any pattern — reverses the pattern so to speak</td>
+    </tr>
+    <tr>
+        <td><code>[:CharacterClass:]</code></td>
+        <td>A character class is a set of predefined patterns and comprpised of the following which:
+            <pre>
+                [:alnum:]  [:alpha:]  [:blank:]  [:cntrl:]
+                [:digit:]  [:graph:]  [:lower:]  [:print:]
+                [:punct:]  [:space:]  [:upper:]  [:xdigit:]
+            </pre>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--
 <h1 id="parentheses-brackets-braces-">Parentheses, Brackets &amp; Braces!</h1>
 <p>I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide
     short examples and important notes on the use and misuse of these symbols.</p>
+    -->
 <h1 id="overview-of-bash-symbols">Overview of Bash Symbols</h1>
 <table>
     <thead>
@@ -518,6 +568,7 @@
     </tr>
     </tbody>
 </table>
+<!--
 <h2>$</h2>
 <ul>
     <li>When declaring or setting a variable you omit the <code>$</code> and when retrieving the value of a
@@ -635,17 +686,25 @@ cat &lt;&lt; &#39;THEEND&#39;
     we all love ourselves....more than other people,
     but care more about their!!!!!!! opinions than our own.
         -.Marcus Aurelius  *_*_!
-        THEEND
+THEEND
     </code></pre>
 <pre><samp>
     It..neve!r cease{}!s to am?aze me :O
     we all love ourselves....more than other people,
     but care more about their!!!!!!! opinions than our own.
         -.Marcus Aurelius  *_*_!
-    </samp></pre>
+</samp></pre>
 <p>A more useful example would be to use sed for removing all symbols, say you want to create an array with all words
     for example. We can replace <code>cat</code> with <code>sed &#39;s/[^[:alpha:]]/ /gi&#39;</code> which removes all
-    symbols.</p> <!-- TODO: Finish sed example -->
+    symbols, alas:</p>
+<pre><samp>
+    THEEND
+    It  neve r cease   s to am aze me  O
+    we all love ourselves    more than other people
+    but care more about their        opinions than our own
+          Marcus Aurelius
+</samp></pre>
+<p>You could run that again and remove repeating whitespace or use a wordlist to fix word boundaries.</p>
 <h5>Notes</h5>
 <ul>
     There exists a couple of variations and rules to the heredoc.
@@ -712,13 +771,14 @@ echo &quot;Hi $1&quot;
 <h5>Notes</h5>
 
 <h2> ` ` </h2>
-<p><em>For running commands in a subshell; equivalent to $( command ) but is deprecated and should not be used. Causes a lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.</em></p>
+<p><em>For running commands in a subshell; equivalent to $( command ) but is deprecated and should not be used. Causes a
+    lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.</em></p>
 <h5>Examples</h5>
 <h5>Notes</h5>
+-->
+<!--
+<h2> Zsh Globbing </h2>
 
-    <h2> Zsh Globbing </h2>
-    Globbing is done to filenames by the shell, and regex is used for searching text.
-    <span>**Always use quotes in your regex to avoid globbing**</span>
 <pre><code class="zsh">
         /      directories
         .      plain <span class="hljs-keyword">files</span>
@@ -746,24 +806,24 @@ echo &quot;Hi $1&quot;
       print *(a1)                       # <span class="hljs-keyword">Files</span> accessed a day ago
       print *(@)                        # Just symlinks
       print *(Lk+<span class="hljs-number">50</span>)                    # <span class="hljs-keyword">Files</span> bigger than <span
-            class="hljs-number">50</span> kilobytes
+        class="hljs-number">50</span> kilobytes
       print *(Lk<span class="hljs-number">-50</span>)                    # <span class="hljs-keyword">Files</span> smaller than <span
-            class="hljs-number">50</span> kilobytes
+        class="hljs-number">50</span> kilobytes
       print **<span class="hljs-comment">/*.c                      # All *.c files recursively starting in $PWD
       print **/</span>*.c~<span class="hljs-keyword">file</span>.c               # Same as above, but excluding <span
-            class="hljs-string">'file.c'</span>
+        class="hljs-string">'file.c'</span>
       print (foo|bar).*                 # <span class="hljs-keyword">Files</span> starting with <span
-            class="hljs-string">'foo'</span> <span class="hljs-keyword">or</span> <span class="hljs-string">'bar'</span>
+        class="hljs-string">'foo'</span> <span class="hljs-keyword">or</span> <span class="hljs-string">'bar'</span>
       print *~*.*                       # <span class="hljs-keyword">All</span> <span class="hljs-keyword">Files</span> that do <span
-            class="hljs-keyword">not</span> contain a dot
+        class="hljs-keyword">not</span> contain a dot
       chmod <span class="hljs-number">644</span> *(.^x)                  # make <span class="hljs-keyword">all</span> plain non-executable <span
-            class="hljs-keyword">files</span> publically readable
+        class="hljs-keyword">files</span> publically readable
       print -l *(.c|.h)                 # Lists *.c <span class="hljs-keyword">and</span> *.h
       print **<span class="hljs-comment">/*(g:users:)              # Recursively match all files that are owned by group 'users'
       echo /proc/*/</span>cwd(:h:t:s/self<span
-            class="hljs-comment">//)   # Analogous to &gt;ps ax | awk '{print }'&lt;</span>
+        class="hljs-comment">//)   # Analogous to &gt;ps ax | awk '{print }'&lt;</span>
     </code></pre>
 <h1 id="resources">Recommended Books</h1>
-
+-->
 </body>
 </html>
