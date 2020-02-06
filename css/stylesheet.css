@@ -1,13 +1,3 @@
-/*
-* Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/29/2014
-*/
-
-
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Classes
@@ -26,47 +16,48 @@
 - Media Queries
 */
 
-@media (min-width: 1000px) {
-    /* Base Styles
-    –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    /* NOTE
-    html is set to 62.5% so that all the REM measurements throughout Skeleton
-    are based on 10px sizing. So basically 1.5rem = 15px :) */
-    html {
-        font-size: 62.5%;
-        scroll-padding-top: 4rem;
-        margin: 4rem auto auto auto;
-    }
 
-    body {
-        font-size: 1.5rem; /* currently ems cause chrome bug misinterpreting rems on body element */
-        line-height: 1.6;
-        font-weight: 400;
-        color: #222;
-    }
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+    font-size: 62.5%;
+    scroll-padding-top: 4rem;
+    margin: 4rem auto auto auto;
+}
 
-    /* Nav
-     ------------------------------------------------- */
-    a {
-        outline: 0;
-    }
+body {
+    font-size: 1.5rem; /* currently ems cause chrome bug misinterpreting rems on body element */
+    line-height: 1.6;
+    font-weight: 400;
+    color: #222;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+/* Nav
+ ------------------------------------------------- */
+a {
+    outline: 0;
+}
 
-    footer {
-        display: flex;
-        width: 50%;
-        margin: auto;
-        display: block;
-        text-align: center;
-        font-family: 'IBM Plex Serif', serif;
-        background: #e7e7e7;
-        padding: 0.625rem 1rem;
+html {
+    scroll-behavior: smooth;
+}
 
-    }
+footer {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-family: 'IBM Plex Serif', serif;
+    background: #e7e7e7;
+    padding: 0.625rem 1rem;
 
+}
+
+@media (min-width: 800px) {
     footer a {
         text-decoration-line: underline;
         text-decoration-style: wavy;
@@ -130,7 +121,7 @@
         margin-top: 0;
         margin-bottom: 0.25rem;
         font-weight: 300;
-        font-family: "PT Mono";
+        font-family: "PT Mono", serif;
     }
 
     h1 {
@@ -174,7 +165,7 @@
     }
 
     p {
-        font-family: "PT Mono";
+        font-family: "PT Mono", serif;
         margin-top: 0;
     }
 
@@ -326,6 +317,7 @@
     /* Lists
     –––––––––––––––––––––––––––––––––––––––––––––––––– */
     main {
+    }
 
     p, ul, li, ol {
 
@@ -420,6 +412,8 @@ pre, blockquote, dl, figure, table, p, ul, ol, form {
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
@@ -437,26 +431,4 @@ p, h1, h2, h3, h4, h5, h6, table {
     width: 50%;
     padding: 10px 0;
     text-align: center;
-}
-
-}
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
 }
