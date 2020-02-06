@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Shell Magic - Advanced Bash Notes</title>
     <meta name="author" content="smokingcuke">
     <meta name="description" content="description here">
-    <meta name="keywords" content="bash,shellscript,sh,dash,ksh,zsh,csh">
+    <meta name="keywords" content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script">
     <link rel="stylesheet" href="./css/stylesheet.css">
     <link rel="shortcut icon" href="./graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
             });
         });
     </script>
-    <noscript></noscript>
 </head>
 
 <body>
@@ -42,894 +41,708 @@
         </ul>
     </nav>
 </header>
-<!--
-<h1>
-    <img src="./graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
-</h1>
--->
-<!--
-<p>
-    <span style='font-size:32px;'>&#11088;Star us on <a href="https://github.com/smokingcuke/ShellMagic">GitHub</a> — it helps!</span>
-</p>
--->
 <main>
     <h1>Bash Quick References</h1>
     <hr>
-    <!--
-    <p>
-        <a href="#quick-references">Quick Reference</a> •
-        <a href="#commands-parameters">Command Parameters</a> •
-        <a href="#comparison-operators">Comparison Operators</a> •
-        <a href="#variable-manipulation">Variable Manipulation</a> •
-        <a href="#overview-of-bash-symbols">Overview of Bash Symbols</a> •
-        <a href="#resources">Recommended Books</a>
-    </p>
-
-    -->
-    <section>
-        <h2 id="command-parameters">Command Parameters</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Command</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><code>$0</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>$1..n</code></td>
-                <td>Parameter 1, 2, 3, 4...n</td>
-            </tr>
-            <tr>
-                <td><code>$*</code></td>
-                <td>Expands to the positional parameters, starting from one. When the expansion occurs within double
-                    quotes, it expands to a single word with the value of each parameter seperated by the first of the
-                    IFS
-                    environment
-                    variable
-                </td>
-            </tr>
-            <tr>
-                <td><code>$-</code></td>
-                <td>Current options</td>
-            </tr>
-            <tr>
-                <td><code>$_</code></td>
-                <td>The underscore variable is set at shell startup and contains the absolute file name of the shell or
-                    script being executed as passed in the argument list. Subsequently, it expands to the last argument
-                    to the
-                    previous
-                    command, after expansion. It is also set to the full pathname of each command executed and placed in
-                    the
-                    environment
-                    exported to that command. When checking mail, this parameter holds the name of the mail file.
-                </td>
-            </tr>
-            <tr>
-                <td><code>$$</code></td>
-                <td>Process id of the shell</td>
-            </tr>
-            <tr>
-                <td><code>$?</code></td>
-                <td>Exit status of the most recently executed command</td>
-            </tr>
-            <tr>
-                <td><code>$@</code></td>
-                <td>All arguments as separate words</td>
-            </tr>
-            <tr>
-                <td><code>$#</code></td>
-                <td>Number of arguments</td>
-            </tr>
-            <tr>
-                <td><code>$!</code></td>
-                <td>PID of most recently backgrounded process</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-    <section>
-        <h2 id="comparison-operators">Comparison Operators</h2>
-        <h3 id="file-test-operators">File Test Operators</h3>
-        <table>
-            <thead>
-            <tr>
-                <th>Flag</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><code>-e</code></td>
-                <td>File exists</td>
-            </tr>
-            <tr>
-                <td><code>-a</code></td>
-                <td>File exists (identical to -e but is deprecated and outdated)</td>
-            </tr>
-            <tr>
-                <td><code>-f</code></td>
-                <td>File is a regular file (not a directory or device file)</td>
-            </tr>
-            <tr>
-                <td><code>-s</code></td>
-                <td>file is not zero size</td>
-            </tr>
-            <tr>
-                <td><code>-d</code></td>
-                <td>file is a directory</td>
-            </tr>
-            <tr>
-                <td><code>-b</code></td>
-                <td>file is a block device</td>
-            </tr>
-            <tr>
-                <td><code>-c</code></td>
-                <td>file is a character device</td>
-            </tr>
-            <tr>
-                <td><code>-p</code></td>
-                <td>file is a pipe</td>
-            </tr>
-            <tr>
-                <td><code>-h</code></td>
-                <td>file is a symbolic link</td>
-            </tr>
-            <tr>
-                <td><code>-L</code></td>
-                <td>file is a symbolic link</td>
-            </tr>
-            <tr>
-                <td><code>-S</code></td>
-                <td>file is a socket</td>
-            </tr>
-            <tr>
-                <td><code>-t</code></td>
-                <td>file (descriptor) is associated with a terminal device; this test option may be used to
-                    check
-                    whether the
-                    stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal
-                </td>
-            </tr>
-            <tr>
-                <td><code>-r</code></td>
-                <td>file has read permission (for the user running the test)</td>
-            </tr>
-            <tr>
-                <td><code>-w</code></td>
-                <td>file has write permission (for the user running the test)</td>
-            </tr>
-            <tr>
-                <td><code>-x</code></td>
-                <td>file has execute permission (for the user running the test)</td>
-            </tr>
-            <tr>
-                <td><code>-g</code></td>
-                <td>set-group-id (sgid) flag set on file or directory</td>
-            </tr>
-            <tr>
-                <td><code>-u</code></td>
-                <td>set-user-id (suid) flag set on file.</td>
-            </tr>
-            <tr>
-                <td><code>-k</code></td>
-                <td>sticky bit set.</td>
-            </tr>
-            <tr>
-                <td><code>-O</code></td>
-                <td>you are owner of file</td>
-            </tr>
-            <tr>
-                <td><code>-G</code></td>
-                <td>group-id of file same as yours</td>
-            </tr>
-            <tr>
-                <td><code>-N</code></td>
-                <td>file modified since it was last read</td>
-            </tr>
-            <tr>
-                <td><code>f1 -nt f2</code></td>
-                <td>file f1 is newer than f2</td>
-            </tr>
-            <tr>
-                <td><code>f1 -ot f2</code></td>
-                <td>file f1 is older than f2</td>
-            </tr>
-            <tr>
-                <td><code>f1 -ef f2</code></td>
-                <td>files f1 and f2 are hard links to the same file</td>
-            </tr>
-            <tr>
-                <td><code>!</code></td>
-                <td>Not -- reverses the sense of the tests above (returns true if condition absent).</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h2 id="command-parameters">Command Parameters</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>$0</code></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><code>$1..n</code></td>
+                        <td>Parameter 1, 2, 3, 4...n</td>
+                    </tr>
+                    <tr>
+                        <td><code>$*</code></td>
+                        <td>Expands to the positional parameters, starting from one. When the expansion occurs within
+                            double
+                            quotes, it expands to a single word with the value of each parameter seperated by the first
+                            of the
+                            IFS
+                            environment
+                            variable
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$-</code></td>
+                        <td>Current options</td>
+                    </tr>
+                    <tr>
+                        <td><code>$_</code></td>
+                        <td>The underscore variable is set at shell startup and contains the absolute file name of the
+                            shell or
+                            script being executed as passed in the argument list. Subsequently, it expands to the last
+                            argument
+                            to the
+                            previous
+                            command, after expansion. It is also set to the full pathname of each command executed and
+                            placed in
+                            the
+                            environment
+                            exported to that command. When checking mail, this parameter holds the name of the mail
+                            file.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$</code></td>
+                        <td>Process id of the shell</td>
+                    </tr>
+                    <tr>
+                        <td><code>$?</code></td>
+                        <td>Exit status of the most recently executed command</td>
+                    </tr>
+                    <tr>
+                        <td><code>$@</code></td>
+                        <td>All arguments as separate words</td>
+                    </tr>
+                    <tr>
+                        <td><code>$#</code></td>
+                        <td>Number of arguments</td>
+                    </tr>
+                    <tr>
+                        <td><code>$!</code></td>
+                        <td>PID of most recently backgrounded process</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="twelve columns">
-            <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
-            <table>
-                <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>-eq</code></td>
-                    <td>is equal to</td>
-                </tr>
-                <tr>
-                    <td><code>-ne</code></td>
-                    <td>is not equal to</td>
-                </tr>
-                <tr>
-                    <td><code>-gt</code></td>
-                    <td>is greater than</td>
-                </tr>
-                <tr>
-                    <td><code>-ge</code></td>
-                    <td>is greater than or equal to</td>
-                </tr>
-                <tr>
-                    <td><code>-lt</code></td>
-                    <td>is less than</td>
-                </tr>
-                <tr>
-                    <td><code>-le</code></td>
-                    <td>is less than or equal to</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;</code></td>
-                    <td>is less than (within double parentheses, i.e. <code>(( ))</code>)</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;=</code></td>
-                    <td>is less than or equal to (same rule as before)</td>
-                </tr>
-                <tr>
-                    <td><code>&gt;</code></td>
-                    <td>is greater than (same rule as before)</td>
-                </tr>
-                <tr>
-                    <td><code>&gt;=</code></td>
-                    <td>is greater than or equal to (same rule as before)</td>
-                </tr>
-                </tbody>
-            </table>
-            <h3 id="string-comparison-operators">String Comparison Operators</h3>
-            <table>
-                <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>=</code></td>
-                    <td>is equal to</td>
-                </tr>
-                <tr>
-                    <td><code>==</code></td>
-                    <td>is equal to (synonym for <code>=</code>)</td>
-                </tr>
-                <tr>
-                    <td><code>!=</code></td>
-                    <td>is not equal to</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;</code></td>
-                    <td>is less than ASCII alphabetical order</td>
-                </tr>
-                <tr>
-                    <td><code>&gt;</code></td>
-                    <td>is greater than ASCII alphabetical order</td>
-                </tr>
-                <tr>
-                    <td><code>-z</code></td>
-                    <td>string is null (i.e. zero length)</td>
-                </tr>
-                <tr>
-                    <td><code>-n</code></td>
-                    <td>string is not null (i.e. !zero length)</td>
-                </tr>
-                </tbody>
-            </table>
-            <h3 id="compound-operators">Compound Operators</h3>
-            <table>
-                <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>-a</code></td>
-                    <td>logical and</td>
-                </tr>
-                <tr>
-                    <td><code>-o</code></td>
-                    <td>logical or</td>
-                </tr>
-                </tbody>
-            </table>
-    </section>
-    <section>
-        <h2 id="variable-manipulation">Variable Manipulation</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Pattern</th>
-                <th style="text-align:left">Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><code>${parameter:-defaultValue}</code></td>
-                <td style="text-align:left">Get default shell variables value</td>
-            </tr>
-            <tr>
-                <td><code>${parameter:=defaultValue}</code></td>
-                <td style="text-align:left">Set default shell variables value</td>
-            </tr>
-            <tr>
-                <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
-                <td style="text-align:left">Display an error message if parameter is not set</td>
-            </tr>
-            <tr>
-                <td><code>${#var}</code></td>
-                <td style="text-align:left">Find the length of the string</td>
-            </tr>
-            <tr>
-                <td><code>${var%pattern}</code></td>
-                <td style="text-align:left">Remove from shortest rear (end) pattern</td>
-            </tr>
-            <tr>
-                <td><code>${var%%pattern}</code></td>
-                <td style="text-align:left">Remove from longest rear (end) pattern</td>
-            </tr>
-            <tr>
-                <td><code>${var:num1:num2}</code></td>
-                <td style="text-align:left">Substring</td>
-            </tr>
-            <tr>
-                <td><code>${var#pattern}</code></td>
-                <td style="text-align:left">Remove from shortest front pattern</td>
-            </tr>
-            <tr>
-                <td><code>${var##pattern}</code></td>
-                <td style="text-align:left">Remove from longest front pattern</td>
-            </tr>
-            <tr>
-                <td><code>${var/pattern/string}</code></td>
-                <td style="text-align:left">Find and replace (only replace first occurrence)</td>
-            </tr>
-            <tr>
-                <td><code>${var//pattern/string}</code></td>
-                <td style="text-align:left">Find and replace all occurrences</td>
-            </tr>
-            <tr>
-                <td><code>${!prefix*}</code></td>
-                <td style="text-align:left">Expands to the names of variables whose names begin with prefix.
-                </td>
-            </tr>
-            <tr>
-                <td><code>${var,}</code><br><code>${var,pattern}</code></td>
-                <td style="text-align:left">Convert first character to lowercase.</td>
-            </tr>
-            <tr>
-                <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>
-                <td style="text-align:left">Convert all characters to lowercase.</td>
-            </tr>
-            <tr>
-                <td><code>${var^}</code><br><code>${var^pattern}</code></td>
-                <td style="text-align:left">Convert first character to uppercase.</td>
-            </tr>
-            <tr>
-                <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
-                <td style="text-align:left">Convert all character to uppercase.</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-    <section>
-        <h2 id="bash-globbing">Bash Globbing</h2>
-        <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em></p>
-        <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
-        <table>
-            <thead>
-            <tr>
-                <th>Glob</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><code>*</code></td>
-                <td>Matches zero or more occurences of a given pattern</td>
-            </tr>
-            <tr>
-                <td><code>?</code></td>
-                <td>Matches zero or one occurences of a given pattern</td>
-            </tr>
-            <tr>
-                <td><code>+</code></td>
-                <td>Matches one or more occurences of a given pattern</td>
-            </tr>
-            <tr>
-                <td><code>@</code></td>
-                <td>Matches exactly one of a given pattern</td>
-            </tr>
-            <tr>
-                <td><code>!</code></td>
-                <td>Negates any pattern — reverses the pattern so to speak</td>
-            </tr>
-            <tr>
-                <td><code>[:CharacterClass:]</code></td>
-                <td>A character class is a set of predefined patterns and comprpised of the following which:
-                    <pre>
-[:alnum:]  [:alpha:]  [:digit:]
-[:lower:]  [:upper:]  [:space:]
-[:punct:]  [:print:]  [:blank:]
-[:graph:]  [:cntrl:]  [:xdigit:]
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns"><h2 id="comparison-operators">Comparison
+                Operators</h2></div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <h3 id="file-test-operators">File Test Operators</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>-e</code></td>
+                        <td>File exists</td>
+                    </tr>
+                    <tr>
+                        <td><code>-a</code></td>
+                        <td>File exists (identical to -e but is deprecated and outdated)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-f</code></td>
+                        <td>File is a regular file (not a directory or device file)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-s</code></td>
+                        <td>file is not zero size</td>
+                    </tr>
+                    <tr>
+                        <td><code>-d</code></td>
+                        <td>file is a directory</td>
+                    </tr>
+                    <tr>
+                        <td><code>-b</code></td>
+                        <td>file is a block device</td>
+                    </tr>
+                    <tr>
+                        <td><code>-c</code></td>
+                        <td>file is a character device</td>
+                    </tr>
+                    <tr>
+                        <td><code>-p</code></td>
+                        <td>file is a pipe</td>
+                    </tr>
+                    <tr>
+                        <td><code>-h</code></td>
+                        <td>file is a symbolic link</td>
+                    </tr>
+                    <tr>
+                        <td><code>-L</code></td>
+                        <td>file is a symbolic link</td>
+                    </tr>
+                    <tr>
+                        <td><code>-S</code></td>
+                        <td>file is a socket</td>
+                    </tr>
+                    <tr>
+                        <td><code>-t</code></td>
+                        <td>file (descriptor) is associated with a terminal device; this test option may be used to
+                            check
+                            whether the
+                            stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>-r</code></td>
+                        <td>file has read permission (for the user running the test)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-w</code></td>
+                        <td>file has write permission (for the user running the test)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-x</code></td>
+                        <td>file has execute permission (for the user running the test)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-g</code></td>
+                        <td>set-group-id (sgid) flag set on file or directory</td>
+                    </tr>
+                    <tr>
+                        <td><code>-u</code></td>
+                        <td>set-user-id (suid) flag set on file.</td>
+                    </tr>
+                    <tr>
+                        <td><code>-k</code></td>
+                        <td>sticky bit set.</td>
+                    </tr>
+                    <tr>
+                        <td><code>-O</code></td>
+                        <td>you are owner of file</td>
+                    </tr>
+                    <tr>
+                        <td><code>-G</code></td>
+                        <td>group-id of file same as yours</td>
+                    </tr>
+                    <tr>
+                        <td><code>-N</code></td>
+                        <td>file modified since it was last read</td>
+                    </tr>
+                    <tr>
+                        <td><code>f1 -nt f2</code></td>
+                        <td>file f1 is newer than f2</td>
+                    </tr>
+                    <tr>
+                        <td><code>f1 -ot f2</code></td>
+                        <td>file f1 is older than f2</td>
+                    </tr>
+                    <tr>
+                        <td><code>f1 -ef f2</code></td>
+                        <td>files f1 and f2 are hard links to the same file</td>
+                    </tr>
+                    <tr>
+                        <td><code>!</code></td>
+                        <td>Not -- reverses the sense of the tests above (returns true if condition absent).</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="six columns">
+                <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>-eq</code></td>
+                        <td>is equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>-ne</code></td>
+                        <td>is not equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>-gt</code></td>
+                        <td>is greater than</td>
+                    </tr>
+                    <tr>
+                        <td><code>-ge</code></td>
+                        <td>is greater than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>-lt</code></td>
+                        <td>is less than</td>
+                    </tr>
+                    <tr>
+                        <td><code>-le</code></td>
+                        <td>is less than or equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;</code></td>
+                        <td>is less than (within double parentheses, i.e. <code>(( ))</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;=</code></td>
+                        <td>is less than or equal to (same rule as before)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>is greater than (same rule as before)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;=</code></td>
+                        <td>is greater than or equal to (same rule as before)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h3 id="string-comparison-operators">String Comparison Operators</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>=</code></td>
+                        <td>is equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>==</code></td>
+                        <td>is equal to (synonym for <code>=</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>!=</code></td>
+                        <td>is not equal to</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;</code></td>
+                        <td>is less than ASCII alphabetical order</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>is greater than ASCII alphabetical order</td>
+                    </tr>
+                    <tr>
+                        <td><code>-z</code></td>
+                        <td>string is null (i.e. zero length)</td>
+                    </tr>
+                    <tr>
+                        <td><code>-n</code></td>
+                        <td>string is not null (i.e. !zero length)</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h3 id="compound-operators">Compound Operators</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>-a</code></td>
+                        <td>logical and</td>
+                    </tr>
+                    <tr>
+                        <td><code>-o</code></td>
+                        <td>logical or</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="seven columns">
+                <h2 id="variable-manipulation">Variable Manipulation</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Pattern</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>${parameter:-defaultValue}</code></td>
+                        <td>Get default shell variables value</td>
+                    </tr>
+                    <tr>
+                        <td><code>${parameter:=defaultValue}</code></td>
+                        <td>Set default shell variables value</td>
+                    </tr>
+                    <tr>
+                        <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
+                        <td>Display an error message if parameter is not set</td>
+                    </tr>
+                    <tr>
+                        <td><code>${#var}</code></td>
+                        <td>Find the length of the string</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var%pattern}</code></td>
+                        <td>Remove from shortest rear (end) pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var%%pattern}</code></td>
+                        <td>Remove from longest rear (end) pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var:num1:num2}</code></td>
+                        <td>Substring</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var#pattern}</code></td>
+                        <td>Remove from shortest front pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var##pattern}</code></td>
+                        <td>Remove from longest front pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var/pattern/string}</code></td>
+                        <td>Find and replace (only replace first occurrence)</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var//pattern/string}</code></td>
+                        <td>Find and replace all occurrences</td>
+                    </tr>
+                    <tr>
+                        <td><code>${!prefix*}</code></td>
+                        <td>Expands to the names of variables whose names begin with prefix.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>${var,}</code><br><code>${var,pattern}</code></td>
+                        <td>Convert first character to lowercase.</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>
+                        <td>Convert all characters to lowercase.</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var^}</code><br><code>${var^pattern}</code></td>
+                        <td>Convert first character to uppercase.</td>
+                    </tr>
+                    <tr>
+                        <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
+                        <td>Convert all character to uppercase.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="five columns">
+                <h2 id="bash-globbing">Bash Globbing</h2>
+                <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em></p>
+                <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Glob</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Matches zero or more occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>?</code></td>
+                        <td>Matches zero or one occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>+</code></td>
+                        <td>Matches one or more occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>@</code></td>
+                        <td>Matches exactly one of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>!</code></td>
+                        <td>Negates any pattern — reverses the pattern so to speak</td>
+                    </tr>
+                    <tr>
+                        <td><code>[:CharClass:]</code></td>
+                        <td>A character class is a set of predefined patterns and comprpised of the following which:
+                            <pre>
+[:alnum:] [:alpha:]
+[:digit:] [:lower:]
+[:upper:] [:space:]
+[:punct:] [:print:]
+[:blank:] [:graph:]
+[:cntrl:] [:xdigit:]
             </pre>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-    <!--
-    <h1 id="parentheses-brackets-braces-">Parentheses, Brackets &amp; Braces!</h1>
-    <p>I will explain all the various rules of braces, brackets and parentheses in the following section. I will provide
-        short examples and important notes on the use and misuse of these symbols.</p>
-        -->
-    <section>
-        <h1 id="overview-of-symbols">Overview of Bash Symbols</h1>
-        <table>
-            <thead>
-            <tr>
-                <th>Symbol</th>
-                <th>Quick Reference</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><code>#</code></td>
-                <td>used for comments</td>
-            </tr>
-            <tr>
-                <td><code>$</code></td>
-                <td>used for parameters and variables. Has a bunch of edge cases.</td>
-            </tr>
-            <tr>
-                <td><code>( )</code></td>
-                <td>is used for running commands in a subshell.</td>
-            </tr>
-            <tr>
-                <td><code>$( )</code></td>
-                <td>is used for saving output of commands that are send to run in a subshell.</td>
-            </tr>
-            <tr>
-                <td><code>(( ))</code></td>
-                <td>is used for arithmetic.</td>
-            </tr>
-            <tr>
-                <td><code>$(( ))</code></td>
-                <td>is used for saving the output of arithmetic.</td>
-            </tr>
-            <tr>
-                <td><code>$[]</code></td>
-                <td>deprecated integer expansion construct which is replaced by <code>(( ))</code>. Evaluates
-                    integers
-                    between the square brackets
-                </td>
-            </tr>
-            <tr>
-                <td><code>[ ]</code></td>
-                <td>is used for testing and is a built-in. Is useful in some cases for filename expansion and
-                    string
-                    manipulation.
-                </td>
-            </tr>
-            <tr>
-                <td><code>[[ ]]</code></td>
-                <td>is used for testing. This is the one you should use unless you can think of a reason not
-                    to.
-                </td>
-            </tr>
-            <tr>
-                <td><code>&lt;( )</code></td>
-                <td>Used for process substitution and is similar to a pipe. Can be used whenever a command
-                    expects a
-                    file and
-                    you can use multiple at once.
-                </td>
-            </tr>
-            <tr>
-                <td><code>{ }</code></td>
-                <td>is used for expansion of sequences</td>
-            </tr>
-            <tr>
-                <td><code>${ }</code></td>
-                <td>is used for variable interpolation and string manipulation.</td>
-            </tr>
-            <tr>
-                <td><code>|</code></td>
-                <td>is a pipe which is used for chaining commands together.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;</code></td>
-                <td>used for feeding input to commands from a file</td>
-            </tr>
-            <tr>
-                <td><code>&gt;</code></td>
-                <td>used for sending output to a file and erasing any previous content in that file.</td>
-            </tr>
-            <tr>
-                <td><code>&gt;|</code></td>
-                <td>forcing the redirection even if the shell option <code>noclobber</code> is set</td>
-            </tr>
-            <tr>
-                <td><code>\<, \></code></td>
-                <td>used for word boundaries in regex</td>
-            </tr>
-            <tr>
-                <td><code>||</code><br><code>&&</code></td>
-                <td>logical or and logical and</td>
-            </tr>
-            <tr>
-                <td><code>-</code></td>
-                <td>used for option prefixes</td>
-            </tr>
-            <tr>
-                <td><code>--</code></td>
-                <td>used for the long-option prefixes</td>
-            </tr>
-            <tr>
-                <td><code>&</code></td>
-                <td>used to send a job to the background</td>
-            </tr>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-            <tr>
-                <td>
-                    <code>&lt;&lt;WORD</code><br><code>&lt;&lt;-WORD</code><br><code>&lt;&lt;'WORD'</code><br><code>&lt;&lt;-'WORD'</code>
-                </td>
-                <td>is used for <em>heredocs</em></td>
-            </tr>
-            <tr>
-                <td><code><<<</code></td>
-                <td>is used for <em>herestrings</em></td>
-            </tr>
-            <tr>
-                <td><code>&gt;&gt;</code></td>
-                <td>is used to append output to a file.</td>
-            </tr>
-            <tr>
-                <td><code>&#39; &#39;</code></td>
-                <td>single quotes are used to preserve the literal value</td>
-            </tr>
-            <tr>
-                <td><code>&quot; &quot;</code></td>
-                <td>double quotes are used to preserve the literal value of all characters except <code>$</code>,
-                    <code>`
-                        `</code>
-                    and <code>\</code></td>
-            </tr>
-            <tr>
-                <td><code>\</code></td>
-                <td>backslash is used to escape otherwise interpreted symbols/characters which has a special
-                    meaning
-                </td>
-            </tr>
-            <tr>
-                <td><code>/</code></td>
-                <td>used for seperating the components of a filename</td>
-            </tr>
-            <tr>
-                <td><code>:</code></td>
-                <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status of
-                    true
-                </td>
-            </tr>
-            <tr>
-                <td><code>;</code></td>
-                <td>used to seperate commands intended to run sequentally.</td>
-            </tr>
-            <tr>
-                <td><code>,</code></td>
-                <td>used for linking together arithmetic operations. All are evalutated but only the last is
-                    returned
-                </td>
-            </tr>
-            <tr>
-                <td><code>.</code></td>
-                <td>expands to the current directory.</td>
-            </tr>
-            <tr>
-                <td><code>..</code></td>
-                <td>expands to parent directory.</td>
-            </tr>
-            <tr>
-                <td><code>~</code></td>
-                <td>expands to home directory.</td>
-            </tr>
-            <tr>
-                <td><code>` `</code></td>
-                <td>is deprecated and should not be used. Read further in its respective section.</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-    <!--
-    <h2>$</h2>
-    <ul>
-        <li>When declaring or setting a variable you omit the <code>$</code> and when retrieving the value of a
-            variable you <em>use</em> the <code>$</code>.
-        </li>
-        <li><code>var=$( date )</code> sets the variable to the output of date.</li>
-        <li><code>printf "%s" "$var"</code> outputs <samp>Sat 01 Feb 2020 01:43:45 PM CET</samp></li>
-        <li>Dollars can be escaped with the escape character <code>\$</code> or with <code>'$'</code></li>
-        <li>The dollar-sign is not escaped by <code>"$"</code> and retains its special meaning within double quotes.</li>
-    </ul>
-    <h2>( )</h2>
-    <p><em>Used for running commands inside a subshell and declaring arrays</em></p>
-    <h5>Examples</h5>
-    <ol>
-        <li><code>( echo &quot;Hello&quot; ; variable=&quot;This variable resides in this subshell ; echo &quot;\n&quot;)
-            ; echo ${variable}</code></li>
-        <li><code>colors=(green yellow purple gray black white magenta)</code></li>
-        <li><code>coordinates=(&#39;16.491838, 28.164997&#39; &#39;-55.594198, -13.051657&#39; &#39;-94.274509,
-            42.953203&#39;)</code></li>
-    </ol>
-    <h5>Notes</h5>
-    <ol>
-        <li>Bash uses the enviromental variable <code>$IFS</code> to determine the delimiter which by default is set
-            to whitespace.
-        </li>
-    </ol>
-    <h2>(( ))</h2>
-    <p><em>Used for integer arithmetic and modifying variables. However, double parentheses will not output any variables!
-        Variables modified
-        inside the parentheses will however stick.</em></p>
-    <h5>Examples</h5>
-    <ol>
-        <li><code>i=4 ; (( i += 4 )) ; echo &quot;${i}&quot;</code> will output <code>8</code>.</li>
-    </ol>
-    <h5>Notes</h5>
-    <ol>
-        <li>Strings inside gets considering &#39;zero&#39;.</li>
-        <li>This is not valid
-            <del><code>a=(( 3 + 4))</code></del>
-        </li>
-    </ol>
-    <h2>$( )</h2>
-    <p><em>Used to retrieve output of commands ran in subshells.</em></p>
+    <div class="container">
+        <div class="row">
+            <div class="eight columns">
+                <h2 id="overview-of-symbols">Overview of Bash Symbols</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Quick Reference</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>#</code></td>
+                        <td>used for comments</td>
+                    </tr>
+                    <tr>
+                        <td><code>$</code></td>
+                        <td>used for parameters and variables. Has a bunch of edge cases.</td>
+                    </tr>
+                    <tr>
+                        <td><code>( )</code></td>
+                        <td>is used for running commands in a subshell.</td>
+                    </tr>
+                    <tr>
+                        <td><code>$( )</code></td>
+                        <td>is used for saving output of commands that are send to run in a subshell.</td>
+                    </tr>
+                    <tr>
+                        <td><code>(( ))</code></td>
+                        <td>is used for arithmetic.</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(( ))</code></td>
+                        <td>is used for saving the output of arithmetic.</td>
+                    </tr>
+                    <tr>
+                        <td><code>$[]</code></td>
+                        <td>deprecated integer expansion construct which is replaced by <code>(( ))</code>.
+                            Evaluates
+                            integers
+                            between the square brackets
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>[ ]</code></td>
+                        <td>is used for testing and is a built-in. Is useful in some cases for filename expansion
+                            and
+                            string
+                            manipulation.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>[[ ]]</code></td>
+                        <td>is used for testing. This is the one you should use unless you can think of a reason not
+                            to.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;( )</code></td>
+                        <td>Used for process substitution and is similar to a pipe. Can be used whenever a command
+                            expects a
+                            file and
+                            you can use multiple at once.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>{ }</code></td>
+                        <td>is used for expansion of sequences</td>
+                    </tr>
+                    <tr>
+                        <td><code>${ }</code></td>
+                        <td>is used for variable interpolation and string manipulation.</td>
+                    </tr>
+                    <tr>
+                        <td><code>|</code></td>
+                        <td>is a pipe which is used for chaining commands together.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;</code></td>
+                        <td>used for feeding input to commands from a file</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>used for sending output to a file and erasing any previous content in that file.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;|</code></td>
+                        <td>forcing the redirection even if the shell option <code>noclobber</code> is set</td>
+                    </tr>
+                    <tr>
+                        <td><code>\<, \></code></td>
+                        <td>used for word boundaries in regex</td>
+                    </tr>
+                    <tr>
+                        <td><code>||</code><br><code>&&</code></td>
+                        <td>logical or and logical and</td>
+                    </tr>
+                    <tr>
+                        <td><code>-</code></td>
+                        <td>used for option prefixes</td>
+                    </tr>
+                    <tr>
+                        <td><code>--</code></td>
+                        <td>used for the long-option prefixes</td>
+                    </tr>
+                    <tr>
+                        <td><code>&</code></td>
+                        <td>used to send a job to the background</td>
+                    </tr>
 
-    <h5>Examples</h5>
-    <ol>
-        <li><code>you_are_here=&quot;Your working directory is: $( pwd )&quot; ; echo ${you_are_here}</code></li>
-        <li><samp>Your working directory is: /home/username</samp></li>
-    </ol>
-    <h2>$(( ))</h2>
-    <p><em>Same rules apply as double parentheses without the dollar and in addition you can store the output in
-        varibales.</em></p>
-    <h5>Examples</h5>
-    <ol>
-        <li><code>you_are_here=&quot;You working directory is: $( pwd )&quot; ; echo ${you_are_here}</code></li>
-    </ol>
-    <h2>[ ]</h2>
-    <p><em>Used for testing. Alternate version of the built-in <code>test</code>.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-    <ol>
-        <li>Strings of zero length are <code>false</code> and greater than one length (even if its whitespace) is
-            <code>true</code>.
-        </li>
-        <li><code>test</code> and <code>[</code> are built-ins, aka. part of the shell language itself aka. programs
-            -- this means that stuff inside is not treated as arguments and thus rendering single square brackets
-            useful for stuff like word splitting or filename expansion.
-        </li>
-        <li>Has a bunch of gotchas and you&#39;re best off sticking to double square brackets, generally.</li>
-    </ol>
-    <h2>[[ ]]</h2>
-    <p><em>Used for testing and supports extended regex but isn&#39;t a shell built-in.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-    <ol>
-        <li>You may use quotes around the second argument to force a raw, instead of a regex match.</li>
-    </ol>
-    <h2>{}</h2>
-    <p><em>Used for expansion of sequences.</em></p>
-    <h5>Examples</h5>
-    <ol>
-        <li><code>a{bsenti,cademi,lgebr,mmoni,mnesi}a</code> expands into <code>absentia academia algebra ammonia
-            amnesia</code></li>
-        <li>You can also do sequences <code>printf &quot;%s &quot; {a..f}{0..9}</code> will print a bunch of hex
-            numbers.
-        </li>
-        <li><code>echo {z..a..2}</code> will print every second letter starting from <code>z</code> and working
-            backwards toward <code>a</code>.
-        </li>
-        <li>To save all 2-letter permutations of the alphabet to an array: <code>letter_combos=({a..z}{a..z})</code>
-            boom!
-        </li>
-    </ol>
-    <h5>Notes</h5>
-    <h2>${}</h2>
-    <p><em>Use to manipulate variables or when normal string interpolation could get weird.</em></p>
-    <h5>Examples</h5>
-    <ul>
-        <li>See: <a href="#variable-manipulation">Variable manipulation</a> for examples on that.</li>
-    </ul>
-    <h5>Notes</h5>
-    <ul>
-        <li>No spaces around the content/variables.</li>
-    </ul>
-    <h2>&lt;( )</h2>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-    <h2>&lt;&lt;- &#39;MAGIC&#39;</h2>
-    <p><em>A &quot;here document&quot; is a special-purpose codeblock that uses a form of I/O redirection to feed a command
-        list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.</em></p>
-    <h5>Examples</h5>
-    <pre><code class="bash">
-    cat &lt;&lt; &#39;THEEND&#39;
-        It..neve!r cease{}!s to am?aze me :O
-        we all love ourselves....more than other people,
-        but care more about their!!!!!!! opinions than our own.
-            -.Marcus Aurelius  *_*_!
-    THEEND
-        </code></pre>
-    <pre><samp>
-        It..neve!r cease{}!s to am?aze me :O
-        we all love ourselves....more than other people,
-        but care more about their!!!!!!! opinions than our own.
-            -.Marcus Aurelius  *_*_!
-    </samp></pre>
-    <p>A more useful example would be to use sed for removing all symbols, say you want to create an array with all words
-        for example. We can replace <code>cat</code> with <code>sed &#39;s/[^[:alpha:]]/ /gi&#39;</code> which removes all
-        symbols, alas:</p>
-    <pre><samp>
-        THEEND
-        It  neve r cease   s to am aze me  O
-        we all love ourselves    more than other people
-        but care more about their        opinions than our own
-              Marcus Aurelius
-    </samp></pre>
-    <p>You could run that again and remove repeating whitespace or use a wordlist to fix word boundaries.</p>
-    <h5>Notes</h5>
-    <ul>
-        There exists a couple of variations and rules to the heredoc.
-        <li>To suppres leading tabs on any lines, use <code>&lt;&lt;-</code> (dash at the end).</li>
-        <li>You may quote, or chose not to quote your &quot;magic word&quot;, i.e. THEEND.</li>
-        <li>Your magic word can be more or less anything you chose.</li>
-    </ul>
-    <h2>Function () { ... }</h2>
-    <p><em>Functions used to execute code blocks, retrieve exit status for code blocks and retrieve output of a code
-        block.</em></p>
-    <h5>Examples</h5>
-    <pre>
-    <code class="bash">
-    function hello() {
-    echo &quot;Hi $1&quot;
-    }
-    </code>
-        </pre>
-    <pre>
-    <code class="bash">hello() {
-        echo &quot;Hi $1&quot;
-        }</code></pre>
-    <pre><code class="bash">function hello {
-        echo &quot;Hi $1&quot;
-        }</code>
-        </pre>
+                    <tr>
+                        <td>
+                            <code>&lt;&lt;WORD</code><br><code>&lt;&lt;-WORD</code><br><code>&lt;&lt;'WORD'</code><br><code>&lt;&lt;-'WORD'</code>
+                        </td>
+                        <td>is used for <em>heredocs</em></td>
+                    </tr>
+                    <tr>
+                        <td><code><<<</code></td>
+                        <td>is used for <em>herestrings</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;&gt;</code></td>
+                        <td>is used to append output to a file.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&#39; &#39;</code></td>
+                        <td>single quotes are used to preserve the literal value</td>
+                    </tr>
+                    <tr>
+                        <td><code>&quot; &quot;</code></td>
+                        <td>double quotes are used to preserve the literal value of all characters except
+                            <code>$</code>,
+                            <code>`
+                                `</code>
+                            and <code>\</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>\</code></td>
+                        <td>backslash is used to escape otherwise interpreted symbols/characters which has a special
+                            meaning
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>/</code></td>
+                        <td>used for seperating the components of a filename</td>
+                    </tr>
+                    <tr>
+                        <td><code>:</code></td>
+                        <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status of
+                            true
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>;</code></td>
+                        <td>used to seperate commands intended to run sequentally.</td>
+                    </tr>
+                    <tr>
+                        <td><code>,</code></td>
+                        <td>used for linking together arithmetic operations. All are evalutated but only the last is
+                            returned
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.</code></td>
+                        <td>expands to the current directory.</td>
+                    </tr>
+                    <tr>
+                        <td><code>..</code></td>
+                        <td>expands to parent directory.</td>
+                    </tr>
+                    <tr>
+                        <td><code>~</code></td>
+                        <td>expands to home directory.</td>
+                    </tr>
+                    <tr>
+                        <td><code>` `</code></td>
+                        <td>is deprecated and should not be used. Read further in its respective section.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="four columns">
+                <h2 id="regex">Regex</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Glob</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Matches zero or more occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>?</code></td>
+                        <td>Matches zero or one occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>+</code></td>
+                        <td>Matches one or more occurences of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>@</code></td>
+                        <td>Matches exactly one of a given pattern</td>
+                    </tr>
+                    <tr>
+                        <td><code>!</code></td>
+                        <td>Negates any pattern — reverses the pattern so to speak</td>
+                    </tr>
+                    <tr>
+                        <td><code>[:CharClass:]</code></td>
+                        <td>A character class is a set of predefined patterns and comprpised of the following which:
+                            <pre>
+[:alnum:] [:alpha:]
+[:digit:] [:lower:]
+[:upper:] [:space:]
+[:punct:] [:print:]
+[:blank:] [:graph:]
+[:cntrl:] [:xdigit:]
+            </pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
 
-    <p>* Q: What's the difference between the three examples above?</p>
-    <p>* A: None, what-so-ever.... :)</p>
-
-    <h2> | </h2>
-    <p><em>Chain commands together.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> < </h2>
-    <p><em>Use file for command input.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> > </h2>
-    <p><em>Output to file and overwrite.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> >> </h2>
-    <p><em>Append to file.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> . </h2>
-    <p><em>Current directory.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> .. </h2>
-    <p><em>Parent directory.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> ~ </h2>
-    <p><em>Home directory.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-
-    <h2> ` ` </h2>
-    <p><em>For running commands in a subshell; equivalent to $( command ) but is deprecated and should not be used. Causes a
-        lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.</em></p>
-    <h5>Examples</h5>
-    <h5>Notes</h5>
-    -->
-    <!--
-    <h2> Zsh Globbing </h2>
-
-    <pre><code class="zsh">
-            /      directories
-            .      plain <span class="hljs-keyword">files</span>
-            @      symbolic links
-            =      sockets
-            p      named pipes (FIFOs)
-            *      executable plain <span class="hljs-keyword">files</span> (<span class="hljs-number">0100</span>)
-            %      device <span class="hljs-keyword">files</span> (character <span class="hljs-keyword">or</span> block special)
-            %b     block special <span class="hljs-keyword">files</span>
-            %c     character special <span class="hljs-keyword">files</span>
-            r      owner-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0400</span>)
-            w      owner-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0200</span>)
-            x      owner-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0100</span>)
-            A      group-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0040</span>)
-            I      group-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0020</span>)
-            E      group-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0010</span>)
-            R      world-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0004</span>)
-            W      world-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0002</span>)
-            X      world-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0001</span>)
-            s      setuid <span class="hljs-keyword">files</span> (<span class="hljs-number">04000</span>)
-            S      setgid <span class="hljs-keyword">files</span> (<span class="hljs-number">02000</span>)
-            t      <span class="hljs-keyword">files</span> with the sticky bit (<span class="hljs-number">01000</span>)
-
-          print *(m<span class="hljs-number">-1</span>)                      # <span class="hljs-keyword">Files</span> modified up to a day ago
-          print *(a1)                       # <span class="hljs-keyword">Files</span> accessed a day ago
-          print *(@)                        # Just symlinks
-          print *(Lk+<span class="hljs-number">50</span>)                    # <span class="hljs-keyword">Files</span> bigger than <span
-            class="hljs-number">50</span> kilobytes
-          print *(Lk<span class="hljs-number">-50</span>)                    # <span class="hljs-keyword">Files</span> smaller than <span
-            class="hljs-number">50</span> kilobytes
-          print **<span class="hljs-comment">/*.c                      # All *.c files recursively starting in $PWD
-          print **/</span>*.c~<span class="hljs-keyword">file</span>.c               # Same as above, but excluding <span
-            class="hljs-string">'file.c'</span>
-          print (foo|bar).*                 # <span class="hljs-keyword">Files</span> starting with <span
-            class="hljs-string">'foo'</span> <span class="hljs-keyword">or</span> <span class="hljs-string">'bar'</span>
-          print *~*.*                       # <span class="hljs-keyword">All</span> <span class="hljs-keyword">Files</span> that do <span
-            class="hljs-keyword">not</span> contain a dot
-          chmod <span class="hljs-number">644</span> *(.^x)                  # make <span class="hljs-keyword">all</span> plain non-executable <span
-            class="hljs-keyword">files</span> publically readable
-          print -l *(.c|.h)                 # Lists *.c <span class="hljs-keyword">and</span> *.h
-          print **<span class="hljs-comment">/*(g:users:)              # Recursively match all files that are owned by group 'users'
-          echo /proc/*/</span>cwd(:h:t:s/self<span
-            class="hljs-comment">//)   # Analogous to &gt;ps ax | awk '{print }'&lt;</span>
-        </code></pre>
-    <h1 id="resources">Recommended Books</h1>
-    -->
+            </div>
+        </div>
+    </div>
 </main>
-
-<footer>
-    &copy;2020 | <a href="https://github.com/smokingcuke/ShellMagic/issues">Suggest an enhancement</a> or <a
-        href="https://github.com/smokingcuke/ShellMagic/blob/master/Contributing.md">contribute to the site</a> | <a
-        href="TODO">Privacy Policy</a> | Note: This site is new and a work in progress.
-</footer>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <form>
+                <label for="exampleEmailInput">Sign up for (max) monthly newsletter - easy to cancel again.</label>
+                <input class="u-full-width" type="email" placeholder="your@mailbox.com" id="exampleEmailInput">
+                <input class="button-primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <footer>
+                &copy;2020 | <a href="https://github.com/smokingcuke/ShellMagic/issues">Suggest an enhancement</a> or <a
+                    href="https://github.com/smokingcuke/ShellMagic/blob/master/Contributing.md">contribute to the
+                site</a> | <a
+                    href="http://www.example.com">Privacy Policy</a> | This site is a work in progress.
+            </footer>
+        </div>
+    </div>
+</div>
 </body>
 </html>
