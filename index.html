@@ -17,9 +17,10 @@
     <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/default.min.css"
           rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
-    <script type='text/javascript'>
+    <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             document.querySelectorAll('pre code').forEach((block) => {
+                let hljs;
                 hljs.highlightBlock(block);
             });
         });
@@ -28,99 +29,28 @@
 
 <body>
 <header>
-    <nav>
-        <ul>
-            <li><a href="#command-parameters">Command Parameters</a></li>
-            <li><a href="#file-test-operators">File Test Operators</a></li>
-            <li><a href="#integer-comparison-operators">Integer Comparison</a></li>
-            <li><a href="#string-comparison-operators">String Comparison</a></li>
-            <li><a href="#compound-operators">Compound Operators</a></li>
-            <li><a href="#variable-manipulation">Variable Manipulation</a></li>
-            <li><a href="#bash-globbing">Bash Globbing</a></li>
-            <li><a href="#overview-of-symbols">Symbol Overview</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <nav>
+                    <div class="navbar">
+                        <a href="#command-parameters">Command Parameters</a>
+                        <a href="#file-test-operators">File Test Operators</a>
+                        <a href="#integer-comparison-operators">Integer Comparison</a>
+                        <a href="#string-comparison-operators">String Comparison</a>
+                        <a href="#compound-operators">Compound Operators</a>
+                        <a href="#variable-manipulation">Variable Manipulation</a>
+                        <a href="#bash-globbing">Bash Globbing</a>
+                        <a href="#overview-of-symbols">Symbol Overview</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
 <main>
     <h1>Bash Quick References</h1>
     <hr>
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns">
-                <h2 id="command-parameters">Command Parameters</h2>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Command</th>
-                        <th>Description</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><code>$0</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>$1..n</code></td>
-                        <td>Parameter 1, 2, 3, 4...n</td>
-                    </tr>
-                    <tr>
-                        <td><code>$*</code></td>
-                        <td>Expands to the positional parameters, starting from one. When the expansion occurs within
-                            double
-                            quotes, it expands to a single word with the value of each parameter seperated by the first
-                            of the
-                            IFS
-                            environment
-                            variable
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>$-</code></td>
-                        <td>Current options</td>
-                    </tr>
-                    <tr>
-                        <td><code>$_</code></td>
-                        <td>The underscore variable is set at shell startup and contains the absolute file name of the
-                            shell or
-                            script being executed as passed in the argument list. Subsequently, it expands to the last
-                            argument
-                            to the
-                            previous
-                            command, after expansion. It is also set to the full pathname of each command executed and
-                            placed in
-                            the
-                            environment
-                            exported to that command. When checking mail, this parameter holds the name of the mail
-                            file.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>$$</code></td>
-                        <td>Process id of the shell</td>
-                    </tr>
-                    <tr>
-                        <td><code>$?</code></td>
-                        <td>Exit status of the most recently executed command</td>
-                    </tr>
-                    <tr>
-                        <td><code>$@</code></td>
-                        <td>All arguments as separate words</td>
-                    </tr>
-                    <tr>
-                        <td><code>$#</code></td>
-                        <td>Number of arguments</td>
-                    </tr>
-                    <tr>
-                        <td><code>$!</code></td>
-                        <td>PID of most recently backgrounded process</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="row">
             <div class="twelve columns"><h2 id="comparison-operators">Comparison
@@ -355,12 +285,13 @@
                     </tbody>
                 </table>
             </div>
+            <div class="twelve columns">
+                <hr class="u-full-width">
+            </div>
         </div>
-    </div>
 
-    <div class="container">
         <div class="row">
-            <div class="seven columns">
+            <div class="six columns">
                 <h2 id="variable-manipulation">Variable Manipulation</h2>
                 <table>
                     <thead>
@@ -438,10 +369,55 @@
                     </tbody>
                 </table>
             </div>
-            <div class="five columns">
+            <div class="six columns">
+                <h2 id="list-constructs">List Constructs</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Construct</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>&&</code></td>
+                        <td>and construct</td>
+                    </tr>
+                    <tr>
+                        <td><code>||</code></td>
+                        <td>or construct</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 id="arrays">Arrays</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Construct</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>&&</code></td>
+                        <td>and construct</td>
+                    </tr>
+                    <tr>
+                        <td><code>||</code></td>
+                        <td>or construct</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="twelve columns">
+                <hr class="u-full-width">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="six columns">
                 <h2 id="bash-globbing">Bash Globbing</h2>
                 <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em></p>
-                <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
                 <table>
                     <thead>
                     <tr>
@@ -486,12 +462,18 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
+            <div class="six columns">
+                <h2 id="regular-expressions">Regular Expressions</h2>
+                <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
+            </div>
+            <div class="twelve columns">
+                <hr class="u-full-width">
+            </div>
 
-    <div class="container">
+        </div>
+
         <div class="row">
-            <div class="eight columns">
+            <div class="seven columns">
                 <h2 id="overview-of-symbols">Overview of Bash Symbols</h2>
                 <table>
                     <thead>
@@ -535,7 +517,8 @@
                     </tr>
                     <tr>
                         <td><code>[ ]</code></td>
-                        <td>is used for testing and is a built-in. Is useful in some cases for filename expansion
+                        <td>is used for testing and is a built-in. Is useful in some cases for filename
+                            expansion
                             and
                             string
                             manipulation.
@@ -543,13 +526,15 @@
                     </tr>
                     <tr>
                         <td><code>[[ ]]</code></td>
-                        <td>is used for testing. This is the one you should use unless you can think of a reason not
+                        <td>is used for testing. This is the one you should use unless you can think of a reason
+                            not
                             to.
                         </td>
                     </tr>
                     <tr>
                         <td><code>&lt;( )</code></td>
-                        <td>Used for process substitution and is similar to a pipe. Can be used whenever a command
+                        <td>Used for process substitution and is similar to a pipe. Can be used whenever a
+                            command
                             expects a
                             file and
                             you can use multiple at once.
@@ -573,7 +558,8 @@
                     </tr>
                     <tr>
                         <td><code>&gt;</code></td>
-                        <td>used for sending output to a file and erasing any previous content in that file.</td>
+                        <td>used for sending output to a file and erasing any previous content in that file.
+                        </td>
                     </tr>
                     <tr>
                         <td><code>&gt;|</code></td>
@@ -628,7 +614,8 @@
                     </tr>
                     <tr>
                         <td><code>\</code></td>
-                        <td>backslash is used to escape otherwise interpreted symbols/characters which has a special
+                        <td>backslash is used to escape otherwise interpreted symbols/characters which has a
+                            special
                             meaning
                         </td>
                     </tr>
@@ -638,7 +625,8 @@
                     </tr>
                     <tr>
                         <td><code>:</code></td>
-                        <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status of
+                        <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status
+                            of
                             true
                         </td>
                     </tr>
@@ -648,7 +636,8 @@
                     </tr>
                     <tr>
                         <td><code>,</code></td>
-                        <td>used for linking together arithmetic operations. All are evalutated but only the last is
+                        <td>used for linking together arithmetic operations. All are evalutated but only the
+                            last is
                             returned
                         </td>
                     </tr>
@@ -671,52 +660,77 @@
                     </tbody>
                 </table>
             </div>
-            <div class="four columns">
-                <h2 id="regex">Regex</h2>
+            <div class="five columns">
+                <h2 id="command-parameters">Command Parameters</h2>
                 <table>
                     <thead>
                     <tr>
-                        <th>Glob</th>
+                        <th>Command</th>
                         <th>Description</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><code>*</code></td>
-                        <td>Matches zero or more occurences of a given pattern</td>
+                        <td><code>$0</code></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td><code>?</code></td>
-                        <td>Matches zero or one occurences of a given pattern</td>
+                        <td><code>$1..n</code></td>
+                        <td>Parameter 1, 2, 3, 4...n</td>
                     </tr>
                     <tr>
-                        <td><code>+</code></td>
-                        <td>Matches one or more occurences of a given pattern</td>
-                    </tr>
-                    <tr>
-                        <td><code>@</code></td>
-                        <td>Matches exactly one of a given pattern</td>
-                    </tr>
-                    <tr>
-                        <td><code>!</code></td>
-                        <td>Negates any pattern — reverses the pattern so to speak</td>
-                    </tr>
-                    <tr>
-                        <td><code>[:CharClass:]</code></td>
-                        <td>A character class is a set of predefined patterns and comprpised of the following which:
-                            <pre>
-[:alnum:] [:alpha:]
-[:digit:] [:lower:]
-[:upper:] [:space:]
-[:punct:] [:print:]
-[:blank:] [:graph:]
-[:cntrl:] [:xdigit:]
-            </pre>
+                        <td><code>$*</code></td>
+                        <td>Expands to the positional parameters, starting from one. When the expansion occurs within
+                            double
+                            quotes, it expands to a single word with the value of each parameter seperated by the first
+                            of the
+                            IFS
+                            environment
+                            variable
                         </td>
+                    </tr>
+                    <tr>
+                        <td><code>$-</code></td>
+                        <td>Current options</td>
+                    </tr>
+                    <tr>
+                        <td><code>$_</code></td>
+                        <td>The underscore variable is set at shell startup and contains the absolute file name of the
+                            shell or
+                            script being executed as passed in the argument list. Subsequently, it expands to the last
+                            argument
+                            to the
+                            previous
+                            command, after expansion. It is also set to the full pathname of each command executed and
+                            placed in
+                            the
+                            environment
+                            exported to that command. When checking mail, this parameter holds the name of the mail
+                            file.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$</code></td>
+                        <td>Process id of the shell</td>
+                    </tr>
+                    <tr>
+                        <td><code>$?</code></td>
+                        <td>Exit status of the most recently executed command</td>
+                    </tr>
+                    <tr>
+                        <td><code>$@</code></td>
+                        <td>All arguments as separate words</td>
+                    </tr>
+                    <tr>
+                        <td><code>$#</code></td>
+                        <td>Number of arguments</td>
+                    </tr>
+                    <tr>
+                        <td><code>$!</code></td>
+                        <td>PID of most recently backgrounded process</td>
                     </tr>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
