@@ -424,7 +424,6 @@ footer {
     /* Grid
     –––––––––––––––––––––––––––––––––––––––––––––––––– */
     .container {
-        position: relative;
         width: 120%;
         max-width: 960px;
         margin: 0 auto;
