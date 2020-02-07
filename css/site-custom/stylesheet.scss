@@ -19,22 +19,37 @@
 
 /* Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-$color_one: #221c1f;
-$color_two: #a8a8a8;
-$color_three: #515151;
-$color_four: #26262e;
-$color_five: #65ffa0;
-$color_six: #aeb9b9;
-$color_seven: #cedbdb;
-$color_eight: #252626;
-$color_nine: #1E1D2B;
-$color_ten: #ff327e;
-$color_eleven: #dedfde;
+$color-one: #221c1f;
+$color-two: #a8a8a8;
+$color-three: #515151;
+$color-four: #26262e;
+$color-five: #65ffa0;
+$color-six: #aeb9b9;
+$color-seven: #cedbdb;
+$color-eight: #252626;
+$color-nine: #1e1d2b;
+$color-ten: #ff327e;
+$color-eleven: #dedfde;
 
-/* Base Style
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon {
+  background: $color-four;
+  color: $color-eleven;
+  min-width: 50px;
+  padding: 10px;
+  text-align: center;
+}
+
+.input-container {
+  margin-bottom: 15px;
+  display: flex;
+  width: 100%;
+}
+
+//---------------------------------------------- Base Style
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  text-justify: inter-word;
   scroll-padding-top: 4rem;
   margin: 4rem auto auto auto; /* For navbar we need some top-margin*/
 }
@@ -43,18 +58,12 @@ body {
   font-size: 1.5rem;
   line-height: 1.6;
   font-weight: 400;
-  color: $color_one;
+  color: $color-one;
 }
 
-/* Nav
- ------------------------------------------------- */
+//---------------------------------------------- Nav
 a {
   outline: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  text-justify: inter-word;
 }
 
 footer {
@@ -67,13 +76,14 @@ footer {
 }
 
 @media (min-width: 800px) {
-  footer a {
-    text-decoration-style: dotted;
-
+  footer {
+    a {
+      text-decoration-style: dotted;
+    }
   }
 
   header {
-    background-color: $color_two;
+    background-color: $color-two;
     position: fixed;
     top: 0;
     left: 0;
@@ -87,13 +97,12 @@ footer {
     display: flex;
   }
 
-  /*---------------------------------------------------*/
   nav a {
-    background-color: $color_two; /* Green background */
+    background-color: $color-two; /* Green background */
     margin: auto;
     width: 50%;
-    border: 1px solid $color_three; /* Green border */
-    color: $color_four; /* White text */
+    border: 1px solid $color-three; /* Green border */
+    color: $color-four; /* White text */
     padding: 8px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
@@ -105,7 +114,7 @@ footer {
     text-decoration: none;
   }
 
-  /* Clear floats (clearfix hack) */
+  // Clear floats (clearfix hack)
   nav:after {
     content: "";
     clear: both;
@@ -116,62 +125,23 @@ footer {
     border-right: none; /* Prevent double borders */
   }
 
-  /* Add a background color on hover */
   nav a:hover {
-    color: $color_five;
-    background-color: $color_four;
+    color: $color-five;
+    background-color: $color-four;
   }
-
-  /*---------------------------------------------------*/
-  /*
-      nav {
-
-          margin: 0 auto;
-          width: 100%;
-
-
-
-
-      }
-
-      nav a {
-          color: black;
-          text-align: center;
-          padding: 12px;
-          margin: 0 1rem;
-          text-decoration: none;
-          height: 2rem;
-          z-index: 9999;
-          font-size: 1.5rem;
-          border-radius: 1.1rem;
-
-
-      }
-
-      nav a:hover {
-
-      }
-  }
-  */
 
   /* Color
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h2 {
-    background: $color_seven;
-    @extend %fa-icon;
-    @extend .fas;
-
-    &:before {
-      content: fa-content($fa-var-user);
-    }
+    background: $color-seven;
   }
   h3 {
-    background: $color_seven;
+    background: $color-seven;
   }
   /* Typography
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h1, h2, h3, h4, h5, h6 {
-    color: $color_eight;
+    color: $color-eight;
     margin: 0 auto 0.25rem auto;
     font-weight: 300;
     font-family: "PT Mono", serif;
@@ -255,11 +225,11 @@ footer {
   /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-    color: $color_nine;
+    color: $color-nine;
   }
 
   a:hover {
-    color: $color_ten;
+    color: $color-ten;
   }
 
   /* Buttons
