@@ -46,7 +46,8 @@
 <body onload="myFunction()">
 <div id="snackbar">We use Google Analytics and Freeform.io for mail collection.
     We don't collect cookies and we have no intention on selling or distributing ANY of your data.
-For more information, please refer to our simple privacy policy in the footer at the bottom of the page.
+    For more information, please refer to our simple privacy policy in the footer at the bottom of the page.
+    <br>[Click anywhere to close this popup]
 </div>
 <header>
     <div class="container">
@@ -70,8 +71,20 @@ For more information, please refer to our simple privacy policy in the footer at
 </header>
 <main>
     <section>
-        <h1><i class="fas fa-terminal"></i> Bash Quick References</h1>
-        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h1><i class="fas fa-terminal"></i> Bash Quick References</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="ten columns offset-by-one">
+                    <hr>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="twelve columns"><h2 id="comparison-operators">Comparison
@@ -306,8 +319,8 @@ For more information, please refer to our simple privacy policy in the footer at
                         </tbody>
                     </table>
                 </div>
-                <div class="twelve columns">
-                    <hr class="u-full-width">
+                <div class="eight columns offset-by-two">
+                    <hr>
                 </div>
             </div>
 
@@ -430,8 +443,8 @@ For more information, please refer to our simple privacy policy in the footer at
                         </tbody>
                     </table>
                 </div>
-                <div class="twelve columns">
-                    <hr class="u-full-width thick-border">
+                <div class="eight columns offset-by-two">
+                    <hr>
                 </div>
             </div>
 
@@ -487,8 +500,8 @@ For more information, please refer to our simple privacy policy in the footer at
                     <h2 id="regular-expressions">Regular Expressions</h2>
                     <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
                 </div>
-                <div class="twelve columns">
-                    <hr class="u-full-width">
+                <div class="eight columns offset-by-two">
+                    <hr>
                 </div>
 
             </div>
@@ -591,8 +604,12 @@ For more information, please refer to our simple privacy policy in the footer at
                             <td>used for word boundaries in regex</td>
                         </tr>
                         <tr>
-                            <td><code>||</code><br><code>&&</code></td>
-                            <td>logical or and logical and</td>
+                            <td><code>||</code></td>
+                            <td>logical or</td>
+                        </tr>
+                        <tr>
+                            <td><code>&&</code></td>
+                            <td>logical and</td>
                         </tr>
                         <tr>
                             <td><code>-</code></td>
@@ -606,12 +623,19 @@ For more information, please refer to our simple privacy policy in the footer at
                             <td><code>&</code></td>
                             <td>used to send a job to the background</td>
                         </tr>
+                        <tr>
+                            <td><code>&lt;&lt;WORD</code></td>
+                            <td rowspan="4">is used for <em>heredocs</em></td>
+                        </tr>
 
                         <tr>
-                            <td>
-                                <code>&lt;&lt;WORD</code><br><code>&lt;&lt;-WORD</code><br><code>&lt;&lt;'WORD'</code><br><code>&lt;&lt;-'WORD'</code>
-                            </td>
-                            <td>is used for <em>heredocs</em></td>
+                            <td><code>&lt;&lt;-WORD</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;'WORD'</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;-'WORD'</code></td>
                         </tr>
                         <tr>
                             <td><code><<<</code></td>
@@ -769,14 +793,15 @@ For more information, please refer to our simple privacy policy in the footer at
             <form action="https://formspree.io/xoqdnqak" method="POST">
                 <label>Sign up for monthly (at most) newsletter - easy to cancel again.</label>
                 <div class="input-container">
-                <i class="fas fa-user icon"></i>
-                <input class="u-full-width" type="email" placeholder="your@mail.com" name="_replyto">
+                    <i class="fas fa-user icon"></i>
+                    <input class="u-full-width" type="email" placeholder="your@mail.com" name="_replyto">
                 </div>
                 <input class="button-primary" type="submit" value="Send">
             </form>
         </div>
         <div class="five columns">
-            <i>Notice: we use a third-party to collect mail addresses as a temporary solution - if you are very privacy conscious you might want to check back and signup at a later time.</i>
+            <p>Did you find this site helpful? Consider sharing it friend - it will motivate me to keep improving the
+                site if people find it useful.<br>~SmokingCuke</p>
         </div>
     </div>
 </div>

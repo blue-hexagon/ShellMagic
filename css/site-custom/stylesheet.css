@@ -69,7 +69,7 @@ a {
 hr {
   margin-bottom: 0.5rem;
   margin-top: 0.825rem;
-  width: 50%;
+  width: 100%;
   border: 0.125rem solid #dedfde;
   border-radius: 5px;
 }
@@ -107,9 +107,12 @@ footer {
     background-color: #26262e;
     color: #65ffa0;
   }
+  nav :not(:last-child) {
+    border-right: 0;
+  }
   nav a {
     background-color: #a8a8a8;
-    border: 0.5px solid #515151;
+    border: 1px solid #515151;
     color: #26262e;
     cursor: pointer;
     float: left;
@@ -122,9 +125,6 @@ footer {
     text-decoration: none;
     text-justify: inter-word;
     width: 50%;
-  }
-  nav a :not(:last-child) {
-    border-right: 0;
   }
   nav ::after {
     clear: both;
@@ -192,6 +192,7 @@ footer {
 
   p {
     font-family: "PT Mono", sans, serif;
+    font-size: 0.525rem;
   }
 }
 @media (min-width: 800px) and (min-width: 550px) {

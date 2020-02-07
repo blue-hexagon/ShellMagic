@@ -91,7 +91,7 @@ a {
 hr {
   margin-bottom: .5rem;
   margin-top: .825rem;
-  width: 50%;
+  width: 100%;
   border: .125rem solid $color-eleven;
   border-radius: 5px;
 }
@@ -132,9 +132,13 @@ footer {
       background-color: $color-four;
       color: $color-five;
     }
+    :not(:last-child) { // Prevent double borders
+      border-right: 0;
+    }
     a {
+
       background-color: $color-two;
-      border: 0.5px solid $color-three;
+      border: 1px solid $color-three;
       color: $color-four;
       cursor: pointer;
       float: left;
@@ -148,9 +152,7 @@ footer {
       text-justify: inter-word;
       width: 50%;
 
-      :not(:last-child) { // Prevent double borders
-        border-right: 0;
-      }
+
     }
 
     ::after {
@@ -223,6 +225,7 @@ footer {
 
   p {
     font-family: 'PT Mono', sans, serif;
+    font-size: .525rem;
   }
 
   // Larger than phablet
