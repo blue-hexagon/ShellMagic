@@ -15,9 +15,21 @@
 - Clearing
 - Media Queries
 */
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$color_one: #221c1f;
+$color_two: #a8a8a8;
+$color_three: #515151;
+$color_four: #26262e;
+$color_five: #65ffa0;
+$color_six: #aeb9b9;
+$color_seven: #cedbdb;
+$color_eight: #252626;
+$color_nine: #1E1D2B;
+$color_ten: #ff327e;
+$color_eleven: #dedfde;
 
-
-/* Base Styles
+/* Base Style
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 html {
   font-size: 62.5%;
@@ -29,7 +41,7 @@ body {
   font-size: 1.5rem;
   line-height: 1.6;
   font-weight: 400;
-  color: #221c1f;
+  color: $color_one;
 }
 
 /* Nav
@@ -60,7 +72,7 @@ footer {
   }
 
   header {
-    background-color: #a8a8a8;
+    background-color: $color_two;
     position: fixed;
     top: 0;
     left: 0;
@@ -76,11 +88,11 @@ footer {
 
   /*---------------------------------------------------*/
   nav a {
-    background-color: #a8a8a8; /* Green background */
+    background-color: $color_two; /* Green background */
     margin: auto;
     width: 50%;
-    border: 1px solid #515151; /* Green border */
-    color: #26262e; /* White text */
+    border: 1px solid $color_three; /* Green border */
+    color: $color_four; /* White text */
     padding: 8px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
@@ -105,8 +117,8 @@ footer {
 
   /* Add a background color on hover */
   nav a:hover {
-    color: #65ffa0;
-    background-color: #26262e;
+    color: $color_five;
+    background-color: $color_four;
   }
 
   /*---------------------------------------------------*/
@@ -144,15 +156,15 @@ footer {
   /* Color
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h2 {
-    background: #aeb9b9;
+    background: $color_six;
   }
   h3 {
-    background: #cedbdb;
+    background: $color_seven;
   }
   /* Typography
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h1, h2, h3, h4, h5, h6 {
-    color: #252626;
+    color: $color_eight;
     margin: 0 auto 0.25rem auto;
     font-weight: 300;
     font-family: "PT Mono", serif;
@@ -236,11 +248,11 @@ footer {
   /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-    color: #1E1D2B;
+    color: $color_nine;
   }
 
   a:hover {
-    color: #ff327e;
+    color: $color_ten;
   }
 
   /* Buttons
