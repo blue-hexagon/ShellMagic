@@ -30,10 +30,15 @@
 </head>
 
 <body onload="snackbar()">
-<div id="snackbar">We use Google Analytics and Freeform.io for mail collection.
-    We don't collect cookies and we have no intention on selling or distributing ANY of your data.
-    For more information, please refer to our simple privacy policy in the footer at the bottom of the page.
-    <br>[Click anywhere to close this popup]
+<div id="snackbar">We use <u style="text-decoration: dotted; color: #ff327e;">Google Analytics</u> for website analytics
+    and we use <u style="text-decoration: dotted; color: #ff327e;">Freeform.io</u> for mail collection.
+    <u style="text-decoration: dotted; color: #65ffa0;">We don't collect cookies</u> and we have <u
+            style="text-decoration: dotted; color: #65ffa0;">no intention of selling or distributing <b
+            style="color: darkorange;">any</b> of your data.</u>
+    <br><i>TODO: For more information, please refer to our simple privacy policy in the footer at the bottom of the
+        page.</i>
+    <br><b style="font-family: 'Source Code Pro', serif;">[You may click anywhere on this popup to close it - autocloses
+        in 15 seconds]</b>
 </div>
 <header>
     <div class="container">
@@ -70,15 +75,6 @@
                     <hr>
                 </div>
             </div>
-        </div>
-        <div id="code-snippet">
-            <span>
-                <code>
-                    #!/bin/bash
-                    who="World"
-                    echo Hello, $who!
-                </code>
-            </span>
         </div>
         <div class="container">
             <div class="row">
@@ -418,22 +414,78 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h2 id="arrays">Arrays</h2>
+                    <h2 id="command-parameters">Command Parameters</h2>
                     <table>
                         <thead>
                         <tr>
-                            <th>Construct</th>
+                            <th>Command</th>
                             <th>Description</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td><code>&&</code></td>
-                            <td>and construct</td>
+                            <td><code>$0</code></td>
+                            <td>Name of the script itself</td>
                         </tr>
                         <tr>
-                            <td><code>||</code></td>
-                            <td>or construct</td>
+                            <td><code>$1 $2 $3</code></td>
+                            <td>Parameter 1, 2, 3, 4, 5 ... etc.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$*</code></td>
+                            <td>Expands to the positional parameters, starting from one. When the expansion occurs
+                                within
+                                double
+                                quotes, it expands to a single word with the value of each parameter seperated by the
+                                first
+                                of the
+                                IFS
+                                environment
+                                variable
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>$-</code></td>
+                            <td>Current options</td>
+                        </tr>
+                        <tr>
+                            <td><code>$_</code></td>
+                            <td>The underscore variable is set at shell startup and contains the absolute file name of
+                                the
+                                shell or
+                                script being executed as passed in the argument list. Subsequently, it expands to the
+                                last
+                                argument
+                                to the
+                                previous
+                                command, after expansion. It is also set to the full pathname of each command executed
+                                and
+                                placed in
+                                the
+                                environment
+                                exported to that command. When checking mail, this parameter holds the name of the mail
+                                file.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>$$</code></td>
+                            <td>Process id of the shell</td>
+                        </tr>
+                        <tr>
+                            <td><code>$?</code></td>
+                            <td>Exit status of the most recently executed command</td>
+                        </tr>
+                        <tr>
+                            <td><code>$@</code></td>
+                            <td>All arguments as separate words</td>
+                        </tr>
+                        <tr>
+                            <td><code>$#</code></td>
+                            <td>Number of arguments</td>
+                        </tr>
+                        <tr>
+                            <td><code>$!</code></td>
+                            <td>PID of most recently backgrounded process</td>
                         </tr>
                         </tbody>
                     </table>
@@ -498,12 +550,14 @@
                 <div class="eight columns offset-by-two">
                     <hr>
                 </div>
-
             </div>
-
             <div class="row">
-                <div class="seven columns">
+                <div class="twelve columns">
                     <h2 id="overview-of-symbols">Overview of Bash Symbols</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
                     <table>
                         <thead>
                         <tr>
@@ -591,6 +645,11 @@
                             </td>
                         </tr>
                         <tr>
+                            <td><code>&gt;</code></td>
+                            <td>used for sending output to a file and erasing any previous content in that file.
+                            </td>
+                        </tr>
+                        <tr>
                             <td><code>&gt;|</code></td>
                             <td>forcing the redirection even if the shell option <code>noclobber</code> is set</td>
                         </tr>
@@ -598,6 +657,18 @@
                             <td><code>\<, \></code></td>
                             <td>used for word boundaries in regex</td>
                         </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="six columns">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Quick Reference</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         <tr>
                             <td><code>||</code></td>
                             <td>logical or</td>
@@ -696,83 +767,6 @@
                         <tr>
                             <td><code>` `</code></td>
                             <td>is deprecated and should not be used. Read further in its respective section.</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="five columns">
-                    <h2 id="command-parameters">Command Parameters</h2>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Command</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>$0</code></td>
-                            <td>Name of the script itself</td>
-                        </tr>
-                        <tr>
-                            <td><code>$1 $2 $3</code></td>
-                            <td>Parameter 1, 2, 3, 4, 5 ... etc.</td>
-                        </tr>
-                        <tr>
-                            <td><code>$*</code></td>
-                            <td>Expands to the positional parameters, starting from one. When the expansion occurs
-                                within
-                                double
-                                quotes, it expands to a single word with the value of each parameter seperated by the
-                                first
-                                of the
-                                IFS
-                                environment
-                                variable
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>$-</code></td>
-                            <td>Current options</td>
-                        </tr>
-                        <tr>
-                            <td><code>$_</code></td>
-                            <td>The underscore variable is set at shell startup and contains the absolute file name of
-                                the
-                                shell or
-                                script being executed as passed in the argument list. Subsequently, it expands to the
-                                last
-                                argument
-                                to the
-                                previous
-                                command, after expansion. It is also set to the full pathname of each command executed
-                                and
-                                placed in
-                                the
-                                environment
-                                exported to that command. When checking mail, this parameter holds the name of the mail
-                                file.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>$$</code></td>
-                            <td>Process id of the shell</td>
-                        </tr>
-                        <tr>
-                            <td><code>$?</code></td>
-                            <td>Exit status of the most recently executed command</td>
-                        </tr>
-                        <tr>
-                            <td><code>$@</code></td>
-                            <td>All arguments as separate words</td>
-                        </tr>
-                        <tr>
-                            <td><code>$#</code></td>
-                            <td>Number of arguments</td>
-                        </tr>
-                        <tr>
-                            <td><code>$!</code></td>
-                            <td>PID of most recently backgrounded process</td>
                         </tr>
                         </tbody>
                     </table>

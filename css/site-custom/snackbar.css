@@ -1,4 +1,6 @@
 #snackbar {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 1.25rem;
   display: block;
   background-color: #333;
   border-radius: 2px;
@@ -6,7 +8,7 @@
   color: #fff;
   margin-left: 10%;
   margin-right: 10%;
-  min-width: 250px;
+  min-width: 80%;
   padding: 16px;
   position: fixed;
   text-align: center;
@@ -15,7 +17,7 @@
 }
 
 #snackbar.show {
-  animation: fadein 0.5s, fadeout 1s 7s;
+  animation: fadein 0.5s, fadeout 1s 14s;
   visibility: visible;
 }
 
