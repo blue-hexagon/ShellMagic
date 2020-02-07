@@ -771,6 +771,27 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = "www.shellmagic.xyz";
+                this.page.identifier = "bash";
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://shellmagic.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>We use a third-party comments provider that uses JavaScript.</noscript>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="twelve columns">
@@ -784,5 +805,6 @@
         </div>
     </div>
 </div>
+<script id="dsq-count-scr" src="//shellmagic.disqus.com/count.js" async></script>
 </body>
 </html>
