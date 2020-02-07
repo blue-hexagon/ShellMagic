@@ -22,20 +22,24 @@ $color-two: #a8a8a8;
 $color-three: #515151;
 $color-four: #26262e;
 $color-five: #65ffa0;
-$color-six: #aeb9b9;
-$color-seven: #cedbdb;
+$color-six: #cedbdb;
+$color-seven: #aeb9b9;
 $color-eight: #252626;
 $color-nine: #1e1d2b;
 $color-ten: #ff327e;
 $color-eleven: #dedfde;
 $footer-background: #e7e7e7;
 $color-black: #000;
+$input-height: 38px;
 
 .icon {
   background: $color-four;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
   color: $color-eleven;
-  min-width: 50px;
-  padding: 10px;
+  height: $input-height;
+  min-width: 3rem;
+  padding: 0 .75rem;
   text-align: center;
 }
 
@@ -52,6 +56,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
   text-justify: inter-word;
+  ::selection {
+    background: #34495e;
+    color: white;
+  }
 }
 
 body {
@@ -64,6 +72,14 @@ body {
 //---------------------------------------------- Nav ----------------------------------------------//
 a {
   outline: 0;
+}
+
+hr {
+  margin-bottom: .5rem;
+  margin-top: .825rem;
+  width: 50%;
+  border: .125rem solid $color-eleven;
+  border-radius: 5px;
 }
 
 footer {
@@ -98,9 +114,13 @@ footer {
   }
 
   nav {
+    :hover {
+      background-color: $color-four;
+      color: $color-five;
+    }
     a {
       background-color: $color-two;
-      border: 1px solid $color-three;
+      border: 0.5px solid $color-three;
       color: $color-four;
       cursor: pointer;
       float: left;
@@ -118,10 +138,7 @@ footer {
         border-right: 0;
       }
 
-      :hover {
-        background-color: $color-four;
-        color: $color-five;
-      }
+
     }
 
     ::after {
@@ -138,13 +155,13 @@ footer {
   }
 
   h3 {
-    background: $color-seven;
+    background: $color-six;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Typography ----------------------------------------------//
   h1, h2, h3, h4, h5, h6 {
     color: $color-eight;
-    margin: 0 auto 0.25rem auto;
+    margin: 0 auto .25rem auto;
     font-weight: 300;
     font-family: "PT Mono", serif;
     width: 100%;
@@ -177,7 +194,7 @@ footer {
     font-size: 2.4rem;
     letter-spacing: -.08rem;
     line-height: 1.35;
-    margin-top: 0.5rem;
+    margin-top: .5rem;
   }
 
   h5 {
@@ -239,13 +256,13 @@ footer {
   input[type="reset"],
   input[type="button"] {
     display: inline-block;
-    height: 38px;
+    height: $input-height;
     padding: 0 30px;
     color: #555;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
-    line-height: 38px;
+    line-height: $input-height;
     letter-spacing: .1rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -307,7 +324,7 @@ footer {
   input[type="password"],
   textarea,
   select {
-    height: 38px;
+    height: $input-height;
     padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
     background-color: #fff;
     border: 1px solid #D1D1D1;
@@ -398,13 +415,13 @@ footer {
   ul ol,
   ol ol,
   ol ul {
-    margin: 0.4em 0 0.6em 1rem;
+    margin: .4em 0 .6em 1rem;
     font-size: 90%;
   }
 
   li {
     font-family: 'IBM Plex Serif', serif;
-    margin-bottom: 0.1em;
+    margin-bottom: .1em;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Grid ----------------------------------------------//
@@ -414,6 +431,7 @@ footer {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+
   }
 
   .column,
@@ -581,8 +599,8 @@ footer {
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Code ----------------------------------------------//
   code {
-    background: #f1f;
-    border: 1px solid #e1e;
+    background: #f1f1f1;
+    border: 1px solid #e1e1e1;
     border-radius: 4px;
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;
@@ -602,7 +620,7 @@ footer {
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Tables ----------------------------------------------//
   th,
   td {
-    border-bottom: 1px dashed #e1e;
+    border-bottom: 1px dashed #e1e1e1;
     padding: 2px 15px;
     text-align: left;
   }
@@ -615,6 +633,11 @@ footer {
   th:last-child,
   td:last-child {
     padding-right: 0;
+  }
+  td:nth-child(2):hover{
+    box-sizing: content-box;
+    overflow: hidden;
+    background: #f1f1f1;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Spacing ----------------------------------------------//
@@ -671,13 +694,6 @@ footer {
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Misc ----------------------------------------------//
-  hr {
-    margin-top: 0.825rem;
-    width: 50%;
-    margin-bottom: 0.5rem;
-    border-width: 0;
-    border-top: 1px solid #E1E1E1;
-  }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Classes ----------------------------------------------//
   table {

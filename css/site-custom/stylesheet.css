@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Classes
@@ -15,142 +16,120 @@
 - Clearing
 - Media Queries
 */
+.icon {
+  background: #26262e;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  color: #dedfde;
+  height: 38px;
+  min-width: 3rem;
+  padding: 0 0.75rem;
+  text-align: center;
+}
 
+.input-container {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+}
 
-/* Base Styles
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 html {
   font-size: 62.5%;
+  margin: 4rem auto auto;
+  scroll-behavior: smooth;
   scroll-padding-top: 4rem;
-  margin: 4rem auto auto auto; /* For navbar we need some top-margin*/
+  text-justify: inter-word;
+}
+html ::selection {
+  background: #34495e;
+  color: white;
 }
 
 body {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  font-weight: 400;
   color: #221c1f;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-/* Nav
- ------------------------------------------------- */
 a {
   outline: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  text-justify: inter-word;
+hr {
+  margin-bottom: 0.5rem;
+  margin-top: 0.825rem;
+  width: 50%;
+  border: 0.125rem solid #dedfde;
+  border-radius: 5px;
 }
 
 footer {
-  display: flex;
-  margin: auto;
-  display: block;
-  text-align: center;
-  font-family: 'IBM Plex Serif', serif;
   background: #e7e7e7;
+  display: block;
+  font-family: "IBM Plex Serif", serif;
+  margin: auto;
   padding: 0.625rem 1rem;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
   footer a {
     text-decoration-style: dotted;
-
   }
 
   header {
     background-color: #a8a8a8;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4rem;
+    box-shadow: 0 0 25px 0 #000;
     display: flex;
-    box-shadow: 0 0 25px 0 black;
+    height: 4rem;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
   }
 
   header * {
     display: flex;
   }
 
-  /*---------------------------------------------------*/
-  nav a {
-    background-color: #a8a8a8; /* Green background */
-    margin: auto;
-    width: 50%;
-    border: 1px solid #515151; /* Green border */
-    color: #26262e; /* White text */
-    padding: 8px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-    text-align: center;
-    text-justify: inter-word;
-    line-height: 1.125rem;
-    font-size: 1.3rem;
-    font-family: 'IBM Plex Serif', serif;
-    text-decoration: none;
+  nav :hover {
+    background-color: #26262e;
+    color: #65ffa0;
   }
-
-  /* Clear floats (clearfix hack) */
-  nav:after {
-    content: "";
+  nav a {
+    background-color: #a8a8a8;
+    border: 0.5px solid #515151;
+    color: #26262e;
+    cursor: pointer;
+    float: left;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 1.3rem;
+    line-height: 1.125rem;
+    margin: auto;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    text-justify: inter-word;
+    width: 50%;
+  }
+  nav a :not(:last-child) {
+    border-right: 0;
+  }
+  nav ::after {
     clear: both;
+    content: "";
     display: table;
   }
 
-  nav a:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-
-  /* Add a background color on hover */
-  nav a:hover {
-    color: #65ffa0;
-    background-color: #26262e;
-  }
-
-  /*---------------------------------------------------*/
-  /*
-      nav {
-
-          margin: 0 auto;
-          width: 100%;
-
-
-
-
-      }
-
-      nav a {
-          color: black;
-          text-align: center;
-          padding: 12px;
-          margin: 0 1rem;
-          text-decoration: none;
-          height: 2rem;
-          z-index: 9999;
-          font-size: 1.5rem;
-          border-radius: 1.1rem;
-
-
-      }
-
-      nav a:hover {
-
-      }
-  }
-  */
-
-  /* Color
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
   h2 {
     background: #aeb9b9;
   }
+
   h3 {
     background: #cedbdb;
   }
-  /* Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
   h1, h2, h3, h4, h5, h6 {
     color: #252626;
     margin: 0 auto 0.25rem auto;
@@ -162,94 +141,88 @@ footer {
   }
 
   h1 {
-    font-size: 4.0rem;
+    font-size: 4rem;
     line-height: 1.2;
-    letter-spacing: -.1rem;
+    letter-spacing: -0.1rem;
     margin-top: 1.6rem;
   }
 
   h2 {
     font-size: 3.6rem;
+    letter-spacing: -0.1rem;
     line-height: 1.25;
-    letter-spacing: -.1rem;
     margin-top: 1.825rem;
   }
 
   h3 {
-    font-size: 3.0rem;
+    font-size: 3rem;
+    letter-spacing: -0.1rem;
     line-height: 1.3;
-    letter-spacing: -.1rem;
     margin-top: 2.2rem;
   }
 
   h4 {
     font-size: 2.4rem;
+    letter-spacing: -0.08rem;
     line-height: 1.35;
-    letter-spacing: -.08rem;
     margin-top: 0.5rem;
   }
 
   h5 {
     font-size: 1.8rem;
+    letter-spacing: -0.05rem;
     line-height: 1.5;
-    letter-spacing: -.05rem;
   }
 
   h6 {
     font-size: 1.5rem;
-    line-height: 1.6;
     letter-spacing: 0;
+    line-height: 1.6;
   }
 
   p {
     font-family: "PT Mono", sans, serif;
-    margin-top: 0;
+  }
+}
+@media (min-width: 800px) and (min-width: 550px) {
+  h1 {
+    font-size: 5rem;
   }
 
-  /* Larger than phablet */
-  @media (min-width: 550px) {
-    h1 {
-      font-size: 5.0rem;
-    }
-
-    h2 {
-      font-size: 4.2rem;
-    }
-
-    h3 {
-      font-size: 3.6rem;
-    }
-
-    h4 {
-      font-size: 3.0rem;
-    }
-
-    h5 {
-      font-size: 2.4rem;
-    }
-
-    h6 {
-      font-size: 1.5rem;
-    }
+  h2 {
+    font-size: 4.2rem;
   }
 
-  /* Links
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  h4 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 800px) {
   a {
-    color: #1E1D2B;
+    color: #1e1d2b;
   }
-
-  a:hover {
+  a :hover {
     color: #ff327e;
   }
-
-  /* Buttons
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+}
+@media (min-width: 800px) {
   .button,
-  button,
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
+button,
+input[type=submit],
+input[type=reset],
+input[type=button] {
     display: inline-block;
     height: 38px;
     padding: 0 30px;
@@ -258,7 +231,7 @@ footer {
     font-size: 11px;
     font-weight: 600;
     line-height: 38px;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
@@ -268,447 +241,445 @@ footer {
     cursor: pointer;
     box-sizing: border-box;
   }
-
+}
+@media (min-width: 800px) {
   .button:hover,
-  button:hover,
-  input[type="submit"]:hover,
-  input[type="reset"]:hover,
-  input[type="button"]:hover,
-  .button:focus,
-  button:focus,
-  input[type="submit"]:focus,
-  input[type="reset"]:focus,
-  input[type="button"]:focus {
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+.button:focus,
+button:focus,
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus {
     color: #333;
     border-color: #888;
     outline: 0;
   }
-
+}
+@media (min-width: 800px) {
   .button.button-primary,
-  button.button-primary,
-  input[type="submit"].button-primary,
-  input[type="reset"].button-primary,
-  input[type="button"].button-primary {
+button.button-primary,
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
     color: #FFF;
     background-color: #33C3F0;
     border-color: #33C3F0;
   }
-
+}
+@media (min-width: 800px) {
   .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
+button.button-primary:hover,
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type=submit].button-primary:focus,
+input[type=reset].button-primary:focus,
+input[type=button].button-primary:focus {
     color: #FFF;
     background-color: #1EAEDB;
     border-color: #1EAEDB;
   }
-
-  /* Forms
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  textarea,
-  select {
+}
+@media (min-width: 800px) {
+  input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea,
+select {
     height: 38px;
-    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    padding: 6px 10px;
     background-color: #fff;
     border: 1px solid #D1D1D1;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
   }
-
-  /* Removes awkward default styles on some inputs for iOS */
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+}
+@media (min-width: 800px) {
+  input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea {
     appearance: none;
   }
-
+}
+@media (min-width: 800px) {
   textarea {
     min-height: 65px;
-    padding-top: 6px;
     padding-bottom: 6px;
+    padding-top: 6px;
   }
-
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
+}
+@media (min-width: 800px) {
+  input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus {
     border: 1px solid #33C3F0;
     outline: 0;
   }
-
+}
+@media (min-width: 800px) {
   label,
-  legend {
+legend {
     display: block;
-    margin-bottom: .5rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
   }
-
+}
+@media (min-width: 800px) {
   fieldset {
-    padding: 0;
     border-width: 0;
+    padding: 0;
   }
-
-  input[type="checkbox"],
-  input[type="radio"] {
+}
+@media (min-width: 800px) {
+  input[type=checkbox],
+input[type=radio] {
     display: inline;
   }
-
+}
+@media (min-width: 800px) {
   label > .label-body {
     display: inline-block;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     font-weight: normal;
   }
-
-
-  /* Lists
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  p, ul, li, ol {
+}
+@media (min-width: 800px) {
+  p,
+ul,
+li,
+ol {
     font-size: 100%;
   }
-
+}
+@media (min-width: 800px) {
   ul {
     list-style: square;
   }
-
+}
+@media (min-width: 800px) {
   ol {
     list-style: upper-roman;
   }
-
-  ol, ul {
+}
+@media (min-width: 800px) {
+  ol,
+ul {
     padding-left: 0;
-    /*  margin-top: 0;
-      margin: auto;*/
     width: 50%;
   }
-
+}
+@media (min-width: 800px) {
   ul ul,
-  ul ol,
-  ol ol,
-  ol ul {
+ul ol,
+ol ol,
+ol ul {
     margin: 0.4em 0 0.6em 1rem;
     font-size: 90%;
   }
-
+}
+@media (min-width: 800px) {
   li {
+    font-family: "IBM Plex Serif", serif;
     margin-bottom: 0.1em;
-    font-family: 'IBM Plex Serif', serif;
   }
-
-
-  /* Grid
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+}
+@media (min-width: 800px) {
   .container {
     width: 120%;
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-
+  }
+}
+@media (min-width: 800px) {
+  .column,
+.columns {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 800px) and (min-width: 400px) {
+  .container {
+    padding: 0;
+    width: 85%;
+  }
+}
+@media (min-width: 800px) and (min-width: 550px) {
+  .container {
+    width: 80%;
   }
 
   .column,
-  .columns {
+.columns {
+    margin-left: 4%;
+  }
+
+  .column:first-child,
+.columns:first-child {
+    margin-left: 0;
+  }
+
+  .one.column,
+.one.columns {
+    width: 4.6666666667%;
+  }
+
+  .two.columns {
+    width: 13.3333333333%;
+  }
+
+  .three.columns {
+    width: 22%;
+  }
+
+  .four.columns {
+    width: 30.6666666667%;
+  }
+
+  .five.columns {
+    width: 39.3333333333%;
+  }
+
+  .six.columns {
+    width: 48%;
+  }
+
+  .seven.columns {
+    width: 56.6666666667%;
+  }
+
+  .eight.columns {
+    width: 65.3333333333%;
+  }
+
+  .nine.columns {
+    width: 74%;
+  }
+
+  .ten.columns {
+    width: 82.6666666667%;
+  }
+
+  .eleven.columns {
+    width: 91.3333333333%;
+  }
+
+  .twelve.columns {
     width: 100%;
-    float: left;
-    box-sizing: border-box;
-    /*background: aqua; Testing*/
+    margin-left: 0;
   }
 
-  /* For devices larger than 400px */
-  @media (min-width: 400px) {
-    .container {
-      width: 85%;
-      padding: 0;
-    }
+  .one-third.column {
+    width: 30.6666666667%;
   }
 
-  /* For devices larger than 550px */
-  @media (min-width: 550px) {
-    .container {
-      width: 80%;
-    }
-
-    .column,
-    .columns {
-      margin-left: 4%;
-    }
-
-    .column:first-child,
-    .columns:first-child {
-      margin-left: 0;
-    }
-
-    .one.column,
-    .one.columns {
-      width: 4.66666666667%;
-    }
-
-    .two.columns {
-      width: 13.3333333333%;
-    }
-
-    .three.columns {
-      width: 22%;
-    }
-
-    .four.columns {
-      width: 30.6666666667%;
-    }
-
-    .five.columns {
-      width: 39.3333333333%;
-    }
-
-    .six.columns {
-      width: 48%;
-    }
-
-    .seven.columns {
-      width: 56.6666666667%;
-    }
-
-    .eight.columns {
-      width: 65.3333333333%;
-    }
-
-    .nine.columns {
-      width: 74.0%;
-    }
-
-    .ten.columns {
-      width: 82.6666666667%;
-    }
-
-    .eleven.columns {
-      width: 91.3333333333%;
-    }
-
-    .twelve.columns {
-      width: 100%;
-      margin-left: 0;
-    }
-
-    .one-third.column {
-      width: 30.6666666667%;
-    }
-
-    .two-thirds.column {
-      width: 65.3333333333%;
-    }
-
-    .one-half.column {
-      width: 48%;
-    }
-
-    /* Offsets */
-    .offset-by-one.column,
-    .offset-by-one.columns {
-      margin-left: 8.66666666667%;
-    }
-
-    .offset-by-two.column,
-    .offset-by-two.columns {
-      margin-left: 17.3333333333%;
-    }
-
-    .offset-by-three.column,
-    .offset-by-three.columns {
-      margin-left: 26%;
-    }
-
-    .offset-by-four.column,
-    .offset-by-four.columns {
-      margin-left: 34.6666666667%;
-    }
-
-    .offset-by-five.column,
-    .offset-by-five.columns {
-      margin-left: 43.3333333333%;
-    }
-
-    .offset-by-six.column,
-    .offset-by-six.columns {
-      margin-left: 52%;
-    }
-
-    .offset-by-seven.column,
-    .offset-by-seven.columns {
-      margin-left: 60.6666666667%;
-    }
-
-    .offset-by-eight.column,
-    .offset-by-eight.columns {
-      margin-left: 69.3333333333%;
-    }
-
-    .offset-by-nine.column,
-    .offset-by-nine.columns {
-      margin-left: 78.0%;
-    }
-
-    .offset-by-ten.column,
-    .offset-by-ten.columns {
-      margin-left: 86.6666666667%;
-    }
-
-    .offset-by-eleven.column,
-    .offset-by-eleven.columns {
-      margin-left: 95.3333333333%;
-    }
-
-    .offset-by-one-third.column,
-    .offset-by-one-third.columns {
-      margin-left: 34.6666666667%;
-    }
-
-    .offset-by-two-thirds.column,
-    .offset-by-two-thirds.columns {
-      margin-left: 69.3333333333%;
-    }
-
-    .offset-by-one-half.column,
-    .offset-by-one-half.columns {
-      margin-left: 52%;
-    }
-
+  .two-thirds.column {
+    width: 65.3333333333%;
   }
 
-  /* Code
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .one-half.column {
+    width: 48%;
+  }
+
+  .offset-by-one.column,
+.offset-by-one.columns {
+    margin-left: 8.6666666667%;
+  }
+
+  .offset-by-two.column,
+.offset-by-two.columns {
+    margin-left: 17.3333333333%;
+  }
+
+  .offset-by-three.column,
+.offset-by-three.columns {
+    margin-left: 26%;
+  }
+
+  .offset-by-four.column,
+.offset-by-four.columns {
+    margin-left: 34.6666666667%;
+  }
+
+  .offset-by-five.column,
+.offset-by-five.columns {
+    margin-left: 43.3333333333%;
+  }
+
+  .offset-by-six.column,
+.offset-by-six.columns {
+    margin-left: 52%;
+  }
+
+  .offset-by-seven.column,
+.offset-by-seven.columns {
+    margin-left: 60.6666666667%;
+  }
+
+  .offset-by-eight.column,
+.offset-by-eight.columns {
+    margin-left: 69.3333333333%;
+  }
+
+  .offset-by-nine.column,
+.offset-by-nine.columns {
+    margin-left: 78%;
+  }
+
+  .offset-by-ten.column,
+.offset-by-ten.columns {
+    margin-left: 86.6666666667%;
+  }
+
+  .offset-by-eleven.column,
+.offset-by-eleven.columns {
+    margin-left: 95.3333333333%;
+  }
+
+  .offset-by-one-third.column,
+.offset-by-one-third.columns {
+    margin-left: 34.6666666667%;
+  }
+
+  .offset-by-two-thirds.column,
+.offset-by-two-thirds.columns {
+    margin-left: 69.3333333333%;
+  }
+
+  .offset-by-one-half.column,
+.offset-by-one-half.columns {
+    margin-left: 52%;
+  }
+}
+@media (min-width: 800px) {
   code {
-    font-family: 'Source Code Pro', monospace;
-    padding: .2rem .5rem;
-    margin: 0 .01rem;
-    font-size: 105%;
-    white-space: nowrap;
-    background: #F1F1F1;
-    border: 1px solid #E1E1E1;
+    background: #f1f1f1;
+    border: 1px solid #e1e1e1;
     border-radius: 4px;
+    font-family: "Source Code Pro", monospace;
+    font-size: 105%;
+    margin: 0 0.01rem;
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
   }
-
+}
+@media (min-width: 800px) {
   pre > code {
-    margin: auto;
-    width: 50%;
     display: block;
+    margin: auto;
     padding: 1rem 1.5rem;
     white-space: pre;
+    width: 50%;
   }
-
-  /* Tables
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+}
+@media (min-width: 800px) {
   th,
-  td {
+td {
+    border-bottom: 1px dashed #e1e1e1;
     padding: 2px 15px;
     text-align: left;
-    border-bottom: 1px dashed #E1E1E1;
   }
-
+}
+@media (min-width: 800px) {
   th:first-child,
-  td:first-child {
+td:first-child {
     padding-left: 0;
   }
-
+}
+@media (min-width: 800px) {
   th:last-child,
-  td:last-child {
+td:last-child {
     padding-right: 0;
   }
-
-
-  /* Spacing
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+}
+@media (min-width: 800px) {
+  td:nth-child(2):hover {
+    box-sizing: content-box;
+    overflow: hidden;
+    background: #f1f1f1;
+  }
+}
+@media (min-width: 800px) {
   button,
-  .button {
+.button {
     margin-bottom: 1rem;
   }
-
+}
+@media (min-width: 800px) {
   input, textarea, select, fieldset {
     margin-bottom: 1.5rem;
   }
-
+}
+@media (min-width: 800px) {
   pre, blockquote, dl, figure, p, ul, ol, form {
+    margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem;
     text-align: center;
-
   }
-
+}
+@media (min-width: 800px) {
   table {
-    /*margin-left: 2rem;
-    margin-right: auto;*/
     margin-bottom: 1.5rem;
     text-align: center;
   }
-
-  /* Utility Classes
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  /* Make element full width */
+}
+@media (min-width: 800px) {
   .u-full-width {
+    box-sizing: border-box;
     width: 100%;
-    box-sizing: border-box;
   }
-
-  /* Make sure elements don't run outside containers (great for images in columns) */
+}
+@media (min-width: 800px) {
   .u-max-full-width {
-    max-width: 100%;
     box-sizing: border-box;
+    max-width: 100%;
   }
-
-  /* Float either direction */
+}
+@media (min-width: 800px) {
   .u-pull-right {
     float: right;
   }
-
+}
+@media (min-width: 800px) {
   .u-pull-left {
     float: left;
   }
-
-  /* Clear a float */
+}
+@media (min-width: 800px) {
   .u-cf {
+    clear: both;
     content: "";
     display: table;
-    clear: both;
   }
-
-  /* Misc
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  hr {
-    margin-top: 0.825rem;
-    width: 50%;
-    margin-bottom: 0.5rem;
-    border-width: 0;
-    border-top: 1px solid #E1E1E1;
-  }
-
-  /* Classes
-  --------------------------------------------------- */
+}
+@media (min-width: 800px) {
   table {
     padding: 10px 0;
   }
 }
+
+/*# sourceMappingURL=stylesheet.css.map */
