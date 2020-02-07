@@ -17,8 +17,7 @@
 */
 
 
-/* Variables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// –––––––––––––––––––––––––––––––––––––––––––––––––– Variables
 $color-one: #221c1f;
 $color-two: #a8a8a8;
 $color-three: #515151;
@@ -40,18 +39,20 @@ $color-eleven: #dedfde;
 }
 
 .input-container {
-  margin-bottom: 15px;
   display: flex;
+  margin-bottom: 15px;
   width: 100%;
 }
 
 //---------------------------------------------- Base Style
 html {
+
+  margin: 4rem auto auto auto; // For navbar we need some top-margin
   font-size: 62.5%;
   scroll-behavior: smooth;
   text-justify: inter-word;
   scroll-padding-top: 4rem;
-  margin: 4rem auto auto auto; /* For navbar we need some top-margin*/
+
 }
 
 body {
@@ -98,14 +99,14 @@ footer {
   }
 
   nav a {
-    background-color: $color-two; /* Green background */
+    background-color: $color-two; // Green background
     margin: auto;
     width: 50%;
-    border: 1px solid $color-three; /* Green border */
-    color: $color-four; /* White text */
-    padding: 8px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+    border: 1px solid $color-three; // Green border
+    color: $color-four; // White text
+    padding: 8px 24px; // Some padding
+    cursor: pointer; // Pointer/hand icon
+    float: left; // Float the buttons side by side
     text-align: center;
     text-justify: inter-word;
     line-height: 1.125rem;
@@ -122,7 +123,7 @@ footer {
   }
 
   nav a:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+    border-right: none; // Prevent double borders
   }
 
   nav a:hover {
@@ -130,16 +131,14 @@ footer {
     background-color: $color-four;
   }
 
-  /* Color
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Color
   h2 {
     background: $color-seven;
   }
   h3 {
     background: $color-seven;
   }
-  /* Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Typography
   h1, h2, h3, h4, h5, h6 {
     color: $color-eight;
     margin: 0 auto 0.25rem auto;
@@ -195,7 +194,7 @@ footer {
     margin-top: 0;
   }
 
-  /* Larger than phablet */
+  // Larger than phablet
   @media (min-width: 550px) {
     h1 {
       font-size: 5.0rem;
@@ -222,8 +221,7 @@ footer {
     }
   }
 
-  /* Links
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Links
   a {
     color: $color-nine;
   }
@@ -232,8 +230,7 @@ footer {
     color: $color-ten;
   }
 
-  /* Buttons
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Buttons
   .button,
   button,
   input[type="submit"],
@@ -298,8 +295,7 @@ footer {
     border-color: #1EAEDB;
   }
 
-  /* Forms
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Forms
   input[type="email"],
   input[type="number"],
   input[type="search"],
@@ -310,7 +306,7 @@ footer {
   textarea,
   select {
     height: 38px;
-    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
     background-color: #fff;
     border: 1px solid #D1D1D1;
     border-radius: 4px;
@@ -318,7 +314,7 @@ footer {
     box-sizing: border-box;
   }
 
-  /* Removes awkward default styles on some inputs for iOS */
+  //Removes awkward default styles on some inputs for iOS
   input[type="email"],
   input[type="number"],
   input[type="search"],
@@ -327,8 +323,6 @@ footer {
   input[type="url"],
   input[type="password"],
   textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
   }
 
@@ -374,9 +368,7 @@ footer {
     font-weight: normal;
   }
 
-
-  /* Lists
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Lists
   p, ul, li, ol {
     font-size: 100%;
   }
@@ -391,8 +383,8 @@ footer {
 
   ol, ul {
     padding-left: 0;
-    /*  margin-top: 0;
-      margin: auto;*/
+    //  margin-top: 0;
+    //margin: auto;
     width: 50%;
   }
 
@@ -410,8 +402,7 @@ footer {
   }
 
 
-  /* Grid
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Grid
   .container {
     width: 120%;
     max-width: 960px;
@@ -426,10 +417,10 @@ footer {
     width: 100%;
     float: left;
     box-sizing: border-box;
-    /*background: aqua; Testing*/
+    //background: aqua; Testing
   }
 
-  /* For devices larger than 400px */
+  // For devices larger than 400px
   @media (min-width: 400px) {
     .container {
       width: 85%;
@@ -437,7 +428,7 @@ footer {
     }
   }
 
-  /* For devices larger than 550px */
+  // For devices larger than 550px
   @media (min-width: 550px) {
     .container {
       width: 80%;
@@ -515,7 +506,7 @@ footer {
       width: 48%;
     }
 
-    /* Offsets */
+    // Offsets
     .offset-by-one.column,
     .offset-by-one.columns {
       margin-left: 8.66666666667%;
@@ -588,8 +579,7 @@ footer {
 
   }
 
-  /* Code
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Code
   code {
     font-family: 'Source Code Pro', monospace;
     padding: .2rem .5rem;
@@ -609,8 +599,7 @@ footer {
     white-space: pre;
   }
 
-  /* Tables
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Tables
   th,
   td {
     padding: 2px 15px;
@@ -628,9 +617,7 @@ footer {
     padding-right: 0;
   }
 
-
-  /* Spacing
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Spacing
   button,
   .button {
     margin-bottom: 1rem;
@@ -649,27 +636,26 @@ footer {
   }
 
   table {
-    /*margin-left: 2rem;
-    margin-right: auto;*/
+    //margin-left: 2rem;
+    //margin-right: auto;
     margin-bottom: 1.5rem;
     text-align: center;
   }
 
-  /* Utility Classes
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  /* Make element full width */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Utility Classes
+  // Make element full width
   .u-full-width {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Make sure elements don't run outside containers (great for images in columns) */
+  // Make sure elements don't run outside containers (great for images in columns)
   .u-max-full-width {
     max-width: 100%;
     box-sizing: border-box;
   }
 
-  /* Float either direction */
+  // Float either direction
   .u-pull-right {
     float: right;
   }
@@ -678,15 +664,14 @@ footer {
     float: left;
   }
 
-  /* Clear a float */
+  // Clear a float
   .u-cf {
     content: "";
     display: table;
     clear: both;
   }
 
-  /* Misc
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Misc
   hr {
     margin-top: 0.825rem;
     width: 50%;
@@ -695,8 +680,7 @@ footer {
     border-top: 1px solid #E1E1E1;
   }
 
-  /* Classes
-  --------------------------------------------------- */
+  // –––––––––––––––––––––––––––––––––––––––––––––––––– Classes
   table {
     padding: 10px 0;
   }
