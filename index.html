@@ -27,11 +27,12 @@
             });
         });
     </script>
-
+    <script src="js/snackbar.js"></script>
     <meta name="author" content="SmokingCuke">
     <meta name="description" content="description here">
     <meta name="keywords" content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script">
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
+    <link rel="stylesheet" href="./css/site-custom/snackbar.css">
     <link rel="shortcut icon" href="./graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
@@ -42,7 +43,11 @@
           rel="stylesheet">
 </head>
 
-<body>
+<body onload="myFunction()">
+<div id="snackbar">We use Google Analytics and Freeform.io for mail collection.
+    We don't collect cookies and we have no intention on selling or distributing ANY of your data.
+For more information, please refer to our simple privacy policy in the footer at the bottom of the page.
+</div>
 <header>
     <div class="container">
         <div class="row">
@@ -688,11 +693,11 @@
                         <tbody>
                         <tr>
                             <td><code>$0</code></td>
-                            <td></td>
+                            <td>Name of the script itself</td>
                         </tr>
                         <tr>
-                            <td><code>$1..n</code></td>
-                            <td>Parameter 1, 2, 3, 4...n</td>
+                            <td><code>$1 $2 $3</code></td>
+                            <td>Parameter 1, 2, 3, 4, 5 ... etc.</td>
                         </tr>
                         <tr>
                             <td><code>$*</code></td>

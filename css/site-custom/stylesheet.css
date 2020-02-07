@@ -17,10 +17,13 @@
 - Media Queries
 */
 .icon {
-  background: #26262e;
+  background: #cedbdb;
+  line-height: unset;
+  vertical-align: middle;
+  font-size: 2rem;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
-  color: #dedfde;
+  color: #221c1f;
   height: 38px;
   min-width: 3rem;
   padding: 0 0.75rem;
@@ -33,6 +36,12 @@
   width: 100%;
 }
 
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
 html {
   font-size: 62.5%;
   margin: 4rem auto auto;
@@ -41,8 +50,9 @@ html {
   text-justify: inter-word;
 }
 html ::selection {
+  padding: 4px;
   background: #34495e;
-  color: white;
+  color: #fff;
 }
 
 body {

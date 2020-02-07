@@ -31,12 +31,19 @@ $color-eleven: #dedfde;
 $footer-background: #e7e7e7;
 $color-black: #000;
 $input-height: 38px;
+$color-border: #e1e1e1;
+$color-code-background: #f1f1f1;
+$color-text-selection-background: #34495e;
+$color-text-selection-text: #fff;
 
 .icon {
-  background: $color-four;
-  border: 1px solid #e1e1e1;
+  background: $color-six;
+  line-height: unset;
+  vertical-align: middle;
+  font-size: 2rem;
+  border: 1px solid $color-border;
   border-radius: 4px;
-  color: $color-eleven;
+  color: $color-one;
   height: $input-height;
   min-width: 3rem;
   padding: 0 .75rem;
@@ -48,6 +55,11 @@ $input-height: 38px;
   margin-bottom: 15px;
   width: 100%;
 }
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
 
 //---------------------------------------------- Base Style ----------------------------------------------//
 html {
@@ -56,9 +68,11 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
   text-justify: inter-word;
+
   ::selection {
-    background: #34495e;
-    color: white;
+    padding: 4px;
+    background: $color-text-selection-background;
+    color: $color-text-selection-text;
   }
 }
 
@@ -137,8 +151,6 @@ footer {
       :not(:last-child) { // Prevent double borders
         border-right: 0;
       }
-
-
     }
 
     ::after {
@@ -599,8 +611,8 @@ footer {
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Code ----------------------------------------------//
   code {
-    background: #f1f1f1;
-    border: 1px solid #e1e1e1;
+    background: $color-code-background;
+    border: 1px solid $color-border;
     border-radius: 4px;
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;
@@ -620,7 +632,7 @@ footer {
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Tables ----------------------------------------------//
   th,
   td {
-    border-bottom: 1px dashed #e1e1e1;
+    border-bottom: 1px dashed $color-border;
     padding: 2px 15px;
     text-align: left;
   }
@@ -637,7 +649,7 @@ footer {
   td:nth-child(2):hover{
     box-sizing: content-box;
     overflow: hidden;
-    background: #f1f1f1;
+    background: $color-code-background;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Spacing ----------------------------------------------//

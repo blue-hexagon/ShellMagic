@@ -1,0 +1,47 @@
+$bottom: 15px;
+$color1: #fff;
+$color2: #333;
+
+#snackbar {
+  display: block;
+  background-color: $color2;
+  border-radius: 2px;
+  bottom: $bottom;
+  color: $color1;
+  margin-left: 10%;
+  margin-right: 10%;
+  min-width: 250px;
+  padding: 16px;
+  position: fixed;
+  text-align: center;
+  visibility: hidden;
+
+  z-index: 1;
+}
+
+#snackbar.show {
+  animation: fadein .5s, fadeout 1s 7s;
+  visibility: visible;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: $bottom;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: $bottom;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
