@@ -55,6 +55,7 @@ $color-text-selection-text: #fff;
   margin-bottom: 15px;
   width: 100%;
 }
+
 .input-field {
   width: 100%;
   padding: 10px;
@@ -132,9 +133,11 @@ footer {
       background-color: $color-four;
       color: $color-five;
     }
+
     :not(:last-child) { // Prevent double borders
       border-right: 0;
     }
+
     a {
 
       background-color: $color-two;
@@ -649,7 +652,7 @@ footer {
   td:last-child {
     padding-right: 0;
   }
-  td:nth-child(2):hover{
+  td:nth-child(2):hover {
     box-sizing: content-box;
     overflow: hidden;
     background: $color-code-background;
@@ -661,11 +664,21 @@ footer {
     margin-bottom: 1rem;
   }
 
-  input, textarea, select, fieldset {
+  input,
+  textarea,
+  select,
+  fieldset {
     margin-bottom: 1.5rem;
   }
 
-  pre, blockquote, dl, figure, p, ul, ol, form {
+  pre,
+  blockquote,
+  dl,
+  figure,
+  p,
+  ul,
+  ol,
+  form {
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;

@@ -640,12 +640,22 @@ td:last-child {
   }
 }
 @media (min-width: 800px) {
-  input, textarea, select, fieldset {
+  input,
+textarea,
+select,
+fieldset {
     margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 800px) {
-  pre, blockquote, dl, figure, p, ul, ol, form {
+  pre,
+blockquote,
+dl,
+figure,
+p,
+ul,
+ol,
+form {
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;

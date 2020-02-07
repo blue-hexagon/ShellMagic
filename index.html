@@ -2,38 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Shell Magic - Advanced Bash Notes</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-157938008-1');
-    </script>
-    <script src="https://kit.fontawesome.com/43b53b6140.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                let hljs;
-                hljs.highlightBlock(block);
-            });
-        });
-    </script>
-    <script src="js/snackbar.js"></script>
     <meta name="author" content="SmokingCuke">
     <meta name="description" content="description here">
     <meta name="keywords" content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script">
+    <title>Shell Magic - Advanced Bash Notes</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
+    <script src="js/third-party.js"></script>
+    <script src="https://kit.fontawesome.com/43b53b6140.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+    <script src="js/snackbar.js"></script>
+    <script src="js/modal.js"></script>
+
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel="stylesheet" href="./css/site-custom/snackbar.css">
+    <link rel="stylesheet" href="./css/site-custom/modal.css">
     <link rel="shortcut icon" href="./graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
+
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
@@ -43,7 +29,7 @@
           rel="stylesheet">
 </head>
 
-<body onload="myFunction()">
+<body onload="snackbar()">
 <div id="snackbar">We use Google Analytics and Freeform.io for mail collection.
     We don't collect cookies and we have no intention on selling or distributing ANY of your data.
     For more information, please refer to our simple privacy policy in the footer at the bottom of the page.
@@ -84,6 +70,15 @@
                     <hr>
                 </div>
             </div>
+        </div>
+        <div id="code-snippet">
+            <span>
+                <code>
+                    #!/bin/bash
+                    who="World"
+                    echo Hello, $who!
+                </code>
+            </span>
         </div>
         <div class="container">
             <div class="row">
@@ -275,7 +270,7 @@
                         </tr>
                         <tr>
                             <td><code>==</code></td>
-                            <td>is equal to (synonym for <code>=</code>)</td>
+                            <td>is equal to (synonymous with the above <code>=</code>)</td>
                         </tr>
                         <tr>
                             <td><code>!=</code></td>
@@ -788,10 +783,15 @@
 </main>
 <div class="container">
     <div class="row">
-
+        <div class="seven columns">
+            <label style="text-align: center;">Sign up for monthly (at most) newsletter - easy to cancel again.</label>
+        </div>
+    </div>
+    <div class="five columns">
+    </div>
+    <div class="row">
         <div class="seven columns">
             <form action="https://formspree.io/xoqdnqak" method="POST">
-                <label>Sign up for monthly (at most) newsletter - easy to cancel again.</label>
                 <div class="input-container">
                     <i class="fas fa-user icon"></i>
                     <input class="u-full-width" type="email" placeholder="your@mail.com" name="_replyto">
@@ -799,9 +799,12 @@
                 <input class="button-primary" type="submit" value="Send">
             </form>
         </div>
+
         <div class="five columns">
-            <p>Did you find this site helpful? Consider sharing it friend - it will motivate me to keep improving the
-                site if people find it useful.<br>~SmokingCuke</p>
+            <p style="font-size: 1.25rem; margin-top: -1.2%;">Did you find this site helpful? Consider sharing it friend
+                - it will motivate
+                me to keep improving the
+                site if people find it useful.
         </div>
     </div>
 </div>
