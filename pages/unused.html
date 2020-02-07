@@ -1,0 +1,257 @@
+<!--
+   <h2>$</h2>
+   <ul>
+       <li>When declaring or setting a variable you omit the <code>$</code> and when retrieving the value of a
+           variable you <em>use</em> the <code>$</code>.
+       </li>
+       <li><code>var=$( date )</code> sets the variable to the output of date.</li>
+       <li><code>printf "%s" "$var"</code> outputs <samp>Sat 01 Feb 2020 01:43:45 PM CET</samp></li>
+       <li>Dollars can be escaped with the escape character <code>\$</code> or with <code>'$'</code></li>
+       <li>The dollar-sign is not escaped by <code>"$"</code> and retains its special meaning within double quotes.</li>
+   </ul>
+   <h2>( )</h2>
+   <p><em>Used for running commands inside a subshell and declaring arrays</em></p>
+   <h5>Examples</h5>
+   <ol>
+       <li><code>( echo &quot;Hello&quot; ; variable=&quot;This variable resides in this subshell ; echo &quot;\n&quot;)
+           ; echo ${variable}</code></li>
+       <li><code>colors=(green yellow purple gray black white magenta)</code></li>
+       <li><code>coordinates=(&#39;16.491838, 28.164997&#39; &#39;-55.594198, -13.051657&#39; &#39;-94.274509,
+           42.953203&#39;)</code></li>
+   </ol>
+   <h5>Notes</h5>
+   <ol>
+       <li>Bash uses the enviromental variable <code>$IFS</code> to determine the delimiter which by default is set
+           to whitespace.
+       </li>
+   </ol>
+   <h2>(( ))</h2>
+   <p><em>Used for integer arithmetic and modifying variables. However, double parentheses will not output any variables!
+       Variables modified
+       inside the parentheses will however stick.</em></p>
+   <h5>Examples</h5>
+   <ol>
+       <li><code>i=4 ; (( i += 4 )) ; echo &quot;${i}&quot;</code> will output <code>8</code>.</li>
+   </ol>
+   <h5>Notes</h5>
+   <ol>
+       <li>Strings inside gets considering &#39;zero&#39;.</li>
+       <li>This is not valid
+           <del><code>a=(( 3 + 4))</code></del>
+       </li>
+   </ol>
+   <h2>$( )</h2>
+   <p><em>Used to retrieve output of commands ran in subshells.</em></p>
+
+   <h5>Examples</h5>
+   <ol>
+       <li><code>you_are_here=&quot;Your working directory is: $( pwd )&quot; ; echo ${you_are_here}</code></li>
+       <li><samp>Your working directory is: /home/username</samp></li>
+   </ol>
+   <h2>$(( ))</h2>
+   <p><em>Same rules apply as double parentheses without the dollar and in addition you can store the output in
+       varibales.</em></p>
+   <h5>Examples</h5>
+   <ol>
+       <li><code>you_are_here=&quot;You working directory is: $( pwd )&quot; ; echo ${you_are_here}</code></li>
+   </ol>
+   <h2>[ ]</h2>
+   <p><em>Used for testing. Alternate version of the built-in <code>test</code>.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+   <ol>
+       <li>Strings of zero length are <code>false</code> and greater than one length (even if its whitespace) is
+           <code>true</code>.
+       </li>
+       <li><code>test</code> and <code>[</code> are built-ins, aka. part of the shell language itself aka. programs
+           -- this means that stuff inside is not treated as arguments and thus rendering single square brackets
+           useful for stuff like word splitting or filename expansion.
+       </li>
+       <li>Has a bunch of gotchas and you&#39;re best off sticking to double square brackets, generally.</li>
+   </ol>
+   <h2>[[ ]]</h2>
+   <p><em>Used for testing and supports extended regex but isn&#39;t a shell built-in.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+   <ol>
+       <li>You may use quotes around the second argument to force a raw, instead of a regex match.</li>
+   </ol>
+   <h2>{}</h2>
+   <p><em>Used for expansion of sequences.</em></p>
+   <h5>Examples</h5>
+   <ol>
+       <li><code>a{bsenti,cademi,lgebr,mmoni,mnesi}a</code> expands into <code>absentia academia algebra ammonia
+           amnesia</code></li>
+       <li>You can also do sequences <code>printf &quot;%s &quot; {a..f}{0..9}</code> will print a bunch of hex
+           numbers.
+       </li>
+       <li><code>echo {z..a..2}</code> will print every second letter starting from <code>z</code> and working
+           backwards toward <code>a</code>.
+       </li>
+       <li>To save all 2-letter permutations of the alphabet to an array: <code>letter_combos=({a..z}{a..z})</code>
+           boom!
+       </li>
+   </ol>
+   <h5>Notes</h5>
+   <h2>${}</h2>
+   <p><em>Use to manipulate variables or when normal string interpolation could get weird.</em></p>
+   <h5>Examples</h5>
+   <ul>
+       <li>See: <a href="#variable-manipulation">Variable manipulation</a> for examples on that.</li>
+   </ul>
+   <h5>Notes</h5>
+   <ul>
+       <li>No spaces around the content/variables.</li>
+   </ul>
+   <h2>&lt;( )</h2>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+   <h2>&lt;&lt;- &#39;MAGIC&#39;</h2>
+   <p><em>A &quot;here document&quot; is a special-purpose codeblock that uses a form of I/O redirection to feed a command
+       list to an interactive program like f.e. cat, ftp, sed, awk, wc, shuf and many more.</em></p>
+   <h5>Examples</h5>
+   <pre><code class="bash">
+   cat &lt;&lt; &#39;THEEND&#39;
+       It..neve!r cease{}!s to am?aze me :O
+       we all love ourselves....more than other people,
+       but care more about their!!!!!!! opinions than our own.
+           -.Marcus Aurelius  *_*_!
+   THEEND
+       </code></pre>
+   <pre><samp>
+       It..neve!r cease{}!s to am?aze me :O
+       we all love ourselves....more than other people,
+       but care more about their!!!!!!! opinions than our own.
+           -.Marcus Aurelius  *_*_!
+   </samp></pre>
+   <p>A more useful example would be to use sed for removing all symbols, say you want to create an array with all words
+       for example. We can replace <code>cat</code> with <code>sed &#39;s/[^[:alpha:]]/ /gi&#39;</code> which removes all
+       symbols, alas:</p>
+   <pre><samp>
+       THEEND
+       It  neve r cease   s to am aze me  O
+       we all love ourselves    more than other people
+       but care more about their        opinions than our own
+             Marcus Aurelius
+   </samp></pre>
+   <p>You could run that again and remove repeating whitespace or use a wordlist to fix word boundaries.</p>
+   <h5>Notes</h5>
+   <ul>
+       There exists a couple of variations and rules to the heredoc.
+       <li>To suppres leading tabs on any lines, use <code>&lt;&lt;-</code> (dash at the end).</li>
+       <li>You may quote, or chose not to quote your &quot;magic word&quot;, i.e. THEEND.</li>
+       <li>Your magic word can be more or less anything you chose.</li>
+   </ul>
+   <h2>Function () { ... }</h2>
+   <p><em>Functions used to execute code blocks, retrieve exit status for code blocks and retrieve output of a code
+       block.</em></p>
+   <h5>Examples</h5>
+   <pre>
+   <code class="bash">
+   function hello() {
+   echo &quot;Hi $1&quot;
+   }
+   </code>
+       </pre>
+   <pre>
+   <code class="bash">hello() {
+       echo &quot;Hi $1&quot;
+       }</code></pre>
+   <pre><code class="bash">function hello {
+       echo &quot;Hi $1&quot;
+       }</code>
+       </pre>
+
+   <p>* Q: What's the difference between the three examples above?</p>
+   <p>* A: None, what-so-ever.... :)</p>
+
+   <h2> | </h2>
+   <p><em>Chain commands together.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> < </h2>
+   <p><em>Use file for command input.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> > </h2>
+   <p><em>Output to file and overwrite.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> >> </h2>
+   <p><em>Append to file.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> . </h2>
+   <p><em>Current directory.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> .. </h2>
+   <p><em>Parent directory.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> ~ </h2>
+   <p><em>Home directory.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+
+   <h2> ` ` </h2>
+   <p><em>For running commands in a subshell; equivalent to $( command ) but is deprecated and should not be used. Causes a
+       lot of confusion and gotchas when nesting the backticks which quickly becomes a PITA.</em></p>
+   <h5>Examples</h5>
+   <h5>Notes</h5>
+   -->
+<!--
+<h2> Zsh Globbing </h2>
+
+<pre><code class="zsh">
+        /      directories
+        .      plain <span class="hljs-keyword">files</span>
+        @      symbolic links
+        =      sockets
+        p      named pipes (FIFOs)
+        *      executable plain <span class="hljs-keyword">files</span> (<span class="hljs-number">0100</span>)
+        %      device <span class="hljs-keyword">files</span> (character <span class="hljs-keyword">or</span> block special)
+        %b     block special <span class="hljs-keyword">files</span>
+        %c     character special <span class="hljs-keyword">files</span>
+        r      owner-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0400</span>)
+        w      owner-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0200</span>)
+        x      owner-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0100</span>)
+        A      group-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0040</span>)
+        I      group-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0020</span>)
+        E      group-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0010</span>)
+        R      world-readable <span class="hljs-keyword">files</span> (<span class="hljs-number">0004</span>)
+        W      world-writable <span class="hljs-keyword">files</span> (<span class="hljs-number">0002</span>)
+        X      world-executable <span class="hljs-keyword">files</span> (<span class="hljs-number">0001</span>)
+        s      setuid <span class="hljs-keyword">files</span> (<span class="hljs-number">04000</span>)
+        S      setgid <span class="hljs-keyword">files</span> (<span class="hljs-number">02000</span>)
+        t      <span class="hljs-keyword">files</span> with the sticky bit (<span class="hljs-number">01000</span>)
+
+      print *(m<span class="hljs-number">-1</span>)                      # <span class="hljs-keyword">Files</span> modified up to a day ago
+      print *(a1)                       # <span class="hljs-keyword">Files</span> accessed a day ago
+      print *(@)                        # Just symlinks
+      print *(Lk+<span class="hljs-number">50</span>)                    # <span class="hljs-keyword">Files</span> bigger than <span
+        class="hljs-number">50</span> kilobytes
+      print *(Lk<span class="hljs-number">-50</span>)                    # <span class="hljs-keyword">Files</span> smaller than <span
+        class="hljs-number">50</span> kilobytes
+      print **<span class="hljs-comment">/*.c                      # All *.c files recursively starting in $PWD
+      print **/</span>*.c~<span class="hljs-keyword">file</span>.c               # Same as above, but excluding <span
+        class="hljs-string">'file.c'</span>
+      print (foo|bar).*                 # <span class="hljs-keyword">Files</span> starting with <span
+        class="hljs-string">'foo'</span> <span class="hljs-keyword">or</span> <span class="hljs-string">'bar'</span>
+      print *~*.*                       # <span class="hljs-keyword">All</span> <span class="hljs-keyword">Files</span> that do <span
+        class="hljs-keyword">not</span> contain a dot
+      chmod <span class="hljs-number">644</span> *(.^x)                  # make <span class="hljs-keyword">all</span> plain non-executable <span
+        class="hljs-keyword">files</span> publically readable
+      print -l *(.c|.h)                 # Lists *.c <span class="hljs-keyword">and</span> *.h
+      print **<span class="hljs-comment">/*(g:users:)              # Recursively match all files that are owned by group 'users'
+      echo /proc/*/</span>cwd(:h:t:s/self<span
+        class="hljs-comment">//)   # Analogous to &gt;ps ax | awk '{print }'&lt;</span>
+    </code></pre>
+<h1 id="resources">Recommended Books</h1>
+-->
