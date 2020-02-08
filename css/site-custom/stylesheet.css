@@ -629,7 +629,6 @@ ol ul {
 }
 @media (min-width: 800px) {
   table {
-    padding: 10px 0;
     width: 100%;
   }
 }
