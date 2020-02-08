@@ -16,34 +16,110 @@
 - Media Queries
 */
 
-//–––––––––––––––––––––––––––––––––––––––––––––––––– Variables ––––––––––––––––––––––––––––––––––––––––––––––––––//
-$color-one: #221c1f;
-$color-two: #a8a8a8;
-$color-three: #515151;
-$color-four: #26262e;
-$color-five: #65ffa0;
-$color-six: #cedbdb;
-$color-seven: #aeb9b9;
-$color-eight: #252626;
-$color-nine: #1e1d2b;
-$color-ten: #ff327e;
-$color-eleven: #dedfde;
-$footer-background: #e7e7e7;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Color Vars
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$color-primary-0: #a73a00;
+$color-primary-1: #ff5900;
+$color-primary-2: #d34a00;
+$color-primary-3: #792a00;
+$color-primary-4: #3f1600;
+$fg: rgba(255, 255, 255, .5);
+$bg: #202020;
+$heading-two-bg: #260101; //unset
+$heading-three-bg: #400101; //unset
+$td-bg: $bg;
+$white: #fff;
+$black: #000;
 $color-black: #000;
+$grey-one: #fff;
+$grey-two: #fff;
+$grey-three: #fff;
+$color-turquoise: #65ffa0;
+
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Height Vars
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
 $input-height: 38px;
-$color-border: #e1e1e1;
+
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// Color Assignment
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$footer-background: $white;
 $color-code-background: #f1f1f1;
 $color-text-selection-background: #34495e;
-$color-text-selection-text: #fff;
+$color-text-selection-text: $white;
+$heading-fg: $color-primary-1;
+$heading-one-bg: $color-primary-1;
+$color-border: $color-primary-2;
 
 .icon {
-  background: $color-six;
+  background: $heading-fg;
+  color: $fg;
+}
+
+html {
+  ::selection {
+    background: $color-text-selection-background;
+    color: $color-text-selection-text;
+  }
+}
+
+body {
+  color: $fg;
+  background: $bg;
+}
+
+nav {
+  a {
+    background-color: $bg;
+    color: $white;
+  }
+
+  :hover {
+    //background-color: $heading-one-bg;
+    color: $heading-one-bg;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: $color-text-selection-background;
+}
+
+a {
+  color: $fg;
+
+  :hover {
+    color: $heading-one-bg;
+  }
+}
+
+th {
+  color: $color-text-selection-text;
+}
+
+td:nth-child(1) {
+  background: $td-bg;
+}
+
+td:nth-child(2) {
+  background: $td-bg;
+}
+
+td:nth-child(2):hover {
+  background: lighten($bg, 10%);
+}
+footer {
+  background: $heading-two-bg;
+}
+
+.icon {
+  border: 1px solid $color-border;
+  border-radius: 4px;
   line-height: unset;
   vertical-align: middle;
   font-size: 2rem;
-  border: 1px solid $color-border;
-  border-radius: 4px;
-  color: $color-one;
   height: $input-height;
   min-width: 3rem;
   padding: 0 .75rem;
@@ -72,13 +148,11 @@ html {
 
   ::selection {
     padding: 4px;
-    background: $color-text-selection-background;
-    color: $color-text-selection-text;
+
   }
 }
 
 body {
-  color: $color-one;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
@@ -89,16 +163,7 @@ a {
   outline: 0;
 }
 
-hr {
-  margin-bottom: .5rem;
-  margin-top: .825rem;
-  width: 100%;
-  border: .125rem solid $color-eleven;
-  border-radius: 5px;
-}
-
 footer {
-  background: $footer-background;
   display: block;
   font-family: 'IBM Plex Serif', serif;
   margin: auto;
@@ -114,8 +179,7 @@ footer {
   }
 
   header {
-    background-color: $color-two;
-    box-shadow: 0 0 25px 0 $color-black;
+    box-shadow: 0 0 25px 0 $black;
     display: flex;
     height: 4rem;
     left: 0;
@@ -129,20 +193,14 @@ footer {
   }
 
   nav {
-    :hover {
-      background-color: $color-four;
-      color: $color-five;
-    }
+
 
     :not(:last-child) { // Prevent double borders
       border-right: 0;
     }
 
     a {
-
-      background-color: $color-two;
-      border: 1px solid $color-three;
-      color: $color-four;
+      border: 1px solid $color-border;
       cursor: pointer;
       float: left;
       font-family: 'IBM Plex Serif', serif;
@@ -154,43 +212,37 @@ footer {
       text-decoration: none;
       text-justify: inter-word;
       width: 50%;
-
-
     }
 
-    ::after {
-      // Clear floats (clearfix hack)
+    ::after { // Clear floats (clearfix hack)
       clear: both;
       content: '';
       display: table;
     }
   }
 
-  // –––––––––––––––––––––––––––––––––––––––––––––––––– Color ----------------------------------------------//
-  h2 {
-    background: $color-seven;
-  }
-
-  h3 {
-    background: $color-six;
-  }
-
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Typography ----------------------------------------------//
-  h1, h2, h3, h4, h5, h6 {
-    color: $color-eight;
-    margin: 0 auto .25rem auto;
-    font-weight: 300;
-    font-family: "PT Mono", serif;
-    width: 100%;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     box-sizing: border-box;
+    font-family: 'PT Mono', serif;
+    font-weight: 300;
+    margin: 0 auto .25rem;
     text-align: center;
+    width: 100%;
   }
 
   h1 {
-    font-size: 4.0rem;
-    line-height: 1.2;
+    border-radius: .5rem;
+    font-size: 4rem;
     letter-spacing: -.1rem;
+    line-height: 1.2;
     margin-top: 1.6rem;
+    padding: 0 1rem;
   }
 
   h2 {
@@ -201,7 +253,7 @@ footer {
   }
 
   h3 {
-    font-size: 3.0rem;
+    font-size: 3rem;
     letter-spacing: -.1rem;
     line-height: 1.3;
     margin-top: 2.2rem;
@@ -231,8 +283,7 @@ footer {
     font-size: .525rem;
   }
 
-  // Larger than phablet
-  @media (min-width: 550px) {
+  @media (min-width: 550px) { // Larger than phablet
     h1 {
       font-size: 5rem;
     }
@@ -258,14 +309,6 @@ footer {
     }
   }
 
-  // –––––––––––––––––––––––––––––––––––––––––––––––––– Links ----------------------------------------------//
-  a {
-    color: $color-nine;
-
-    :hover {
-      color: $color-ten;
-    }
-  }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Buttons ----------------------------------------------//
   .button,
@@ -433,8 +476,8 @@ footer {
   ul ol,
   ol ol,
   ol ul {
-    margin: .4em 0 .6em 1rem;
     font-size: 90%;
+    margin: .4em 0 .6em 1rem;
   }
 
   li {
@@ -444,12 +487,11 @@ footer {
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Grid ----------------------------------------------//
   .container {
-    width: 120%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
     box-sizing: border-box;
-
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 20px;
+    width: 120%;
   }
 
   .column,
@@ -617,9 +659,6 @@ footer {
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Code ----------------------------------------------//
   code {
-    background: $color-code-background;
-    border: 1px solid $color-border;
-    border-radius: 4px;
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;
     margin: 0 .01rem;
@@ -636,6 +675,10 @@ footer {
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Tables ----------------------------------------------//
+  table {
+    padding: 10px 0;
+  }
+
   th,
   td {
     border-bottom: 1px dashed $color-border;
@@ -643,11 +686,9 @@ footer {
     text-align: left;
   }
 
-  th:first-child,
-  td:first-child {
-    padding-left: 0;
+  th {
+    padding-left: 1rem;
   }
-
   th:last-child,
   td:last-child {
     padding-right: 0;
@@ -655,7 +696,6 @@ footer {
   td:nth-child(2):hover {
     box-sizing: content-box;
     overflow: hidden;
-    background: $color-code-background;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Spacing ----------------------------------------------//
@@ -724,7 +764,5 @@ footer {
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Misc ----------------------------------------------//
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Classes ----------------------------------------------//
-  table {
-    padding: 10px 0;
-  }
+
 }

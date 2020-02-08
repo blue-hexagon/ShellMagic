@@ -17,13 +17,65 @@
 - Media Queries
 */
 .icon {
-  background: #cedbdb;
+  background: #ff5900;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+html ::selection {
+  background: #34495e;
+  color: #fff;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.5);
+  background: #202020;
+}
+
+nav a {
+  background-color: #202020;
+  color: #fff;
+}
+nav :hover {
+  color: #ff5900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: #34495e;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.5);
+}
+a :hover {
+  color: #ff5900;
+}
+
+th {
+  color: #fff;
+}
+
+td:nth-child(1) {
+  background: #202020;
+}
+
+td:nth-child(2) {
+  background: #202020;
+}
+
+td:nth-child(2):hover {
+  background: #3a3a3a;
+}
+
+footer {
+  background: #260101;
+}
+
+.icon {
+  border: 1px solid #d34a00;
+  border-radius: 4px;
   line-height: unset;
   vertical-align: middle;
   font-size: 2rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 4px;
-  color: #221c1f;
   height: 38px;
   min-width: 3rem;
   padding: 0 0.75rem;
@@ -51,12 +103,9 @@ html {
 }
 html ::selection {
   padding: 4px;
-  background: #34495e;
-  color: #fff;
 }
 
 body {
-  color: #221c1f;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
@@ -66,16 +115,7 @@ a {
   outline: 0;
 }
 
-hr {
-  margin-bottom: 0.5rem;
-  margin-top: 0.825rem;
-  width: 100%;
-  border: 0.125rem solid #dedfde;
-  border-radius: 5px;
-}
-
 footer {
-  background: #e7e7e7;
   display: block;
   font-family: "IBM Plex Serif", serif;
   margin: auto;
@@ -89,7 +129,6 @@ footer {
   }
 
   header {
-    background-color: #a8a8a8;
     box-shadow: 0 0 25px 0 #000;
     display: flex;
     height: 4rem;
@@ -103,17 +142,11 @@ footer {
     display: flex;
   }
 
-  nav :hover {
-    background-color: #26262e;
-    color: #65ffa0;
-  }
   nav :not(:last-child) {
     border-right: 0;
   }
   nav a {
-    background-color: #a8a8a8;
-    border: 1px solid #515151;
-    color: #26262e;
+    border: 1px solid #d34a00;
     cursor: pointer;
     float: left;
     font-family: "IBM Plex Serif", serif;
@@ -132,29 +165,27 @@ footer {
     display: table;
   }
 
-  h2 {
-    background: #aeb9b9;
-  }
-
-  h3 {
-    background: #cedbdb;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #252626;
-    margin: 0 auto 0.25rem auto;
-    font-weight: 300;
-    font-family: "PT Mono", serif;
-    width: 100%;
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     box-sizing: border-box;
+    font-family: "PT Mono", serif;
+    font-weight: 300;
+    margin: 0 auto 0.25rem;
     text-align: center;
+    width: 100%;
   }
 
   h1 {
+    border-radius: 0.5rem;
     font-size: 4rem;
-    line-height: 1.2;
     letter-spacing: -0.1rem;
+    line-height: 1.2;
     margin-top: 1.6rem;
+    padding: 0 1rem;
   }
 
   h2 {
@@ -218,14 +249,6 @@ footer {
 
   h6 {
     font-size: 1.5rem;
-  }
-}
-@media (min-width: 800px) {
-  a {
-    color: #1e1d2b;
-  }
-  a :hover {
-    color: #ff327e;
   }
 }
 @media (min-width: 800px) {
@@ -405,8 +428,8 @@ ul {
 ul ol,
 ol ol,
 ol ul {
-    margin: 0.4em 0 0.6em 1rem;
     font-size: 90%;
+    margin: 0.4em 0 0.6em 1rem;
   }
 }
 @media (min-width: 800px) {
@@ -417,11 +440,11 @@ ol ul {
 }
 @media (min-width: 800px) {
   .container {
-    width: 120%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 20px;
+    width: 120%;
   }
 }
 @media (min-width: 800px) {
@@ -587,9 +610,6 @@ ol ul {
 }
 @media (min-width: 800px) {
   code {
-    background: #f1f1f1;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
     font-family: "Source Code Pro", monospace;
     font-size: 105%;
     margin: 0 0.01rem;
@@ -607,17 +627,21 @@ ol ul {
   }
 }
 @media (min-width: 800px) {
+  table {
+    padding: 10px 0;
+  }
+}
+@media (min-width: 800px) {
   th,
 td {
-    border-bottom: 1px dashed #e1e1e1;
+    border-bottom: 1px dashed #d34a00;
     padding: 2px 15px;
     text-align: left;
   }
 }
 @media (min-width: 800px) {
-  th:first-child,
-td:first-child {
-    padding-left: 0;
+  th {
+    padding-left: 1rem;
   }
 }
 @media (min-width: 800px) {
@@ -630,7 +654,6 @@ td:last-child {
   td:nth-child(2):hover {
     box-sizing: content-box;
     overflow: hidden;
-    background: #f1f1f1;
   }
 }
 @media (min-width: 800px) {
@@ -695,11 +718,6 @@ form {
     clear: both;
     content: "";
     display: table;
-  }
-}
-@media (min-width: 800px) {
-  table {
-    padding: 10px 0;
   }
 }
 
