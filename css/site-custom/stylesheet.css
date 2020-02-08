@@ -630,6 +630,17 @@ ol ul {
 @media (min-width: 800px) {
   table {
     padding: 10px 0;
+    width: 100%;
+  }
+}
+@media (min-width: 800px) {
+  td:nth-child(1) {
+    min-width: 5%;
+  }
+}
+@media (min-width: 800px) {
+  td:nth-child(2) {
+    min-width: 60%;
   }
 }
 @media (min-width: 800px) {
