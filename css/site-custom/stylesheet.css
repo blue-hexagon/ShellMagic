@@ -17,7 +17,7 @@
 - Media Queries
 */
 .icon {
-  background: #ff5900;
+  background: #3a3a3a;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -70,8 +70,36 @@ footer {
   background: #202020;
 }
 
+p {
+  background: #3a3a3a;
+}
+
+.button.button-primary,
+button.button-primary,
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
+  color: #ff5900;
+  background: #3a3a3a;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type=submit].button-primary:focus,
+input[type=reset].button-primary:focus,
+input[type=button].button-primary:focus {
+  color: #fff;
+  background: #464646;
+  border-color: rgba(230, 230, 230, 0.5);
+}
+
 .icon {
-  border: 1px solid #d34a00;
   border-radius: 4px;
   line-height: unset;
   vertical-align: middle;
@@ -290,33 +318,6 @@ input[type=button]:focus {
     color: #333;
     border-color: #888;
     outline: 0;
-  }
-}
-@media (min-width: 800px) {
-  .button.button-primary,
-button.button-primary,
-input[type=submit].button-primary,
-input[type=reset].button-primary,
-input[type=button].button-primary {
-    color: #FFF;
-    background-color: #33C3F0;
-    border-color: #33C3F0;
-  }
-}
-@media (min-width: 800px) {
-  .button.button-primary:hover,
-button.button-primary:hover,
-input[type=submit].button-primary:hover,
-input[type=reset].button-primary:hover,
-input[type=button].button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus,
-input[type=submit].button-primary:focus,
-input[type=reset].button-primary:focus,
-input[type=button].button-primary:focus {
-    color: #FFF;
-    background-color: #1EAEDB;
-    border-color: #1EAEDB;
   }
 }
 @media (min-width: 800px) {
@@ -683,6 +684,11 @@ form {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+}
+@media (min-width: 800px) {
+  .pad-right-1-d-5-px {
+    margin: 0 1.5px 0;
   }
 }
 @media (min-width: 800px) {

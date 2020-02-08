@@ -55,7 +55,7 @@ $heading-one-bg: $color-primary-1;
 $color-border: $color-primary-2;
 
 .icon {
-  background: $heading-fg;
+  background: lighten($bg, 10%);
   color: $fg;
 }
 
@@ -110,12 +110,43 @@ td:nth-child(2) {
 td:nth-child(2):hover {
   background: lighten($bg, 10%);
 }
+
 footer {
   background: $bg;
 }
 
+p {
+  background: lighten($bg, 10%);
+}
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: $color-primary-1;
+  background: lighten($bg, 10%);
+  border-color: $fg;
+
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: $white;
+  background: lighten($bg, 15%);
+  border-color: darken($fg, 10%);
+}
+
+// ----------------------------------------------------------------------------------------
 .icon {
-  border: 1px solid $color-border;
   border-radius: 4px;
   line-height: unset;
   vertical-align: middle;
@@ -350,30 +381,6 @@ footer {
     outline: 0;
   }
 
-  .button.button-primary,
-  button.button-primary,
-  input[type="submit"].button-primary,
-  input[type="reset"].button-primary,
-  input[type="button"].button-primary {
-    color: #FFF;
-    background-color: #33C3F0;
-    border-color: #33C3F0;
-  }
-
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    color: #FFF;
-    background-color: #1EAEDB;
-    border-color: #1EAEDB;
-  }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Forms ----------------------------------------------//
   input[type="email"],
@@ -724,7 +731,9 @@ footer {
     margin-right: auto;
     text-align: center;
   }
-
+  .pad-right-1-d-5-px {
+    margin: 0 1.5px 0;
+  }
   table {
     //margin-left: 2rem;
     //margin-right: auto;
