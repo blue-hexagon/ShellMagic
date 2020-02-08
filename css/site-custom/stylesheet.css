@@ -206,10 +206,10 @@ footer {
     cursor: pointer;
     float: left;
     font-family: "IBM Plex Serif", serif;
-    font-size: 1.3rem;
-    line-height: 1.125rem;
+    font-size: 1.625rem;
+    line-height: 1.285rem;
     margin: auto;
-    padding: 8px 24px;
+    padding: 4px 24px;
     text-align: center;
     text-decoration: none;
     text-justify: inter-word;
@@ -227,6 +227,7 @@ h3,
 h4,
 h5,
 h6 {
+    padding: 0.725rem 0;
     box-sizing: border-box;
     font-family: "PT Mono", serif;
     font-weight: 300;
