@@ -145,6 +145,14 @@ input[type="button"].button-primary:focus {
   border-color: darken($fg, 10%);
 }
 
+// Gradients
+.gradiet-h1 {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 6px $black;
+}
+
 // ----------------------------------------------------------------------------------------
 .icon {
   border-radius: 4px;
@@ -686,11 +694,11 @@ footer {
     //padding: 4px 0;
     width: 100%;
   }
-  td:nth-child(1){
-   min-width: 5%;
+  td:nth-child(1) {
+    min-width: 5%;
   }
-  td:nth-child(2){
-min-width: 60%;
+  td:nth-child(2) {
+    min-width: 60%;
   }
   th,
   td {

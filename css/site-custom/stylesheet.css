@@ -99,6 +99,13 @@ input[type=button].button-primary:focus {
   border-color: rgba(230, 230, 230, 0.5);
 }
 
+.gradiet-h1 {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 6px #000;
+}
+
 .icon {
   border-radius: 4px;
   line-height: unset;
