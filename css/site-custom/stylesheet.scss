@@ -26,14 +26,12 @@ $color-primary-3: #792a00;
 $color-primary-4: #3f1600;
 $fg: rgba(255, 255, 255, .5);
 $bg: #202020;
-$heading-two-bg: #260101; //unset
-$heading-three-bg: #400101; //unset
 $td-bg: $bg;
 $white: #fff;
 $black: #000;
 $color-black: #000;
-$grey-one: #fff;
-$grey-two: #fff;
+$grey-one: #bbb;
+$grey-two: #555;
 $grey-three: #fff;
 $color-turquoise: #65ffa0;
 
@@ -53,6 +51,9 @@ $color-text-selection-text: $white;
 $heading-fg: $color-primary-1;
 $heading-one-bg: $color-primary-1;
 $color-border: $color-primary-2;
+$border-color-cream: #d1d1d1;
+$color-temporary: #33c3f0;
+$color-link-hover: #ff327e;
 
 .icon {
   background: lighten($bg, 10%);
@@ -67,8 +68,9 @@ html {
 }
 
 body {
-  color: $fg;
   background: $bg;
+  color: $fg;
+
 }
 
 nav {
@@ -83,16 +85,27 @@ nav {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  background: $color-text-selection-background;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: $color-primary-1;
+  color: $bg;
+}
+h2{
+  background: $color-primary-1;
 }
 
 a {
   color: $fg;
 
-  :hover {
-    color: $heading-one-bg;
-  }
+
+}
+a:hover {
+  color: $color-link-hover;
+  text-decoration: none;
 }
 
 th {
@@ -124,9 +137,10 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: $color-primary-1;
   background: lighten($bg, 10%);
   border-color: $fg;
+  color: $color-primary-1;
+
 
 }
 
@@ -140,29 +154,32 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  color: $white;
   background: lighten($bg, 15%);
   border-color: darken($fg, 10%);
+  color: $white;
 }
-
+// ------------------------------------------------
 // Gradients
-.gradiet-h1 {
+// ------------------------------------------------
+.gradient-h1 {
+  -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 6px $black;
 }
 
-// ----------------------------------------------------------------------------------------
+// ----------------------------------------------
+// Borders TODO
+// ----------------------------------------------
 .icon {
   border-radius: 4px;
-  line-height: unset;
-  vertical-align: middle;
   font-size: 2rem;
   height: $input-height;
+  line-height: unset;
   min-width: 3rem;
   padding: 0 .75rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 .input-container {
@@ -172,12 +189,14 @@ input[type="button"].button-primary:focus {
 }
 
 .input-field {
-  width: 100%;
-  padding: 10px;
   outline: none;
+  padding: 10px;
+  width: 100%;
 }
 
-//---------------------------------------------- Base Style ----------------------------------------------//
+//----------------------------------------------
+// Base Style
+// ---------------------------------------------
 html {
   font-size: 62.5%;
   margin: 4rem auto auto; // For navbar we need some top-margin
@@ -187,7 +206,6 @@ html {
 
   ::selection {
     padding: 4px;
-
   }
 }
 
@@ -197,7 +215,9 @@ body {
   line-height: 1.6;
 }
 
-//---------------------------------------------- Nav ----------------------------------------------//
+//----------------------------------------------
+// Nav
+// ---------------------------------------------
 a {
   outline: 0;
 }
@@ -355,23 +375,23 @@ footer {
   input[type="submit"],
   input[type="reset"],
   input[type="button"] {
+    background-color: transparent;
+    border: 1px solid $grey-one;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: $grey-two;
+    cursor: pointer;
     display: inline-block;
-    height: $input-height;
-    padding: 0 30px;
-    color: #555;
-    text-align: center;
     font-size: 11px;
     font-weight: 600;
-    line-height: $input-height;
+    height: $input-height;
     letter-spacing: .1rem;
-    text-transform: uppercase;
+    line-height: $input-height;
+    padding: 0 30px;
+    text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     white-space: nowrap;
-    background-color: transparent;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
   }
 
   .button:hover,
@@ -384,8 +404,8 @@ footer {
   input[type="submit"]:focus,
   input[type="reset"]:focus,
   input[type="button"]:focus {
-    color: #333;
-    border-color: #888;
+    border-color: $grey-one;
+    color: $bg;
     outline: 0;
   }
 
@@ -400,13 +420,13 @@ footer {
   input[type="password"],
   textarea,
   select {
-    height: $input-height;
-    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
+    background-color: $white;
+    border: 1px solid $border-color-cream;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
+    height: $input-height;
+    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
   }
 
   //Removes awkward default styles on some inputs for iOS
@@ -436,7 +456,7 @@ footer {
   input[type="password"]:focus,
   textarea:focus,
   select:focus {
-    border: 1px solid #33C3F0;
+    border: 1px solid $color-temporary;
     outline: 0;
   }
 
@@ -459,8 +479,8 @@ footer {
 
   label > .label-body {
     display: inline-block;
-    margin-left: .5rem;
     font-weight: normal;
+    margin-left: .5rem;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Lists ----------------------------------------------//
@@ -584,8 +604,8 @@ footer {
     }
 
     .twelve.columns {
-      width: 100%;
       margin-left: 0;
+      width: 100%;
     }
 
     .one-third.column {
@@ -643,7 +663,7 @@ footer {
 
     .offset-by-nine.column,
     .offset-by-nine.columns {
-      margin-left: 78.0%;
+      margin-left: 78%;
     }
 
     .offset-by-ten.column,
@@ -745,9 +765,11 @@ footer {
     margin-right: auto;
     text-align: center;
   }
+
   .pad-right-1-d-5-px {
-    margin: 0 1.5px 0;
+    margin: 0 1.5px 0 0;
   }
+
   table {
     //margin-left: 2rem;
     //margin-right: auto;
@@ -783,9 +805,4 @@ footer {
     content: '';
     display: table;
   }
-
-  // –––––––––––––––––––––––––––––––––––––––––––––––––– Misc ----------------------------------------------//
-
-  // –––––––––––––––––––––––––––––––––––––––––––––––––– Classes ----------------------------------------------//
-
 }

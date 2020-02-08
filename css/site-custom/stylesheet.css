@@ -27,8 +27,8 @@ html ::selection {
 }
 
 body {
-  color: rgba(255, 255, 255, 0.5);
   background: #202020;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 nav a {
@@ -39,15 +39,27 @@ nav :hover {
   color: #ff5900;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  background: #34495e;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: #ff5900;
+  color: #202020;
+}
+
+h2 {
+  background: #ff5900;
 }
 
 a {
   color: rgba(255, 255, 255, 0.5);
 }
-a :hover {
-  color: #ff5900;
+
+a:hover {
+  color: #ff327e;
+  text-decoration: none;
 }
 
 th {
@@ -79,9 +91,9 @@ button.button-primary,
 input[type=submit].button-primary,
 input[type=reset].button-primary,
 input[type=button].button-primary {
-  color: #ff5900;
   background: #3a3a3a;
   border-color: rgba(255, 255, 255, 0.5);
+  color: #ff5900;
 }
 
 .button.button-primary:hover,
@@ -94,27 +106,27 @@ button.button-primary:focus,
 input[type=submit].button-primary:focus,
 input[type=reset].button-primary:focus,
 input[type=button].button-primary:focus {
-  color: #fff;
   background: #464646;
   border-color: rgba(230, 230, 230, 0.5);
+  color: #fff;
 }
 
-.gradiet-h1 {
+.gradient-h1 {
+  -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 6px #000;
 }
 
 .icon {
   border-radius: 4px;
-  line-height: unset;
-  vertical-align: middle;
   font-size: 2rem;
   height: 38px;
+  line-height: unset;
   min-width: 3rem;
   padding: 0 0.75rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 .input-container {
@@ -124,9 +136,9 @@ input[type=button].button-primary:focus {
 }
 
 .input-field {
-  width: 100%;
-  padding: 10px;
   outline: none;
+  padding: 10px;
+  width: 100%;
 }
 
 html {
@@ -292,23 +304,23 @@ button,
 input[type=submit],
 input[type=reset],
 input[type=button] {
-    display: inline-block;
-    height: 38px;
-    padding: 0 30px;
+    background-color: transparent;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
     color: #555;
-    text-align: center;
+    cursor: pointer;
+    display: inline-block;
     font-size: 11px;
     font-weight: 600;
-    line-height: 38px;
+    height: 38px;
     letter-spacing: 0.1rem;
-    text-transform: uppercase;
+    line-height: 38px;
+    padding: 0 30px;
+    text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     white-space: nowrap;
-    background-color: transparent;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
   }
 }
 @media (min-width: 800px) {
@@ -322,8 +334,8 @@ button:focus,
 input[type=submit]:focus,
 input[type=reset]:focus,
 input[type=button]:focus {
-    color: #333;
-    border-color: #888;
+    border-color: #bbb;
+    color: #202020;
     outline: 0;
   }
 }
@@ -337,13 +349,13 @@ input[type=url],
 input[type=password],
 textarea,
 select {
-    height: 38px;
-    padding: 6px 10px;
     background-color: #fff;
-    border: 1px solid #D1D1D1;
+    border: 1px solid #d1d1d1;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
+    height: 38px;
+    padding: 6px 10px;
   }
 }
 @media (min-width: 800px) {
@@ -375,7 +387,7 @@ input[type=url]:focus,
 input[type=password]:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid #33C3F0;
+    border: 1px solid #33c3f0;
     outline: 0;
   }
 }
@@ -402,8 +414,8 @@ input[type=radio] {
 @media (min-width: 800px) {
   label > .label-body {
     display: inline-block;
-    margin-left: 0.5rem;
     font-weight: normal;
+    margin-left: 0.5rem;
   }
 }
 @media (min-width: 800px) {
@@ -530,8 +542,8 @@ ol ul {
   }
 
   .twelve.columns {
-    width: 100%;
     margin-left: 0;
+    width: 100%;
   }
 
   .one-third.column {
@@ -705,7 +717,7 @@ form {
 }
 @media (min-width: 800px) {
   .pad-right-1-d-5-px {
-    margin: 0 1.5px 0;
+    margin: 0 1.5px 0 0;
   }
 }
 @media (min-width: 800px) {
