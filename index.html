@@ -79,7 +79,7 @@
                     <h3 id="file-test-operators">File Test Operators</h3>
                     <p class="info">Testing files in scripts is easy and straight forward. This is where shell scripting starts to show its glory! In Bash you can do file testing for permissions, size, date, filetype or
                         existence.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Flag</th>
@@ -197,7 +197,7 @@
                     </table>
                     <h3 id="job-identifiers">Job Identifiers</h3>
                     <p class="info">TODO</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Notation</th>
@@ -235,11 +235,115 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h3 id="signals">Signals</h3>
+                    <p class="info">UNIX System V Signals.</p>
+                    <table class="four-column-table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number</th>
+                            <th>Action</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>SIGHUP     </code></td>
+                            <td>1</td>
+                            <td>exit</td>
+                            <td>Hangs up</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGINT     </code></td>
+                            <td>2</td>
+                            <td>exit</td>
+                            <td>Interrupts.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGQUIT    </code></td>
+                            <td>3</td>
+                            <td>core dump</td>
+                            <td>Quits.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGILL     </code></td>
+                            <td>4</td>
+                            <td>core dump</td>
+                            <td>Illegal instruction.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGTRAP    </code></td>
+                            <td>5</td>
+                            <td>core dump</td>
+                            <td>Trace trap.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGIOT     </code></td>
+                            <td>6</td>
+                            <td>core dump</td>
+                            <td>IOT instruction.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGEMT     </code></td>
+                            <td>7</td>
+                            <td>core dump</td>
+                            <td>MT instruction.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGFPE     </code></td>
+                            <td>8</td>
+                            <td>core dump</td>
+                            <td>Floating point exception.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGKILL    </code></td>
+                            <td>9</td>
+                            <td>exit</td>
+                            <td>Kills (cannot be caught or ignored).</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGBUS     </code></td>
+                            <td>10</td>
+                            <td>core dump</td>
+                            <td>Bus error.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGSEGV    </code></td>
+                            <td>11</td>
+                            <td>core dump</td>
+                            <td>Segmentation violation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGSYS     </code></td>
+                            <td>12</td>
+                            <td>core dump</td>
+                            <td>Bad argument to system call.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGPIPE    </code></td>
+                            <td>13</td>
+                            <td>exit</td>
+                            <td>Writes on a pipe with no one to read it.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGALRM    </code></td>
+                            <td>14</td>
+                            <td>exit</td>
+                            <td>Alarm clock.</td>
+                        </tr>
+                        <tr>
+                            <td><code>SIGTERM</code></td>
+                            <td>15</td>
+                            <td>exit</td>
+                            <td>Software termination signal.</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="six columns">
                     <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
                     <p class="info">How to compare integers or arithmetic expressions in shell scripts.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Flag</th>
@@ -291,7 +395,7 @@
                     </table>
                     <h3 id="string-comparison-operators">String Comparison Operators</h3>
                     <p class="info">How to compare strings in Bash.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Flag</th>
@@ -331,7 +435,7 @@
                     </table>
                     <h3 id="compound-operators">Compound Operators</h3>
                     <p class="info">TODO</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Flag</th>
@@ -351,7 +455,7 @@
                     </table>
                     <h2 id="list-constructs">List Constructs</h2>
                     <p class="info">TODO</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Construct</th>
@@ -371,7 +475,7 @@
                     </table>
                     <h3 id="reserved-exit-codes">Reserved Exit Codes</h3>
                     <p class="info">TODO</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Exit Code No.</th>
@@ -417,12 +521,11 @@
                 <div class="eight columns offset-by-two">
                 </div>
             </div>
-
             <div class="row">
                 <div class="eight columns">
                     <h2 id="variable-manipulation">Variable Manipulation</h2>
                     <p class="info">How to manipulate and edit variables in Bash.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Pattern</th>
@@ -507,7 +610,7 @@
                 <div class="eight columns">
                     <h2 id="string-manipulation">String Manipulation</h2>
                     <p class="info">String manipultion can be extremely useful ... TODO.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Expression</th>
@@ -609,7 +712,7 @@
                 <div class="six columns">
                     <h2 id="command-parameters">Command Parameters</h2>
                     <p class="info">Command parameters are used when invoking a Bash script.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Command</th>
@@ -696,7 +799,7 @@
                 <div class="six columns">
                     <h2 id="history-expansion">History Expansion</h2>
                     <p class="info">Enables use and manipulation of previous commands.</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Command</th>
@@ -752,7 +855,7 @@
                         by the shell
                         while RegEx is used for searching text.
                     </p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Glob</th>
@@ -800,7 +903,7 @@
                 <div class="six columns">
                     <h2 id="regular-expressions">Regular Expressions</h2>
                     <p class="info">Always use quotes in your regex to avoid globbing</p>
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Operator</th>
@@ -895,7 +998,7 @@
             </div>
             <div class="row">
                 <div class="six columns">
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Builtin</th>
@@ -1029,7 +1132,7 @@
                     </table>
                 </div>
                 <div class="six columns">
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Builtin</th>
@@ -1168,7 +1271,7 @@
             </div>
             <div class="row">
                 <div class="six columns">
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Symbol</th>
@@ -1271,7 +1374,7 @@
                     </table>
                 </div>
                 <div class="six columns">
-                    <table>
+                    <table class="two-column-table">
                         <thead>
                         <tr>
                             <th>Symbol</th>
