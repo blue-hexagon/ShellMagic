@@ -178,7 +178,171 @@ input[type=button].button-primary:focus {
   width: 100%;
 }
 
-@media (min-width: 800px) {
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+td:nth-child(1) {
+  min-width: 5%;
+}
+td:nth-child(2) {
+  min-width: 60%;
+}
+td:nth-child(2):hover {
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+th,
+td {
+  border-bottom: 1px dashed #d34a00;
+  padding: 2px 6px;
+  text-align: left;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0.725rem 0;
+  box-sizing: border-box;
+  font-family: "PT Mono", serif;
+  font-weight: 300;
+  margin: 0 auto 0.25rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.button,
+button,
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #555;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  height: 38px;
+  letter-spacing: 0.1rem;
+  line-height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button:hover,
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+.button:focus,
+button:focus,
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus {
+  border-color: #bbb;
+  color: #202020;
+  outline: 0;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: 38px;
+  padding: 6px 10px;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea {
+  appearance: none;
+}
+
+textarea {
+  min-height: 65px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33c3f0;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: none;
+  }
+
+  .email-input {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 880px) {
   footer a {
     text-decoration-style: dotted;
   }
@@ -194,21 +358,6 @@ input[type=button].button-primary:focus {
     position: fixed;
     right: 0;
     top: 0;
-  }
-
-  h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    padding: 0.725rem 0;
-    box-sizing: border-box;
-    font-family: "PT Mono", serif;
-    font-weight: 300;
-    margin: 0 auto 0.25rem 0;
-    text-align: center;
-    width: 100%;
   }
 
   h1 {
@@ -258,116 +407,6 @@ h6 {
     font-size: 0.525rem;
   }
 
-  .button,
-button,
-input[type=submit],
-input[type=reset],
-input[type=button] {
-    background-color: transparent;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: #555;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    height: 38px;
-    letter-spacing: 0.1rem;
-    line-height: 38px;
-    padding: 0 30px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .button:hover,
-button:hover,
-input[type=submit]:hover,
-input[type=reset]:hover,
-input[type=button]:hover,
-.button:focus,
-button:focus,
-input[type=submit]:focus,
-input[type=reset]:focus,
-input[type=button]:focus {
-    border-color: #bbb;
-    color: #202020;
-    outline: 0;
-  }
-
-  input[type=email],
-input[type=number],
-input[type=search],
-input[type=text],
-input[type=tel],
-input[type=url],
-input[type=password],
-textarea,
-select {
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-    height: 38px;
-    padding: 6px 10px;
-  }
-
-  input[type=email],
-input[type=number],
-input[type=search],
-input[type=text],
-input[type=tel],
-input[type=url],
-input[type=password],
-textarea {
-    appearance: none;
-  }
-
-  textarea {
-    min-height: 65px;
-    padding-bottom: 6px;
-    padding-top: 6px;
-  }
-
-  input[type=email]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=text]:focus,
-input[type=tel]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-textarea:focus,
-select:focus {
-    border: 1px solid #33c3f0;
-    outline: 0;
-  }
-
-  label,
-legend {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  fieldset {
-    border-width: 0;
-    padding: 0;
-  }
-
-  input[type=checkbox],
-input[type=radio] {
-    display: inline;
-  }
-
-  label > .label-body {
-    display: inline-block;
-    font-weight: normal;
-    margin-left: 0.5rem;
-  }
-
   p,
 ul,
 li,
@@ -409,13 +448,13 @@ ul {
     width: 100%;
   }
 }
-@media (min-width: 800px) and (min-width: 400px) {
+@media (min-width: 880px) and (min-width: 400px) {
   .container {
     padding: 0;
     width: 85%;
   }
 }
-@media (min-width: 800px) and (min-width: 550px) {
+@media (min-width: 880px) and (min-width: 550px) {
   .container {
     width: 80%;
   }
@@ -562,7 +601,7 @@ ul {
     margin-left: 52%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   code {
     font-family: "Source Code Pro", monospace;
     font-size: 105%;
@@ -571,7 +610,7 @@ ul {
     white-space: nowrap;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   pre > code {
     display: block;
     margin: auto;
@@ -580,46 +619,13 @@ ul {
     width: 50%;
   }
 }
-@media (min-width: 800px) {
-  table {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-}
-@media (min-width: 800px) {
-  td:nth-child(1) {
-    min-width: 5%;
-  }
-  td:nth-child(2) {
-    min-width: 60%;
-  }
-  td:nth-child(2):hover {
-    box-sizing: content-box;
-    overflow: hidden;
-  }
-}
-@media (min-width: 800px) {
-  th,
-td {
-    border-bottom: 1px dashed #d34a00;
-    padding: 2px 6px;
-    text-align: left;
-  }
-}
-@media (min-width: 800px) {
-  th:last-child,
-td:last-child {
-    padding-right: 0;
-  }
-}
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   button,
 .button {
     margin-bottom: 1rem;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   input,
 textarea,
 select,
@@ -627,7 +633,7 @@ fieldset {
     margin-bottom: 1.5rem;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   pre,
 blockquote,
 dl,
@@ -642,34 +648,34 @@ form {
     text-align: center;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .pad-right-1-d-5-px {
     margin: 0 1.5px 0 0;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .u-full-width {
     box-sizing: border-box;
     width: 100%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .u-max-full-width {
     box-sizing: border-box;
     max-width: 100%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .u-pull-right {
     float: right;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .u-pull-left {
     float: left;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 880px) {
   .u-cf {
     clear: both;
     content: "";

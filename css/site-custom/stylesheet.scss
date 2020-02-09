@@ -177,9 +177,11 @@ footer {
 
 p {
   background: lighten($bg, 10%);
+
   &.explanation {
     border-left: 6px solid #65ffa0;
   }
+
   &.warning {
     border-left: 6px solid $warning;
   }
@@ -248,8 +250,184 @@ input[type='button'].button-primary:focus {
   width: 100%;
 }
 
+// Tables
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
 
-@media (min-width: 800px) {
+}
+
+td {
+  &:nth-child(1) {
+    min-width: 5%;
+  }
+
+  &:nth-child(2) {
+    min-width: 60%;
+
+    &:hover {
+      box-sizing: content-box;
+      overflow: hidden;
+    }
+  }
+}
+
+th,
+td {
+  border-bottom: 1px dashed $color-border;
+  padding: 2px 6px;
+  text-align: left;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: .725rem 0;
+  box-sizing: border-box;
+  font-family: 'PT Mono', serif;
+  font-weight: 300;
+  margin: 0 auto .25rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+
+// Buttons
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-color: transparent;
+  border: 1px solid $grey-one;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $grey-two;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  height: $input-height;
+  letter-spacing: .1rem;
+  line-height: $input-height;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button:hover,
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+.button:focus,
+button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  border-color: $grey-one;
+  color: $bg;
+  outline: 0;
+}
+
+
+// Forms
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea,
+select {
+  background-color: $white;
+  border: 1px solid $border-color-cream;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: $input-height;
+  padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+}
+
+//Removes awkward default styles on some inputs for iOS
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea {
+  appearance: none;
+}
+
+textarea {
+  min-height: 65px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $color-temporary;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: none;
+  }
+
+  .email-input {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 880px) {
   footer {
     a {
       text-decoration-style: dotted;
@@ -267,23 +445,6 @@ input[type='button'].button-primary:focus {
     position: fixed;
     right: 0;
     top: 0;
-  }
-
-
-  // Typography
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding: .725rem 0;
-    box-sizing: border-box;
-    font-family: 'PT Mono', serif;
-    font-weight: 300;
-    margin: 0 auto .25rem 0;
-    text-align: center;
-    width: 100%;
   }
 
   h1 {
@@ -328,125 +489,12 @@ input[type='button'].button-primary:focus {
     line-height: 1.6;
   }
 
+
   p {
     font-family: 'PT Mono', sans, serif;
     font-size: .525rem;
   }
 
-
-  // Buttons
-  .button,
-  button,
-  input[type='submit'],
-  input[type='reset'],
-  input[type='button'] {
-    background-color: transparent;
-    border: 1px solid $grey-one;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: $grey-two;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    height: $input-height;
-    letter-spacing: .1rem;
-    line-height: $input-height;
-    padding: 0 30px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .button:hover,
-  button:hover,
-  input[type='submit']:hover,
-  input[type='reset']:hover,
-  input[type='button']:hover,
-  .button:focus,
-  button:focus,
-  input[type='submit']:focus,
-  input[type='reset']:focus,
-  input[type='button']:focus {
-    border-color: $grey-one;
-    color: $bg;
-    outline: 0;
-  }
-
-
-  // Forms
-  input[type='email'],
-  input[type='number'],
-  input[type='search'],
-  input[type='text'],
-  input[type='tel'],
-  input[type='url'],
-  input[type='password'],
-  textarea,
-  select {
-    background-color: $white;
-    border: 1px solid $border-color-cream;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-    height: $input-height;
-    padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
-  }
-
-  //Removes awkward default styles on some inputs for iOS
-  input[type='email'],
-  input[type='number'],
-  input[type='search'],
-  input[type='text'],
-  input[type='tel'],
-  input[type='url'],
-  input[type='password'],
-  textarea {
-    appearance: none;
-  }
-
-  textarea {
-    min-height: 65px;
-    padding-bottom: 6px;
-    padding-top: 6px;
-  }
-
-  input[type='email']:focus,
-  input[type='number']:focus,
-  input[type='search']:focus,
-  input[type='text']:focus,
-  input[type='tel']:focus,
-  input[type='url']:focus,
-  input[type='password']:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid $color-temporary;
-    outline: 0;
-  }
-
-  label,
-  legend {
-    display: block;
-    font-weight: 600;
-    margin-bottom: .5rem;
-  }
-
-  fieldset {
-    border-width: 0;
-    padding: 0;
-  }
-
-  input[type='checkbox'],
-  input[type='radio'] {
-    display: inline;
-  }
-
-  label > .label-body {
-    display: inline-block;
-    font-weight: normal;
-    margin-left: .5rem;
-  }
 
   // Lists
   p,
@@ -667,43 +715,6 @@ input[type='button'].button-primary:focus {
     white-space: pre;
     width: 50%;
   }
-
-
-  // Tables
-  table {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    text-align: center;
-
-  }
-
-  td {
-    &:nth-child(1) {
-      min-width: 5%;
-    }
-
-    &:nth-child(2) {
-      min-width: 60%;
-
-      &:hover {
-        box-sizing: content-box;
-        overflow: hidden;
-      }
-    }
-  }
-
-  th,
-  td {
-    border-bottom: 1px dashed $color-border;
-    padding: 2px 6px;
-    text-align: left;
-  }
-
-  th:last-child,
-  td:last-child {
-    padding-right: 0;
-  }
-
 
   // Spacing
   button,
