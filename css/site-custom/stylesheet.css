@@ -8,6 +8,14 @@
 .icon {
   background: #3a3a3a;
   color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  font-size: 2rem;
+  height: 38px;
+  line-height: unset;
+  min-width: 3rem;
+  padding: 0 0.75rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
 html {
@@ -44,10 +52,10 @@ nav a {
   text-justify: inter-word;
 }
 nav a:nth-child(even) {
-  background: #868686;
+  background: #2d2d2d;
 }
 nav a:nth-child(even):hover {
-  color: #000;
+  color: #ff5900;
 }
 nav a:nth-child(odd) {
   background: #252525;
@@ -136,17 +144,6 @@ input[type=button].button-primary:focus {
   font-size: 6rem;
   text-shadow: 6px #000;
   -webkit-background-clip: text;
-}
-
-.icon {
-  border-radius: 4px;
-  font-size: 2rem;
-  height: 38px;
-  line-height: unset;
-  min-width: 3rem;
-  padding: 0 0.75rem;
-  text-align: center;
-  vertical-align: middle;
 }
 
 .input-container {
