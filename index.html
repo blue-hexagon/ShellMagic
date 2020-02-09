@@ -74,23 +74,12 @@
             </div>
         </div>
         <div class="container">
-            <!--            <div class="row">
-                            <div class="twelve columns"><h2 id="comparison-operators">Comparison
-                                Operators</h2></div>
-                        </div>
-                  <div class="twelve columns">
-                    <p class="info-box">Comparison operators will compare two files, strings, booleans, integers or
-                        expressions
-                        hereof.</p>
-                </div>
-            -->
-
             <div class="row">
                 <div class="six columns">
                     <h3 id="file-test-operators">File Test Operators</h3>
                     <p>Testing files in scripts is easy and straight forward. This is where shell scripting really
-                        become powerful! In Bash you can do file testing for permissions, size, date, filetypes or
-                        exsistance.</p>
+                        become powerful! In Bash you can do file testing for permissions, size, date, filetype or
+                        existence.</p>
                     <table>
                         <thead>
                         <tr>
@@ -379,6 +368,50 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h3 id="reserved-exit-codes">Reserved Exit Codes</h3>
+                    <p>TODO</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Exit Code No.</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>1</code></td>
+                            <td>Catchall for general errors</td>
+                        </tr>
+                        <tr>
+                            <td><code>2</code></td>
+                            <td>Misuse of shell builtins</td>
+                        </tr>
+                        <tr>
+                            <td><code>126</code></td>
+                            <td>Command invoked cannot execute</td>
+                        </tr>
+                        <tr>
+                            <td><code>127</code></td>
+                            <td>Command not found</td>
+                        </tr>
+                        <tr>
+                            <td><code>128</code></td>
+                            <td>Invalid argument to exit</td>
+                        </tr>
+                        <tr>
+                            <td><code>128+n</code></td>
+                            <td>Fatal error signal "n"</td>
+                        </tr>
+                        <tr>
+                            <td><code>130</code></td>
+                            <td>Script terminated by Control-C</td>
+                        </tr>
+                        <tr>
+                            <td><code>255*</code></td>
+                            <td>Exit status out of range</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
@@ -465,8 +498,96 @@
                     </table>
                 </div>
                 <div class="six columns">
+                    <h2 id="string-manipulation">String Manipulation</h2>
+                    <p class="info">String manipultion can be extremely useful ... TODO.</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Expression</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>${#string}</code></td>
+                            <td>Length of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string:position}</code></td>
+                            <td>Extract substring from $string at $position</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string:position:length}</code></td>
+                            <td>Extract $length characters substring from $string at $position [zero-indexed, first character is at position 0]</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string#substring}</code></td>
+                            <td>Strip shortest match of $substring from front of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string##substring}</code></td>
+                            <td>Strip longest match of $substring from front of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string%substring}</code></td>
+                            <td>Strip shortest match of $substring from back of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string%%substring}</code></td>
+                            <td>Strip longest match of $substring from back of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/substring/replacement}</code></td>
+                            <td>Replace first match of $substring with $replacement</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string//substring/replacement}</code></td>
+                            <td>Replace all matches of $substring with $replacement</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/#substring/replacement}</code></td>
+                            <td>If $substring matches front end of $string, substitute $replacement for $substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/%substring/replacement}</code></td>
+                            <td>If $substring matches back end of $string, substitute $replacement for $substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '$substring'</code></td>
+                            <td>Length of matching $substring* at beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '$substring'</code></td>
+                            <td>Length of matching $substring* at beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr index "$string" $substring</code></td>
+                            <td>Numerical position in $string of first character in $substring* that matches [0 if no match, first character counts as position 1]</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr substr $string $position $length</code></td>
+                            <td>Extract $length characters from $string starting at $position [0 if no match, first character counts as position 1]</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '\($substring\)'</code></td>
+                            <td>Extract $substring* , searching from beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '.*\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from end of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '.*\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from end of $string</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <h2 id="command-parameters">Command Parameters</h2>
-                    <p>Now you can know how to manipulate Bash command parameters.</p>
+                    <p class="info">Command parameters are used when invoking a Bash script.</p>
                     <table>
                         <thead>
                         <tr>
@@ -551,7 +672,7 @@
                         </tbody>
                     </table>
                     <h2 id="history-expansion">History Expansion</h2>
-                    <p>Enables use and manipulation of previous commands.</p>
+                    <p class="info">Enables use and manipulation of previous commands.</p>
                     <table>
                         <thead>
                         <tr>
@@ -596,13 +717,12 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="eight columns offset-by-two">
-                </div>
             </div>
             <div class="row">
                 <div class="six columns">
                     <h2 id="bash-globbing">Bash Globbing</h2>
-                    <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em>
+                    <p class="info">Bash cannot recognize RegEx but understand globbing. Globbing is done to filenames by the shell
+                        while RegEx is used for searching text.
                     </p>
                     <table>
                         <thead>
@@ -651,7 +771,7 @@
                 </div>
                 <div class="six columns">
                     <h2 id="regular-expressions">Regular Expressions</h2>
-                    <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
+                    <p class="info">Always use quotes in your regex to avoid globbing</p>
                     <table>
                         <thead>
                         <tr>
@@ -722,8 +842,11 @@
                         </tr>
                         </tbody>
                     </table>
-                    <p>In basic regular expressions the metacharacters "?", "+", "{", "|", "(", and ")" lose their special meaning; instead use the backslash versions "\?" ... "\)".
-                        Check in your system documentation whether commands using regular expressions support extended expressions.</p>
+                    <p class="warning">In basic regular expressions the metacharacters "?", "+", "{", "|", "(", and ")"
+                        lose their
+                        special meaning; instead use the backslash versions "\?" ... "\)".
+                        Check in your system documentation whether commands using regular expressions support extended
+                        expressions.</p>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
