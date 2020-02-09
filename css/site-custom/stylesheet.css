@@ -50,7 +50,6 @@ nav a {
   font-family: "IBM Plex Serif", serif;
   font-size: 1.625rem;
   line-height: 1.285rem;
-  margin: auto;
   padding: 7px 24px;
   text-align: center;
   text-decoration: none;
@@ -141,13 +140,13 @@ p.warning {
   border-left: 6px solid #ffeb3b;
 }
 p.info {
-  border-left: 6px solid #2196F3;
+  border-left: 6px solid #2196f3;
 }
 p.danger {
   border-left: 6px solid #f44336;
 }
 p.success {
-  border-left: 6px solid #4CAF50;
+  border-left: 6px solid #4caf50;
 }
 
 p.info-box {
@@ -359,6 +358,7 @@ label > .label-body {
 
   header * {
     display: flex;
+    overflow: hidden;
   }
 
   header {
@@ -422,14 +422,6 @@ ul,
 li,
 ol {
     font-size: 100%;
-  }
-
-  ul {
-    list-style: square;
-  }
-
-  ol {
-    list-style: upper-roman;
   }
 
   ol,

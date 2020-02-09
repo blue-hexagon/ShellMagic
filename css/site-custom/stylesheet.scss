@@ -42,9 +42,10 @@ $gradient-h1-color-two: #333;
 // Size + Dimension Variables
 $input-height: 38px;
 $warning: #ffeb3b;
-$info: #2196F3;
+$info: #2196f3;
 $danger: #f44336;
-$success: #4CAF50;
+$success: #4caf50;
+$explanation: #65ffa0;
 // - Variable declaration END
 
 // - Font swapping for better page loading.
@@ -97,6 +98,8 @@ body {
 }
 
 nav {
+  .navbar {
+  }
 
   a {
     background-color: $bg;
@@ -104,7 +107,7 @@ nav {
     font-family: 'IBM Plex Serif', serif;
     font-size: 1.625rem;
     line-height: 1.285rem;
-    margin: auto;
+    //margin: auto;
     padding: 7px 24px;
     text-align: center;
     text-decoration: none;
@@ -192,7 +195,6 @@ th {
     &:nth-child(4) {
       background: $td-bg;
       min-width: 5%;
-
     }
   }
 }
@@ -211,7 +213,7 @@ p {
   background: lighten($bg, 10%);
 
   &.explanation {
-    border-left: 6px solid #65ffa0;
+    border-left: 6px solid $explanation;
   }
 
   &.warning {
@@ -453,6 +455,7 @@ label > .label-body {
 
   header * {
     display: flex;
+    overflow: hidden;
   }
 
   header {
@@ -506,12 +509,10 @@ label > .label-body {
     line-height: 1.6;
   }
 
-
   p {
     font-family: 'PT Mono', sans, serif;
     font-size: .525rem;
   }
-
 
   // Lists
   p,
@@ -519,14 +520,6 @@ label > .label-body {
   li,
   ol {
     font-size: 100%;
-  }
-
-  ul {
-    list-style: square;
-  }
-
-  ol {
-    list-style: upper-roman;
   }
 
   ol,
@@ -543,7 +536,6 @@ label > .label-body {
 
 
   // Grid
-
   .container {
     box-sizing: border-box;
     margin: 0 auto;
@@ -714,9 +706,7 @@ label > .label-body {
     }
   }
 
-
   // Code
-
   code {
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;

@@ -41,28 +41,23 @@
         in 15 seconds]</b>
 </div>
 <header>
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns">
-                <nav>
-                    <div class="navbar">
-                        <a href="#file-test-operators">File Test Operators</a>
-                        <a href="#integer-comparison-operators">Integer Comparison</a>
-                        <a href="#string-comparison-operators">String Comparison</a>
-                        <a href="#compound-operators">Compound Operators</a>
-                        <a href="#variable-manipulation">Variable Manipulation</a>
-                        <a href="#command-parameters">List Constructs</a>
-                        <a href="#command-parameters">Command Parameters</a>
-                        <a href="#command-parameters">History Expansion</a>
-                        <a href="#bash-globbing">Bash Globbing</a>
-                        <a href="#bash-globbing">Regular Expressions</a>
-                        <a href="#bash-globbing">Shell Builtins</a>
-                        <a href="#overview-of-symbols">Symbol Overview</a>
-                    </div>
-                </nav>
-            </div>
+
+    <nav>
+        <div class="navbar u-max-full-width">
+            <a href="#file-test-operators">File Test Operators</a>
+            <a href="#integer-comparison-operators">Integer Comparison</a>
+            <a href="#string-comparison-operators">String Comparison</a>
+            <a href="#compound-operators">Compound Operators</a>
+            <a href="#variable-manipulation">Variable Manipulation</a>
+            <a href="#command-parameters">List Constructs</a>
+            <a href="#command-parameters">Command Parameters</a>
+            <a href="#command-parameters">History Expansion</a>
+            <a href="#bash-globbing">Bash Globbing</a>
+            <a href="#bash-globbing">Regular Expressions</a>
+            <a href="#bash-globbing">Shell Builtins</a>
+            <a href="#overview-of-symbols">Symbol Overview</a>
         </div>
-    </div>
+    </nav>
 </header>
 <main>
     <section>
@@ -77,7 +72,9 @@
             <div class="row">
                 <div class="six columns">
                     <h3 id="file-test-operators">File Test Operators</h3>
-                    <p class="info">Testing files in scripts is easy and straight forward. This is where shell scripting starts to show its glory! In Bash you can do file testing for permissions, size, date, filetype or
+                    <p class="info">Testing files in scripts is easy and straight forward. This is where shell scripting
+                        starts to show its glory! In Bash you can do file testing for permissions, size, date, filetype
+                        or
                         existence.</p>
                     <table class="two-column-table">
                         <thead>
@@ -248,85 +245,85 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><code>SIGHUP     </code></td>
+                            <td><code>SIGHUP </code></td>
                             <td>1</td>
                             <td>exit</td>
                             <td>Hangs up</td>
                         </tr>
                         <tr>
-                            <td><code>SIGINT     </code></td>
+                            <td><code>SIGINT </code></td>
                             <td>2</td>
                             <td>exit</td>
                             <td>Interrupts.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGQUIT    </code></td>
+                            <td><code>SIGQUIT </code></td>
                             <td>3</td>
                             <td>core dump</td>
                             <td>Quits.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGILL     </code></td>
+                            <td><code>SIGILL </code></td>
                             <td>4</td>
                             <td>core dump</td>
                             <td>Illegal instruction.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGTRAP    </code></td>
+                            <td><code>SIGTRAP </code></td>
                             <td>5</td>
                             <td>core dump</td>
                             <td>Trace trap.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGIOT     </code></td>
+                            <td><code>SIGIOT </code></td>
                             <td>6</td>
                             <td>core dump</td>
                             <td>IOT instruction.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGEMT     </code></td>
+                            <td><code>SIGEMT </code></td>
                             <td>7</td>
                             <td>core dump</td>
                             <td>MT instruction.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGFPE     </code></td>
+                            <td><code>SIGFPE </code></td>
                             <td>8</td>
                             <td>core dump</td>
                             <td>Floating point exception.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGKILL    </code></td>
+                            <td><code>SIGKILL </code></td>
                             <td>9</td>
                             <td>exit</td>
                             <td>Kills (cannot be caught or ignored).</td>
                         </tr>
                         <tr>
-                            <td><code>SIGBUS     </code></td>
+                            <td><code>SIGBUS </code></td>
                             <td>10</td>
                             <td>core dump</td>
                             <td>Bus error.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGSEGV    </code></td>
+                            <td><code>SIGSEGV </code></td>
                             <td>11</td>
                             <td>core dump</td>
                             <td>Segmentation violation.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGSYS     </code></td>
+                            <td><code>SIGSYS </code></td>
                             <td>12</td>
                             <td>core dump</td>
                             <td>Bad argument to system call.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGPIPE    </code></td>
+                            <td><code>SIGPIPE </code></td>
                             <td>13</td>
                             <td>exit</td>
                             <td>Writes on a pipe with no one to read it.</td>
                         </tr>
                         <tr>
-                            <td><code>SIGALRM    </code></td>
+                            <td><code>SIGALRM </code></td>
                             <td>14</td>
                             <td>exit</td>
                             <td>Alarm clock.</td>
@@ -1264,7 +1261,8 @@
             <div class="row">
                 <div class="twelve columns">
                     <h2 id="overview-of-symbolss">Overview of Bash Symbols</h2>
-                    <p class="info">Here we have gathered a collection of all arcane syntax along with a brief description. A bunch
+                    <p class="info">Here we have gathered a collection of all arcane syntax along with a brief
+                        description. A bunch
                         of these symbols are repeated from earlier but many are new - this is a good starting point if
                         you are new to the language.</p>
                 </div>
