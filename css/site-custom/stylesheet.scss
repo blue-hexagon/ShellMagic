@@ -105,11 +105,11 @@ a {
   color: $fg;
 }
 
-a:nth-child(even){
+nav a:nth-child(even){
   background: lighten($bg,4%);
 }
 
-a:nth-child(odd){
+nav a:nth-child(odd){
   background: lighten($bg,2%);
 }
 
