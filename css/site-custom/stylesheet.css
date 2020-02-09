@@ -113,6 +113,9 @@ footer {
 p {
   background: #3a3a3a;
 }
+p.explanation {
+  border-left: 6px solid #65ffa0;
+}
 p.warning {
   border-left: 6px solid #ffeb3b;
 }

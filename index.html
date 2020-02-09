@@ -418,7 +418,7 @@
             </div>
 
             <div class="row">
-                <div class="six columns">
+                <div class="twelve columns">
                     <h2 id="variable-manipulation">Variable Manipulation</h2>
                     <p>How to manipulate and edit variables in Bash.</p>
                     <table>
@@ -497,7 +497,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="six columns">
+
+            </div>
+            <div class="row">
+                <div class="twelve columns">
                     <h2 id="string-manipulation">String Manipulation</h2>
                     <p class="info">String manipultion can be extremely useful ... TODO.</p>
                     <table>
@@ -518,7 +521,9 @@
                         </tr>
                         <tr>
                             <td><code>${string:position:length}</code></td>
-                            <td>Extract $length characters substring from $string at $position [zero-indexed, first character is at position 0]</td>
+                            <td>Extract $length characters substring from $string at $position [zero-indexed, first
+                                character is at position 0]
+                            </td>
                         </tr>
                         <tr>
                             <td><code>${string#substring}</code></td>
@@ -562,11 +567,15 @@
                         </tr>
                         <tr>
                             <td><code>expr index "$string" $substring</code></td>
-                            <td>Numerical position in $string of first character in $substring* that matches [0 if no match, first character counts as position 1]</td>
+                            <td>Numerical position in $string of first character in $substring* that matches [0 if no
+                                match, first character counts as position 1]
+                            </td>
                         </tr>
                         <tr>
                             <td><code>expr substr $string $position $length</code></td>
-                            <td>Extract $length characters from $string starting at $position [0 if no match, first character counts as position 1]</td>
+                            <td>Extract $length characters from $string starting at $position [0 if no match, first
+                                character counts as position 1]
+                            </td>
                         </tr>
                         <tr>
                             <td><code>expr match "$string" '\($substring\)'</code></td>
@@ -586,6 +595,10 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
                     <h2 id="command-parameters">Command Parameters</h2>
                     <p class="info">Command parameters are used when invoking a Bash script.</p>
                     <table>
@@ -671,6 +684,8 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="six columns">
                     <h2 id="history-expansion">History Expansion</h2>
                     <p class="info">Enables use and manipulation of previous commands.</p>
                     <table>
@@ -719,9 +734,14 @@
                 </div>
             </div>
             <div class="row">
+                <div class="twelve columns">
+                </div>
+            </div>
+            <div class="row">
                 <div class="six columns">
                     <h2 id="bash-globbing">Bash Globbing</h2>
-                    <p class="info">Bash cannot recognize RegEx but understand globbing. Globbing is done to filenames by the shell
+                    <p class="info">Bash cannot recognize RegEx but understand globbing. Globbing is done to filenames
+                        by the shell
                         while RegEx is used for searching text.
                     </p>
                     <table>
@@ -847,8 +867,6 @@
                         special meaning; instead use the backslash versions "\?" ... "\)".
                         Check in your system documentation whether commands using regular expressions support extended
                         expressions.</p>
-                </div>
-                <div class="eight columns offset-by-two">
                 </div>
             </div>
             <div class="row">

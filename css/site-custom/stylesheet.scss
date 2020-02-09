@@ -177,7 +177,9 @@ footer {
 
 p {
   background: lighten($bg, 10%);
-
+  &.explanation {
+    border-left: 6px solid #65ffa0;
+  }
   &.warning {
     border-left: 6px solid $warning;
   }
