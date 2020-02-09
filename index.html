@@ -429,8 +429,8 @@
                                 <td>Name of the script itself</td>
                             </tr>
                             <tr>
-                                <td><code>$1 $2 $3</code></td>
-                                <td>Parameter 1, 2, 3, 4, 5 ... etc.</td>
+                                <td><code>$&lt;N&gt;</code></td>
+                                <td>Parameter 1 ... N</td>
                             </tr>
                             <tr>
                                 <td><code>$*</code></td>
@@ -588,7 +588,7 @@
                             </tr>
                             <tr>
                                 <td><code>.</code></td>
-                                <td></td>
+                                <td>Reads and executes commands from a designated file in the current shell.</td>
                             </tr>
                             <tr>
                                 <td><code>[</code></td>
@@ -596,107 +596,108 @@
                             </tr>
                             <tr>
                                 <td><code>alias</code></td>
-                                <td></td>
+                                <td>Defines an alias for the specified command.</td>
                             </tr>
                             <tr>
                                 <td><code>bg</code></td>
-                                <td></td>
+                                <td>Resumes a job in background mode.</td>
                             </tr>
                             <tr>
                                 <td><code>bind</code></td>
-                                <td></td>
+                                <td>Binds a keyboard sequence to a read line function or macro.</td>
                             </tr>
                             <tr>
                                 <td><code>break</code></td>
-                                <td></td>
+                                <td>Exits from a for, while, select, or until loop.</td>
                             </tr>
                             <tr>
                                 <td><code>builtin</code></td>
-                                <td></td>
+                                <td>Executes the specified shell built-in command.</td>
                             </tr>
+                            <!--TODO: Add "caller" "readarray" "comopt" "mapfile" builtin if its missing -->
                             <tr>
                                 <td><code>case</code></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td><code>cd</code></td>
-                                <td></td>
+                                <td>Changes the current directory to the specified directory.</td>
                             </tr>
                             <tr>
                                 <td><code>command</code></td>
-                                <td></td>
+                                <td>Executes the specified command without the normal shell lookup.</td>
                             </tr>
                             <tr>
                                 <td><code>compgen</code></td>
-                                <td></td>
+                                <td>Generates possible completion matches for the specified word.</td>
                             </tr>
                             <tr>
                                 <td><code>complete</code></td>
-                                <td></td>
+                                <td>Displays how the specified words would be completed.</td>
                             </tr>
                             <tr>
                                 <td><code>continue</code></td>
-                                <td></td>
+                                <td>Resumes the next iteration of a for, while, select, or until loop.</td>
                             </tr>
                             <tr>
                                 <td><code>declare</code></td>
-                                <td></td>
+                                <td>Declares a variable or variable type.</td>
                             </tr>
                             <tr>
                                 <td><code>dirs</code></td>
-                                <td></td>
+                                <td>Displays a list of currently remembered directories.</td>
                             </tr>
                             <tr>
                                 <td><code>disown</code></td>
-                                <td></td>
+                                <td>Removes the specified jobs from the jobs table for the process.</td>
                             </tr>
                             <tr>
                                 <td><code>echo</code></td>
-                                <td></td>
+                                <td>Displays the specified string to STDOUT.</td>
                             </tr>
                             <tr>
                                 <td><code>enable</code></td>
-                                <td></td>
+                                <td>Enables or disables the specified built-in shell command.</td>
                             </tr>
                             <tr>
                                 <td><code>eval</code></td>
-                                <td></td>
+                                <td>Concatenates the specified arguments into a single command, and executes the command.</td>
                             </tr>
                             <tr>
                                 <td><code>exec</code></td>
-                                <td></td>
+                                <td>Replaces the shell process with the specified command.</td>
                             </tr>
                             <tr>
                                 <td><code>exit</code></td>
-                                <td></td>
+                                <td>Forces the shell to exit with the specified exit status.</td>
                             </tr>
                             <tr>
                                 <td><code>export</code></td>
-                                <td></td>
+                                <td>Sets the specified variables to be available for child shell processes.</td>
                             </tr>
                             <tr>
                                 <td><code>fc</code></td>
-                                <td></td>
+                                <td>Selects a list of commands from the history list.</td>
                             </tr>
                             <tr>
                                 <td><code>fg</code></td>
-                                <td></td>
+                                <td>Resumes a job in foreground mode.</td>
                             </tr>
                             <tr>
                                 <td><code>getopts</code></td>
-                                <td></td>
+                                <td>Parses the specified positional parameters.</td>
                             </tr>
                             <tr>
                                 <td><code>hash</code></td>
-                                <td></td>
+                                <td>Finds and remembers the full pathname of the specified command.</td>
                             </tr>
                             <tr>
                                 <td><code>help</code></td>
-                                <td></td>
+                                <td>Displays a help file.</td>
                             </tr>
                             <tr>
                                 <td><code>history</code></td>
-                                <td></td>
+                                <td>Displays the command history.</td>
                             </tr>
                             <tr>
                                 <td><code>if</code></td>
@@ -716,107 +717,107 @@
                             <tbody>
                             <tr>
                                 <td><code>jobs</code></td>
-                                <td></td>
+                                <td>Lists active jobs.</td>
                             </tr>
                             <tr>
                                 <td><code>kill</code></td>
-                                <td></td>
+                                <td>Sends a system signal to the specified process ID (PID).</td>
                             </tr>
                             <tr>
                                 <td><code>let</code></td>
-                                <td></td>
+                                <td>Evaluates each argument in a mathematical expression.</td>
                             </tr>
                             <tr>
                                 <td><code>local</code></td>
-                                <td></td>
+                                <td>Creates a limited-scope variable in a function.</td>
                             </tr>
                             <tr>
                                 <td><code>logout</code></td>
-                                <td></td>
+                                <td>Exits a login shell.</td>
                             </tr>
                             <tr>
                                 <td><code>popd</code></td>
-                                <td></td>
+                                <td>Removes entries from the directory stack.</td>
                             </tr>
                             <tr>
                                 <td><code>printf</code></td>
-                                <td></td>
+                                <td>Displays text using formatted strings.</td>
                             </tr>
                             <tr>
                                 <td><code>pushd</code></td>
-                                <td></td>
+                                <td>Adds a directory to the directory stack.</td>
                             </tr>
                             <tr>
                                 <td><code>pwd</code></td>
-                                <td></td>
+                                <td>Displays the pathname of the current working directory.</td>
                             </tr>
                             <tr>
                                 <td><code>read</code></td>
-                                <td></td>
+                                <td>Reads one line of data from STDIN, and assigns it to a variable.</td>
                             </tr>
                             <tr>
                                 <td><code>readonly</code></td>
-                                <td></td>
+                                <td>Reads one line of data from STDIN, and assigns it to a variable that can’t be changed.</td>
                             </tr>
                             <tr>
                                 <td><code>return</code></td>
-                                <td></td>
+                                <td>Forces a function to exit with a value that can be retrieved by the calling script.</td>
                             </tr>
                             <tr>
                                 <td><code>set</code></td>
-                                <td></td>
+                                <td>Sets and displays environment variable values and shell attributes.</td>
                             </tr>
                             <tr>
                                 <td><code>shift</code></td>
-                                <td></td>
+                                <td>Rotates positional parameters down one position.</td>
                             </tr>
                             <tr>
                                 <td><code>shopt</code></td>
-                                <td></td>
+                                <td>Toggles the values of variables controlling optional shell behavior.</td>
                             </tr>
                             <tr>
                                 <td><code>source</code></td>
-                                <td></td>
+                                <td>Reads and executes commands from a designated file in the current shell.</td>
                             </tr>
                             <tr>
                                 <td><code>suspend</code></td>
-                                <td></td>
+                                <td>Suspends the execution of the shell until a SIGCONT signal is received.</td>
                             </tr>
                             <tr>
                                 <td><code>test</code></td>
-                                <td></td>
+                                <td>Returns an exit status of 0 or 1 based on the specified condition.</td>
                             </tr>
                             <tr>
                                 <td><code>times</code></td>
-                                <td></td>
+                                <td>Displays the accumulated user and system shell time.</td>
                             </tr>
                             <tr>
                                 <td><code>trap</code></td>
-                                <td></td>
+                                <td>Executes the specified command if the specified system signal is received.</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
-                                <td></td>
+                                <td>Displays how the specified words would be interpreted if used as a command.</td>
                             </tr>
                             <tr>
                                 <td><code>typeset</code></td>
-                                <td></td>
+                                <td>Declares a variable or variable type.</td>
                             </tr>
                             <tr>
                                 <td><code>ulimit</code></td>
-                                <td></td>
+                                <td>Sets a limit on the specific resource for system users.</td>
                             </tr>
                             <tr>
                                 <td><code>umask</code></td>
-                                <td></td>
+                                <td>Sets default permissions for newly created files and directories.</td>
                             </tr>
                             <tr>
                                 <td><code>unalias</code></td>
-                                <td></td>
+                                <td>Removes specified alias.</td>
                             </tr>
                             <tr>
                                 <td><code>unset</code></td>
-                                <td></td>
+                                <td>Removes the specified environment variable or shell attribute.</td>
                             </tr>
                             <tr>
                                 <td><code>until</code></td>
@@ -828,7 +829,7 @@
                             </tr>
                             <tr>
                                 <td><code>while</code></td>
-                                <td></td>
+                                <td>Waits for the specified process to complete, and returns the exit status.</td>
                             </tr>
                             </tbody>
                         </table>
@@ -1057,11 +1058,10 @@
                 </div>
                 <div class="row">
                     <div class="six columns offset-by-three">
-                        <p style="font-size: 1.25rem;">If you find this site <u style="color: mediumpurple">helpful</u>,
-                            please consider <u style="color: orange">sharing it</u> with a friend!
-                            If people <u style="color: #65ffa0">start using the site</u>, I will keep the <u
-                                    style="color: #ff327e">improvements</u> coming at a much <u style="color:gold;">faster
-                                rate</u> <u style="color:gold;"><i class="fas fa-smile-beam"></i></u>
+                        <p style="font-size: 1.5rem; color: azure;">If you find this site helpful,
+                            please consider sharing it with a friend!<br>
+                            The more people start using the site, the faster improvements will come along
+                                 <i class="fas fa-smile-beam"></i>
                     </div>
 
                     <div class="six columns offset-by-three">

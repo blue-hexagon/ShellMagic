@@ -103,11 +103,18 @@ background: lighten($color-primary-1, 15%);
 
 a {
   color: $fg;
-
-
 }
+
+a:nth-child(even){
+  background: lighten($bg,4%);
+}
+
+a:nth-child(odd){
+  background: lighten($bg,2%);
+}
+
 a:hover {
-  color: $color-link-hover;
+  color: $grey-one;
   text-decoration: none;
 }
 
@@ -208,7 +215,7 @@ html {
   font-size: 62.5%;
   margin: 4rem auto auto; // For navbar we need some top-margin
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 4.6rem;
   text-justify: inter-word;
 
   ::selection {
@@ -266,7 +273,6 @@ footer {
     }
 
     a {
-      border: 1px solid $color-border;
       cursor: pointer;
       float: left;
       font-family: 'IBM Plex Serif', serif;
@@ -278,6 +284,7 @@ footer {
       text-decoration: none;
       text-justify: inter-word;
       width: 50%;
+
     }
 
     ::after { // Clear floats (clearfix hack)

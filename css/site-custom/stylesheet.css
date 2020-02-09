@@ -61,8 +61,16 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
+a:nth-child(even) {
+  background: #2a2a2a;
+}
+
+a:nth-child(odd) {
+  background: #252525;
+}
+
 a:hover {
-  color: #ff327e;
+  color: #bbb;
   text-decoration: none;
 }
 
@@ -154,7 +162,7 @@ html {
   font-size: 62.5%;
   margin: 4rem auto auto;
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 4.6rem;
   text-justify: inter-word;
 }
 html ::selection {
@@ -202,7 +210,6 @@ footer {
     border-right: 0;
   }
   nav a {
-    border: 1px solid #d34a00;
     cursor: pointer;
     float: left;
     font-family: "IBM Plex Serif", serif;
