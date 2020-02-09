@@ -46,13 +46,17 @@
             <div class="twelve columns">
                 <nav>
                     <div class="navbar">
-                        <a href="#command-parameters">Command Parameters</a>
                         <a href="#file-test-operators">File Test Operators</a>
                         <a href="#integer-comparison-operators">Integer Comparison</a>
                         <a href="#string-comparison-operators">String Comparison</a>
                         <a href="#compound-operators">Compound Operators</a>
                         <a href="#variable-manipulation">Variable Manipulation</a>
+                        <a href="#command-parameters">List Constructs</a>
+                        <a href="#command-parameters">Command Parameters</a>
+                        <a href="#command-parameters">History Expansion</a>
                         <a href="#bash-globbing">Bash Globbing</a>
+                        <a href="#bash-globbing">Regular Expressions</a>
+                        <a href="#bash-globbing">Shell Builtins</a>
                         <a href="#overview-of-symbols">Symbol Overview</a>
                     </div>
                 </nav>
@@ -84,7 +88,9 @@
             <div class="row">
                 <div class="six columns">
                     <h3 id="file-test-operators">File Test Operators</h3>
-                    <p>Testing files in scripts is easy and straight forward. This is where shell scripting really become powerful! In Bash you can do file testing for permissions, size, date, filetypes or exsistance.</p>
+                    <p>Testing files in scripts is easy and straight forward. This is where shell scripting really
+                        become powerful! In Bash you can do file testing for permissions, size, date, filetypes or
+                        exsistance.</p>
                     <table>
                         <thead>
                         <tr>
@@ -201,6 +207,46 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h3 id="job-identifiers">Job Identifiers</h3>
+                    <p>TODO</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Notation</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>%N</code></td>
+                            <td>Job number [N]</td>
+                        </tr>
+                        <tr>
+                            <td><code>%S</code></td>
+                            <td>Invocation (command-line) of job begins with string S</td>
+                        </tr>
+                        <tr>
+                            <td><code>%?S</code></td>
+                            <td>Invocation (command-line) of job contains within it string S</td>
+                        </tr>
+                        <tr>
+                            <td><code>%%</code></td>
+                            <td>"current" job (last job stopped in foreground or started in background)</td>
+                        </tr>
+                        <tr>
+                            <td><code>%+</code></td>
+                            <td>"current" job (last job stopped in foreground or started in background)</td>
+                        </tr>
+                        <tr>
+                            <td><code>%-</code></td>
+                            <td>Last job</td>
+                        </tr>
+                        <tr>
+                            <td><code>%!</code></td>
+                            <td>Last background process</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="six columns">
                     <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
@@ -314,6 +360,25 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h2 id="list-constructs">List Constructs</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Construct</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>&&</code></td>
+                            <td>and construct</td>
+                        </tr>
+                        <tr>
+                            <td><code>||</code></td>
+                            <td>or construct</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
@@ -400,25 +465,6 @@
                     </table>
                 </div>
                 <div class="six columns">
-                    <h2 id="list-constructs">List Constructs</h2>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Construct</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>&&</code></td>
-                            <td>and construct</td>
-                        </tr>
-                        <tr>
-                            <td><code>||</code></td>
-                            <td>or construct</td>
-                        </tr>
-                        </tbody>
-                    </table>
                     <h2 id="command-parameters">Command Parameters</h2>
                     <p>Now you can know how to manipulate Bash command parameters.</p>
                     <table>
@@ -434,8 +480,12 @@
                             <td>Name of the script itself</td>
                         </tr>
                         <tr>
-                            <td><code>$&lt;N&gt;</code></td>
-                            <td>Parameter 1 ... N</td>
+                            <td><code>$1, ... $9</code></td>
+                            <td>Parameter 1 ... 9</td>
+                        </tr>
+                        <tr>
+                            <td>${10}</td>
+                            <td>Positional parameter 10</td>
                         </tr>
                         <tr>
                             <td><code>$*</code></td>
@@ -532,11 +582,12 @@
                         </tr>
                         <tr>
                             <td><code>!?string?</code></td>
-                            <td>Refers to the most recent command containing &lt;string&gt; (the ending ? is optional)</td>
+                            <td>Refers to the most recent command containing &lt;string&gt; (the ending ? is optional)
+                            </td>
                         </tr>
                         <tr>
                             <td><code>^string1^string2^</code></td>
-                            <td>Quick substitution.  Repeats the last command, replacing &lt;string1&gt; with &lt;string2&gt;.</td>
+                            <td>Quick substitution. Repeats the last command, replacing &lt;string1&gt; with &lt;string2&gt;.</td>
                         </tr>
                         <tr>
                             <td><code>!#</code></td>
@@ -601,6 +652,78 @@
                 <div class="six columns">
                     <h2 id="regular-expressions">Regular Expressions</h2>
                     <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Effect</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>.</code></td>
+                            <td>Matches any single character.</td>
+                        </tr>
+                        <tr>
+                            <td><code>?</code></td>
+                            <td>The preceding item is optional and will be matched, at most, once.</td>
+                        </tr>
+                        <tr>
+                            <td><code>*</code></td>
+                            <td>The preceding item will be matched zero or more times.</td>
+                        </tr>
+                        <tr>
+                            <td><code>+</code></td>
+                            <td>The preceding item will be matched one or more times.</td>
+                        </tr>
+                        <tr>
+                            <td><code>{N}</code></td>
+                            <td>The preceding item is matched exactly N times.</td>
+                        </tr>
+                        <tr>
+                            <td><code>{N,}</code></td>
+                            <td>The preceding item is matched N or more times.</td>
+                        </tr>
+                        <tr>
+                            <td><code>{N,M}</code></td>
+                            <td>The preceding item is matched at least N times, but not more than M times.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td>
+                            <td>Represents the range if it's not first or last in a list or the ending point of a range
+                                in a list.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>^</code></td>
+                            <td>Matches the empty string at the beginning of a line; also represents the characters not
+                                in the range of a list.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>$</code></td>
+                            <td>Matches the empty string at the end of a line.</td>
+                        </tr>
+                        <tr>
+                            <td><code>\b</code></td>
+                            <td>Matches the empty string at the edge of a word.</td>
+                        </tr>
+                        <tr>
+                            <td><code>\B</code></td>
+                            <td>Matches the empty string provided it's not at the edge of a word.</td>
+                        </tr>
+                        <tr>
+                            <td><code>\&lt;</code></td>
+                            <td>Match the empty string at the beginning of word.</td>
+                        </tr>
+                        <tr>
+                            <td><code>\&gt;</code></td>
+                            <td>Match the empty string at the end of word.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p>In basic regular expressions the metacharacters "?", "+", "{", "|", "(", and ")" lose their special meaning; instead use the backslash versions "\?" ... "\)".
+                        Check in your system documentation whether commands using regular expressions support extended expressions.</p>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
@@ -889,7 +1012,9 @@
             <div class="row">
                 <div class="twelve columns">
                     <h2 id="overview-of-symbolss">Overview of Bash Symbols</h2>
-                    <p>Here we have gathered a collection of all arcane syntax along with a brief description. A bunch of these symbols are repeated from earlier but many are new - this is a good starting point if you are new to the language.</p>
+                    <p>Here we have gathered a collection of all arcane syntax along with a brief description. A bunch
+                        of these symbols are repeated from earlier but many are new - this is a good starting point if
+                        you are new to the language.</p>
                 </div>
             </div>
             <div class="row">
