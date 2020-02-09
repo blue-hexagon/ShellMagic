@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
+  <img src="https://github.com/smokingcuke/Advanced-Shell-Notes/blob/master/resources/graphic/logo/logo.png" alt="AdvancedShellNotesLogo" width="600">
 </h1>
 <p align="center">
 :star: Star us on GitHub it helps!
