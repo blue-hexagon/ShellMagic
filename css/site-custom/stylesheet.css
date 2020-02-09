@@ -1,23 +1,58 @@
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pacifico Regular"), local("Pacifico-Regular"), url("https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2") format("woff2");
+  font-display: swap;
+}
 .icon {
   background: #3a3a3a;
   color: rgba(255, 255, 255, 0.5);
 }
 
+html {
+  font-size: 62.5%;
+  margin: 4rem auto auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.6rem;
+  text-justify: inter-word;
+}
 html ::selection {
   background: #34495e;
   color: #fff;
+  padding: 4px;
 }
 
 body {
   background: #202020;
   color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 nav a {
   background-color: #202020;
   color: #fff;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 1.625rem;
+  line-height: 1.285rem;
+  margin: auto;
+  padding: 7px 24px;
+  text-align: center;
+  text-decoration: none;
+  text-justify: inter-word;
 }
-nav :hover {
+nav a:nth-child(even) {
+  background: #868686;
+}
+nav a:nth-child(even):hover {
+  color: #000;
+}
+nav a:nth-child(odd) {
+  background: #252525;
+}
+nav a:nth-child(odd):hover {
   color: #ff5900;
 }
 
@@ -31,24 +66,11 @@ h6 {
   color: #202020;
 }
 
-h2 {
-  background: #ff5900;
-}
-
 a {
   color: rgba(255, 255, 255, 0.5);
+  outline: 0;
 }
-
-nav a:nth-child(even) {
-  background: #2a2a2a;
-}
-
-nav a:nth-child(odd) {
-  background: #252525;
-}
-
 a:hover {
-  color: #bbb;
   text-decoration: none;
 }
 
@@ -59,17 +81,20 @@ th {
 td:nth-child(1) {
   background: #202020;
 }
-
 td:nth-child(2) {
   background: #202020;
 }
-
 td:nth-child(2):hover {
   background: #3a3a3a;
 }
 
 footer {
   background: #202020;
+  display: block;
+  font-family: "IBM Plex Serif", serif;
+  margin: auto;
+  padding: 0.625rem 1rem;
+  text-align: center;
 }
 
 p {
@@ -77,7 +102,7 @@ p {
 }
 
 p.info-box {
-  margin: 1ex 0 0 0;
+  margin: 1ex 0 0;
 }
 
 .button.button-primary,
@@ -136,74 +161,22 @@ input[type=button].button-primary:focus {
   width: 100%;
 }
 
-html {
-  font-size: 62.5%;
-  margin: 4rem auto auto;
-  scroll-behavior: smooth;
-  scroll-padding-top: 4.6rem;
-  text-justify: inter-word;
-}
-html ::selection {
-  padding: 4px;
-}
-
-body {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-a {
-  outline: 0;
-}
-
-footer {
-  display: block;
-  font-family: "IBM Plex Serif", serif;
-  margin: auto;
-  padding: 0.625rem 1rem;
-  text-align: center;
-}
-
 @media (min-width: 800px) {
   footer a {
     text-decoration-style: dotted;
-  }
-
-  header {
-    box-shadow: 0 0 25px 0 #000;
-    display: flex;
-    height: 4rem;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
   }
 
   header * {
     display: flex;
   }
 
-  nav :not(:last-child) {
-    border-right: 0;
-  }
-  nav a {
-    cursor: pointer;
-    float: left;
-    font-family: "IBM Plex Serif", serif;
-    font-size: 1.625rem;
-    line-height: 1.285rem;
-    margin: auto;
-    padding: 7px 24px;
-    text-align: center;
-    text-decoration: none;
-    text-justify: inter-word;
-    width: 50%;
-  }
-  nav ::after {
-    clear: both;
-    content: "";
-    display: table;
+  header {
+    box-shadow: 0 0 25px 0 #000;
+    height: 4rem;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
   }
 
   h1,
@@ -593,16 +566,20 @@ ul {
 @media (min-width: 800px) {
   table {
     width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 }
 @media (min-width: 800px) {
   td:nth-child(1) {
     min-width: 5%;
   }
-}
-@media (min-width: 800px) {
   td:nth-child(2) {
     min-width: 60%;
+  }
+  td:nth-child(2):hover {
+    box-sizing: content-box;
+    overflow: hidden;
   }
 }
 @media (min-width: 800px) {
@@ -617,12 +594,6 @@ td {
   th:last-child,
 td:last-child {
     padding-right: 0;
-  }
-}
-@media (min-width: 800px) {
-  td:nth-child(2):hover {
-    box-sizing: content-box;
-    overflow: hidden;
   }
 }
 @media (min-width: 800px) {
@@ -657,12 +628,6 @@ form {
 @media (min-width: 800px) {
   .pad-right-1-d-5-px {
     margin: 0 1.5px 0 0;
-  }
-}
-@media (min-width: 800px) {
-  table {
-    margin-bottom: 1.5rem;
-    text-align: center;
   }
 }
 @media (min-width: 800px) {

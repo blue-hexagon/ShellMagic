@@ -1,6 +1,21 @@
-// ------------------------------------------------
+// sass-lint:disable nesting-depth
+// sass-lint:disable force-pseudo-nesting
+// sass-lint:disable force-element-nesting
+// sass-lint:disable no-vendor-prefixes
+// sass-lint:disable property-sort-order
+// sass-lint:disable force-attribute-nesting
+// sass-lint:disable no-qualifying-elements
+// sass-lint:disable force-pseudo-nesting
+//sass-lint:disable no-url-domains, no-url-protocols
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url('https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
+  font-display: swap;
+}
+
 // Color Vars
-// ------------------------------------------------
 $color-primary-0: #a73a00;
 $color-primary-1: #ff5900;
 $color-primary-2: #d34a00;
@@ -17,9 +32,7 @@ $grey-two: #555;
 $grey-three: #fff;
 $color-turquoise: #65ffa0;
 
-// ------------------------------------------------
 // Color Assignment
-// ------------------------------------------------
 $footer-background: $white;
 $color-code-background: #f1f1f1;
 $color-text-selection-background: #34495e;
@@ -33,32 +46,66 @@ $color-link-hover: #ff327e;
 $gradient-h1-color-one: #eee;
 $gradient-h1-color-two: #333;
 
+// Size + Dimension Variables
+$input-height: 38px;
+
+
 .icon {
   background: lighten($bg, 10%);
   color: $fg;
 }
 
 html {
+  font-size: 62.5%;
+  margin: 4rem auto auto; // For navbar we need some top-margin
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.6rem;
+  text-justify: inter-word;
+
   ::selection {
     background: $color-text-selection-background;
     color: $color-text-selection-text;
+    padding: 4px;
   }
 }
 
 body {
   background: $bg;
   color: $fg;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 nav {
+
   a {
     background-color: $bg;
     color: $white;
-  }
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.625rem;
+    line-height: 1.285rem;
+    margin: auto;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    text-justify: inter-word;
 
-  :hover {
-    //background-color: $heading-one-bg;
-    color: $heading-one-bg;
+    &:nth-child(even) {
+      background: lighten($bg, 40%);
+
+      &:hover { // TODO: Fix - Why is this selector not working?
+        color: $black;
+      }
+    }
+
+    &:nth-child(odd) {
+      background: lighten($bg, 2%);
+
+      &:hover {
+        color: $heading-one-bg;
+      }
+    }
   }
 }
 
@@ -72,45 +119,41 @@ h6 {
   color: $bg;
 }
 
-h2 {
-  background: $color-primary-1;
-}
-
 a {
   color: $fg;
-}
+  outline: 0;
 
-nav a:nth-child(even) {
-  background: lighten($bg, 4%);
-}
-
-nav a:nth-child(odd) {
-  background: lighten($bg, 2%);
-}
-
-a:hover {
-  color: $grey-one;
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 th {
   color: $color-text-selection-text;
 }
 
-td:nth-child(1) {
-  background: $td-bg;
-}
+td {
+  &:nth-child(1) {
+    background: $td-bg;
+  }
 
-td:nth-child(2) {
-  background: $td-bg;
-}
+  &:nth-child(2) {
+    background: $td-bg;
 
-td:nth-child(2):hover {
-  background: lighten($bg, 10%);
+    &:hover {
+      background: lighten($bg, 10%);
+    }
+  }
 }
 
 footer {
   background: $bg;
+  display: block;
+  font-family: 'IBM Plex Serif', serif;
+  margin: auto;
+  padding: .625rem 1rem;
+  text-align: center;
+
 }
 
 p {
@@ -118,7 +161,7 @@ p {
 }
 
 p.info-box {
-  margin: 1ex 0 0 0;
+  margin: 1ex 0 0;
 }
 
 .button.button-primary,
@@ -146,16 +189,8 @@ input[type='button'].button-primary:focus {
   color: $white;
 }
 
-// ------------------------------------------------
-// Size + Dimension Variables
-// ------------------------------------------------
-$input-height: 38px;
 
-// ------------------------------------------------
 // Gradients
-// sass-lint:disable no-vendor-prefixes
-// sass-lint:disable property-sort-order
-// ------------------------------------------------
 .gradient-h1 {
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
@@ -163,13 +198,7 @@ $input-height: 38px;
   text-shadow: 6px $black;
   -webkit-background-clip: text;
 }
-// sass-lint:enable property-sort-order
-// sass-lint:enable no-vendor-prefixes
 
-
-// ------------------------------------------------
-// Borders TODO
-// ------------------------------------------------
 .icon {
   border-radius: 4px;
   font-size: 2rem;
@@ -193,41 +222,6 @@ $input-height: 38px;
   width: 100%;
 }
 
-// ------------------------------------------------
-// Base Style
-// ------------------------------------------------
-html {
-  font-size: 62.5%;
-  margin: 4rem auto auto; // For navbar we need some top-margin
-  scroll-behavior: smooth;
-  scroll-padding-top: 4.6rem;
-  text-justify: inter-word;
-
-  ::selection {
-    padding: 4px;
-  }
-}
-
-body {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-// ------------------------------------------------
-// Nav
-// ------------------------------------------------
-a {
-  outline: 0;
-}
-
-footer {
-  display: block;
-  font-family: 'IBM Plex Serif', serif;
-  margin: auto;
-  padding: .625rem 1rem;
-  text-align: center;
-}
 
 @media (min-width: 800px) {
   footer {
@@ -236,9 +230,12 @@ footer {
     }
   }
 
+  header * {
+    display: flex;
+  }
+
   header {
     box-shadow: 0 0 25px 0 $black;
-    display: flex;
     height: 4rem;
     left: 0;
     position: fixed;
@@ -246,40 +243,8 @@ footer {
     top: 0;
   }
 
-  header * {
-    display: flex;
-  }
 
-  nav {
-    :not(:last-child) { // Prevent double borders
-      border-right: 0;
-    }
-
-    a {
-      cursor: pointer;
-      float: left;
-      font-family: 'IBM Plex Serif', serif;
-      font-size: 1.625rem;
-      line-height: 1.285rem;
-      margin: auto;
-      padding: 7px 24px;
-      text-align: center;
-      text-decoration: none;
-      text-justify: inter-word;
-      width: 50%;
-
-    }
-
-    ::after { // Clear floats (clearfix hack)
-      clear: both;
-      content: '';
-      display: table;
-    }
-  }
-
-  // ------------------------------------------------
   // Typography
-  // ------------------------------------------------
   h1,
   h2,
   h3,
@@ -342,12 +307,8 @@ footer {
     font-size: .525rem;
   }
 
-  // ------------------------------------------------
+
   // Buttons
-  // sass-lint:disable force-attribute-nesting
-  // sass-lint:disable no-qualifying-elements
-  // sass-lint:disable force-pseudo-nesting
-  // ------------------------------------------------
   .button,
   button,
   input[type='submit'],
@@ -387,9 +348,8 @@ footer {
     outline: 0;
   }
 
-  // ------------------------------------------------
+
   // Forms
-  // ------------------------------------------------
   input[type='email'],
   input[type='number'],
   input[type='search'],
@@ -462,13 +422,7 @@ footer {
     margin-left: .5rem;
   }
 
-  // sass-lint:enable force-pseudo-nesting
-  // sass-lint:enable force-attribute-nesting
-  // sass-lint:enable no-qualifying-elements
-
-  // ------------------------------------------------
   // Lists
-  // ------------------------------------------------
   p,
   ul,
   li,
@@ -496,9 +450,9 @@ footer {
     margin-bottom: .1em;
   }
 
-  // ------------------------------------------------
+
   // Grid
-  // ------------------------------------------------
+
   .container {
     box-sizing: border-box;
     margin: 0 auto;
@@ -570,7 +524,7 @@ footer {
     }
 
     .nine.columns {
-      width: 74.0%;
+      width: 74%;
     }
 
     .ten.columns {
@@ -669,9 +623,9 @@ footer {
     }
   }
 
-  // ------------------------------------------------
+
   // Code
-  // ------------------------------------------------
+
   code {
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;
@@ -688,19 +642,30 @@ footer {
     width: 50%;
   }
 
-  // ------------------------------------------------
+
   // Tables
-  // ------------------------------------------------
   table {
-    //padding: 4px 0;
     width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
   }
-  td:nth-child(1) {
-    min-width: 5%;
+
+  td {
+    &:nth-child(1) {
+      min-width: 5%;
+    }
+
+    &:nth-child(2) {
+      min-width: 60%;
+
+      &:hover {
+        box-sizing: content-box;
+        overflow: hidden;
+      }
+    }
   }
-  td:nth-child(2) {
-    min-width: 60%;
-  }
+
   th,
   td {
     border-bottom: 1px dashed $color-border;
@@ -712,14 +677,9 @@ footer {
   td:last-child {
     padding-right: 0;
   }
-  td:nth-child(2):hover {
-    box-sizing: content-box;
-    overflow: hidden;
-  }
 
-  // ------------------------------------------------
+
   // Spacing
-  // ------------------------------------------------
   button,
   .button {
     margin-bottom: 1rem;
@@ -750,14 +710,7 @@ footer {
     margin: 0 1.5px 0 0;
   }
 
-  table {
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  // ------------------------------------------------
   // Utility Classes
-  // ------------------------------------------------
   .u-full-width { // Make element full width
     box-sizing: border-box;
     width: 100%;
