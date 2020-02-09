@@ -41,6 +41,10 @@ $gradient-h1-color-two: #333;
 
 // Size + Dimension Variables
 $input-height: 38px;
+$warning: #ffeb3b;
+$info: #2196F3;
+$danger: #f44336;
+$success: #4CAF50;
 // - Variable declaration END
 
 // - Font swapping for better page loading.
@@ -50,6 +54,11 @@ $input-height: 38px;
   font-weight: 400;
   src: local('Pacifico Regular'), local('Pacifico-Regular'), url('https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
   font-display: swap;
+}
+
+.block {
+  background: lighten($bg, 1%);
+  padding: 12px;
 }
 
 .icon {
@@ -168,6 +177,22 @@ footer {
 
 p {
   background: lighten($bg, 10%);
+
+  &.warning {
+    border-left: 6px solid $warning;
+  }
+
+  &.info {
+    border-left: 6px solid $info;
+  }
+
+  &.danger {
+    border-left: 6px solid $danger;
+  }
+
+  &.success {
+    border-left: 6px solid $success;
+  }
 }
 
 p.info-box {
