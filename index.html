@@ -81,462 +81,506 @@
                 </div>
             -->
 
-                <div class="row">
-                    <div class="six columns">
-                        <h3 id="file-test-operators">File Test Operators</h3>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Flag</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>-e</code></td>
-                                <td>File exists</td>
-                            </tr>
-                            <tr>
-                                <td><code>-a</code></td>
-                                <td>File exists (identical to -e but is deprecated and outdated)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-f</code></td>
-                                <td>File is a regular file (not a directory or device file)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-s</code></td>
-                                <td>file is not zero size</td>
-                            </tr>
-                            <tr>
-                                <td><code>-d</code></td>
-                                <td>file is a directory</td>
-                            </tr>
-                            <tr>
-                                <td><code>-b</code></td>
-                                <td>file is a block device</td>
-                            </tr>
-                            <tr>
-                                <td><code>-c</code></td>
-                                <td>file is a character device</td>
-                            </tr>
-                            <tr>
-                                <td><code>-p</code></td>
-                                <td>file is a pipe</td>
-                            </tr>
-                            <tr>
-                                <td><code>-h</code></td>
-                                <td>file is a symbolic link</td>
-                            </tr>
-                            <tr>
-                                <td><code>-L</code></td>
-                                <td>file is a symbolic link</td>
-                            </tr>
-                            <tr>
-                                <td><code>-S</code></td>
-                                <td>file is a socket</td>
-                            </tr>
-                            <tr>
-                                <td><code>-t</code></td>
-                                <td>file (descriptor) is associated with a terminal device; this test option may be used
-                                    to
-                                    check
-                                    whether the
-                                    stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>-r</code></td>
-                                <td>file has read permission (for the user running the test)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-w</code></td>
-                                <td>file has write permission (for the user running the test)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-x</code></td>
-                                <td>file has execute permission (for the user running the test)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-g</code></td>
-                                <td>set-group-id (sgid) flag set on file or directory</td>
-                            </tr>
-                            <tr>
-                                <td><code>-u</code></td>
-                                <td>set-user-id (suid) flag set on file.</td>
-                            </tr>
-                            <tr>
-                                <td><code>-k</code></td>
-                                <td>sticky bit set.</td>
-                            </tr>
-                            <tr>
-                                <td><code>-O</code></td>
-                                <td>you are owner of file</td>
-                            </tr>
-                            <tr>
-                                <td><code>-G</code></td>
-                                <td>group-id of file same as yours</td>
-                            </tr>
-                            <tr>
-                                <td><code>-N</code></td>
-                                <td>file modified since it was last read</td>
-                            </tr>
-                            <tr>
-                                <td><code>f1 -nt f2</code></td>
-                                <td>file f1 is newer than f2</td>
-                            </tr>
-                            <tr>
-                                <td><code>f1 -ot f2</code></td>
-                                <td>file f1 is older than f2</td>
-                            </tr>
-                            <tr>
-                                <td><code>f1 -ef f2</code></td>
-                                <td>files f1 and f2 are hard links to the same file</td>
-                            </tr>
-                            <tr>
-                                <td><code>!</code></td>
-                                <td>Not -- reverses the sense of the tests above (returns true if condition absent).
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="six columns">
-                        <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Flag</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>-eq</code></td>
-                                <td>is equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>-ne</code></td>
-                                <td>is not equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>-gt</code></td>
-                                <td>is greater than</td>
-                            </tr>
-                            <tr>
-                                <td><code>-ge</code></td>
-                                <td>is greater than or equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>-lt</code></td>
-                                <td>is less than</td>
-                            </tr>
-                            <tr>
-                                <td><code>-le</code></td>
-                                <td>is less than or equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;</code></td>
-                                <td>is less than (within double parentheses, i.e. <code>(( ))</code>)</td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;=</code></td>
-                                <td>is less than or equal to (same rule as before)</td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;</code></td>
-                                <td>is greater than (same rule as before)</td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;=</code></td>
-                                <td>is greater than or equal to (same rule as before)</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h3 id="string-comparison-operators">String Comparison Operators</h3>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Flag</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>=</code></td>
-                                <td>is equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>==</code></td>
-                                <td>is equal to (synonymous with the above <code>=</code>)</td>
-                            </tr>
-                            <tr>
-                                <td><code>!=</code></td>
-                                <td>is not equal to</td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;</code></td>
-                                <td>is less than ASCII alphabetical order</td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;</code></td>
-                                <td>is greater than ASCII alphabetical order</td>
-                            </tr>
-                            <tr>
-                                <td><code>-z</code></td>
-                                <td>string is null (i.e. zero length)</td>
-                            </tr>
-                            <tr>
-                                <td><code>-n</code></td>
-                                <td>string is not null (i.e. !zero length)</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h3 id="compound-operators">Compound Operators</h3>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Flag</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>-a</code></td>
-                                <td>logical and</td>
-                            </tr>
-                            <tr>
-                                <td><code>-o</code></td>
-                                <td>logical or</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="eight columns offset-by-two">
-                    </div>
+            <div class="row">
+                <div class="six columns">
+                    <h3 id="file-test-operators">File Test Operators</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>-e</code></td>
+                            <td>File exists</td>
+                        </tr>
+                        <tr>
+                            <td><code>-a</code></td>
+                            <td>File exists (identical to -e but is deprecated and outdated)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-f</code></td>
+                            <td>File is a regular file (not a directory or device file)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-s</code></td>
+                            <td>file is not zero size</td>
+                        </tr>
+                        <tr>
+                            <td><code>-d</code></td>
+                            <td>file is a directory</td>
+                        </tr>
+                        <tr>
+                            <td><code>-b</code></td>
+                            <td>file is a block device</td>
+                        </tr>
+                        <tr>
+                            <td><code>-c</code></td>
+                            <td>file is a character device</td>
+                        </tr>
+                        <tr>
+                            <td><code>-p</code></td>
+                            <td>file is a pipe</td>
+                        </tr>
+                        <tr>
+                            <td><code>-h</code></td>
+                            <td>file is a symbolic link</td>
+                        </tr>
+                        <tr>
+                            <td><code>-L</code></td>
+                            <td>file is a symbolic link</td>
+                        </tr>
+                        <tr>
+                            <td><code>-S</code></td>
+                            <td>file is a socket</td>
+                        </tr>
+                        <tr>
+                            <td><code>-t</code></td>
+                            <td>file (descriptor) is associated with a terminal device; this test option may be used
+                                to
+                                check
+                                whether the
+                                stdin [ -t 0 ] or stdout [ -t 1 ] in a given script is a terminal
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>-r</code></td>
+                            <td>file has read permission (for the user running the test)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-w</code></td>
+                            <td>file has write permission (for the user running the test)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-x</code></td>
+                            <td>file has execute permission (for the user running the test)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-g</code></td>
+                            <td>set-group-id (sgid) flag set on file or directory</td>
+                        </tr>
+                        <tr>
+                            <td><code>-u</code></td>
+                            <td>set-user-id (suid) flag set on file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-k</code></td>
+                            <td>sticky bit set.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-O</code></td>
+                            <td>you are owner of file</td>
+                        </tr>
+                        <tr>
+                            <td><code>-G</code></td>
+                            <td>group-id of file same as yours</td>
+                        </tr>
+                        <tr>
+                            <td><code>-N</code></td>
+                            <td>file modified since it was last read</td>
+                        </tr>
+                        <tr>
+                            <td><code>f1 -nt f2</code></td>
+                            <td>file f1 is newer than f2</td>
+                        </tr>
+                        <tr>
+                            <td><code>f1 -ot f2</code></td>
+                            <td>file f1 is older than f2</td>
+                        </tr>
+                        <tr>
+                            <td><code>f1 -ef f2</code></td>
+                            <td>files f1 and f2 are hard links to the same file</td>
+                        </tr>
+                        <tr>
+                            <td><code>!</code></td>
+                            <td>Not -- reverses the sense of the tests above (returns true if condition absent).
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <div class="six columns">
+                    <h3 id="integer-comparison-operators">Integer Comparison Operators</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>-eq</code></td>
+                            <td>is equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>-ne</code></td>
+                            <td>is not equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>-gt</code></td>
+                            <td>is greater than</td>
+                        </tr>
+                        <tr>
+                            <td><code>-ge</code></td>
+                            <td>is greater than or equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>-lt</code></td>
+                            <td>is less than</td>
+                        </tr>
+                        <tr>
+                            <td><code>-le</code></td>
+                            <td>is less than or equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;</code></td>
+                            <td>is less than (within double parentheses, i.e. <code>(( ))</code>)</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;=</code></td>
+                            <td>is less than or equal to (same rule as before)</td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;</code></td>
+                            <td>is greater than (same rule as before)</td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;=</code></td>
+                            <td>is greater than or equal to (same rule as before)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3 id="string-comparison-operators">String Comparison Operators</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>=</code></td>
+                            <td>is equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>==</code></td>
+                            <td>is equal to (synonymous with the above <code>=</code>)</td>
+                        </tr>
+                        <tr>
+                            <td><code>!=</code></td>
+                            <td>is not equal to</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;</code></td>
+                            <td>is less than ASCII alphabetical order</td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;</code></td>
+                            <td>is greater than ASCII alphabetical order</td>
+                        </tr>
+                        <tr>
+                            <td><code>-z</code></td>
+                            <td>string is null (i.e. zero length)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-n</code></td>
+                            <td>string is not null (i.e. !zero length)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3 id="compound-operators">Compound Operators</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Flag</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>-a</code></td>
+                            <td>logical and</td>
+                        </tr>
+                        <tr>
+                            <td><code>-o</code></td>
+                            <td>logical or</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="eight columns offset-by-two">
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="six columns">
-                        <h2 id="variable-manipulation">Variable Manipulation</h2>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Pattern</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>${parameter:-defaultValue}</code></td>
-                                <td>Get default shell variables value</td>
-                            </tr>
-                            <tr>
-                                <td><code>${parameter:=defaultValue}</code></td>
-                                <td>Set default shell variables value</td>
-                            </tr>
-                            <tr>
-                                <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
-                                <td>Display an error message if parameter is not set</td>
-                            </tr>
-                            <tr>
-                                <td><code>${#var}</code></td>
-                                <td>Find the length of the string</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var%pattern}</code></td>
-                                <td>Remove from shortest rear (end) pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var%%pattern}</code></td>
-                                <td>Remove from longest rear (end) pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var:num1:num2}</code></td>
-                                <td>Substring</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var#pattern}</code></td>
-                                <td>Remove from shortest front pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var##pattern}</code></td>
-                                <td>Remove from longest front pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var/pattern/string}</code></td>
-                                <td>Find and replace (only replace first occurrence)</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var//pattern/string}</code></td>
-                                <td>Find and replace all occurrences</td>
-                            </tr>
-                            <tr>
-                                <td><code>${!prefix*}</code></td>
-                                <td>Expands to the names of variables whose names begin with prefix.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>${var,}</code><br><code>${var,pattern}</code></td>
-                                <td>Convert first character to lowercase.</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>
-                                <td>Convert all characters to lowercase.</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var^}</code><br><code>${var^pattern}</code></td>
-                                <td>Convert first character to uppercase.</td>
-                            </tr>
-                            <tr>
-                                <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
-                                <td>Convert all character to uppercase.</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="six columns">
-                        <h2 id="list-constructs">List Constructs</h2>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Construct</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>&&</code></td>
-                                <td>and construct</td>
-                            </tr>
-                            <tr>
-                                <td><code>||</code></td>
-                                <td>or construct</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h2 id="command-parameters">Command Parameters</h2>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Command</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>$0</code></td>
-                                <td>Name of the script itself</td>
-                            </tr>
-                            <tr>
-                                <td><code>$&lt;N&gt;</code></td>
-                                <td>Parameter 1 ... N</td>
-                            </tr>
-                            <tr>
-                                <td><code>$*</code></td>
-                                <td>Expands to the positional parameters, starting from one. When the expansion occurs
-                                    within
-                                    double
-                                    quotes, it expands to a single word with the value of each parameter seperated by
-                                    the
-                                    first
-                                    of the
-                                    IFS
-                                    environment
-                                    variable
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>$-</code></td>
-                                <td>Current options</td>
-                            </tr>
-                            <tr>
-                                <td><code>$_</code></td>
-                                <td>The underscore variable is set at shell startup and contains the absolute file name
-                                    of
-                                    the
-                                    shell or
-                                    script being executed as passed in the argument list. Subsequently, it expands to
-                                    the
-                                    last
-                                    argument
-                                    to the
-                                    previous
-                                    command, after expansion. It is also set to the full pathname of each command
-                                    executed
-                                    and
-                                    placed in
-                                    the
-                                    environment
-                                    exported to that command. When checking mail, this parameter holds the name of the
-                                    mail
-                                    file.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>$$</code></td>
-                                <td>Process id of the shell</td>
-                            </tr>
-                            <tr>
-                                <td><code>$?</code></td>
-                                <td>Exit status of the most recently executed command</td>
-                            </tr>
-                            <tr>
-                                <td><code>$@</code></td>
-                                <td>All arguments as separate words</td>
-                            </tr>
-                            <tr>
-                                <td><code>$#</code></td>
-                                <td>Number of arguments</td>
-                            </tr>
-                            <tr>
-                                <td><code>$!</code></td>
-                                <td>PID of most recently backgrounded process</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="eight columns offset-by-two">
-                    </div>
+            <div class="row">
+                <div class="six columns">
+                    <h2 id="variable-manipulation">Variable Manipulation</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Pattern</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>${parameter:-defaultValue}</code></td>
+                            <td>Get default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:=defaultValue}</code></td>
+                            <td>Set default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
+                            <td>Display an error message if parameter is not set</td>
+                        </tr>
+                        <tr>
+                            <td><code>${#var}</code></td>
+                            <td>Find the length of the string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%pattern}</code></td>
+                            <td>Remove from shortest rear (end) pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%%pattern}</code></td>
+                            <td>Remove from longest rear (end) pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:num1:num2}</code></td>
+                            <td>Substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var#pattern}</code></td>
+                            <td>Remove from shortest front pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var##pattern}</code></td>
+                            <td>Remove from longest front pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var/pattern/string}</code></td>
+                            <td>Find and replace (only replace first occurrence)</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var//pattern/string}</code></td>
+                            <td>Find and replace all occurrences</td>
+                        </tr>
+                        <tr>
+                            <td><code>${!prefix*}</code></td>
+                            <td>Expands to the names of variables whose names begin with prefix.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>${var,}</code><br><code>${var,pattern}</code></td>
+                            <td>Convert first character to lowercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>
+                            <td>Convert all characters to lowercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var^}</code><br><code>${var^pattern}</code></td>
+                            <td>Convert first character to uppercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
+                            <td>Convert all character to uppercase.</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="six columns">
-                        <h2 id="bash-globbing">Bash Globbing</h2>
-                        <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em>
-                        </p>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Glob</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>*</code></td>
-                                <td>Matches zero or more occurences of a given pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>?</code></td>
-                                <td>Matches zero or one occurences of a given pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>+</code></td>
-                                <td>Matches one or more occurences of a given pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>@</code></td>
-                                <td>Matches exactly one of a given pattern</td>
-                            </tr>
-                            <tr>
-                                <td><code>!</code></td>
-                                <td>Negates any pattern — reverses the pattern so to speak</td>
-                            </tr>
-                            <tr>
-                                <td><code>[:CharClass:]</code></td>
-                                <td>A character class is a set of predefined patterns and comprpised of the following
-                                    which:
-                                    <pre>
+                <div class="six columns">
+                    <h2 id="list-constructs">List Constructs</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Construct</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>&&</code></td>
+                            <td>and construct</td>
+                        </tr>
+                        <tr>
+                            <td><code>||</code></td>
+                            <td>or construct</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="command-parameters">Command Parameters</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>$0</code></td>
+                            <td>Name of the script itself</td>
+                        </tr>
+                        <tr>
+                            <td><code>$&lt;N&gt;</code></td>
+                            <td>Parameter 1 ... N</td>
+                        </tr>
+                        <tr>
+                            <td><code>$*</code></td>
+                            <td>Expands to the positional parameters, starting from one. When the expansion occurs
+                                within
+                                double
+                                quotes, it expands to a single word with the value of each parameter seperated by
+                                the
+                                first
+                                of the
+                                IFS
+                                environment
+                                variable
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>$-</code></td>
+                            <td>Current options</td>
+                        </tr>
+                        <tr>
+                            <td><code>$_</code></td>
+                            <td>The underscore variable is set at shell startup and contains the absolute file name
+                                of
+                                the
+                                shell or
+                                script being executed as passed in the argument list. Subsequently, it expands to
+                                the
+                                last
+                                argument
+                                to the
+                                previous
+                                command, after expansion. It is also set to the full pathname of each command
+                                executed
+                                and
+                                placed in
+                                the
+                                environment
+                                exported to that command. When checking mail, this parameter holds the name of the
+                                mail
+                                file.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>$$</code></td>
+                            <td>Process id of the shell</td>
+                        </tr>
+                        <tr>
+                            <td><code>$?</code></td>
+                            <td>Exit status of the most recently executed command</td>
+                        </tr>
+                        <tr>
+                            <td><code>$@</code></td>
+                            <td>All arguments as separate words</td>
+                        </tr>
+                        <tr>
+                            <td><code>$#</code></td>
+                            <td>Number of arguments</td>
+                        </tr>
+                        <tr>
+                            <td><code>$!</code></td>
+                            <td>PID of most recently backgrounded process</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h2 id="history-expansion">History Expansion</h2>
+                    <p>Enables use and manipulation of previous commands.</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>!</code></td>
+                            <td>Starts a history substitution</td>
+                        </tr>
+                        <tr>
+                            <td><code>!!</code></td>
+                            <td>Refers to the last command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>!n</code></td>
+                            <td>Refers to the &lt;n&gt;-th command line.</td>
+                        </tr>
+                        <tr>
+                            <td><code>!-n</code></td>
+                            <td>Refers to the current command line minus &lt;n&gt;.</td>
+                        </tr>
+                        <tr>
+                            <td><code>!string</code></td>
+                            <td>Refers to the most recent command starting with &lt;string&gt;</td>
+                        </tr>
+                        <tr>
+                            <td><code>!?string?</code></td>
+                            <td>Refers to the most recent command containing &lt;string&gt; (the ending ? is optional)</td>
+                        </tr>
+                        <tr>
+                            <td><code>^string1^string2^</code></td>
+                            <td>Quick substitution.  Repeats the last command, replacing &lt;string1&gt; with &lt;string2&gt;.</td>
+                        </tr>
+                        <tr>
+                            <td><code>!#</code></td>
+                            <td>Refers to the entire command line typed so far.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="eight columns offset-by-two">
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <h2 id="bash-globbing">Bash Globbing</h2>
+                    <p><em>Globbing is done to filenames by the shell, and regex is used for searching text.</em>
+                    </p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Glob</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>*</code></td>
+                            <td>Matches zero or more occurences of a given pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>?</code></td>
+                            <td>Matches zero or one occurences of a given pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>+</code></td>
+                            <td>Matches one or more occurences of a given pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>@</code></td>
+                            <td>Matches exactly one of a given pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>!</code></td>
+                            <td>Negates any pattern — reverses the pattern so to speak</td>
+                        </tr>
+                        <tr>
+                            <td><code>[:CharClass:]</code></td>
+                            <td>A character class is a set of predefined patterns and comprpised of the following
+                                which:
+                                <pre>
 [:alnum:] [:alpha:]
 [:digit:] [:lower:]
 [:upper:] [:space:]
@@ -544,544 +588,546 @@
 [:blank:] [:graph:]
 [:cntrl:] [:xdigit:]
             </pre>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="six columns">
-                        <h2 id="regular-expressions">Regular Expressions</h2>
-                        <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
-                    </div>
-                    <div class="eight columns offset-by-two">
-                    </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="twelve columns">
-                        <h2 id="overview-of-symbols">Shell Builtins [Working on it]</h2>
-                    </div>
+                <div class="six columns">
+                    <h2 id="regular-expressions">Regular Expressions</h2>
+                    <p><span><b>Always use quotes in your regex to avoid globbing</b></span></p>
                 </div>
-                <div class="row">
-                    <div class="ten columns offset-by-one">
-                        <p>
-                            Shell builins are built into Bash are often very (if not extremely) fast compared to
-                            external
-                            programs. Some of the builtins are <em>inherited</em> from the Bourne Shell (<code>sh</code>)
-                            —
-                            these inherited commands will also work in the original Bourne Shell.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="six columns">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Builtin</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>:</code></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.</code></td>
-                                <td>Reads and executes commands from a designated file in the current shell.</td>
-                            </tr>
-                            <tr>
-                                <td><code>[</code></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>alias</code></td>
-                                <td>Defines an alias for the specified command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>bg</code></td>
-                                <td>Resumes a job in background mode.</td>
-                            </tr>
-                            <tr>
-                                <td><code>bind</code></td>
-                                <td>Binds a keyboard sequence to a read line function or macro.</td>
-                            </tr>
-                            <tr>
-                                <td><code>break</code></td>
-                                <td>Exits from a for, while, select, or until loop.</td>
-                            </tr>
-                            <tr>
-                                <td><code>builtin</code></td>
-                                <td>Executes the specified shell built-in command.</td>
-                            </tr>
-                            <!--TODO: Add "caller" "readarray" "comopt" "mapfile" builtin if its missing -->
-                            <tr>
-                                <td><code>case</code></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>cd</code></td>
-                                <td>Changes the current directory to the specified directory.</td>
-                            </tr>
-                            <tr>
-                                <td><code>command</code></td>
-                                <td>Executes the specified command without the normal shell lookup.</td>
-                            </tr>
-                            <tr>
-                                <td><code>compgen</code></td>
-                                <td>Generates possible completion matches for the specified word.</td>
-                            </tr>
-                            <tr>
-                                <td><code>complete</code></td>
-                                <td>Displays how the specified words would be completed.</td>
-                            </tr>
-                            <tr>
-                                <td><code>continue</code></td>
-                                <td>Resumes the next iteration of a for, while, select, or until loop.</td>
-                            </tr>
-                            <tr>
-                                <td><code>declare</code></td>
-                                <td>Declares a variable or variable type.</td>
-                            </tr>
-                            <tr>
-                                <td><code>dirs</code></td>
-                                <td>Displays a list of currently remembered directories.</td>
-                            </tr>
-                            <tr>
-                                <td><code>disown</code></td>
-                                <td>Removes the specified jobs from the jobs table for the process.</td>
-                            </tr>
-                            <tr>
-                                <td><code>echo</code></td>
-                                <td>Displays the specified string to STDOUT.</td>
-                            </tr>
-                            <tr>
-                                <td><code>enable</code></td>
-                                <td>Enables or disables the specified built-in shell command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>eval</code></td>
-                                <td>Concatenates the specified arguments into a single command, and executes the command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>exec</code></td>
-                                <td>Replaces the shell process with the specified command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>exit</code></td>
-                                <td>Forces the shell to exit with the specified exit status.</td>
-                            </tr>
-                            <tr>
-                                <td><code>export</code></td>
-                                <td>Sets the specified variables to be available for child shell processes.</td>
-                            </tr>
-                            <tr>
-                                <td><code>fc</code></td>
-                                <td>Selects a list of commands from the history list.</td>
-                            </tr>
-                            <tr>
-                                <td><code>fg</code></td>
-                                <td>Resumes a job in foreground mode.</td>
-                            </tr>
-                            <tr>
-                                <td><code>getopts</code></td>
-                                <td>Parses the specified positional parameters.</td>
-                            </tr>
-                            <tr>
-                                <td><code>hash</code></td>
-                                <td>Finds and remembers the full pathname of the specified command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>help</code></td>
-                                <td>Displays a help file.</td>
-                            </tr>
-                            <tr>
-                                <td><code>history</code></td>
-                                <td>Displays the command history.</td>
-                            </tr>
-                            <tr>
-                                <td><code>if</code></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="six columns">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Builtin</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>jobs</code></td>
-                                <td>Lists active jobs.</td>
-                            </tr>
-                            <tr>
-                                <td><code>kill</code></td>
-                                <td>Sends a system signal to the specified process ID (PID).</td>
-                            </tr>
-                            <tr>
-                                <td><code>let</code></td>
-                                <td>Evaluates each argument in a mathematical expression.</td>
-                            </tr>
-                            <tr>
-                                <td><code>local</code></td>
-                                <td>Creates a limited-scope variable in a function.</td>
-                            </tr>
-                            <tr>
-                                <td><code>logout</code></td>
-                                <td>Exits a login shell.</td>
-                            </tr>
-                            <tr>
-                                <td><code>popd</code></td>
-                                <td>Removes entries from the directory stack.</td>
-                            </tr>
-                            <tr>
-                                <td><code>printf</code></td>
-                                <td>Displays text using formatted strings.</td>
-                            </tr>
-                            <tr>
-                                <td><code>pushd</code></td>
-                                <td>Adds a directory to the directory stack.</td>
-                            </tr>
-                            <tr>
-                                <td><code>pwd</code></td>
-                                <td>Displays the pathname of the current working directory.</td>
-                            </tr>
-                            <tr>
-                                <td><code>read</code></td>
-                                <td>Reads one line of data from STDIN, and assigns it to a variable.</td>
-                            </tr>
-                            <tr>
-                                <td><code>readonly</code></td>
-                                <td>Reads one line of data from STDIN, and assigns it to a variable that can’t be changed.</td>
-                            </tr>
-                            <tr>
-                                <td><code>return</code></td>
-                                <td>Forces a function to exit with a value that can be retrieved by the calling script.</td>
-                            </tr>
-                            <tr>
-                                <td><code>set</code></td>
-                                <td>Sets and displays environment variable values and shell attributes.</td>
-                            </tr>
-                            <tr>
-                                <td><code>shift</code></td>
-                                <td>Rotates positional parameters down one position.</td>
-                            </tr>
-                            <tr>
-                                <td><code>shopt</code></td>
-                                <td>Toggles the values of variables controlling optional shell behavior.</td>
-                            </tr>
-                            <tr>
-                                <td><code>source</code></td>
-                                <td>Reads and executes commands from a designated file in the current shell.</td>
-                            </tr>
-                            <tr>
-                                <td><code>suspend</code></td>
-                                <td>Suspends the execution of the shell until a SIGCONT signal is received.</td>
-                            </tr>
-                            <tr>
-                                <td><code>test</code></td>
-                                <td>Returns an exit status of 0 or 1 based on the specified condition.</td>
-                            </tr>
-                            <tr>
-                                <td><code>times</code></td>
-                                <td>Displays the accumulated user and system shell time.</td>
-                            </tr>
-                            <tr>
-                                <td><code>trap</code></td>
-                                <td>Executes the specified command if the specified system signal is received.</td>
-                            </tr>
-                            <tr>
-                                <td><code>type</code></td>
-                                <td>Displays how the specified words would be interpreted if used as a command.</td>
-                            </tr>
-                            <tr>
-                                <td><code>typeset</code></td>
-                                <td>Declares a variable or variable type.</td>
-                            </tr>
-                            <tr>
-                                <td><code>ulimit</code></td>
-                                <td>Sets a limit on the specific resource for system users.</td>
-                            </tr>
-                            <tr>
-                                <td><code>umask</code></td>
-                                <td>Sets default permissions for newly created files and directories.</td>
-                            </tr>
-                            <tr>
-                                <td><code>unalias</code></td>
-                                <td>Removes specified alias.</td>
-                            </tr>
-                            <tr>
-                                <td><code>unset</code></td>
-                                <td>Removes the specified environment variable or shell attribute.</td>
-                            </tr>
-                            <tr>
-                                <td><code>until</code></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>wait</code></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>while</code></td>
-                                <td>Waits for the specified process to complete, and returns the exit status.</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="twelve columns">
-                        <h2 id="overview-of-symbolss">Overview of Bash Symbols</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="six columns">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Symbol</th>
-                                <th>Quick Reference</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>#</code></td>
-                                <td>used for comments</td>
-                            </tr>
-                            <tr>
-                                <td><code>$</code></td>
-                                <td>used for parameters and variables. Has a bunch of edge cases.</td>
-                            </tr>
-                            <tr>
-                                <td><code>( )</code></td>
-                                <td>is used for running commands in a subshell.</td>
-                            </tr>
-                            <tr>
-                                <td><code>$( )</code></td>
-                                <td>is used for saving output of commands that are send to run in a subshell.</td>
-                            </tr>
-                            <tr>
-                                <td><code>(( ))</code></td>
-                                <td>is used for arithmetic.</td>
-                            </tr>
-                            <tr>
-                                <td><code>$(( ))</code></td>
-                                <td>is used for saving the output of arithmetic.</td>
-                            </tr>
-                            <tr>
-                                <td><code>$[]</code></td>
-                                <td>deprecated integer expansion construct which is replaced by <code>(( ))</code>.
-                                    Evaluates
-                                    integers
-                                    between the square brackets
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>[ ]</code></td>
-                                <td>is used for testing and is a built-in. Is useful in some cases for filename
-                                    expansion
-                                    and
-                                    string
-                                    manipulation.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>[[ ]]</code></td>
-                                <td>is used for testing. This is the one you should use unless you can think of a reason
-                                    not
-                                    to.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;( )</code></td>
-                                <td>Used for process substitution and is similar to a pipe. Can be used whenever a
-                                    command
-                                    expects a
-                                    file and
-                                    you can use multiple at once.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>{ }</code></td>
-                                <td>is used for expansion of sequences</td>
-                            </tr>
-                            <tr>
-                                <td><code>${ }</code></td>
-                                <td>is used for variable interpolation and string manipulation.</td>
-                            </tr>
-                            <tr>
-                                <td><code>|</code></td>
-                                <td>is a pipe which is used for chaining commands together.</td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;</code></td>
-                                <td>used for feeding input to commands from a file</td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;</code></td>
-                                <td>used for sending output to a file and erasing any previous content in that file.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;</code></td>
-                                <td>used for sending output to a file and erasing any previous content in that file.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;|</code></td>
-                                <td>forcing the redirection even if the shell option <code>noclobber</code> is set</td>
-                            </tr>
-                            <tr>
-                                <td><code>\&lt;, \&gt;</code></td>
-                                <td>used for word boundaries in regex</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="six columns">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Symbol</th>
-                                <th>Quick Reference</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><code>||</code></td>
-                                <td>logical or</td>
-                            </tr>
-                            <tr>
-                                <td><code>&&</code></td>
-                                <td>logical and</td>
-                            </tr>
-                            <tr>
-                                <td><code>-</code></td>
-                                <td>used for option prefixes</td>
-                            </tr>
-                            <tr>
-                                <td><code>--</code></td>
-                                <td>used for the long-option prefixes</td>
-                            </tr>
-                            <tr>
-                                <td><code>&</code></td>
-                                <td>used to send a job to the background</td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;&lt;WORD</code></td>
-                                <td rowspan="4">is used for <em>heredocs</em></td>
-                            </tr>
-
-                            <tr>
-                                <td><code>&lt;&lt;-WORD</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;&lt;'WORD'</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;&lt;-'WORD'</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;&lt;&lt;</code></td>
-                                <td>is used for <em>herestrings</em></td>
-                            </tr>
-                            <tr>
-                                <td><code>&gt;&gt;</code></td>
-                                <td>is used to append output to a file.</td>
-                            </tr>
-                            <tr>
-                                <td><code>&#39; &#39;</code></td>
-                                <td>single quotes are used to preserve the literal value</td>
-                            </tr>
-                            <tr>
-                                <td><code>&quot; &quot;</code></td>
-                                <td>double quotes are used to preserve the literal value of all characters except
-                                    <code>$</code>,
-                                    <code>`
-                                        `</code>
-                                    and <code>\</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>\</code></td>
-                                <td>backslash is used to escape otherwise interpreted symbols/characters which has a
-                                    special
-                                    meaning
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>/</code></td>
-                                <td>used for seperating the components of a filename</td>
-                            </tr>
-                            <tr>
-                                <td><code>:</code></td>
-                                <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status
-                                    of
-                                    true
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>;</code></td>
-                                <td>used to seperate commands intended to run sequentally.</td>
-                            </tr>
-                            <tr>
-                                <td><code>,</code></td>
-                                <td>used for linking together arithmetic operations. All are evalutated but only the
-                                    last is
-                                    returned
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>.</code></td>
-                                <td>expands to the current directory.</td>
-                            </tr>
-                            <tr>
-                                <td><code>..</code></td>
-                                <td>expands to parent directory.</td>
-                            </tr>
-                            <tr>
-                                <td><code>~</code></td>
-                                <td>expands to home directory.</td>
-                            </tr>
-                            <tr>
-                                <td><code>` `</code></td>
-                                <td>is deprecated and should not be used. Read further in its respective section.</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="six columns offset-by-three">
-                        <p style="font-size: 1.5rem; color: azure;">If you find this site helpful,
-                            please consider sharing it with a friend!<br>
-                            The more people start using the site, the faster improvements will come along
-                                 <i class="fas fa-smile-beam"></i>
-                    </div>
-
-                    <div class="six columns offset-by-three">
-                        <label style="text-align: center; font-size: 1rem;" for="exampleEmailInput">Register for our
-                            bi-weekly newsletter! It's easy to unsubscribe again.</label>
-                    </div>
-
-                    <div class="six columns offset-by-three">
-                        <form action="https://formspree.io/xoqdnqak" method="POST">
-                            <div class="input-container">
-                                <i class="fas fa-user icon pad-right-6-px"></i>
-                                <input class="u-full-width" style="text-align: center;" type="email"
-                                       placeholder="your@awesome-mailaddress.com"
-                                       id="exampleEmailInput">
-                                <input class="button-primary pad-right-6-px" type="submit" value="Send">
-                            </div>
-                        </form>
-                    </div>
+                <div class="eight columns offset-by-two">
                 </div>
             </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <h2 id="overview-of-symbols">Shell Builtins [Working on it]</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ten columns offset-by-one">
+                    <p>
+                        Shell builins are built into Bash are often very (if not extremely) fast compared to
+                        external
+                        programs. Some of the builtins are <em>inherited</em> from the Bourne Shell (<code>sh</code>)
+                        —
+                        these inherited commands will also work in the original Bourne Shell.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Builtin</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>:</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>.</code></td>
+                            <td>Reads and executes commands from a designated file in the current shell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>[</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>alias</code></td>
+                            <td>Defines an alias for the specified command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg</code></td>
+                            <td>Resumes a job in background mode.</td>
+                        </tr>
+                        <tr>
+                            <td><code>bind</code></td>
+                            <td>Binds a keyboard sequence to a read line function or macro.</td>
+                        </tr>
+                        <tr>
+                            <td><code>break</code></td>
+                            <td>Exits from a for, while, select, or until loop.</td>
+                        </tr>
+                        <tr>
+                            <td><code>builtin</code></td>
+                            <td>Executes the specified shell built-in command.</td>
+                        </tr>
+                        <!--TODO: Add "caller" "readarray" "comopt" "mapfile" builtin if its missing -->
+                        <tr>
+                            <td><code>case</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>cd</code></td>
+                            <td>Changes the current directory to the specified directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>command</code></td>
+                            <td>Executes the specified command without the normal shell lookup.</td>
+                        </tr>
+                        <tr>
+                            <td><code>compgen</code></td>
+                            <td>Generates possible completion matches for the specified word.</td>
+                        </tr>
+                        <tr>
+                            <td><code>complete</code></td>
+                            <td>Displays how the specified words would be completed.</td>
+                        </tr>
+                        <tr>
+                            <td><code>continue</code></td>
+                            <td>Resumes the next iteration of a for, while, select, or until loop.</td>
+                        </tr>
+                        <tr>
+                            <td><code>declare</code></td>
+                            <td>Declares a variable or variable type.</td>
+                        </tr>
+                        <tr>
+                            <td><code>dirs</code></td>
+                            <td>Displays a list of currently remembered directories.</td>
+                        </tr>
+                        <tr>
+                            <td><code>disown</code></td>
+                            <td>Removes the specified jobs from the jobs table for the process.</td>
+                        </tr>
+                        <tr>
+                            <td><code>echo</code></td>
+                            <td>Displays the specified string to STDOUT.</td>
+                        </tr>
+                        <tr>
+                            <td><code>enable</code></td>
+                            <td>Enables or disables the specified built-in shell command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>eval</code></td>
+                            <td>Concatenates the specified arguments into a single command, and executes the command.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>exec</code></td>
+                            <td>Replaces the shell process with the specified command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>exit</code></td>
+                            <td>Forces the shell to exit with the specified exit status.</td>
+                        </tr>
+                        <tr>
+                            <td><code>export</code></td>
+                            <td>Sets the specified variables to be available for child shell processes.</td>
+                        </tr>
+                        <tr>
+                            <td><code>fc</code></td>
+                            <td>Selects a list of commands from the history list.</td>
+                        </tr>
+                        <tr>
+                            <td><code>fg</code></td>
+                            <td>Resumes a job in foreground mode.</td>
+                        </tr>
+                        <tr>
+                            <td><code>getopts</code></td>
+                            <td>Parses the specified positional parameters.</td>
+                        </tr>
+                        <tr>
+                            <td><code>hash</code></td>
+                            <td>Finds and remembers the full pathname of the specified command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>help</code></td>
+                            <td>Displays a help file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>history</code></td>
+                            <td>Displays the command history.</td>
+                        </tr>
+                        <tr>
+                            <td><code>if</code></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="six columns">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Builtin</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>jobs</code></td>
+                            <td>Lists active jobs.</td>
+                        </tr>
+                        <tr>
+                            <td><code>kill</code></td>
+                            <td>Sends a system signal to the specified process ID (PID).</td>
+                        </tr>
+                        <tr>
+                            <td><code>let</code></td>
+                            <td>Evaluates each argument in a mathematical expression.</td>
+                        </tr>
+                        <tr>
+                            <td><code>local</code></td>
+                            <td>Creates a limited-scope variable in a function.</td>
+                        </tr>
+                        <tr>
+                            <td><code>logout</code></td>
+                            <td>Exits a login shell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>popd</code></td>
+                            <td>Removes entries from the directory stack.</td>
+                        </tr>
+                        <tr>
+                            <td><code>printf</code></td>
+                            <td>Displays text using formatted strings.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pushd</code></td>
+                            <td>Adds a directory to the directory stack.</td>
+                        </tr>
+                        <tr>
+                            <td><code>pwd</code></td>
+                            <td>Displays the pathname of the current working directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>read</code></td>
+                            <td>Reads one line of data from STDIN, and assigns it to a variable.</td>
+                        </tr>
+                        <tr>
+                            <td><code>readonly</code></td>
+                            <td>Reads one line of data from STDIN, and assigns it to a variable that can’t be changed.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>return</code></td>
+                            <td>Forces a function to exit with a value that can be retrieved by the calling script.</td>
+                        </tr>
+                        <tr>
+                            <td><code>set</code></td>
+                            <td>Sets and displays environment variable values and shell attributes.</td>
+                        </tr>
+                        <tr>
+                            <td><code>shift</code></td>
+                            <td>Rotates positional parameters down one position.</td>
+                        </tr>
+                        <tr>
+                            <td><code>shopt</code></td>
+                            <td>Toggles the values of variables controlling optional shell behavior.</td>
+                        </tr>
+                        <tr>
+                            <td><code>source</code></td>
+                            <td>Reads and executes commands from a designated file in the current shell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>suspend</code></td>
+                            <td>Suspends the execution of the shell until a SIGCONT signal is received.</td>
+                        </tr>
+                        <tr>
+                            <td><code>test</code></td>
+                            <td>Returns an exit status of 0 or 1 based on the specified condition.</td>
+                        </tr>
+                        <tr>
+                            <td><code>times</code></td>
+                            <td>Displays the accumulated user and system shell time.</td>
+                        </tr>
+                        <tr>
+                            <td><code>trap</code></td>
+                            <td>Executes the specified command if the specified system signal is received.</td>
+                        </tr>
+                        <tr>
+                            <td><code>type</code></td>
+                            <td>Displays how the specified words would be interpreted if used as a command.</td>
+                        </tr>
+                        <tr>
+                            <td><code>typeset</code></td>
+                            <td>Declares a variable or variable type.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ulimit</code></td>
+                            <td>Sets a limit on the specific resource for system users.</td>
+                        </tr>
+                        <tr>
+                            <td><code>umask</code></td>
+                            <td>Sets default permissions for newly created files and directories.</td>
+                        </tr>
+                        <tr>
+                            <td><code>unalias</code></td>
+                            <td>Removes specified alias.</td>
+                        </tr>
+                        <tr>
+                            <td><code>unset</code></td>
+                            <td>Removes the specified environment variable or shell attribute.</td>
+                        </tr>
+                        <tr>
+                            <td><code>until</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>wait</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>while</code></td>
+                            <td>Waits for the specified process to complete, and returns the exit status.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <h2 id="overview-of-symbolss">Overview of Bash Symbols</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Quick Reference</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>#</code></td>
+                            <td>used for comments</td>
+                        </tr>
+                        <tr>
+                            <td><code>$</code></td>
+                            <td>used for parameters and variables. Has a bunch of edge cases.</td>
+                        </tr>
+                        <tr>
+                            <td><code>( )</code></td>
+                            <td>is used for running commands in a subshell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$( )</code></td>
+                            <td>is used for saving output of commands that are send to run in a subshell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>(( ))</code></td>
+                            <td>is used for arithmetic.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$(( ))</code></td>
+                            <td>is used for saving the output of arithmetic.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$[]</code></td>
+                            <td>deprecated integer expansion construct which is replaced by <code>(( ))</code>.
+                                Evaluates
+                                integers
+                                between the square brackets
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>[ ]</code></td>
+                            <td>is used for testing and is a built-in. Is useful in some cases for filename
+                                expansion
+                                and
+                                string
+                                manipulation.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>[[ ]]</code></td>
+                            <td>is used for testing. This is the one you should use unless you can think of a reason
+                                not
+                                to.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;( )</code></td>
+                            <td>Used for process substitution and is similar to a pipe. Can be used whenever a
+                                command
+                                expects a
+                                file and
+                                you can use multiple at once.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>{ }</code></td>
+                            <td>is used for expansion of sequences</td>
+                        </tr>
+                        <tr>
+                            <td><code>${ }</code></td>
+                            <td>is used for variable interpolation and string manipulation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>|</code></td>
+                            <td>is a pipe which is used for chaining commands together.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;</code></td>
+                            <td>used for feeding input to commands from a file</td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;</code></td>
+                            <td>used for sending output to a file and erasing any previous content in that file.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;</code></td>
+                            <td>used for sending output to a file and erasing any previous content in that file.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;|</code></td>
+                            <td>forcing the redirection even if the shell option <code>noclobber</code> is set</td>
+                        </tr>
+                        <tr>
+                            <td><code>\&lt;, \&gt;</code></td>
+                            <td>used for word boundaries in regex</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="six columns">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Quick Reference</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>||</code></td>
+                            <td>logical or</td>
+                        </tr>
+                        <tr>
+                            <td><code>&&</code></td>
+                            <td>logical and</td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td>
+                            <td>used for option prefixes</td>
+                        </tr>
+                        <tr>
+                            <td><code>--</code></td>
+                            <td>used for the long-option prefixes</td>
+                        </tr>
+                        <tr>
+                            <td><code>&</code></td>
+                            <td>used to send a job to the background</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;WORD</code></td>
+                            <td rowspan="4">is used for <em>heredocs</em></td>
+                        </tr>
+
+                        <tr>
+                            <td><code>&lt;&lt;-WORD</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;'WORD'</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;-'WORD'</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;&lt;&lt;</code></td>
+                            <td>is used for <em>herestrings</em></td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;&gt;</code></td>
+                            <td>is used to append output to a file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&#39; &#39;</code></td>
+                            <td>single quotes are used to preserve the literal value</td>
+                        </tr>
+                        <tr>
+                            <td><code>&quot; &quot;</code></td>
+                            <td>double quotes are used to preserve the literal value of all characters except
+                                <code>$</code>,
+                                <code>`
+                                    `</code>
+                                and <code>\</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>\</code></td>
+                            <td>backslash is used to escape otherwise interpreted symbols/characters which has a
+                                special
+                                meaning
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>/</code></td>
+                            <td>used for seperating the components of a filename</td>
+                        </tr>
+                        <tr>
+                            <td><code>:</code></td>
+                            <td>similar to a NOP – a do nothing operation. It is a shell builtin with an exit status
+                                of
+                                true
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>;</code></td>
+                            <td>used to seperate commands intended to run sequentally.</td>
+                        </tr>
+                        <tr>
+                            <td><code>,</code></td>
+                            <td>used for linking together arithmetic operations. All are evalutated but only the
+                                last is
+                                returned
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.</code></td>
+                            <td>expands to the current directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>..</code></td>
+                            <td>expands to parent directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>~</code></td>
+                            <td>expands to home directory.</td>
+                        </tr>
+                        <tr>
+                            <td><code>` `</code></td>
+                            <td>is deprecated and should not be used. Read further in its respective section.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns offset-by-three">
+                    <p style="font-size: 1.5rem; color: azure;">If you find this site helpful,
+                        please consider sharing it with a friend!<br>
+                        The more people start using the site, the faster improvements will come along
+                        <i class="fas fa-smile-beam"></i>
+                </div>
+
+                <div class="six columns offset-by-three">
+                    <label style="text-align: center; font-size: 1rem;" for="exampleEmailInput">Register for our
+                        bi-weekly newsletter! It's easy to unsubscribe again.</label>
+                </div>
+
+                <div class="six columns offset-by-three">
+                    <form action="https://formspree.io/xoqdnqak" method="POST">
+                        <div class="input-container">
+                            <i class="fas fa-user icon pad-right-6-px"></i>
+                            <input class="u-full-width" style="text-align: center;" type="email"
+                                   placeholder="your@awesome-mailaddress.com"
+                                   id="exampleEmailInput">
+                            <input class="button-primary pad-right-6-px" type="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 <div class="container">
