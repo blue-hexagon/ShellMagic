@@ -35,10 +35,6 @@ h2 {
   background: #ff5900;
 }
 
-#comparison-operators {
-  background: #ff8b4d;
-}
-
 a {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -110,11 +106,11 @@ input[type=button].button-primary:focus {
 }
 
 .gradient-h1 {
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(#eee, #333);
   font-size: 6rem;
   text-shadow: 6px #000;
+  -webkit-background-clip: text;
 }
 
 .icon {

@@ -48,7 +48,6 @@ html {
 body {
   background: $bg;
   color: $fg;
-
 }
 
 nav {
@@ -75,10 +74,6 @@ h6 {
 
 h2 {
   background: $color-primary-1;
-}
-
-#comparison-operators {
-  background: lighten($color-primary-1, 15%);
 }
 
 a {
@@ -159,17 +154,19 @@ $input-height: 38px;
 // ------------------------------------------------
 // Gradients
 // sass-lint:disable no-vendor-prefixes
+// sass-lint:disable property-sort-order
 // ------------------------------------------------
-
 .gradient-h1 {
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
   font-size: 6rem;
   text-shadow: 6px $black;
+  -webkit-background-clip: text;
 }
-
+// sass-lint:enable property-sort-order
 // sass-lint:enable no-vendor-prefixes
+
+
 // ------------------------------------------------
 // Borders TODO
 // ------------------------------------------------
