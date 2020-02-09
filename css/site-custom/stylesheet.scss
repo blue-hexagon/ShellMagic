@@ -54,6 +54,8 @@ $color-border: $color-primary-2;
 $border-color-cream: #d1d1d1;
 $color-temporary: #33c3f0;
 $color-link-hover: #ff327e;
+$gradient-h1-color-one: #eee;
+$gradient-h1-color-two: #333;
 
 .icon {
   background: lighten($bg, 10%);
@@ -94,23 +96,25 @@ h6 {
   background: $color-primary-1;
   color: $bg;
 }
-h2{
+
+h2 {
   background: $color-primary-1;
 }
-#comparison-operators{
-background: lighten($color-primary-1, 15%);
+
+#comparison-operators {
+  background: lighten($color-primary-1, 15%);
 }
 
 a {
   color: $fg;
 }
 
-nav a:nth-child(even){
-  background: lighten($bg,4%);
+nav a:nth-child(even) {
+  background: lighten($bg, 4%);
 }
 
-nav a:nth-child(odd){
-  background: lighten($bg,2%);
+nav a:nth-child(odd) {
+  background: lighten($bg, 2%);
 }
 
 a:hover {
@@ -141,47 +145,49 @@ footer {
 p {
   background: lighten($bg, 10%);
 }
+
 p.info-box {
-margin: 1ex 0 0 0;
+  margin: 1ex 0 0 0;
 }
 
 .button.button-primary,
 button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+input[type='submit'].button-primary,
+input[type='reset'].button-primary,
+input[type='button'].button-primary {
   background: lighten($bg, 10%);
   border-color: $fg;
   color: $color-primary-1;
-
-
 }
 
 .button.button-primary:hover,
 button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
+input[type='submit'].button-primary:hover,
+input[type='reset'].button-primary:hover,
+input[type='button'].button-primary:hover,
 .button.button-primary:focus,
 button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
+input[type='submit'].button-primary:focus,
+input[type='reset'].button-primary:focus,
+input[type='button'].button-primary:focus {
   background: lighten($bg, 15%);
   border-color: darken($fg, 10%);
   color: $white;
 }
+
 // ------------------------------------------------
 // Gradients
 // ------------------------------------------------
+// sass-lint:disable no-vendor-prefixes
 .gradient-h1 {
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
-  text-shadow: 6px $black;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
   font-size: 6rem;
+  text-shadow: 6px $black;
 }
 
+// sass-lint:enable no-vendor-prefixes
 // ----------------------------------------------
 // Borders TODO
 // ----------------------------------------------
@@ -355,39 +361,16 @@ footer {
     font-size: .525rem;
   }
 
-  @media (min-width: 550px) { // Larger than phablet
-    h1 {
-      font-size: 5rem;
-    }
-
-    h2 {
-      font-size: 4.2rem;
-    }
-
-    h3 {
-      font-size: 3.6rem;
-    }
-
-    h4 {
-      font-size: 3rem;
-    }
-
-    h5 {
-      font-size: 2.4rem;
-    }
-
-    h6 {
-      font-size: 1.5rem;
-    }
-  }
-
-
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Buttons ----------------------------------------------//
+
+  // sass-lint:disable force-attribute-nesting
+  // sass-lint:disable no-qualifying-elements
+  // sass-lint:disable force-pseudo-nesting
   .button,
   button,
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'] {
     background-color: transparent;
     border: 1px solid $grey-one;
     border-radius: 4px;
@@ -409,14 +392,14 @@ footer {
 
   .button:hover,
   button:hover,
-  input[type="submit"]:hover,
-  input[type="reset"]:hover,
-  input[type="button"]:hover,
+  input[type='submit']:hover,
+  input[type='reset']:hover,
+  input[type='button']:hover,
   .button:focus,
   button:focus,
-  input[type="submit"]:focus,
-  input[type="reset"]:focus,
-  input[type="button"]:focus {
+  input[type='submit']:focus,
+  input[type='reset']:focus,
+  input[type='button']:focus {
     border-color: $grey-one;
     color: $bg;
     outline: 0;
@@ -424,13 +407,13 @@ footer {
 
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Forms ----------------------------------------------//
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
+  input[type='email'],
+  input[type='number'],
+  input[type='search'],
+  input[type='text'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='password'],
   textarea,
   select {
     background-color: $white;
@@ -443,13 +426,13 @@ footer {
   }
 
   //Removes awkward default styles on some inputs for iOS
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
+  input[type='email'],
+  input[type='number'],
+  input[type='search'],
+  input[type='text'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='password'],
   textarea {
     appearance: none;
   }
@@ -460,13 +443,13 @@ footer {
     padding-top: 6px;
   }
 
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
+  input[type='email']:focus,
+  input[type='number']:focus,
+  input[type='search']:focus,
+  input[type='text']:focus,
+  input[type='tel']:focus,
+  input[type='url']:focus,
+  input[type='password']:focus,
   textarea:focus,
   select:focus {
     border: 1px solid $color-temporary;
@@ -485,8 +468,8 @@ footer {
     padding: 0;
   }
 
-  input[type="checkbox"],
-  input[type="radio"] {
+  input[type='checkbox'],
+  input[type='radio'] {
     display: inline;
   }
 
@@ -496,6 +479,9 @@ footer {
     margin-left: .5rem;
   }
 
+  // sass-lint:enable force-pseudo-nesting
+  // sass-lint:enable force-attribute-nesting
+  // sass-lint:enable no-qualifying-elements
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Lists ----------------------------------------------//
   p,
   ul,
@@ -515,18 +501,9 @@ footer {
   ol,
   ul {
     padding-left: 0;
-    //  margin-top: 0;
-    //margin: auto;
     width: 50%;
   }
 
-  ul ul,
-  ul ol,
-  ol ol,
-  ol ul {
-    font-size: 90%;
-    margin: .4em 0 .6em 1rem;
-  }
 
   li {
     font-family: 'IBM Plex Serif', serif;
@@ -633,7 +610,6 @@ footer {
       width: 48%;
     }
 
-    // Offsets
     .offset-by-one.column,
     .offset-by-one.columns {
       margin-left: 8.66666666667%;
@@ -781,27 +757,23 @@ footer {
   }
 
   table {
-    //margin-left: 2rem;
-    //margin-right: auto;
     margin-bottom: 1.5rem;
     text-align: center;
   }
 
   // –––––––––––––––––––––––––––––––––––––––––––––––––– Utility Classes ----------------------------------------------//
-  // Make element full width
-  .u-full-width {
+  .u-full-width { // Make element full width
     box-sizing: border-box;
     width: 100%;
   }
 
-  // Make sure elements don't run outside containers (great for images in columns)
-  .u-max-full-width {
+  .u-max-full-width { // Make sure elements don't run outside containers (great for images in columns)
     box-sizing: border-box;
     max-width: 100%;
   }
 
-  // Float either direction
-  .u-pull-right {
+
+  .u-pull-right { // Float either direction
     float: right;
   }
 
@@ -809,8 +781,7 @@ footer {
     float: left;
   }
 
-  // Clear a float
-  .u-cf {
+  .u-cf { // Clear a float
     clear: both;
     content: '';
     display: table;

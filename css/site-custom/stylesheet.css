@@ -128,11 +128,11 @@ input[type=button].button-primary:focus {
 }
 
 .gradient-h1 {
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  text-shadow: 6px #000;
   font-size: 6rem;
+  text-shadow: 6px #000;
 }
 
 .icon {
@@ -289,33 +289,7 @@ h6 {
     font-family: "PT Mono", sans, serif;
     font-size: 0.525rem;
   }
-}
-@media (min-width: 800px) and (min-width: 550px) {
-  h1 {
-    font-size: 5rem;
-  }
 
-  h2 {
-    font-size: 4.2rem;
-  }
-
-  h3 {
-    font-size: 3.6rem;
-  }
-
-  h4 {
-    font-size: 3rem;
-  }
-
-  h5 {
-    font-size: 2.4rem;
-  }
-
-  h6 {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 800px) {
   .button,
 button,
 input[type=submit],
@@ -339,8 +313,7 @@ input[type=button] {
     text-transform: uppercase;
     white-space: nowrap;
   }
-}
-@media (min-width: 800px) {
+
   .button:hover,
 button:hover,
 input[type=submit]:hover,
@@ -355,8 +328,7 @@ input[type=button]:focus {
     color: #202020;
     outline: 0;
   }
-}
-@media (min-width: 800px) {
+
   input[type=email],
 input[type=number],
 input[type=search],
@@ -374,8 +346,7 @@ select {
     height: 38px;
     padding: 6px 10px;
   }
-}
-@media (min-width: 800px) {
+
   input[type=email],
 input[type=number],
 input[type=search],
@@ -386,15 +357,13 @@ input[type=password],
 textarea {
     appearance: none;
   }
-}
-@media (min-width: 800px) {
+
   textarea {
     min-height: 65px;
     padding-bottom: 6px;
     padding-top: 6px;
   }
-}
-@media (min-width: 800px) {
+
   input[type=email]:focus,
 input[type=number]:focus,
 input[type=search]:focus,
@@ -407,75 +376,56 @@ select:focus {
     border: 1px solid #33c3f0;
     outline: 0;
   }
-}
-@media (min-width: 800px) {
+
   label,
 legend {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-}
-@media (min-width: 800px) {
+
   fieldset {
     border-width: 0;
     padding: 0;
   }
-}
-@media (min-width: 800px) {
+
   input[type=checkbox],
 input[type=radio] {
     display: inline;
   }
-}
-@media (min-width: 800px) {
+
   label > .label-body {
     display: inline-block;
     font-weight: normal;
     margin-left: 0.5rem;
   }
-}
-@media (min-width: 800px) {
+
   p,
 ul,
 li,
 ol {
     font-size: 100%;
   }
-}
-@media (min-width: 800px) {
+
   ul {
     list-style: square;
   }
-}
-@media (min-width: 800px) {
+
   ol {
     list-style: upper-roman;
   }
-}
-@media (min-width: 800px) {
+
   ol,
 ul {
     padding-left: 0;
     width: 50%;
   }
-}
-@media (min-width: 800px) {
-  ul ul,
-ul ol,
-ol ol,
-ol ul {
-    font-size: 90%;
-    margin: 0.4em 0 0.6em 1rem;
-  }
-}
-@media (min-width: 800px) {
+
   li {
     font-family: "IBM Plex Serif", serif;
     margin-bottom: 0.1em;
   }
-}
-@media (min-width: 800px) {
+
   .container {
     box-sizing: border-box;
     margin: 0 auto;
@@ -483,8 +433,7 @@ ol ul {
     padding: 0 20px;
     width: 120%;
   }
-}
-@media (min-width: 800px) {
+
   .column,
 .columns {
     box-sizing: border-box;
