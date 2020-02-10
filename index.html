@@ -9,6 +9,13 @@
     <meta name="keywords"
           content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt">
     <title>Shell Magic - The Ultimate Bash Cheatsheet!</title>
+    <!-- Open graph tags for customizing link previews.-->
+    <meta property="og:url" content="http://www.ShellMagic.xyz/index.html"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Ultimate Bash Notes"/>
+    <meta property="og:description" content="The Final Resource for Learning Shell Scripting!"/>
+    <meta property="og:image"
+          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/logo/logo.png"/>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
     <script src="js/snackbar.js"></script>
     <script src="js/modal.js"></script>
@@ -18,6 +25,9 @@
 </head>
 
 <body onload="snackbar()">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
 <div id="snackbar">We use <u style="text-decoration: dotted; color: #ff327e;">Google Analytics</u> for website analytics
     and we use <u style="text-decoration: dotted; color: #ff327e;">Freeform.io</u> for mail collection.
     <u style="text-decoration: dotted; color: #65ffa0;">We don't collect cookies</u> and we have <u
@@ -509,6 +519,39 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h3 id="sending-control-signals">Sending Control Signals</h3>
+                    <p class="info">You can use these key-combinations to send signals</p>
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Key Combo</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>Ctrl+C</code></td>
+                            <td>The interrupt signal, sends SIGINT to the job running in the foreground.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl+Y</code></td>
+                            <td>The delayed suspend character. Causes a running process to be stopped when it attempts
+                                to read input from the terminal. Control is returned to the shell, the user can
+                                foreground, background or kill the process. Delayed suspend is only available on
+                                operating systems supporting this feature.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>Ctrl+Z</code></td>
+                            <td>The suspend signal, sends a SIGTSTP to a running program, thus stopping it and returning
+                                control to the shell.
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="warning">
+                        Check your stty settings. Suspend and resume of output is usually disabled if you are using
+                        "modern" terminal emulations. The standard xterm supports Ctrl+S and Ctrl+Q by default.</p>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
@@ -594,8 +637,101 @@
                     </table>
                 </div>
                 <div class="four columns">
-                    <h2>Placeholder</h2>
+                    <h2>File Types</h2>
                     <p class="info">TODO</p>
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Meaning</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>-</code></td>
+                            <td>Regular file</td>
+                        </tr>
+                        <tr>
+                            <td><code>d</code></td>
+                            <td>Directory</td>
+                        </tr>
+                        <tr>
+                            <td><code>l</code></td>
+                            <td>Link</td>
+                        </tr>
+                        <tr>
+                            <td><code>c</code></td>
+                            <td>Special file</td>
+                        </tr>
+                        <tr>
+                            <td><code>s</code></td>
+                            <td>Socket</td>
+                        </tr>
+                        <tr>
+                            <td><code>p</code></td>
+                            <td>Named pipe</td>
+                        </tr>
+                        <tr>
+                            <td><code>b</code></td>
+                            <td>Block device</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="four columns">
+                    <h2>Access Codes & Permissions</h2>
+                    <p class="info">TODO</p>
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>0</code></td>
+                            <td rowspan="2">The access right that is supposed to be on this place is not granted.</td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>4</code></td>
+                            <td rowspan="2">read access is granted to the user category defined in this place</td>
+                        </tr>
+                        <tr>
+                            <td><code>r</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>2</code></td>
+                            <td rowspan="2">write permission is granted to the user category defined in this place</td>
+                        </tr>
+                        <tr>
+                            <td><code>w</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>1</code></td>
+                            <td rowspan="2">execute permission is granted to the user category defined in this place
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>x</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>u</code></td>
+                            <td>user permissions</td>
+                        </tr>
+                        <tr>
+                            <td><code>g</code></td>
+                            <td>group permissions</td>
+                        </tr>
+                        <tr>
+                            <td><code>o</code></td>
+                            <td>owner permissions</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="row">
@@ -1479,17 +1615,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="six columns offset-by-three">
+                <div class="eight columns offset-by-two">
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
                     <p class="success" style="font-size: 1.5rem; color: azure;">If you find this site helpful,
                         please consider sharing it with a friend!<br>
                         The more people start using the site, the faster improvements will come along
                         <i class="fas fa-smile-beam"></i>
+
                 </div>
-                <div class="six columns offset-by-three email-input">
+            </div>
+            <div class="row">
+                <div class="twelve columns email-input">
                     <label style="text-align: center; font-size: 1rem;" for="exampleEmailInput">Register for our
-                        bi-weekly newsletter! It's easy to unsubscribe again.</label>
-                </div>
-                <div class="six columns offset-by-three">
+                        monthly newsletter! It's easy to unsubscribe again.</label>
                     <form action="https://formspree.io/xoqdnqak" method="POST">
                         <div class="input-container">
                             <i class="fas fa-user icon pad-right-6-px"></i>
@@ -1499,7 +1640,45 @@
                             <input class="button-primary pad-right-6-px" type="submit" value="Send">
                         </div>
                     </form>
+                    <ul class="share-buttons">
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
+                               target="_blank" title="Share on Facebook"><i class="fab fa-facebook-square fa-2x"
+                                                                            aria-hidden="true"></i><span
+                                    class="sr-only">Share on Facebook</span></a></li>
+                        <li>
+                            <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
+                               target="_blank" title="Tweet"><i class="fab fa-twitter-square fa-2x"
+                                                                aria-hidden="true"></i><span
+                                    class="sr-only">Tweet</span></a></li>
+                        <li>
+                            <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
+                               target="_blank" title="Pin it"><i class="fab fa-pinterest-square fa-2x"
+                                                                 aria-hidden="true"></i><span
+                                    class="sr-only">Pin it</span></a></li>
+                        <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
+                               target="_blank" title="Add to Pocket"><i class="fab fab fa-get-pocket fa-2x"
+                                                                        aria-hidden="true"></i><span class="sr-only">Add to Pocket</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
+                               target="_blank" title="Submit to Reddit"><i class="fab fa-reddit-square fa-2x"
+                                                                           aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
+                               target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin fa-2x"
+                                                                            aria-hidden="true"></i><span
+                                    class="sr-only">Share on LinkedIn</span></a></li>
+                        <li>
+                            <a href="mailto:?subject=Shell%20Magic&body=Ultimate%20Bash%20Reference%20Notes:%20http%3A%2F%2Fwww.shellmagic.xyz"
+                               target="_blank" title="Send email"><i class="fas fa-envelope-square fa-2x"
+                                                                     aria-hidden="true"></i><span
+                                    class="sr-only">Send email</span></a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </section>

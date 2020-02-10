@@ -1,55 +1,53 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: none;
-    overflow: auto;
-    background-color: #000000;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
-    overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
 }
 
 .modal-window {
-    position: relative;
-    background-color: #202020;
-    border: black solid 2px;
-    border-radius: 3rem;
-    width: 50%;
-    height: 65%;
-    margin: 10% auto;
-    padding: 20px;
-    scrollbar-color: lighten(#202020, 5%);
-}
+  background-color: #202020;
+  border: black solid 2px;
+  border-radius: 3rem;
+  height: 65%;
+  margin: 10% auto;
+  padding: 20px;
+  position: relative;
+  width: 50%;
 
-.modal-window.small {
+  .small {
     width: 30%;
+  }
+
+  .large {
+    width: 75%;
+  }
 }
 
-.modal-window.large {
-    width: 75%;
-}
 
 .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: rgba(0, 0, 0, 0.3);
-    height: 30px;
-    width: 30px;
-    font-size: 30px;
-    line-height: 30px;
-    text-align: center;
-}
+  color: rgba(0, 0, 0, .3);
+  font-size: 30px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 30px;
 
-.close:hover,
-.close:focus {
+  &:hover,
+  &:focus {
     color: #000000;
     cursor: pointer;
+  }
 }
 
 .open {
-    display: block;
+  display: block;
 }

@@ -43,53 +43,46 @@
   }
 }
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: none;
-  overflow: auto;
-  background-color: #000000;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
+  bottom: 0;
+  display: none;
+  left: 0;
   overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
 }
 
 .modal-window {
-  position: relative;
   background-color: #202020;
   border: black solid 2px;
   border-radius: 3rem;
-  width: 50%;
   height: 65%;
   margin: 10% auto;
   padding: 20px;
-  scrollbar-color: #2d2d2d;
+  position: relative;
+  width: 50%;
 }
-
-.modal-window.small {
+.modal-window .small {
   width: 30%;
 }
-
-.modal-window.large {
+.modal-window .large {
   width: 75%;
 }
 
 .close {
-  position: absolute;
-  top: 0;
-  right: 0;
   color: rgba(0, 0, 0, 0.3);
-  height: 30px;
-  width: 30px;
   font-size: 30px;
+  height: 30px;
   line-height: 30px;
+  position: absolute;
+  right: 0;
   text-align: center;
+  top: 0;
+  width: 30px;
 }
-
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000000;
   cursor: pointer;
 }
@@ -11921,6 +11914,43 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+
+/*!
+ * Font Awesome Free 5.12.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.eot");
+  src: url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.woff2") format("woff2"), url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.woff") format("woff"), url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.ttf") format("truetype"), url("../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+ul.share-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li {
+  display: inline;
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 .block {
