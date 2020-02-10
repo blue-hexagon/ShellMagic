@@ -7,7 +7,9 @@
 // sass-lint:disable no-qualifying-elements
 // sass-lint:disable force-pseudo-nesting
 //sass-lint:disable no-url-domains, no-url-protocols
-
+@use 'snackbar';
+@use 'modal';
+@use 'load-fonts';
 // Color Vars
 $fg: rgba(255, 255, 255, .5);
 $bg: #202020;
@@ -156,9 +158,18 @@ th {
 
 .two-column-table {
   td {
+
+      &:hover{
+        //cursor: pointer;
+      }
     &:nth-child(1) {
       background: $td-bg;
       min-width: 5%;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        overflow: hidden;
+      }
     }
 
     &:nth-child(2) {
@@ -167,7 +178,6 @@ th {
 
       &:hover {
         background: lighten($bg, 10%);
-        box-sizing: content-box;
         overflow: hidden;
       }
     }
