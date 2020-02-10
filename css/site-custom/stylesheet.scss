@@ -6,15 +6,18 @@
 // sass-lint:disable force-attribute-nesting
 // sass-lint:disable no-qualifying-elements
 // sass-lint:disable force-pseudo-nesting
-//sass-lint:disable no-url-domains, no-url-protocols
+// sass-lint:disable no-url-domains, no-url-protocols
+
 @use 'snackbar';
 @use 'modal';
 @use 'load-fonts';
+
 // Font Awesome
 @use '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
 
 @import 'variables';
-$fa-font-path:        '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
+
+$fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
 
@@ -68,9 +71,6 @@ body {
 }
 
 nav {
-  .navbar {
-  }
-
   a {
     background-color: $bg;
     color: $white;
@@ -109,6 +109,13 @@ h5,
 h6 {
   background: $color-primary-1;
   color: $bg;
+  padding: .725rem 0;
+  box-sizing: border-box;
+  font-family: 'PT Mono', serif;
+  font-weight: 300;
+  margin: 0 auto .25rem 0;
+  text-align: center;
+  width: 100%;
 }
 
 a {
@@ -127,9 +134,10 @@ th {
 .two-column-table {
   td {
 
-      &:hover{
-        //cursor: pointer;
-      }
+    &:hover {
+      //cursor: pointer;
+    }
+
     &:nth-child(1) {
       background: $td-bg;
       min-width: 5%;
@@ -282,23 +290,6 @@ td:last-child {
   padding-right: 0;
 }
 
-// Typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: .725rem 0;
-  box-sizing: border-box;
-  font-family: 'PT Mono', serif;
-  font-weight: 300;
-  margin: 0 auto .25rem 0;
-  text-align: center;
-  width: 100%;
-}
-
-
 // Buttons
 .button,
 button,
@@ -445,46 +436,37 @@ label > .label-body {
     top: 0;
   }
 
+  @mixin heading($border-radius, $font-size, $letter-spacing, $line-height, $margin-top, $padding) {
+    border-radius: $border-radius;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+    margin-top: $margin-top;
+    padding: $padding;
+  }
+
   h1 {
-    border-radius: .5rem;
-    font-size: 4rem;
-    letter-spacing: -.1rem;
-    line-height: 1.2;
-    margin-top: 1.6rem;
-    padding: 0 1rem;
+    @include heading(.5rem, 4rem, -.1rem, 1.2, 1.6rem, 0 1rem);
   }
 
   h2 {
-    font-size: 3.6rem;
-    letter-spacing: -.1rem;
-    line-height: 1.25;
-    margin-top: 1.825rem;
+    @include heading(.5rem, 3.6rem, -.1rem, 1.25, 1.825rem, 0 1rem);
   }
 
   h3 {
-    font-size: 3rem;
-    letter-spacing: -.1rem;
-    line-height: 1.3;
-    margin-top: 2rem;
+    @include heading(.5rem, 3rem, -.1rem, 1.3, 2rem, 0 1rem);
   }
 
   h4 {
-    font-size: 2.4rem;
-    letter-spacing: -.08rem;
-    line-height: 1.35;
-    margin-top: .5rem;
+    @include heading(.5rem, 2.4rem, -.1rem, 1.35, .5rem, 0 1rem);
   }
 
   h5 {
-    font-size: 1.8rem;
-    letter-spacing: -.05rem;
-    line-height: 1.5;
+    @include heading(.5rem, 1.8rem, -.05rem, 1.5, .25rem, 0 1rem);
   }
 
   h6 {
-    font-size: 1.5rem;
-    letter-spacing: 0;
-    line-height: 1.6;
+    @include heading(.5rem, 1.5rem, 0, 1.6, .1rem, 0 1rem);
   }
 
   p {
