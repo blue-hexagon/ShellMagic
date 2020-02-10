@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="SmokingCuke">
-    <meta name="description" content="Cheatsheet for Bash shellscripting. This site explains all about bash and how to do shellscripting with example.">
-    <meta name="keywords" content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet, cheat, sheet">
+    <meta name="description"
+          content="Cheatsheet for Bash shellscripting. This site explains all about bash and how to do shellscripting with example.">
+    <meta name="keywords"
+          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet, cheat, sheet">
     <title>Shell Magic - Advanced Bash Notes</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
     <script src="js/third-party.js"></script>
@@ -13,6 +15,11 @@
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
     <script src="js/snackbar.js"></script>
     <script src="js/modal.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script> -->
+    <script
+            charset="UTF-8"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel="stylesheet" href="./css/site-custom/snackbar.css">
     <link rel="stylesheet" href="./css/site-custom/modal.css">
@@ -22,9 +29,6 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/default.min.css"
-          rel="stylesheet">
-
 </head>
 
 <body onload="snackbar()">
@@ -38,6 +42,35 @@
     <br><b style="font-family: 'Source Code Pro', serif;">[You may click anywhere on this popup to close it - autocloses
         in 15 seconds]</b>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<div id="simpleModal_1" class="modal">
+    <div class="modal-window">
+        <script>
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var txtFile = new XMLHttpRequest();
+                txtFile.open("GET", "https://raw.githubusercontent.com/smokingcuke/100-shell-script-examples/master/001-inpath.sh", true);
+                txtFile.onreadystatechange = function () {
+                    if (txtFile.readyState === 4 && txtFile.status == 200) {
+                        allText = txtFile.responseText;
+                    }
+                    let codedText = hljs.highlightBlock(allText);
+                    print(codedText);
+                }
+            else
+                {
+                    alert('The File APIs are not fully supported in this browser.');
+                }
+            }
+        </script>
+    </div>
+</div>
+
 <header>
     <nav>
         <div class="navbar u-max-full-width">
@@ -62,6 +95,40 @@
             <div class="row">
                 <div class="twelve columns">
                     <h1 class="gradient-h1"><i class="fas fa-terminal"></i> Bash Quick References</h1>
+                    <!--<pre><code class="bash">
+                        #!/bin/sh
+# validalAlphaNum - Ensures that input only consists of alphabetical
+#              and numeric characters.
+
+validAlphaNum()
+{
+  # validate arg: returns 0 if all upper+lower+digits, 1 otherwise
+
+  # Remove all unacceptable chars
+  compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
+
+  if [ "$compressed" != "$input" ] ; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+# Sample usage of this function in a script
+
+echo -n "Enter input: "
+read input
+
+if ! validAlphaNum "$input" ; then
+  echo "Your input must consist of only letters and numbers." >&2
+  exit 1
+else
+  echo "Input is valid."
+fi
+
+exit 0
+
+                    </code></pre> -->
                 </div>
             </div>
         </div>
@@ -82,7 +149,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><code>-e</code></td>
+                            <td><code data-target="simpleModal_1" data-toggle="modal">-e</code></td>
                             <td>File exists</td>
                         </tr>
                         <tr>

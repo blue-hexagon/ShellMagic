@@ -1,3 +1,4 @@
+<pre><code class="bash">
 #!/bin/sh
 # validalAlphaNum - Ensures that input only consists of alphabetical
 #              and numeric characters.
@@ -29,3 +30,4 @@ else
 fi
 
 exit 0
+</code></pre>
