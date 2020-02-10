@@ -12065,7 +12065,7 @@ h6 {
   color: #202020;
   padding: 0.725rem 0;
   box-sizing: border-box;
-  font-family: "PT Mono", serif;
+  font-family: "IBM Plex Sans", serif;
   font-weight: 300;
   margin: 0 auto 0.25rem 0;
   text-align: center;
@@ -12353,7 +12353,11 @@ label > .label-body {
   }
 
   .shadow-box {
-    box-shadow: 5px 5px 10px 2px #000;
+    box-shadow: 1px 1px 14px 2px #0f0f0f;
+  }
+
+  .info.shadow-box {
+    box-shadow: 1px 1px 4px 1px #0e0e0e;
   }
 
   h1 {

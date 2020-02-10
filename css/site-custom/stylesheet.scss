@@ -15,6 +15,7 @@
 // Font Awesome
 @use '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
 @import 'variables';
+
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
@@ -22,16 +23,16 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
 
 
 // Test
-ul.share-buttons{
+ul.share-buttons {
   list-style: none;
   padding: 0;
 }
 
-ul.share-buttons li{
+ul.share-buttons li {
   display: inline;
 }
 
-ul.share-buttons .sr-only{
+ul.share-buttons .sr-only {
   position: absolute;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
@@ -124,7 +125,7 @@ h6 {
   color: $bg;
   padding: .725rem 0;
   box-sizing: border-box;
-  font-family: 'PT Mono', serif;
+  font-family: 'IBM Plex Sans', serif;
   font-weight: 300;
   margin: 0 auto .25rem 0;
   text-align: center;
@@ -457,9 +458,15 @@ label > .label-body {
     margin-top: $margin-top;
     padding: $padding;
   }
-  .shadow-box{
-    box-shadow: 5px 5px 10px 2px $black;
+
+  .shadow-box {
+    box-shadow: 1px 1px 14px 2px darken($bg,6.5%);
+
   }
+  .info.shadow-box {
+    box-shadow: 1px 1px 4px 1px darken($bg,7%);
+  }
+
   h1 {
     @include heading(.5rem, 4rem, -.1rem, 1.2, 1.6rem, 0 1rem);
   }
