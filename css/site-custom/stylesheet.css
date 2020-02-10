@@ -120,9 +120,9 @@
   src: url("../../resources/typography/fonts/PT_Mono");
 }
 .tooltip {
-  position: relative;
-  display: inline-block;
   border-bottom: 1px dotted black;
+  display: inline-block;
+  position: relative;
 }
 
 .tooltip .tooltiptext {
@@ -12350,6 +12350,10 @@ label > .label-body {
     position: fixed;
     right: 0;
     top: 0;
+  }
+
+  .shadow-box {
+    box-shadow: 5px 5px 10px 2px #000;
   }
 
   h1 {
