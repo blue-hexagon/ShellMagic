@@ -10,6 +10,8 @@
 @use 'snackbar';
 @use 'modal';
 @use 'load-fonts';
+@use 'tooltip';
+
 // Font Awesome
 @use '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
 @import 'variables';
@@ -17,6 +19,7 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/brands';
+
 
 // Test
 ul.share-buttons{
