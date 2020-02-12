@@ -13,8 +13,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@shellmagic1">
     <meta name="twitter:title" content="Shell Magic - The Ultimate Bash Reference">
-    <meta name="twitter:description" content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg">
+    <meta name="twitter:description"
+          content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax.">
+    <meta name="twitter:image"
+          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg">
     <meta name="twitter:image:width" content="1852">
     <meta name="twitter:image:height" content="970">
 
@@ -25,7 +27,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:image"
-              content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg">
+          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg">
     <meta property="og:url" content="https://shellmagic.xyz">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
     <script src="js/snackbar.js"></script>
@@ -589,7 +591,7 @@
                 <div class="eight columns">
                     <div class="shadow-box">
                         <h2 id="string-manipulation">String Manipulation</h2></div>
-                    <p class="info shadow-box">How to manipulate and edit variables in Bash.</p>
+                    <p class="info shadow-box">Bash supports a suprisingly big number of string operations!</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -598,18 +600,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><code>${parameter:-defaultValue}</code></td>
-                            <td>Get default shell variables value</td>
-                        </tr>
-                        <tr>
-                            <td><code>${parameter:=defaultValue}</code></td>
-                            <td>Set default shell variables value</td>
-                        </tr>
-                        <tr>
-                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
-                            <td>Display an error message if parameter is not set</td>
-                        </tr>
                         <tr>
                             <td><code>${#var}</code></td>
                             <td>Find the length of the string</td>
@@ -621,6 +611,10 @@
                         <tr>
                             <td><code>${var%%pattern}</code></td>
                             <td>Remove from longest rear (end) pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:position}</code></td>
+                            <td>Extract substring from $var at $position</td>
                         </tr>
                         <tr>
                             <td><code>${var:num1:num2}</code></td>
@@ -662,36 +656,6 @@
                         <tr>
                             <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
                             <td>Convert all character to uppercase.</td>
-                        </tr>
-                        <tr>
-                            <td><code>${#string}</code></td>
-                            <td>Length of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string:position}</code></td>
-                            <td>Extract substring from $string at $position</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string:position:length}</code></td>
-                            <td>Extract $length characters substring from $string at $position [zero-indexed, first
-                                character is at position 0]
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>${string#substring}</code></td>
-                            <td>Strip shortest match of $substring from front of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string##substring}</code></td>
-                            <td>Strip longest match of $substring from front of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string%substring}</code></td>
-                            <td>Strip shortest match of $substring from back of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string%%substring}</code></td>
-                            <td>Strip longest match of $substring from back of $string</td>
                         </tr>
                         <tr>
                             <td><code>${string/substring/replacement}</code></td>
@@ -744,6 +708,38 @@
                         <tr>
                             <td><code>expr "$string" : '.*\($substring\)'</code></td>
                             <td>Extract $substring*, searching from end of $string</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="four columns">
+                    <h2>Variable Operations</h2>
+                    <p class="info shadow-box">Perform operations on variables.</p>
+                    <table class="one-column-table">
+                        <thead>
+                        <tr>
+                            <th>Expression</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>${parameter:-defaultValue}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Get default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:=defaultValue}</code></td>
+
+                        </tr>
+                        <tr>
+                            <td>Set default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Display an error message if parameter is not set</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1672,18 +1668,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="twelve columns email-input">
-                    <label style="text-align: center; font-size: 1rem;" for="exampleEmailInput">Register for our
-                        monthly newsletter! It's easy to unsubscribe again.</label>
-                    <form action="https://formspree.io/xoqdnqak" method="POST">
-                        <div class="input-container">
-                            <i class="fas fa-user icon pad-right-6-px"></i>
-                            <input class="u-full-width" style="text-align: center;" type="email"
-                                   placeholder="your@awesome-mailaddress.com"
-                                   id="exampleEmailInput">
-                            <input class="button-primary pad-right-6-px" type="submit" value="Send">
-                        </div>
-                    </form>
+                <div class="twelve columns">
+                    <div class="email-input">
+                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Register for our
+                            monthly newsletter!</label>
+                        <form action="https://formspree.io/xoqdnqak" method="POST">
+                            <div class="input-container">
+                                <i class="fas fa-user icon"></i>
+                                <input class="u-full-width" style="text-align: center;" type="email"
+                                       placeholder="your@awesome-mailaddress.com"
+                                       id="exampleEmailInput">
+                                <input class="button-primary" type="submit" value="Send">
+                            </div>
+                        </form>
+                    </div>
                     <ul class="share-buttons">
                         <li>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
@@ -1744,12 +1742,7 @@
                 Policy</a>
             </footer>
             <footer>
-                <a href="https://github.com/smokingcuke/ShellMagic/issues"><img class="soft-shadow-box"
-                                                                                src="https://camo.githubusercontent.com/69ead98c7931ad09198efdde7ee7c0bacbc0833b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f736d6f6b696e6763756b652f416476616e6365642d5368656c6c2d4e6f7465732e737667"
-                                                                                alt="GitHub Issues"
-                                                                                data-canonical-src="https://img.shields.io/github/issues/smokingcuke/ShellMagic.svg"
-                                                                                style="max-width:100%;"></a>
-                <a target="_blank" rel="noopener noreferrer"
+               <a target="_blank" rel="noopener noreferrer"
                    href="https://camo.githubusercontent.com/72f84692f9f89555c176bb9e0eca9cf08d97fec9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6e747269627574696f6e732d77656c636f6d652d6f72616e67652e737667"><img
                         class="soft-shadow-box"
                         src="https://camo.githubusercontent.com/72f84692f9f89555c176bb9e0eca9cf08d97fec9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6e747269627574696f6e732d77656c636f6d652d6f72616e67652e737667"

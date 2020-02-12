@@ -6027,25 +6027,18 @@ ul.share-buttons {
   list-style: none;
   padding: 0;
 }
-
 ul.share-buttons li {
   display: inline;
-}
-
-ul.share-buttons .sr-only {
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+  box-shadow: 1px 1px 14px 2px #0f0f0f;
 }
 
 .tooltip {
   display: inline-block;
   position: relative;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 .tooltip a {
   text-decoration: none;
@@ -6078,11 +6071,6 @@ ul.share-buttons .sr-only {
   border-style: solid;
   border-color: #555 transparent transparent transparent;
   font-size: 1.25rem;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
 }
 
 .block {
@@ -6177,6 +6165,33 @@ th {
   color: #fff;
 }
 
+td {
+  padding: 2px 6px;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px dashed #d34a00;
+}
+
+th:last-child {
+  padding-right: 0;
+}
+
+.one-column-table td:nth-child(1) {
+  min-width: 5%;
+}
+.one-column-table td:nth-child(1):hover {
+  background: #3a3a3a;
+  overflow: hidden;
+}
+.one-column-table tr:nth-child(even) td {
+  border-bottom: 1px dashed #d34a00;
+}
+
+.two-column-table td {
+  border-bottom: 1px dashed #d34a00;
+}
 .two-column-table td:nth-child(1) {
   background: #202020;
   min-width: 5%;
@@ -6278,8 +6293,8 @@ input[type=button].button-primary:focus {
 
 .input-container {
   display: flex;
-  margin-bottom: 15px;
   width: 100%;
+  margin-bottom: 0;
 }
 
 .input-field {
@@ -6292,18 +6307,6 @@ table {
   width: 100%;
   margin-bottom: 1.5rem;
   text-align: center;
-}
-
-th,
-td {
-  border-bottom: 1px dashed #d34a00;
-  padding: 2px 6px;
-  text-align: left;
-}
-
-th:last-child,
-td:last-child {
-  padding-right: 0;
 }
 
 .button,
@@ -6443,6 +6446,10 @@ label > .label-body {
     position: fixed;
     right: 0;
     top: 0;
+  }
+
+  .soft-shadow-box {
+    box-shadow: 1px 1px 30px 1px #0f0f0f;
   }
 
   .shadow-box {

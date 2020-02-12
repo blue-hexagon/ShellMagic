@@ -12,40 +12,35 @@
 @import 'load-fonts';
 @import 'variables';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
+
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/brands';
 
 
-// Test
 ul.share-buttons {
   list-style: none;
   padding: 0;
+
+  li {
+    display: inline;
+    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
+  }
 }
-
-ul.share-buttons li {
-  display: inline;
-}
-
-ul.share-buttons .sr-only {
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-//
-
 
 .tooltip {
   display: inline-block;
   position: relative;
-  a{
+
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  a {
     text-decoration: none;
   }
 
@@ -53,7 +48,7 @@ ul.share-buttons .sr-only {
     visibility: hidden;
     width: 120px;
     background-color: #555;
-    box-shadow: 1px 1px 14px 2px darken($bg,6.5%);
+    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -66,7 +61,8 @@ ul.share-buttons .sr-only {
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 1.25rem;
-    &::after{
+
+    &::after {
       content: "";
       position: absolute;
       top: 100%;
@@ -77,13 +73,6 @@ ul.share-buttons .sr-only {
       border-color: #555 transparent transparent transparent;
       font-size: 1.25rem;
     }
-  }
-}
-
-.tooltip:hover {
-  .tooltiptext {
-    visibility: visible;
-    opacity: 1;
   }
 }
 
@@ -189,8 +178,45 @@ th {
   color: $color-text-selection-text;
 }
 
+td {
+  padding: 2px 6px;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px dashed $color-border;
+}
+
+th:last-child {
+  padding-right: 0;
+}
+
+.one-column-table {
+  td {
+
+
+    &:nth-child(1) {
+      //background: $td-bg;
+      min-width: 5%;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        overflow: hidden;
+      }
+    }
+  }
+
+  tr:nth-child(even) {
+    td {
+      border-bottom: 1px dashed $color-border;
+    }
+  }
+
+}
+
 .two-column-table {
   td {
+    border-bottom: 1px dashed $color-border;
 
     &:hover {
       //cursor: pointer;
@@ -318,8 +344,8 @@ input[type='button'].button-primary:focus {
 
 .input-container {
   display: flex;
-  margin-bottom: 15px;
   width: 100%;
+  margin-bottom: 0;
 }
 
 .input-field {
@@ -334,18 +360,6 @@ table {
   margin-bottom: 1.5rem;
   text-align: center;
 
-}
-
-th,
-td {
-  border-bottom: 1px dashed $color-border;
-  padding: 2px 6px;
-  text-align: left;
-}
-
-th:last-child,
-td:last-child {
-  padding-right: 0;
 }
 
 // Buttons
@@ -435,7 +449,7 @@ input[type='url']:focus,
 input[type='password']:focus,
 textarea:focus,
 select:focus {
-  border: 2px solid lighten($bg,8%);
+  border: 2px solid lighten($bg, 8%);
   outline: 0;
 }
 
@@ -502,13 +516,16 @@ label > .label-body {
     margin-top: $margin-top;
     padding: $padding;
   }
+  .soft-shadow-box {
+    box-shadow: 1px 1px 30px 1px darken($bg, 6.5%);
 
+  }
   .shadow-box {
-    box-shadow: 1px 1px 14px 2px darken($bg,6.5%);
+    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
 
   }
   .info.shadow-box {
-    box-shadow: 1px 1px 4px 1px darken($bg,7%);
+    box-shadow: 1px 1px 4px 1px darken($bg, 7%);
   }
 
   h1 {
