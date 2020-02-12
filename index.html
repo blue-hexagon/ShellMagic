@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="SmokingCuke">
     <meta name="description"
-          content="This is the Ultimate and Final Resource You Will Ever Need - and it's 110% FREE! This Site is The Ultimate Compilation of Bash - It's The Only Resource You Wil Ever Need for Reference on Bash Syntax.">
+          content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax.">
     <meta name="keywords"
           content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt">
     <title>Shell Magic - The Ultimate Bash Cheatsheet!</title>
-    <!-- Open graph tags for customizing link previews.-->
     <meta property="og:url" content="https://www.ShellMagic.xyz/index.html"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="The Ultimate Bash Learning Resource"/>
+    <meta property="og:site_name" content="Shell Magic">
     <meta property="og:description" content="The Final Resource for Learning Shell Scripting!"/>
     <meta property="og:image"
-          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/logo/logo.png"/>
+          content="https://github.com/smokingcuke/ShellMagic/blob/master/md/screenshot-dark-theme-09-02-2020.png?raw=true"/>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
     <script src="js/snackbar.js"></script>
     <script src="js/modal.js"></script>
@@ -1065,7 +1065,7 @@
                 <div class="six columns">
                     <div class="shadow-box">
                         <h2 id="regular-expressions">Regular Expressions</h2></div>
-                    <p class="info shadow-box">Always use quotes in your regex to avoid globbing</p>
+                    <p class="info shadow-box">Always use quotes in your RegEx to avoid globbing</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -1133,6 +1133,18 @@
                         <tr>
                             <td><code>\&gt;</code></td>
                             <td>Match the empty string at the end of word.</td>
+                        </tr>
+                        <tr>
+                            <td><code>[aoeiAOEI]</code></td>
+                            <td>Matches any 1 character from the list. </td>
+                        </tr>
+                        <tr>
+                            <td><code>[^AOEIaoei]</code></td>
+                            <td>Matches any 1 character, not in the list!</td>
+                        </tr>
+                        <tr>
+                            <td><code>[a-f]</code></td>
+                            <td>Matches any 1 character in the range a-f</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1685,42 +1697,42 @@
                     <ul class="share-buttons">
                         <li>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
-                               target="_blank" title="Share on Facebook"><i class="tooltip fab fa-facebook-square fa-2x"
+                               target="_blank" title="Share on Facebook"><i class="tooltip shadow-box fab fa-facebook-square fa-2x"
                                                                             aria-hidden="true"><span
                                     class="tooltiptext">Share on Facebook!</span></i><span
                                     class="sr-only">Share on Facebook</span></a></li>
                         <li>
                             <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
-                               target="_blank" title="Tweet"><i class="tooltip fab fa-twitter-square fa-2x"
+                               target="_blank" title="Tweet"><i class="tooltip shadow-box fab fa-twitter-square fa-2x"
                                                                 aria-hidden="true"><span
                                     class="tooltiptext">Tweet!</span></i><span
                                     class="sr-only">Tweet</span></a></li>
                         <li>
                             <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
-                               target="_blank" title="Pin it"><i class="tooltip fab fa-pinterest-square fa-2x"
+                               target="_blank" title="Pin it"><i class="tooltip shadow-box fab fa-pinterest-square fa-2x"
                                                                  aria-hidden="true"><span
                                     class="tooltiptext">Pin it!</span></i><span
                                     class="sr-only">Pin it</span></a></li>
                         <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank" title="Add to Pocket"><i class="tooltip fab fab fa-get-pocket fa-2x"
+                               target="_blank" title="Add to Pocket"><i class="tooltip shadow-box fab fab fa-get-pocket fa-2x"
                                                                         aria-hidden="true"><span class="tooltiptext">Add to Pocket!</span></i><span
                                 class="sr-only">Add to Pocket</span></a>
                         </li>
                         <li>
                             <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank" title="Submit to Reddit"><i class="tooltip fab fa-reddit-square fa-2x"
+                               target="_blank" title="Submit to Reddit"><i class="tooltip shadow-box fab fa-reddit-square fa-2x"
                                                                            aria-hidden="true"><span class="tooltiptext">Submit to Reddit!</span></i><span
                                     class="sr-only">Submit to Reddit</span></a>
                         </li>
                         <li>
                             <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
-                               target="_blank" title="Share on LinkedIn"><i class="tooltip fab fa-linkedin fa-2x"
+                               target="_blank" title="Share on LinkedIn"><i class="tooltip shadow-box fab fa-linkedin fa-2x"
                                                                             aria-hidden="true"><span
                                     class="tooltiptext">Share on LinkedIn!</span></i><span
                                     class="sr-only">Share on LinkedIn</span></a></li>
                         <li>
                             <a href="mailto:?subject=Shell%20Magic&body=Ultimate%20Bash%20Reference%20Notes:%20http%3A%2F%2Fwww.shellmagic.xyz"
-                               target="_blank" title="Send email"><i class="tooltip fas fa-envelope-square fa-2x"
+                               target="_blank" title="Send email"><i class="tooltip shadow-box fas fa-envelope-square fa-2x"
                                                                      aria-hidden="true"><span class="tooltiptext">Send email!</span></i><span
                                     class="sr-only">Send email</span></a>
                         </li>
