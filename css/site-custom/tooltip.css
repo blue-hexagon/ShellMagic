@@ -19,6 +19,7 @@
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-size: 2rem;
 }
 
 .tooltip .tooltiptext::after {
@@ -30,6 +31,7 @@
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
+  font-size: 2rem;
 }
 
 .tooltip:hover .tooltiptext {

@@ -1,0 +1,13 @@
+.gradient-border {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  background: #eee;
+  border: 20px solid transparent;
+
+  -moz-border-image: -moz-linear-gradient(top left, #3acfd5 0%, #3a4ed5 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, #3acfd5 0%, #3a4ed5 100%);
+  border-image: linear-gradient(to bottom right, #3acfd5 0%, #3a4ed5 100%);
+
+  border-image-slice: 1;
+}
