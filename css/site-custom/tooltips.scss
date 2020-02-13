@@ -1,12 +1,44 @@
 @import 'variables';
+
 .tooltip {
   display: inline-block;
   position: relative;
 
   &:hover {
     .tooltiptext {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .tooltiptext {
+    background-color: $grey-two;
+    border-radius: 6px;
+    bottom: 125%;
+    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
+    color: $white;
+    font-size: 1.25rem;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    padding: 5px 0;
+    position: absolute;
+    text-align: center;
+    transition: opacity .3s;
+    visibility: hidden;
+    width: 120px;
+    z-index: 1;
+
+    &::after {
+      border-color: $grey-two transparent transparent;
+      border-style: solid;
+      border-width: 5px;
+      content: '';
+      font-size: 1.25rem;
+      left: 50%;
+      margin-left: -5px;
+      position: absolute;
+      top: 100%;
     }
   }
 
@@ -14,34 +46,4 @@
     text-decoration: none;
   }
 
-  .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 1.25rem;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-      font-size: 1.25rem;
-    }
-  }
 }

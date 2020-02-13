@@ -123,15 +123,12 @@ a {
 
 th {
   color: $color-text-selection-text;
+  border-bottom: 1px dashed $color-border;
 }
 
 td {
   padding: 2px 6px;
   text-align: left;
-}
-
-th {
-  border-bottom: 1px dashed $color-border;
 }
 
 th:last-child {
@@ -164,10 +161,6 @@ th:last-child {
 .two-column-table {
   td {
     border-bottom: 1px dashed $color-border;
-
-    &:hover {
-      //cursor: pointer;
-    }
 
     &:nth-child(1) {
       background: $td-bg;
@@ -438,7 +431,8 @@ label > .label-body {
   footer {
     a {
       text-decoration-style: dotted;
-      &:hover{
+
+      &:hover {
         color: $explanation;
       }
     }
@@ -466,14 +460,15 @@ label > .label-body {
     margin-top: $margin-top;
     padding: $padding;
   }
+
   .soft-shadow-box {
     box-shadow: 1px 1px 30px 1px darken($bg, 6.5%);
-
   }
+
   .shadow-box {
     box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
-
   }
+
   .info.shadow-box {
     box-shadow: 1px 1px 4px 1px darken($bg, 7%);
   }
