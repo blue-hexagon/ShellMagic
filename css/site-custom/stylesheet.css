@@ -6622,8 +6622,9 @@ h3,
 h4,
 h5,
 h6 {
-  background: #ff5900;
-  color: #202020;
+  background: #3c3c3c;
+  color: #e8f0ff;
+  text-transform: capitalize;
   padding: 0.725rem 0;
   box-sizing: border-box;
   font-family: "IBM Plex Sans", serif;

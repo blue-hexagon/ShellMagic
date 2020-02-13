@@ -94,8 +94,9 @@ h3,
 h4,
 h5,
 h6 {
-  background: $color-primary-1;
-  color: $bg;
+  background: darken($headings-bg,10%);
+  color: #e8f0ff;
+  text-transform: capitalize;
   padding: .725rem 0;
   box-sizing: border-box;
   font-family: 'IBM Plex Sans', serif;
@@ -189,7 +190,7 @@ p.info-box {
   padding: 0 .75rem;
   text-align: center;
   vertical-align: middle;
-  
+
 }
 
 // Gradients
@@ -218,6 +219,7 @@ table {
   width: 100%;
   margin-bottom: 1.5rem;
   text-align: center;
+
   th {
     text-align: left;
   }
