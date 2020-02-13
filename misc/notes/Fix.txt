@@ -1,0 +1,1 @@
+Things like \b and \< are GNU extensions, and only work if you use glibc, or another libc where regex(3) happens to include those same extension
