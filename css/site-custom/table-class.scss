@@ -1,0 +1,75 @@
+// sass-lint:disable nesting-depth
+// sass-lint:disable force-pseudo-nesting
+
+@import 'variables';
+
+.one-column-table {
+  td {
+
+    &:nth-child(1) {
+      min-width: 5%;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        overflow: hidden;
+      }
+    }
+  }
+
+  tr:nth-child(even) {
+    td {
+      border-bottom: 1px dashed $color-border;
+    }
+  }
+}
+
+.two-column-table {
+  td {
+    border-bottom: 1px dashed $color-border;
+
+    &:nth-child(1) {
+      background: $td-bg;
+      min-width: 5%;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        overflow: hidden;
+      }
+    }
+
+    &:nth-child(2) {
+      background: $td-bg;
+      min-width: 60%;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.four-column-table {
+  td {
+    &:nth-child(1) {
+      background: $td-bg;
+      min-width: 5%;
+    }
+
+    &:nth-child(2) {
+      background: $td-bg;
+      min-width: 5%;
+
+    }
+
+    &:nth-child(3) {
+      background: $td-bg;
+      min-width: 5%;
+    }
+
+    &:nth-child(4) {
+      background: $td-bg;
+      min-width: 5%;
+    }
+  }
+}

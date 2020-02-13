@@ -1,0 +1,107 @@
+.button.button-primary,
+button.button-primary,
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
+  background: #3a3a3a;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ff5900;
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type=submit].button-primary:focus,
+input[type=reset].button-primary:focus,
+input[type=button].button-primary:focus {
+  background: #464646;
+  border-color: rgba(230, 230, 230, 0.5);
+  color: #fff;
+}
+
+.button,
+button,
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #555;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  height: 38px;
+  letter-spacing: 0.1rem;
+  line-height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button:hover,
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+.button:focus,
+button:focus,
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus {
+  border-color: #bbb;
+  color: #202020;
+  outline: 0;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: 38px;
+  padding: 6px 10px;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea {
+  appearance: none;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus {
+  border: 2px solid #343434;
+  outline: 0;
+}
+
+/*# sourceMappingURL=form.css.map */

@@ -1,9 +1,11 @@
 @import 'variables';
 
+
 .icon-container {
+  font-size: $share-button-font-size;
   list-style: none;
-  font-size: 1.25rem;
   text-align: center;
+  margin: 1rem auto 0 auto;
 
 
   li {

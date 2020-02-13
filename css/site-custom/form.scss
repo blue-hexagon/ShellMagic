@@ -1,0 +1,121 @@
+@import 'variables';
+.button.button-primary,
+button.button-primary,
+input[type='submit'].button-primary,
+input[type='reset'].button-primary,
+input[type='button'].button-primary {
+  background: lighten($bg, 10%);
+  border-color: $fg;
+  color: $color-primary-1;
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type='submit'].button-primary:hover,
+input[type='reset'].button-primary:hover,
+input[type='button'].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type='submit'].button-primary:focus,
+input[type='reset'].button-primary:focus,
+input[type='button'].button-primary:focus {
+  background: lighten($bg, 15%);
+  border-color: darken($fg, 10%);
+  color: $white;
+}
+
+// Buttons
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-color: transparent;
+  border: 1px solid $grey-one;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $grey-two;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  height: $input-height;
+  letter-spacing: .1rem;
+  line-height: $input-height;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button:hover,
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+.button:focus,
+button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  border-color: $grey-one;
+  color: $bg;
+  outline: 0;
+}
+
+
+// Forms
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea,
+select {
+  background-color: $white;
+  border: 1px solid $border-color-cream;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: $input-height;
+  padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+}
+
+//Removes awkward default styles on some inputs for iOS
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea {
+  appearance: none;
+}
+
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+textarea:focus,
+select:focus {
+  border: 2px solid lighten($bg, 8%);
+  outline: 0;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
+}
+

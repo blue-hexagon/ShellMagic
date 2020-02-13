@@ -1,4 +1,4 @@
-
+// sass-lint:disable force-element-nesting
 .column,
 .columns {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 900px) {
   .container {
     box-sizing: border-box;
     margin: 0 auto;
@@ -16,16 +16,20 @@
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 800px) {
   .container {
+    box-sizing: border-box;
     padding: 0;
+    margin: 0 auto;
     width: 85%;
   }
-}
 
-@media (min-width: 550px) {
-  .container {
-    width: 80%;
+  @media (min-width: 500px) {
+    .container {
+      box-sizing: border-box;
+      padding: 0;
+      width: 90%;
+    }
   }
 
   .column,
