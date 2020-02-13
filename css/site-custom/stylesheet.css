@@ -6601,6 +6601,7 @@ html {
   font-size: 62.5%;
   margin: 4rem auto auto;
   scroll-behavior: smooth;
+  scroll-padding-top: 4.6rem;
   text-justify: inter-word;
 }
 html ::selection {
