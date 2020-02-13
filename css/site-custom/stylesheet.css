@@ -6711,9 +6711,9 @@ p.info-box {
   vertical-align: middle;
 }
 
-.gradient-h1 {
+#gradient-h1 {
   -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(#eee, #333);
+  background: -webkit-linear-gradient(#eee, #8c9191);
   font-size: 6rem;
   text-shadow: 6px #000;
   -webkit-background-clip: text;

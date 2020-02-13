@@ -189,11 +189,11 @@ p.info-box {
   padding: 0 .75rem;
   text-align: center;
   vertical-align: middle;
-
+  
 }
 
 // Gradients
-.gradient-h1 {
+#gradient-h1 {
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
   font-size: 6rem;
