@@ -11,6 +11,9 @@
 @import 'modal';
 @import 'load-fonts';
 @import 'variables';
+@import 'share-buttons';
+@import 'main-containers';
+@import 'tooltips';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
 
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
@@ -18,63 +21,6 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/brands';
 
-
-ul.share-buttons {
-  list-style: none;
-  padding: 0;
-
-  li {
-    display: inline;
-    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
-  }
-}
-
-.tooltip {
-  display: inline-block;
-  position: relative;
-
-  &:hover {
-    .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 1.25rem;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-      font-size: 1.25rem;
-    }
-  }
-}
 
 
 .block {
@@ -93,6 +39,7 @@ ul.share-buttons {
   padding: 0 .75rem;
   text-align: center;
   vertical-align: middle;
+
 }
 
 html {
@@ -491,6 +438,9 @@ label > .label-body {
   footer {
     a {
       text-decoration-style: dotted;
+      &:hover{
+        color: $explanation;
+      }
     }
   }
 
@@ -557,7 +507,6 @@ label > .label-body {
     font-size: .525rem;
   }
 
-  // Lists
   p,
   ul,
   li,
@@ -571,185 +520,6 @@ label > .label-body {
     width: 50%;
   }
 
-
-  li {
-    font-family: 'IBM Plex Serif', serif;
-    margin-bottom: .1em;
-  }
-
-
-  // Grid
-  .container {
-    box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 0 20px;
-    width: 120%;
-  }
-
-  .column,
-  .columns {
-    box-sizing: border-box;
-    float: left;
-    width: 100%;
-  }
-
-  @media (min-width: 400px) {
-    .container {
-      padding: 0;
-      width: 85%;
-    }
-  }
-
-  @media (min-width: 550px) {
-    .container {
-      width: 80%;
-    }
-
-    .column,
-    .columns {
-      margin-left: 4%;
-    }
-
-    .column:first-child,
-    .columns:first-child {
-      margin-left: 0;
-    }
-
-    .one.column,
-    .one.columns {
-      width: 4.66666666667%;
-    }
-
-    .two.columns {
-      width: 13.3333333333%;
-    }
-
-    .three.columns {
-      width: 22%;
-    }
-
-    .four.columns {
-      width: 30.6666666667%;
-    }
-
-    .five.columns {
-      width: 39.3333333333%;
-    }
-
-    .six.columns {
-      width: 48%;
-    }
-
-    .seven.columns {
-      width: 56.6666666667%;
-    }
-
-    .eight.columns {
-      width: 65.3333333333%;
-    }
-
-    .nine.columns {
-      width: 74%;
-    }
-
-    .ten.columns {
-      width: 82.6666666667%;
-    }
-
-    .eleven.columns {
-      width: 91.3333333333%;
-    }
-
-    .twelve.columns {
-      margin-left: 0;
-      width: 100%;
-    }
-
-    .one-third.column {
-      width: 30.6666666667%;
-    }
-
-    .two-thirds.column {
-      width: 65.3333333333%;
-    }
-
-    .one-half.column {
-      width: 48%;
-    }
-
-    .offset-by-one.column,
-    .offset-by-one.columns {
-      margin-left: 8.66666666667%;
-    }
-
-    .offset-by-two.column,
-    .offset-by-two.columns {
-      margin-left: 17.3333333333%;
-    }
-
-    .offset-by-three.column,
-    .offset-by-three.columns {
-      margin-left: 26%;
-    }
-
-    .offset-by-four.column,
-    .offset-by-four.columns {
-      margin-left: 34.6666666667%;
-    }
-
-    .offset-by-five.column,
-    .offset-by-five.columns {
-      margin-left: 43.3333333333%;
-    }
-
-    .offset-by-six.column,
-    .offset-by-six.columns {
-      margin-left: 52%;
-    }
-
-    .offset-by-seven.column,
-    .offset-by-seven.columns {
-      margin-left: 60.6666666667%;
-    }
-
-    .offset-by-eight.column,
-    .offset-by-eight.columns {
-      margin-left: 69.3333333333%;
-    }
-
-    .offset-by-nine.column,
-    .offset-by-nine.columns {
-      margin-left: 78%;
-    }
-
-    .offset-by-ten.column,
-    .offset-by-ten.columns {
-      margin-left: 86.6666666667%;
-    }
-
-    .offset-by-eleven.column,
-    .offset-by-eleven.columns {
-      margin-left: 95.3333333333%;
-    }
-
-    .offset-by-one-third.column,
-    .offset-by-one-third.columns {
-      margin-left: 34.6666666667%;
-    }
-
-    .offset-by-two-thirds.column,
-    .offset-by-two-thirds.columns {
-      margin-left: 69.3333333333%;
-    }
-
-    .offset-by-one-half.column,
-    .offset-by-one-half.columns {
-      margin-left: 52%;
-    }
-  }
-
-  // Code
   code {
     font-family: 'Source Code Pro', monospace;
     font-size: 105%;

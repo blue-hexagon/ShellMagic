@@ -1,0 +1,36 @@
+ul.icon-container {
+  list-style: none;
+  padding: 0;
+}
+ul.icon-container a {
+  box-shadow: 1px 1px 14px 2px #0f0f0f;
+}
+ul.icon-container .fa-facebook-f:hover {
+  border-radius: 4px;
+  color: whitesmoke;
+  background: #3b5998;
+}
+ul.icon-container .fa-twitter-square:hover {
+  color: #1da1f2;
+}
+ul.icon-container .fa-pinterest-square:hover {
+  color: #bd081c;
+}
+ul.icon-container .fa-linkedin:hover {
+  color: #0077b5;
+}
+ul.icon-container .fa-reddit-square:hover {
+  color: #ff4500;
+}
+ul.icon-container .fa-get-pocket:hover {
+  color: #ef4056;
+}
+ul.icon-container .fa-envelope-square:hover {
+  color: #505264;
+}
+ul.icon-container .fa-envelope-square:hover + .fa-square {
+  visibility: visible;
+  background: white;
+}
+
+/*# sourceMappingURL=share-buttons.css.map */

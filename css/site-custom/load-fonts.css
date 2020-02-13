@@ -3,14 +3,10 @@
   font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/source-sans-pro-v13-latin-regular.eot");
+  src: url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("../fonts/source-sans-pro-v13-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans-pro-v13-latin-regular.woff2") format("woff2"), url("../fonts/source-sans-pro-v13-latin-regular.woff") format("woff"), url("../fonts/source-sans-pro-v13-latin-regular.ttf") format("truetype"), url("../fonts/source-sans-pro-v13-latin-regular.svg#SourceSansPro") format("svg");
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.woff2") format("woff2"), url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.woff") format("woff"), url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.ttf") format("truetype"), url("../../resources/typography/fonts/source-sans-pro-v13-latin-regular.svg#SourceSansPro") format("svg");
   /* Legacy iOS */
-}
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("../../resources/typography/fonts/Source_Code_Pro");
 }
 @font-face {
   font-family: "IBM Plex Serif";
