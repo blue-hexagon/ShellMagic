@@ -51,6 +51,7 @@
 
 .four-column-table {
   td {
+    border-bottom: 1px dashed $color-border;
     &:nth-child(1) {
       background: $td-bg;
       min-width: 5%;

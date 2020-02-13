@@ -513,6 +513,9 @@
   overflow: hidden;
 }
 
+.four-column-table td {
+  border-bottom: 1px dashed #d34a00;
+}
 .four-column-table td:nth-child(1) {
   background: #202020;
   min-width: 5%;
@@ -536,7 +539,7 @@ input[type=submit].button-primary,
 input[type=reset].button-primary,
 input[type=button].button-primary {
   background: #3a3a3a;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.9);
   color: #ff5900;
 }
 
@@ -551,7 +554,7 @@ input[type=submit].button-primary:focus,
 input[type=reset].button-primary:focus,
 input[type=button].button-primary:focus {
   background: #464646;
-  border-color: rgba(230, 230, 230, 0.5);
+  border-color: rgba(230, 230, 230, 0.9);
   color: #fff;
 }
 
@@ -6607,7 +6610,7 @@ html ::selection {
 
 body {
   background: #202020;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6631,7 +6634,7 @@ h6 {
 }
 
 a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   outline: 0;
 }
 a:hover {
@@ -6697,7 +6700,7 @@ p.info-box {
 
 .icon {
   background: #3a3a3a;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 4px;
   font-size: 2rem;
   height: 38px;
@@ -6732,6 +6735,9 @@ table {
   width: 100%;
   margin-bottom: 1.5rem;
   text-align: center;
+}
+table th {
+  text-align: left;
 }
 
 label {
