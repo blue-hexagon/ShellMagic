@@ -1,3 +1,14 @@
+.explanation-tooltip {
+  text-decoration: underline dotted;
+  cursor: help;
+  font-size: 1.5rem;
+}
+
+tt-code {
+  text-decoration: none;
+  text-decoration-color: #65ffa0;
+}
+
 .tooltip {
   display: inline-block;
   position: relative;
@@ -5,6 +16,7 @@
 .tooltip:hover .tooltiptext {
   opacity: 1;
   visibility: visible;
+  overflow: visible;
 }
 .tooltip .tooltiptext {
   background-color: #555;

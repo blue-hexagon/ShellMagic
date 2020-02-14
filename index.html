@@ -35,6 +35,8 @@
     <script src="js/snackbar.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.min.js">
+    <script src="js/include-html.js"></script>
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel=“canonical” href=“https://shellmagic.xyz/index.html”/>
     <link rel="shortcut icon" href="./resources/graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
@@ -54,9 +56,11 @@
     <br><b style="font-family: 'Source Code Pro', serif;">[You may click anywhere on this popup to close it - autocloses
         in 15 seconds]</b>
 </div>-->
+
 <div id="simpleModal_1" class="modal">
     <div class="modal-window">
         <code>
+            <div w3-include-html="./resources/code-examples/00-testing/example.sh"></div>
             <!--<embed width="100%" height="500px"
                    src="./resources/code-examples/00-testing/example.sh">-->
         </code>
@@ -439,9 +443,7 @@
                                 <span class="tooltip explanation-tooltip">
                                     =
                                     <span class="tooltiptext">
-                                        <code class="tt-code">
                                             if [ "$birthday_cake" = "$favorite_cake" ]
-                                        </code>
                             </span>
                             </span>
                                 </code>
@@ -526,7 +528,9 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="reserved-exit-codes">Reserved Exit Codes</h3></div>
-                    <p class="info-box info shadow-box">Useful for debugging a script. <dfn title="See section about Shell Builtins.">Exit</dfn> takes integer args in the range 0-255.</p>
+                    <p class="info-box info shadow-box">Useful for debugging a script. <dfn
+                            title="See section about Shell Builtins.">Exit</dfn> takes integer args in the range 0-255.
+                    </p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -607,17 +611,150 @@
                         Ctrl+S and Ctrl+Q by default.</p>
                 </div>
                 <div class="eight columns offset-by-two">
+
                 </div>
             </div>
             <div class="row">
-                <div class="eight columns">
+                <div class="six columns">
+                    <div class="shadow-box">
+                        <h3>File Types</h3></div>
+                    <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
+                        get it. I'll expand this section soon with more context.</p>
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Meaning</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>-</code></td>
+                            <td>Regular file</td>
+                        </tr>
+                        <tr>
+                            <td><code>d</code></td>
+                            <td>Directory</td>
+                        </tr>
+                        <tr>
+                            <td><code>l</code></td>
+                            <td>Link</td>
+                        </tr>
+                        <tr>
+                            <td><code>c</code></td>
+                            <td>Character device</td>
+                        </tr>
+                        <tr>
+                            <td><code>s</code></td>
+                            <td>Socket</td>
+                        </tr>
+                        <tr>
+                            <td><code>p</code></td>
+                            <td>Named pipe</td>
+                        </tr>
+                        <tr>
+                            <td><code>b</code></td>
+                            <td>Block device</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="six columns">
+                    <div class="shadow-box">
+                        <h3>Access Codes & Permissions</h3>
+                    </div>
+                    <p class="info-box info shadow-box">Now you may know what that arcane looking string
+                        <code>rwxrwxrwx</code>
+                        is when
+                        you invoke <code>ls -l</code></p>
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>s</code></td>
+                            <td>setuid when in <dfn
+                                    title="uuugggooo - user column (owners column) is the three first letters in this example.">user
+                                column</dfn></td>
+                        </tr>
+                        <tr>
+                            <td><code>s</code></td>
+                            <td>setgid when in <dfn
+                                    title="uuugggooo - group column is the three middle letters in this example.">group
+                                column</dfn></td>
+                        </tr>
+                        <tr>
+                            <td><code>t</code></td>
+                            <td>sticky bit</td>
+                        </tr>
+                        <tr>
+                            <td><code>0</code></td>
+                            <td rowspan="2">The <dfn
+                                    title="An access right may be any of the codes you see in this table">access
+                                right</dfn>
+                                that is supposed to be on this place is not granted.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>4</code></td>
+                            <td rowspan="2"><dfn title="User which is affected by the category may read the file.">read
+                                access</dfn> is granted to the user category defined in this place
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>r</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>2</code></td>
+                            <td rowspan="2"><dfn
+                                    title="User which is affected by the category may write the file. But the file is not editable in a text editor if you don't have read access.">write
+                                permission</dfn> is granted to the user category defined in this place
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>w</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>1</code></td>
+                            <td rowspan="2">execute permission is granted to the user category defined in this place
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>x</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>u</code></td>
+                            <td>user permissions</td>
+                        </tr>
+                        <tr>
+                            <td><code>g</code></td>
+                            <td>group permissions</td>
+                        </tr>
+                        <tr>
+                            <td><code>o</code></td>
+                            <td>others permissions</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
                     <div class="shadow-box">
                         <h3 id="string-manipulation">String Manipulation</h3></div>
                     <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!
                         Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,
                         and others fall under the functionality of the UNIX expr command. This results in inconsistent
                         command syntax and overlap of functionality.</p>
-                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of these.</p>
+                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of
+                        these.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -734,158 +871,6 @@
                         <tr>
                             <td><code>expr "$string" : '.*\($substring\)'</code></td>
                             <td>Extract $substring*, searching from end of $string</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="four columns">
-                    <h3>Variable Operations</h3>
-                    <p class="info-box info shadow-box">Perform operations on variables.</p>
-                    <table class="one-column-table">
-                        <thead>
-                        <tr>
-                            <th>Expression</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>${parameter:-defaultValue}</code></td>
-                        </tr>
-                        <tr>
-                            <td>Get default shell variables value</td>
-                        </tr>
-                        <tr>
-                            <td><code>${parameter:=defaultValue}</code></td>
-
-                        </tr>
-                        <tr>
-                            <td>Set default shell variables value</td>
-                        </tr>
-                        <tr>
-                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
-                        </tr>
-                        <tr>
-                            <td>Display an error message if parameter is not set</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="four columns">
-                    <div class="shadow-box">
-                        <h3>File Types</h3></div>
-                    <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
-                        get it. I'll expand this section soon with more context.</p>
-                    <table class="two-column-table">
-                        <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Meaning</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>-</code></td>
-                            <td>Regular file</td>
-                        </tr>
-                        <tr>
-                            <td><code>d</code></td>
-                            <td>Directory</td>
-                        </tr>
-                        <tr>
-                            <td><code>l</code></td>
-                            <td>Link</td>
-                        </tr>
-                        <tr>
-                            <td><code>c</code></td>
-                            <td>Character device</td>
-                        </tr>
-                        <tr>
-                            <td><code>s</code></td>
-                            <td>Socket</td>
-                        </tr>
-                        <tr>
-                            <td><code>p</code></td>
-                            <td>Named pipe</td>
-                        </tr>
-                        <tr>
-                            <td><code>b</code></td>
-                            <td>Block device</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="four columns">
-                    <div class="shadow-box">
-                        <h3>Access Codes & Permissions</h3>
-                    </div>
-                    <p class="info-box info shadow-box">Now you may know what that arcane looking string
-                        <code>rwxrwxrwx</code>
-                        is when
-                        you invoke <code>ls -l</code></p>
-                    <table class="two-column-table">
-                        <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>s</code></td>
-                            <td>setuid when in <dfn title="uuugggooo - user column (owners column) is the three first letters in this example.">user column</dfn></td>
-                        </tr>
-                        <tr>
-                            <td><code>s</code></td>
-                            <td>setgid when in <dfn title="uuugggooo - group column is the three middle letters in this example.">group column</dfn></td>
-                        </tr>
-                        <tr>
-                            <td><code>t</code></td>
-                            <td>sticky bit</td>
-                        </tr>
-                        <tr>
-                            <td><code>0</code></td>
-                            <td rowspan="2">The <dfn
-                                    title="An access right may be any of the codes you see in this table">access
-                                right</dfn>
-                                that is supposed to be on this place is not granted.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>-</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>4</code></td>
-                            <td rowspan="2">read access is granted to the user category defined in this place</td>
-                        </tr>
-                        <tr>
-                            <td><code>r</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>2</code></td>
-                            <td rowspan="2">write permission is granted to the user category defined in this place</td>
-                        </tr>
-                        <tr>
-                            <td><code>w</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>1</code></td>
-                            <td rowspan="2">execute permission is granted to the user category defined in this place
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>x</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>u</code></td>
-                            <td>user permissions</td>
-                        </tr>
-                        <tr>
-                            <td><code>g</code></td>
-                            <td>group permissions</td>
-                        </tr>
-                        <tr>
-                            <td><code>o</code></td>
-                            <td>others permissions</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1030,6 +1015,36 @@
                         </tr>
                         </tbody>
                     </table>
+                    <h3>Variable Operations</h3>
+                    <p class="info-box info shadow-box">Perform operations on variables.</p>
+                    <table class="one-column-table">
+                        <thead>
+                        <tr>
+                            <th>Expression</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>${parameter:-defaultValue}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Get default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:=defaultValue}</code></td>
+
+                        </tr>
+                        <tr>
+                            <td>Set default shell variables value</td>
+                        </tr>
+                        <tr>
+                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
+                        </tr>
+                        <tr>
+                            <td>Display an error message if parameter is not set</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="row">
@@ -1081,14 +1096,13 @@
                             <td><code>[:CharClass:]</code></td>
                             <td>A character class is a set of predefined patterns and comprpised of the following
                                 which:
-                                <pre>
-[:alnum:] [:alpha:]
-[:digit:] [:lower:]
-[:upper:] [:space:]
-[:punct:] [:print:]
-[:blank:] [:graph:]
-[:cntrl:] [:xdigit:]
-            </pre>
+
+                                [:alnum:] [:alpha:]
+                                [:digit:] [:lower:]
+                                [:upper:] [:space:]
+                                [:punct:] [:print:]
+                                [:blank:] [:graph:]
+                                [:cntrl:] [:xdigit:]
                             </td>
                         </tr>
                         </tbody>
@@ -1234,7 +1248,9 @@
                         </tr>
                         <tr>
                             <td><code>caller</code></td>
-                            <td>Returns the context of any active  <dfn title="A shell function or a script executed with the . or source builtins">subroutine call</dfn></td>
+                            <td>Returns the context of any active <dfn
+                                    title="A shell function or a script executed with the . or source builtins">subroutine
+                                call</dfn></td>
                         </tr>
                         <tr>
                             <td><code>case</code></td>
@@ -1452,7 +1468,10 @@
                         </tr>
                         <tr>
                             <td><code>until</code></td>
-                            <td>Loop that is very similar to the while-loop except that it executes until the test-command executes succesfully. As long as the test-command fails, the until-loop continues.</td>
+                            <td>Loop that is very similar to the while-loop except that it executes until the
+                                test-command executes succesfully. As long as the test-command fails, the until-loop
+                                continues.
+                            </td>
                         </tr>
                         <tr>
                             <td><code>wait</code></td>
@@ -1497,19 +1516,19 @@
                             <td>used for parameters and variables. Has a bunch of edge cases.</td>
                         </tr>
                         <tr>
-                            <td><code>( )</code></td>
+                            <td><code>(&nbsp;)</code></td>
                             <td>is used for running commands in a subshell.</td>
                         </tr>
                         <tr>
-                            <td><code>$( )</code></td>
+                            <td><code>$(&nbsp;)</code></td>
                             <td>is used for saving output of commands that are send to run in a subshell.</td>
                         </tr>
                         <tr>
-                            <td><code>(( ))</code></td>
+                            <td><code>((&nbsp;))</code></td>
                             <td>is used for arithmetic.</td>
                         </tr>
                         <tr>
-                            <td><code>$(( ))</code></td>
+                            <td><code>$((&nbsp;))</code></td>
                             <td>is used for retrieving the output of arithmetic expressions, either for usage with a
                                 command or to save the output in a variable.
                             </td>
@@ -1523,7 +1542,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><code>[ ]</code></td>
+                            <td><code>[&nbsp;]</code></td>
                             <td>is used for testing and is a built-in. Is useful in some cases for filename
                                 expansion
                                 and
@@ -1532,14 +1551,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><code>[[ ]]</code></td>
+                            <td><code>[[&nbsp;]]</code></td>
                             <td>is used for testing. This is the one you should use unless you can think of a reason
                                 not
                                 to.
                             </td>
                         </tr>
                         <tr>
-                            <td><code>&lt;( )</code></td>
+                            <td><code>&lt;(&nbsp;)</code></td>
                             <td>Used for process substitution and is similar to a pipe. Can be used whenever a
                                 command
                                 expects a
@@ -1548,11 +1567,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><code>{ }</code></td>
+                            <td><code>{&nbsp;}</code></td>
                             <td>is used for expansion of sequences</td>
                         </tr>
                         <tr>
-                            <td><code>${ }</code></td>
+                            <td><code>${&nbsp;}</code></td>
                             <td>is used for variable interpolation and string manipulation.</td>
                         </tr>
                         <tr>
@@ -1623,15 +1642,14 @@
                             <td>is used to append output to a file.</td>
                         </tr>
                         <tr>
-                            <td><code>&#39; &#39;</code></td>
+                            <td><code>&#39;&nbsp;&#39;</code></td>
                             <td>single quotes are used to preserve the literal value</td>
                         </tr>
                         <tr>
-                            <td><code>&quot; &quot;</code></td>
+                            <td><code>&quot;&nbsp;&quot;</code></td>
                             <td>double quotes are used to preserve the literal value of all characters except
                                 <code>$</code>,
-                                <code>`
-                                    `</code>
+                                <code>`&nbsp;`</code>
                                 and <code>\</code></td>
                         </tr>
                         <tr>
@@ -1676,7 +1694,7 @@
                             <td>expands to home directory.</td>
                         </tr>
                         <tr>
-                            <td><code>` `</code></td>
+                            <td><code>`&nbsp;`</code></td>
                             <td>is deprecated and should not be used. Read further in its respective section.</td>
                         </tr>
                         </tbody>
@@ -1707,7 +1725,9 @@
             <div class="row">
                 <div class="twelve columns">
                     <div class="email-input">
-                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Be informed about groundbreaking content updates and site development. One email/month – and only if something is worth telling about.</label>
+                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Be informed about
+                            groundbreaking content updates and site development. One email/month – and only if something
+                            is worth telling about.</label>
                         <form action="https://formspree.io/xoqdnqak" method="POST">
                             <div class="input-container">
                                 <i class="fas fa-user icon"></i>
@@ -1796,5 +1816,6 @@
         </div>
     </div>
 </div>
+<script>includeHTML();</script>
 </body>
 </html>

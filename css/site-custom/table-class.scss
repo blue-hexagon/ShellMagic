@@ -7,7 +7,7 @@
   td {
 
     &:nth-child(1) {
-      min-width: 5%;
+      min-width: 10%;
 
       &:hover {
         background: lighten($bg, 10%);
@@ -28,7 +28,7 @@
 
     &:nth-child(1) {
       background: $td-bg;
-      min-width: 5%;
+      min-width: 10%;
 
       &:hover {
         background: lighten($bg, 10%);
@@ -53,7 +53,7 @@
     border-bottom: 1px dashed $color-border;
     &:nth-child(1) {
       background: $td-bg;
-      min-width: 5%;
+      min-width: 10%;
     }
 
     &:nth-child(2) {
