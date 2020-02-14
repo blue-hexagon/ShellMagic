@@ -355,7 +355,7 @@ code {
     margin-bottom: 1.5rem;
   }
 
-  pre,
+
   p,
   ul,
   ol,
@@ -364,5 +364,10 @@ code {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+  pre{
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

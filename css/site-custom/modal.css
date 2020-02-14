@@ -13,7 +13,7 @@
 .modal-window {
   background-color: #202020;
   border: black solid 2px;
-  border-radius: 3rem;
+  border-radius: 2rem;
   height: 65%;
   margin: 10% auto;
   padding: 20px;
@@ -34,7 +34,6 @@
   line-height: 30px;
   position: absolute;
   right: 0;
-  text-align: center;
   top: 0;
   width: 30px;
 }

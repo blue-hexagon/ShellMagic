@@ -48,7 +48,7 @@
   bottom: 0;
   display: none;
   left: 0;
-  overflow: hidden;
+  overflow: scroll;
   position: fixed;
   right: 0;
   top: 0;
@@ -58,10 +58,10 @@
 .modal-window {
   background-color: #202020;
   border: black solid 2px;
-  border-radius: 3rem;
-  height: 65%;
-  margin: 10% auto;
-  padding: 20px;
+  border-radius: 2rem;
+  height: auto;
+  margin: 5% auto;
+  padding: 8px 4px 4px 16px;
   position: relative;
   width: 50%;
 }
@@ -79,7 +79,6 @@
   line-height: 30px;
   position: absolute;
   right: 0;
-  text-align: center;
   top: 0;
   width: 30px;
 }
@@ -6914,8 +6913,7 @@ fieldset {
     margin-bottom: 1.5rem;
   }
 
-  pre,
-p,
+  p,
 ul,
 ol,
 form {
@@ -6923,6 +6921,12 @@ form {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+
+  pre {
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

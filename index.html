@@ -36,12 +36,15 @@
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
+    <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">
+    <script src="node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel=“canonical” href=“https://shellmagic.xyz/index.html”/>
     <link rel="shortcut icon" href="./resources/graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 
-<body onload="snackbar()">
+<body onload="snackbar();">
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
@@ -58,11 +61,7 @@
 
 <div id="simpleModal_1" class="modal">
     <div class="modal-window">
-        <code>
-            <div w3-include-html="./resources/code-examples/00-testing/example.sh"></div>
-            <!--<embed width="100%" height="500px"
-                   src="./resources/code-examples/00-testing/example.sh">-->
-        </code>
+        <div w3-include-html="./resources/code-examples/00-testing/example.sh"></div>
     </div>
 </div>
 <header>
@@ -85,6 +84,26 @@
 </header>
 <main>
     <section>
+      <!--  <pre><code class="bash">
+            #!/bin/sh
+# validalAlphaNum - Ensures that input only consists of alphabetical
+#              and numeric characters.
+
+validAlphaNum()
+{
+  # validate arg: returns 0 if all upper+lower+digits, 1 otherwise
+
+  # Remove all unacceptable chars
+  compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
+
+  if [ "$compressed" != "$input" ] ; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+        </code></pre> -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
