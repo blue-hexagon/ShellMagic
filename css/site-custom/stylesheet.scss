@@ -315,7 +315,9 @@ ul {
   width: 50%;
 }
 dfn{
-  text-decoration: underline wavy $info;
+  text-decoration: underline dotted $info;
+  font-style: normal;
+  cursor: help;
 }
 code {
   font-family: 'Source Code Pro', monospace;

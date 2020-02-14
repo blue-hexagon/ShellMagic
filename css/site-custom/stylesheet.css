@@ -6879,7 +6879,9 @@ ul {
 }
 
 dfn {
-  text-decoration: underline wavy #2196f3;
+  text-decoration: underline dotted #2196f3;
+  font-style: normal;
+  cursor: help;
 }
 
 code {

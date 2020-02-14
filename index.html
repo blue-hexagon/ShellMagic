@@ -526,7 +526,7 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="reserved-exit-codes">Reserved Exit Codes</h3></div>
-                    <p class="info-box info shadow-box">Useful for debugging a script.</p>
+                    <p class="info-box info shadow-box">Useful for debugging a script. <dfn title="See section about Shell Builtins.">Exit</dfn> takes integer args in the range 0-255.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -562,10 +562,6 @@
                         <tr>
                             <td><code>130</code></td>
                             <td>Script terminated by Control-C</td>
-                        </tr>
-                        <tr>
-                            <td><code>255*</code></td>
-                            <td>Exit status out of range</td>
                         </tr>
                         </tbody>
                     </table>
@@ -836,11 +832,11 @@
                         <tbody>
                         <tr>
                             <td><code>s</code></td>
-                            <td>setuid when in <dfn title="">user column</dfn></td>
+                            <td>setuid when in <dfn title="uuugggooo - user column (owners column) is the three first letters in this example.">user column</dfn></td>
                         </tr>
                         <tr>
                             <td><code>s</code></td>
-                            <td>setgid when in <dfn title="">group column</dfn></td>
+                            <td>setgid when in <dfn title="uuugggooo - group column is the three middle letters in this example.">group column</dfn></td>
                         </tr>
                         <tr>
                             <td><code>t</code></td>
@@ -1079,7 +1075,7 @@
                         -->
                         <tr>
                             <td><code>!</code></td>
-                            <td>Negates any pattern — reverses the pattern so to speak</td>
+                            <td>Negates any pattern matches — reverses the pattern so to speak</td>
                         </tr>
                         <tr>
                             <td><code>[:CharClass:]</code></td>
@@ -1206,7 +1202,7 @@
                         <tbody>
                         <tr>
                             <td><code>:</code></td>
-                            <td></td>
+                            <td>Equivalent to true.</td>
                         </tr>
                         <tr>
                             <td><code>.</code></td>
@@ -1214,7 +1210,7 @@
                         </tr>
                         <tr>
                             <td><code>[</code></td>
-                            <td></td>
+                            <td>Is a synonym for test but requires a final argument of ].</td>
                         </tr>
                         <tr>
                             <td><code>alias</code></td>
@@ -1236,7 +1232,10 @@
                             <td><code>builtin</code></td>
                             <td>Executes the specified shell built-in command.</td>
                         </tr>
-                        <!--TODO: Add "caller" "readarray" "comopt" "mapfile" builtin if its missing -->
+                        <tr>
+                            <td><code>caller</code></td>
+                            <td>Returns the context of any active  <dfn title="A shell function or a script executed with the . or source builtins">subroutine call</dfn></td>
+                        </tr>
                         <tr>
                             <td><code>case</code></td>
                             <td></td>
@@ -1256,6 +1255,10 @@
                         <tr>
                             <td><code>complete</code></td>
                             <td>Displays how the specified words would be completed.</td>
+                        </tr>
+                        <tr>
+                            <td><code>comopt</code></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><code>continue</code></td>
@@ -1324,7 +1327,7 @@
                         </tr>
                         <tr>
                             <td><code>if</code></td>
-                            <td></td>
+                            <td>Used for branching.</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1357,6 +1360,10 @@
                         <tr>
                             <td><code>logout</code></td>
                             <td>Exits a login shell.</td>
+                        </tr>
+                        <tr>
+                            <td><code>mapfile</code></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><code>popd</code></td>
@@ -1445,11 +1452,11 @@
                         </tr>
                         <tr>
                             <td><code>until</code></td>
-                            <td></td>
+                            <td>Loop that is very similar to the while-loop except that it executes until the test-command executes succesfully. As long as the test-command fails, the until-loop continues.</td>
                         </tr>
                         <tr>
                             <td><code>wait</code></td>
-                            <td></td>
+                            <td>Make the shell wait for a job to finish.</def></td>
                         </tr>
                         <tr>
                             <td><code>while</code></td>
