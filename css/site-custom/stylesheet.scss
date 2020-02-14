@@ -200,7 +200,7 @@ p.info-box {
 // Gradients
 #gradient-h1 {
   -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
+  background: linear-gradient($gradient-h1-color-one, $gradient-h1-color-two);
   font-size: 6rem;
   text-shadow: 6px $black;
   -webkit-background-clip: text; // Must not be moved despite linter warnings - breaks if moved.
@@ -299,6 +299,7 @@ h6 {
 p {
   font-family: 'PT Mono', sans, serif;
   font-size: .525rem;
+  line-height: 1.4;
 }
 
 p,
@@ -313,13 +314,15 @@ ul {
   padding-left: 0;
   width: 50%;
 }
-
+dfn{
+  text-decoration: underline wavy $info;
+}
 code {
   font-family: 'Source Code Pro', monospace;
   font-size: 105%;
   margin: 0 .01rem;
   padding: .2rem .5rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 @media (min-width: 880px) {

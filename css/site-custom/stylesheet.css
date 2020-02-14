@@ -459,6 +459,16 @@
     margin-left: 52%;
   }
 }
+.explanation-tooltip {
+  text-decoration: underline dotted;
+  cursor: help;
+  font-size: 1.5rem;
+}
+
+tt-code {
+  text-decoration: none;
+}
+
 .tooltip {
   display: inline-block;
   position: relative;
@@ -466,6 +476,7 @@
 .tooltip:hover .tooltiptext {
   opacity: 1;
   visibility: visible;
+  overflow: visible;
 }
 .tooltip .tooltiptext {
   background-color: #555;
@@ -505,7 +516,6 @@
 }
 .one-column-table td:nth-child(1):hover {
   background: #3a3a3a;
-  overflow: hidden;
 }
 .one-column-table tr:nth-child(even) td {
   border-bottom: 1px dashed #d34a00;
@@ -520,7 +530,6 @@
 }
 .two-column-table td:nth-child(1):hover {
   background: #3a3a3a;
-  overflow: hidden;
 }
 .two-column-table td:nth-child(2) {
   background: #202020;
@@ -528,7 +537,6 @@
 }
 .two-column-table td:nth-child(2):hover {
   background: #3a3a3a;
-  overflow: hidden;
 }
 
 .four-column-table td {
@@ -6738,7 +6746,7 @@ p.info-box {
 
 #gradient-h1 {
   -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(#eee, #8c9191);
+  background: linear-gradient(#eee, #8c9191);
   font-size: 6rem;
   text-shadow: 6px #000;
   -webkit-background-clip: text;
@@ -6854,6 +6862,7 @@ h6 {
 p {
   font-family: "PT Mono", sans, serif;
   font-size: 0.525rem;
+  line-height: 1.4;
 }
 
 p,
@@ -6869,12 +6878,16 @@ ul {
   width: 50%;
 }
 
+dfn {
+  text-decoration: underline wavy #2196f3;
+}
+
 code {
   font-family: "Source Code Pro", monospace;
   font-size: 105%;
   margin: 0 0.01rem;
   padding: 0.2rem 0.5rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 @media (min-width: 880px) {

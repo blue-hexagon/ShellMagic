@@ -85,15 +85,8 @@
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
-                    <h1 id="gradient-h1"><i class="fas fa-terminal"></i> Bash Quick References</h1>
+                    <h1 id="gradient-h1">Bash Quick References</h1>
                 </div>
-                <!--
-                                <div class="eight columns offset-by-two">
-                                    <p class="shadow-box info-box success">This site is under heavy development and are being improved
-                                        each day. See something you don't like? Open an issue on Github (link in page footer) and I'll
-                                        consider changing it.</p>
-                                </div>
-                -->
             </div>
         </div>
         <div class="container">
@@ -218,7 +211,8 @@
                         </tr>
                         <tr>
                             <td><code>!</code></td>
-                            <td>Not -- reverses the sense of the tests above (returns true if condition absent).
+                            <td><dfn title="A boolean operator which negates any expression.">Not</dfn> – reverses the
+                                sense of the tests above (returns true if condition absent).
                             </td>
                         </tr>
                         </tbody>
@@ -412,25 +406,25 @@
                         </tr>
                         <tr>
                             <td><code>&lt;</code></td>
-                            <td>is less than (within double parentheses, i.e. <code>(( ))</code>)</td>
+                            <td>is less than – place within double parentheses</td>
                         </tr>
                         <tr>
                             <td><code>&lt;=</code></td>
-                            <td>is less than or equal to (same rule as before)</td>
+                            <td>is less than or equal to (same rule as previous row)</td>
                         </tr>
                         <tr>
                             <td><code>&gt;</code></td>
-                            <td>is greater than (same rule as before)</td>
+                            <td>is greater than (same rule as previous row)</td>
                         </tr>
                         <tr>
                             <td><code>&gt;=</code></td>
-                            <td>is greater than or equal to (same rule as before)</td>
+                            <td>is greater than or equal to (same rule as previous row)</td>
                         </tr>
                         </tbody>
                     </table>
                     <div class="shadow-box">
                         <h3 id="string-comparison-operators">String Comparison Operators</h3></div>
-                    <p class="info-box info shadow-box">How to compare strings in Bash.</p>
+                    <p class="info-box info shadow-box">String comparison in Bash.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -440,12 +434,23 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><code>=</code></td>
+                            <td>
+                                <code>
+                                <span class="tooltip explanation-tooltip">
+                                    =
+                                    <span class="tooltiptext">
+                                        <code class="tt-code">
+                                            if [ "$birthday_cake" = "$favorite_cake" ]
+                                        </code>
+                            </span>
+                            </span>
+                                </code>
+                            </td>
                             <td>is equal to</td>
                         </tr>
                         <tr>
                             <td><code>==</code></td>
-                            <td>is equal to (synonymous with the above <code>=</code>)</td>
+                            <td>same as above</td>
                         </tr>
                         <tr>
                             <td><code>!=</code></td>
@@ -566,7 +571,9 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="sending-control-signals">Sending Control Signals</h3></div>
-                    <p class="info-box info shadow-box">You can use these key-combinations to send signals</p>
+                    <p class="info-box info shadow-box">You can use these key-combinations to send <dfn
+                            title="A signal is a software interrupt which indicates that an important event has occured.">signals</dfn>
+                    </p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -596,8 +603,12 @@
                         </tbody>
                     </table>
                     <p class="info-box warning shadow-box">
-                        Check your stty settings. Suspend and resume of output is usually disabled if you are using
-                        "modern" terminal emulations. The standard xterm supports Ctrl+S and Ctrl+Q by default.</p>
+                        Check your <dfn
+                            title="Short for set teletype. It is the command to set up a terminal. stty without options lists the current settings.">stty</dfn>
+                        settings. Suspend and resume of output is usually disabled if you are using
+                        "modern" terminal emulations. The standard <dfn
+                            title="The standard terminal emulator for the X Window System, X11.">xterm</dfn> supports
+                        Ctrl+S and Ctrl+Q by default.</p>
                 </div>
                 <div class="eight columns offset-by-two">
                 </div>
@@ -606,7 +617,11 @@
                 <div class="eight columns">
                     <div class="shadow-box">
                         <h3 id="string-manipulation">String Manipulation</h3></div>
-                    <p class="info-box info shadow-box">Bash supports a suprisingly big number of string operations!</p>
+                    <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!
+                        Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,
+                        and others fall under the functionality of the UNIX expr command. This results in inconsistent
+                        command syntax and overlap of functionality.</p>
+                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of these.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -763,9 +778,7 @@
                     <div class="shadow-box">
                         <h3>File Types</h3></div>
                     <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
-                        get it.
-                        You may
-                        also have heard the expression "everything is a file in Linux".</p>
+                        get it. I'll expand this section soon with more context.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -788,7 +801,7 @@
                         </tr>
                         <tr>
                             <td><code>c</code></td>
-                            <td>Special file</td>
+                            <td>Character device</td>
                         </tr>
                         <tr>
                             <td><code>s</code></td>
@@ -809,7 +822,8 @@
                     <div class="shadow-box">
                         <h3>Access Codes & Permissions</h3>
                     </div>
-                    <p class="info-box info shadow-box">Now you may know what that arcane looking string (<code>drwxrwxrwx</code>)
+                    <p class="info-box info shadow-box">Now you may know what that arcane looking string
+                        <code>rwxrwxrwx</code>
                         is when
                         you invoke <code>ls -l</code></p>
                     <table class="two-column-table">
@@ -821,8 +835,24 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td><code>s</code></td>
+                            <td>setuid when in <dfn title="">user column</dfn></td>
+                        </tr>
+                        <tr>
+                            <td><code>s</code></td>
+                            <td>setgid when in <dfn title="">group column</dfn></td>
+                        </tr>
+                        <tr>
+                            <td><code>t</code></td>
+                            <td>sticky bit</td>
+                        </tr>
+                        <tr>
                             <td><code>0</code></td>
-                            <td rowspan="2">The access right that is supposed to be on this place is not granted.</td>
+                            <td rowspan="2">The <dfn
+                                    title="An access right may be any of the codes you see in this table">access
+                                right</dfn>
+                                that is supposed to be on this place is not granted.
+                            </td>
                         </tr>
                         <tr>
                             <td><code>-</code></td>
@@ -859,7 +889,7 @@
                         </tr>
                         <tr>
                             <td><code>o</code></td>
-                            <td>owner permissions</td>
+                            <td>others permissions</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1040,10 +1070,13 @@
                             <td><code>+</code></td>
                             <td>Matches one or more occurences of a given pattern</td>
                         </tr>
-                        <tr>
-                            <td><code>@</code></td>
-                            <td>Matches exactly one of a given pattern</td>
-                        </tr>
+                        <!--
+                        TODO:
+                         <tr>
+                             <td><code>@</code></td>
+                             <td>Matches exactly one of a given pattern</td>
+                         </tr>
+                        -->
                         <tr>
                             <td><code>!</code></td>
                             <td>Negates any pattern — reverses the pattern so to speak</td>
@@ -1470,11 +1503,13 @@
                         </tr>
                         <tr>
                             <td><code>$(( ))</code></td>
-                            <td>is used for saving the output of arithmetic.</td>
+                            <td>is used for retrieving the output of arithmetic expressions, either for usage with a
+                                command or to save the output in a variable.
+                            </td>
                         </tr>
                         <tr>
                             <td><code>$[]</code></td>
-                            <td>deprecated integer expansion construct which is replaced by <code>(( ))</code>.
+                            <td>deprecated integer expansion construct which is replaced by <code>$(( ))</code>.
                                 Evaluates
                                 integers
                                 between the square brackets
@@ -1646,19 +1681,26 @@
                 </div>
             </div>
             <div class="row">
-                <div class="twelve columns">
+                <div class="six columns">
                     <p class="info-box success shadow-box" style="font-size: 1.5rem; color: azure;">If you find this
                         site helpful,
                         please consider sharing it with a friend!<br>
                         The more people start using the site, the faster improvements will come along
                         <i class="fas fa-smile-beam"></i>
                 </div>
+                <div class="six columns">
+                    <p class="shadow-box info-box danger">Site is under heavy development and is being improved each day
+                        in
+                        some way or another. If you see something you don't like feel free to open an issue on
+                        <span class="tooltip" style="text-decoration: underline dotted">Github
+                        <span class="tooltiptext">Link is in the footer.</span>
+                    </span>.</p>
+                </div>
             </div>
             <div class="row">
                 <div class="twelve columns">
                     <div class="email-input">
-                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Register for our
-                            monthly newsletter!</label>
+                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Be informed about groundbreaking content updates and site development. One email/month – and only if something is worth telling about.</label>
                         <form action="https://formspree.io/xoqdnqak" method="POST">
                             <div class="input-container">
                                 <i class="fas fa-user icon"></i>
@@ -1720,7 +1762,8 @@
         <div class="twelve columns">
             <footer>
                 <a href="https://github.com/smokingcuke/shellmagic/blob/master/md/License.md">&copy;2020</a> | <a
-                    href="https://github.com/smokingcuke/ShellMagic/issues">Suggest an Enhancement</a> or <a
+                    href="https://github.com/smokingcuke/ShellMagic/issues">Suggest an Enhancement</a>, <a
+                    href="https://github.com/smokingcuke/ShellMagic/issues">File an Issue</a> or <a
                     href="https://github.com/smokingcuke/ShellMagic/blob/master/md/Contributing.md">Contribute to The
                 Site</a> | <a
                     href="https://github.com/smokingcuke/ShellMagic/blob/master/md/PrivacyPolicy.md"> View our Privacy
