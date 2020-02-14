@@ -467,6 +467,7 @@
 
 tt-code {
   text-decoration: none;
+  text-decoration-color: #65ffa0;
 }
 
 .tooltip {
@@ -512,7 +513,7 @@ tt-code {
 }
 
 .one-column-table td:nth-child(1) {
-  min-width: 5%;
+  min-width: 10%;
 }
 .one-column-table td:nth-child(1):hover {
   background: #3a3a3a;
@@ -526,7 +527,7 @@ tt-code {
 }
 .two-column-table td:nth-child(1) {
   background: #202020;
-  min-width: 5%;
+  min-width: 10%;
 }
 .two-column-table td:nth-child(1):hover {
   background: #3a3a3a;
@@ -544,7 +545,7 @@ tt-code {
 }
 .four-column-table td:nth-child(1) {
   background: #202020;
-  min-width: 5%;
+  min-width: 10%;
 }
 .four-column-table td:nth-child(2) {
   background: #202020;
@@ -6894,7 +6895,10 @@ code {
   font-size: 105%;
   margin: 0 0.01rem;
   padding: 0.2rem 0.5rem;
-  white-space: normal;
+}
+
+.code-no-wrap code {
+  white-space: nowrap;
 }
 
 @media (min-width: 880px) {

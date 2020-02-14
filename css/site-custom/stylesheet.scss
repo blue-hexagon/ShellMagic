@@ -31,11 +31,13 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
     display: none;
   }
 }
-@media not screen and (max-width: $media-phone-portrait){
-pre {
-  line-break: normal;
+
+@media not screen and (max-width: $media-phone-portrait) {
+  pre {
+    line-break: normal;
+  }
 }
-}
+
 @media screen and (min-width: 800px) {
   nav {
     a {
@@ -111,9 +113,11 @@ h6 {
   text-align: center;
   width: 100%;
 }
-h1{
+
+h1 {
   font-family: 'IBM Plex Serif', serif;
 }
+
 a {
   color: $fg;
   outline: 0;
@@ -318,17 +322,24 @@ ul {
   padding-left: 0;
   width: 50%;
 }
-dfn{
+
+dfn {
   text-decoration: underline dotted $info;
   font-style: normal;
   cursor: help;
 }
+
 code {
   font-family: 'Source Code Pro', monospace;
   font-size: 105%;
   margin: 0 .01rem;
   padding: .2rem .5rem;
-  white-space: normal;
+}
+
+.code-no-wrap {
+  code {
+    white-space: nowrap;
+  }
 }
 
 @media (min-width: 880px) {
