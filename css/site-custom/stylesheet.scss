@@ -31,7 +31,11 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
     display: none;
   }
 }
-
+@media not screen and (max-width: $media-phone-portrait){
+pre {
+  line-break: normal;
+}
+}
 @media screen and (min-width: 800px) {
   nav {
     a {
