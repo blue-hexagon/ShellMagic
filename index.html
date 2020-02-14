@@ -87,6 +87,13 @@
                 <div class="twelve columns">
                     <h1 id="gradient-h1"><i class="fas fa-terminal"></i> Bash Quick References</h1>
                 </div>
+                <!--
+                                <div class="eight columns offset-by-two">
+                                    <p class="shadow-box info-box success">This site is under heavy development and are being improved
+                                        each day. See something you don't like? Open an issue on Github (link in page footer) and I'll
+                                        consider changing it.</p>
+                                </div>
+                -->
             </div>
         </div>
         <div class="container">
@@ -94,7 +101,8 @@
                 <div class="six columns">
                     <div class="shadow-box">
                         <h3 id="file-test-operators">File Test Operators</h3></div>
-                    <p class="info shadow-box">Testing files in scripts is easy and straight forward. This is where
+                    <p class="info-box info shadow-box">Testing files in scripts is easy and straight forward. This is
+                        where
                         shell scripting
                         starts to show its glory! In Bash you can do file testing for permissions, size, date, filetype
                         or
@@ -217,7 +225,8 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="job-identifiers">Job Identifiers</h3></div>
-                    <p class="info shadow-box">Job control allows you to selectively stop (suspend) the execution of
+                    <p class="info-box info shadow-box">Job control allows you to selectively stop (suspend) the
+                        execution of
                         processes and
                         continue their execution at a later point in time.</p>
                     <table class="two-column-table">
@@ -260,7 +269,7 @@
                     </table>
                     <h3 id="signals">Signals</h3>
                     <div class="shadow-box">
-                        <p class="info shadow-box">UNIX System V Signals.</p></div>
+                        <p class="info-box info shadow-box">UNIX System V Signals.</p></div>
                     <table class="four-column-table">
                         <thead>
                         <tr>
@@ -367,7 +376,8 @@
                 <div class="six columns">
                     <div class="shadow-box">
                         <h3 id="integer-comparison-operators">Integer Comparison Operators</h3></div>
-                    <p class="info shadow-box">How to compare integers or arithmetic expressions in shell scripts.</p>
+                    <p class="info-box info shadow-box">How to compare integers or arithmetic expressions in shell
+                        scripts.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -420,7 +430,7 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="string-comparison-operators">String Comparison Operators</h3></div>
-                    <p class="info shadow-box">How to compare strings in Bash.</p>
+                    <p class="info-box info shadow-box">How to compare strings in Bash.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -461,7 +471,8 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="compound-operators">Compound Operators</h3></div>
-                    <p class="info shadow-box">Useful for boolean expressions and is similar to <code>&&</code> and
+                    <p class="info-box info shadow-box">Useful for boolean expressions and is similar to <code>&&</code>
+                        and
                         <code>||</code>.
                         The compound operators work with the <code>test</code> command or may occur within single
                         brackets <code>[ &lt;expr&gt; ].</code></p>
@@ -484,9 +495,10 @@
                         </tbody>
                     </table>
                     <div class="shadow-box">
-                        <h2 id="list-constructs">List Constructs</h2>
+                        <h3 id="list-constructs">List Constructs</h3>
                     </div>
-                    <p class="info shadow-box">Provides a means of processing commands consecutively, alas effectively
+                    <p class="info-box info shadow-box">Provides a means of processing commands consecutively, alas
+                        effectively
                         being able
                         to replace complex if/then/case structures.</p>
                     <table class="two-column-table">
@@ -509,7 +521,7 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="reserved-exit-codes">Reserved Exit Codes</h3></div>
-                    <p class="info shadow-box">Useful for debugging a script.</p>
+                    <p class="info-box info shadow-box">Useful for debugging a script.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -554,7 +566,7 @@
                     </table>
                     <div class="shadow-box">
                         <h3 id="sending-control-signals">Sending Control Signals</h3></div>
-                    <p class="info shadow-box">You can use these key-combinations to send signals</p>
+                    <p class="info-box info shadow-box">You can use these key-combinations to send signals</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -583,7 +595,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <p class="warning">
+                    <p class="info-box warning shadow-box">
                         Check your stty settings. Suspend and resume of output is usually disabled if you are using
                         "modern" terminal emulations. The standard xterm supports Ctrl+S and Ctrl+Q by default.</p>
                 </div>
@@ -593,8 +605,8 @@
             <div class="row">
                 <div class="eight columns">
                     <div class="shadow-box">
-                        <h2 id="string-manipulation">String Manipulation</h2></div>
-                    <p class="info shadow-box">Bash supports a suprisingly big number of string operations!</p>
+                        <h3 id="string-manipulation">String Manipulation</h3></div>
+                    <p class="info-box info shadow-box">Bash supports a suprisingly big number of string operations!</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -716,8 +728,8 @@
                     </table>
                 </div>
                 <div class="four columns">
-                    <h2>Variable Operations</h2>
-                    <p class="info shadow-box">Perform operations on variables.</p>
+                    <h3>Variable Operations</h3>
+                    <p class="info-box info shadow-box">Perform operations on variables.</p>
                     <table class="one-column-table">
                         <thead>
                         <tr>
@@ -749,8 +761,9 @@
                 </div>
                 <div class="four columns">
                     <div class="shadow-box">
-                        <h2>File Types</h2></div>
-                    <p class="info shadow-box">This is very different from Windows but straightforward once you get it.
+                        <h3>File Types</h3></div>
+                    <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
+                        get it.
                         You may
                         also have heard the expression "everything is a file in Linux".</p>
                     <table class="two-column-table">
@@ -794,9 +807,9 @@
                 </div>
                 <div class="four columns">
                     <div class="shadow-box">
-                        <h2>Access Codes & Permissions</h2>
+                        <h3>Access Codes & Permissions</h3>
                     </div>
-                    <p class="info shadow-box">Now you may know what that arcane looking string (<code>drwxrwxrwx</code>)
+                    <p class="info-box info shadow-box">Now you may know what that arcane looking string (<code>drwxrwxrwx</code>)
                         is when
                         you invoke <code>ls -l</code></p>
                     <table class="two-column-table">
@@ -855,8 +868,9 @@
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h2 id="command-parameters">Command Parameters</h2></div>
-                    <p class="info shadow-box">Command parameters, also known as arguments, are used when invoking a
+                        <h3 id="command-parameters">Command Parameters</h3></div>
+                    <p class="info-box info shadow-box">Command parameters, also known as arguments, are used when
+                        invoking a
                         Bash
                         script.</p>
                     <table class="two-column-table">
@@ -945,8 +959,8 @@
                 </div>
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h2 id="history-expansion">History Expansion</h2></div>
-                    <p class="info shadow-box">Enables use and manipulation of previous commands.</p>
+                        <h3 id="history-expansion">History Expansion</h3></div>
+                    <p class="info-box info shadow-box">Enables use and manipulation of previous commands.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -999,8 +1013,9 @@
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h2 id="bash-globbing">Bash Globbing</h2></div>
-                    <p class="info shadow-box">Bash cannot recognize RegEx but understand globbing. Globbing is done to
+                        <h3 id="bash-globbing">Bash Globbing</h3></div>
+                    <p class="info-box info shadow-box">Bash cannot recognize RegEx but understand globbing. Globbing is
+                        done to
                         filenames
                         by the shell
                         while RegEx is used for searching text.
@@ -1052,8 +1067,8 @@
                 </div>
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h2 id="regular-expressions">Regular Expressions</h2></div>
-                    <p class="info shadow-box">Always use quotes in your RegEx to avoid globbing</p>
+                        <h3 id="regular-expressions">Regular Expressions</h3></div>
+                    <p class="info-box info shadow-box">Always use quotes in your RegEx to avoid globbing</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -1120,7 +1135,8 @@
                         </tr>
                         </tbody>
                     </table>
-                    <p class="warning">In basic regular expressions the metacharacters <code>"?", "+", "{", "|", "(",
+                    <p class="info-box warning shadow-box">In basic regular expressions the metacharacters <code>"?",
+                        "+", "{", "|", "(",
                         and ")"</code>
                         lose their
                         special meaning; instead use the backslash versions <code>"\?" ... "\)"</code>.
@@ -1136,7 +1152,7 @@
             </div>
             <div class="row">
                 <div class="ten columns offset-by-one">
-                    <p class="info shadow-box">
+                    <p class="info-box info shadow-box">
                         Shell builins are built into Bash are often very (if not extremely) fast compared to
                         external
                         programs. Some of the builtins are <em>inherited</em> from the Bourne Shell (<code>sh</code>)
@@ -1414,7 +1430,8 @@
                 <div class="twelve columns">
                     <div class="shadow-box">
                         <h2 id="overview-of-symbols">Overview of Bash Symbols</h2></div>
-                    <p class="info shadow-box">Here we have gathered a collection of all arcane syntax along with a
+                    <p class="info-box info shadow-box">Here we have gathered a collection of all arcane syntax along
+                        with a
                         brief
                         description. A bunch
                         of these symbols are repeated from earlier but many are new - this is a good starting point if
@@ -1630,7 +1647,8 @@
             </div>
             <div class="row">
                 <div class="twelve columns">
-                    <p class="success" style="font-size: 1.5rem; color: azure;">If you find this site helpful,
+                    <p class="info-box success shadow-box" style="font-size: 1.5rem; color: azure;">If you find this
+                        site helpful,
                         please consider sharing it with a friend!<br>
                         The more people start using the site, the faster improvements will come along
                         <i class="fas fa-smile-beam"></i>
@@ -1655,34 +1673,34 @@
                         <li>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
                                target="_blank"><i class="tooltip fab fa-facebook-f fa-2x"
-                                                                            aria-hidden="true"><span
+                                                  aria-hidden="true"><span
                                     class="tooltiptext">Share on Facebook!</span></i><span
                                     class="sr-only">Share on Facebook</span></a></li>
                         <li>
                             <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
                                target="_blank"><i class="tooltip  fab fa-twitter fa-2x"
-                                                                aria-hidden="true"><span
+                                                  aria-hidden="true"><span
                                     class="tooltiptext">Tweet!</span></i><span
                                     class="sr-only">Tweet</span></a></li>
                         <li>
                             <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
                                target="_blank"><i class="tooltip  fab fa-pinterest fa-2x"
-                                                                 aria-hidden="true"><span
+                                                  aria-hidden="true"><span
                                     class="tooltiptext">Pin it!</span></i><span
                                     class="sr-only">Pin it</span></a></li>
                         <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
                                target="_blank"><i class="tooltip  fab fa-get-pocket fa-2x"
-                                                                        aria-hidden="true"><span class="tooltiptext">Add to Pocket!</span></i><span
+                                                  aria-hidden="true"><span class="tooltiptext">Add to Pocket!</span></i><span
                                 class="sr-only">Add to Pocket</span></a></li>
                         <li>
                             <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
                                target="_blank"><i class="tooltip fab fa-reddit-alien fa-2x"
-                                                                           aria-hidden="true"><span class="tooltiptext">Submit to Reddit!</span></i><span
+                                                  aria-hidden="true"><span class="tooltiptext">Submit to Reddit!</span></i><span
                                     class="sr-only">Submit to Reddit</span></a></li>
                         <li>
                             <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
                                target="_blank"><i class="tooltip fab fa-linkedin fa-2x"
-                                                                            aria-hidden="true"><span
+                                                  aria-hidden="true"><span
                                     class="tooltiptext">Share on LinkedIn!</span></i><span
                                     class="sr-only">Share on LinkedIn</span></a></li>
                         <li>

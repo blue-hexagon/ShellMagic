@@ -37,7 +37,7 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
     a {
       background-color: $bg;
       color: $white;
-      font-family: 'IBM Plex Serif', serif;
+      font-family: 'IBM Plex Sans', serif;
       font-size: 1.625rem;
       line-height: 1.285rem;
       padding: 7px 24px;
@@ -100,13 +100,16 @@ h6 {
   text-transform: capitalize;
   padding: .725rem 0;
   box-sizing: border-box;
-  font-family: 'IBM Plex Sans', serif;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 0.9rem;
   font-weight: 300;
   margin: 0 auto .25rem 0;
   text-align: center;
   width: 100%;
 }
-
+h1{
+  font-family: 'IBM Plex Serif', serif;
+}
 a {
   color: $fg;
   outline: 0;
@@ -172,7 +175,7 @@ p {
 }
 
 p.info-box {
-  margin: 1ex 0 0;
+  padding: 1ex 1ex;
 }
 
 .block {
@@ -262,7 +265,7 @@ header {
 }
 
 .shadow-box {
-  box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
+  box-shadow: 1px 1px 14px 2px darken($bg, 3.5%);
 }
 
 .info.shadow-box {

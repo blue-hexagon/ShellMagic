@@ -31,3 +31,52 @@ Table template:
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="four columns">
+                                    <h2>Variable Operations</h2>
+                                    <p class="info shadow-box">This is very different from Windows but straightforward once you get
+                                        it.
+                                        You may
+                                        also have heard the expression "everything is a file in Linux".</p>
+                                    <table class="two-column-table">
+                                        <thead>
+                                        <tr>
+                                            <th>Expression</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><code>${parameter:-defaultValue}</code></td>
+                                            <td>Get default shell variables value</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>${parameter:=defaultValue}</code></td>
+                                            <td>Set default shell variables value</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>${parameter:?&quot;Error Message&quot;}</code></td>
+                                            <td>Display an error message if parameter is not set</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
