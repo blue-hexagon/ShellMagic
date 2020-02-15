@@ -1,0 +1,35 @@
+/*
+@media screen and (min-width: 800px) {
+  nav {
+    a {
+      background-color: $bg;
+      color: $white;
+      font-family: 'IBM Plex Sans', serif;
+      font-size: 1.625rem;
+      line-height: 1.285rem;
+      padding: 7px 24px;
+      text-align: center;
+      text-decoration: none;
+      text-justify: inter-word;
+
+      &:nth-child(even) {
+        background: lighten($bg, 5%);
+
+        &:hover {
+          color: $heading-one-bg;
+        }
+      }
+
+      &:nth-child(odd) {
+        background: lighten($bg, 2%);
+
+        &:hover {
+          color: $heading-one-bg;
+        }
+      }
+    }
+  }
+}
+*/
+
+/*# sourceMappingURL=header.css.map */

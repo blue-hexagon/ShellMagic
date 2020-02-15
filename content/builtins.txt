@@ -1,0 +1,29 @@
+Table 10-1. Options to the declare built-in
+
+Option	Meaning
+-a	Variable is an array.
+-f	Use function names only.
+-i	The variable is to be treated as an integer; arithmetic evaluation is performed when the variable is assigned a value (see Section 3.4.6).
+-p	Display the attributes and values of each variable. When -p is used, additional options are ignored.
+-r	Make variables read-only. These variables cannot then be assigned values by subsequent assignment statements, nor can they be unset.
+-t	Give each variable the trace attribute.
+-x	Mark each variable for export to subsequent commands via the environment.
+
+
+10.1.3. Constants
+In Bash, constants are created by making a variable read-only. The readonly built-in marks each specified variable as unchangeable. The syntax is:
+
+readonly OPTION VARIABLE(s)
+
+The values of these variables can then no longer be changed by subsequent assignment. If the -f option is given, each variable refers to a shell function; see Chapter 11. If -a is specified, each variable refers to an array of variables. If no arguments are given, or if -p is supplied, a list of all read-only variables is displayed. Using the -p option, the output can be reused as input.
+
+The return status is zero, unless an invalid option was specified, one of the variables or functions does not exist, or -f was supplied for a variable name instead of for a function name.
+
+
+[bob in ~] readonly TUX=penguinpower
+
+[bob in ~] TUX=Mickeysoft
+bash: TUX: readonly variable
+
+
+The unset built-in is used to destroy arrays or member variables of an array:

@@ -1,0 +1,47 @@
+Debugging with set
+
+Short notation	Long notation	Result
+set -f	set -o noglob	Disable file name generation using metacharacters (globbing).
+set -v	set -o verbose	Prints shell input lines as they are read.
+set -x	set -o xtrace	Print command traces before executing command.
+
+[Rewrite]
+Configuration files:
+
+~/.bash_profile
+This is the preferred configuration file for configuring user environments individually. In this file, users can add extra configuration options or change default settings:
+
+~/.bash_login
+This file contains specific settings that are normally only executed when you log in to the system. In the example, we use it to configure the umask value and to show a list of connected users upon login. This user also gets the calendar for the current month:
+
+~/.profile
+In the absence of ~/.bash_profile and ~/.bash_login, ~/.profile is read. It can hold the same configurations, which are then also accessible by other shells. Mind that other shells might not understand the Bash syntax.
+
+~/.bashrc
+Today, it is more common to use a non-login shell, for instance when logged in graphically using X terminal windows. Upon opening such a window, the user does not have to provide a user name or password; no authentication is done. Bash searches for ~/.bashrc when this happens, so it is referred to in the files read upon login as well, which means you don't have to enter the same settings in multiple files.
+In this user's .bashrc a couple of aliases are defined and variables for specific programs are set after the system-wide /etc/bashrc is read:
+
+~/.bash_logout
+This file contains specific instructions for the logout procedure. In the example, the terminal window is cleared upon logout. This is useful for remote connections, which will leave a clean window after closing them.
+
+When making changes to any of the above files, users have to either reconnect to the system or source the altered file for the changes to take effect. By interpreting the script this way, changes are applied to the current shell session:
+
+Sourcing can be done with <code>source</code> or <code>.</code>
+
+
+
+Variables:
+Global variables - the <code>env</code> or <code>printenv</code> command can be used to display global varaibles, also called environmental varibales.
+
+Local variables - are only availabe in the current shell. Using <term>set</term> builtin without any options/flags will display a list of all variables including environmetnal and functions.
+
+Four different types of variable-types exsist:
+String variables
+Integer variables.
+Constant variables.
+Array variables.
+
+Variables are case sensitive and you are free to use the names you want or mix uppercase and lower case. Conventionally local variables are lowercase and global variables uppercase. Conventionally snake_case is used and your geeky friends might give you a look if you start using camelCase.
+Variables may contain digits, but not start with digit(s).
+
+In order to pass a local variable to a subshell we must export the variable. This is accomplished by using the command <term>export</term>, example follows: <code>export VARNAME="value"</code>

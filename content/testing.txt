@@ -1,0 +1,1 @@
+[ -o noclobber ] will test if shopt noclobber is set.

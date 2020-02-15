@@ -7,12 +7,12 @@
     <meta name="description"
           content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
     <meta name="keywords"
-          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt"/>
+          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt,arch,arch linux,cli,commandline,compare,test,operator,stack overflow"/>
     <title>Shell Magic - The Ultimate Bash Cheatsheet!</title>
 
     <!-- Open Graph Tags -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@shellmagic1"/>
+    <meta name="twitter:site" content="@shellmagicxyz"/>
     <meta name="twitter:title" content="Shell Magic - The Ultimate Bash Reference"/>
     <meta name="twitter:description"
           content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
@@ -36,6 +36,18 @@
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
+    <script>
+        function toggleSideNavigation() {
+            var sideNavigation = document.getElementById("mySidenav");
+            if (sideNavigation.style.width >= '250') {
+                sideNavigation.style.width = '0';
+                document.getElementsByTagName("main").style.marginLeft = "0";
+            } else {
+                sideNavigation.style.width = "250px";
+                document.getElementsByTagName("main").style.marginLeft = "250px";
+            }
+        }
+    </script>
     <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">
     <script src="node_modules/highlight.js/lib/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -66,24 +78,37 @@
 </div>
 <header>
     <nav>
-        <div class="navbar u-max-full-width">
-            <a href="#file-test-operators">File Testing</a>
-            <a href="#integer-comparison-operators">Integer Comparison</a>
-            <a href="#string-comparison-operators">String Comparison</a>
-            <a href="#compound-operators">Compound Operators</a>
-            <a href="#string-manipulation">String Manipulation</a>
-            <!--<a href="#command-parameters">List Constructs</a>-->
-            <a href="#command-parameters">Command Parameters</a>
-            <a href="#history-expansion">History Expansion</a>
-            <a href="#bash-globbing">Bash Globbing</a>
-            <a href="#regular-expressions">Regular Expressions</a>
-            <a href="#shell-builtins">Shell Builtins</a>
-            <a href="#overview-of-symbols">Symbol Overview</a>
+        <!-- Operators for comparison could be grouperd under a "conditionals" tab-->
+        <div class="topnav">
+            <a href="javascript:void(0)" class="openbtn" onclick="toggleSideNavigation()">&#9776;</a>
         </div>
+
     </nav>
 </header>
+<div id="mySidenav" class="sidenav u-max-full-width disable-scrollbars">
+    <a href="#file-test-operators">File&nbsp;Testing</a>
+    <a href="#integer-comparison-operators">Integer&nbsp;Comparison</a>
+    <a href="#string-comparison-operators">String&nbsp;Comparison</a>
+    <a href="#compound-operators">Compound&nbsp;Operators</a>
+    <a href="#job-identifiers">Job&nbsp;Identifiers</a>
+    <a href="#list-constructs">List&nbsp;Constructs</a>
+    <a href="#reserved-exit-codes">Reserved&nbsp;Exit&nbsp;Codes</a>
+    <a href="#signals">Signals</a>
+    <a href="#sending-control-signals">Sending&nbsp;Control&nbsp;Signals</a>
+    <a href="#signals">File Types</a>
+    <a href="#signals">Permissions</a>
+    <a href="#string-manipulation">String&nbsp;Manipulation</a>
+    <a href="#command-parameters">Command&nbsp;Parameters</a>
+    <a href="#history-expansion">History&nbsp;Expansion</a>
+    <a href="#variable-operations">Variable Operations</a>
+    <a href="#bash-globbing">Bash&nbsp;Globbing</a>
+    <a href="#regular-expressions">Regular&nbsp;Expressions</a>
+    <a href="#shell-builtins">Shell&nbsp;Builtins</a>
+    <a href="#overview-of-symbols">Symbol&nbsp;Overview</a>
+</div>
 <main>
     <section>
+
         <!--  <pre><code class="bash">
               #!/bin/sh
   # validalAlphaNum - Ensures that input only consists of alphabetical
@@ -442,7 +467,7 @@
                         </tr>
                         </tbody>
                     </table>
-                        <h3 id="string-comparison-operators" class="shadow-box">String Comparison Operators</h3>
+                    <h3 id="string-comparison-operators" class="shadow-box">String Comparison Operators</h3>
                     <p class="info-box info shadow-box">String comparison in Bash.</p>
                     <table class="two-column-table">
                         <thead>
@@ -491,7 +516,7 @@
                         </tr>
                         </tbody>
                     </table>
-                        <h3 id="compound-operators" class="shadow-box">Compound Operators</h3>
+                    <h3 id="compound-operators" class="shadow-box">Compound Operators</h3>
                     <p class="info-box info shadow-box">Useful for boolean expressions and is similar to <code>&&</code>
                         and
                         <code>||</code>.
@@ -673,7 +698,7 @@
                 </div>
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h3>Access Codes & Permissions</h3>
+                        <h3>Permissions</h3>
                     </div>
                     <p class="info-box info shadow-box">Now you may know what that arcane looking string
                         <code>rwxrwxrwx</code>
@@ -1027,7 +1052,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3>Variable Operations</h3>
+                    <h3 id="variable-operations">Variable Operations</h3>
                     <p class="info-box info shadow-box">Perform operations on variables.</p>
                     <table class="one-column-table">
                         <thead>
