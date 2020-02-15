@@ -1,0 +1,32 @@
+@import 'variables';
+
+header * {
+  //display: flex;
+  overflow: hidden;
+}
+
+header {
+  box-shadow: 0 0 25px 0 $black;
+  height: $navbar-top-height;
+  background: darken($bg, 2%);
+  z-index: $z-index-header;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+  nav .topnav {
+    a {
+      height: $navbar-top-height;
+      background-color: $bg;
+      color: $white;
+      font-family: 'IBM Plex Sans', serif;
+      font-size: 1.625rem;
+      line-height: $navbar-top-height;
+      padding: 7px 24px;
+      text-align: center;
+      text-decoration: none;
+      text-justify: inter-word;
+    }
+  }

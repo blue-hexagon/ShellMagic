@@ -1,3 +1,4 @@
+@import 'variables';
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -8,21 +9,14 @@
 }
 
 .sidenav {
-  @media mobile, tablet {
-    width: 100%;
-  }
-  height: 100%;
-  @media desktop and (min-width: 800px) {
-    width: 0;
-  }
-  @media desktop and (max-width: 800px) {
-    width: 100%;
-  }
+  width: 0px;
+  border-right: solid $grey-two 2px;
   position: fixed;
-  z-index: 1;
+  z-index: $z-index-sidenav;
   top: 0;
   left: 0;
-  background-color: #111;
+  height:100%;
+  background: lighten($bg,5%);
   overflow-x: hidden;
   overflow-y: scroll;
   transition: 0.5s;
@@ -37,17 +31,49 @@
   }
 
   a {
-    padding: 8px 8px 8px 32px;
-    margin: auto auto;
-    text-decoration: none;
-    text-wrap: none;
-    font-size: 2rem;
-    color: #818181;
+
+      height: 4rem;
+      background-color: $bg;
+      color: $white;
+      font-family: 'IBM Plex Sans', serif;
+      font-size: 1.625rem;
+      line-height: $navbar-top-height;
+      padding: 7px 24px;
+      text-align: center;
+      text-decoration: none;
+      text-justify: inter-word;
+
+      &:nth-child(even) {
+        background: lighten($bg, 5%);
+
+        &:hover {
+          color: $heading-one-bg;
+        }
+      }
+
+      &:nth-child(odd) {
+        background: lighten($bg, 2%);
+
+        &:hover {
+          color: $heading-one-bg;
+        }
+      }
+
     display: block;
     transition: 0.3s;
 
     &:hover {
       color: #f1f1f1;
     }
+  }
+  @media mobile, tablet {
+    width: 100%;
+  }
+  height: 100%;
+  @media desktop and (min-width: 800px) {
+    width: 0;
+  }
+  @media desktop and (max-width: 800px) {
+    width: 100%;
   }
 }

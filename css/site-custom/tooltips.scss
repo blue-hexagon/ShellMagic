@@ -40,7 +40,7 @@ tt-code {
     transition: opacity .3s;
     visibility: hidden;
     width: 120px;
-    z-index: 1;
+    z-index: $z-index-tooltip;
 
     &::after {
       border-color: $grey-two transparent transparent;

@@ -15,7 +15,7 @@
   position: fixed;
   text-align: center;
   visibility: hidden;
-  z-index: 1;
+  z-index: 15;
 }
 
 #snackbar.show {
@@ -52,7 +52,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 95;
 }
 
 .modal-window {
@@ -494,7 +494,7 @@ tt-code {
   transition: opacity 0.3s;
   visibility: hidden;
   width: 120px;
-  z-index: 1;
+  z-index: 100;
 }
 .tooltip .tooltiptext::after {
   border-color: #555 transparent transparent;
@@ -698,6 +698,110 @@ label > .label-body {
   clear: both;
   content: "";
   display: table;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.sidenav {
+  width: 0px;
+  border-right: solid #555 2px;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #2d2d2d;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 0.5s;
+  padding-top: 60px;
+  height: 100%;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidenav a {
+  height: 4rem;
+  background-color: #202020;
+  color: #fff;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 1.625rem;
+  line-height: 4rem;
+  padding: 7px 24px;
+  text-align: center;
+  text-decoration: none;
+  text-justify: inter-word;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:nth-child(even) {
+  background: #2d2d2d;
+}
+.sidenav a:nth-child(even):hover {
+  color: #ff5900;
+}
+.sidenav a:nth-child(odd) {
+  background: #252525;
+}
+.sidenav a:nth-child(odd):hover {
+  color: #ff5900;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+@media mobile, tablet {
+  .sidenav {
+    width: 100%;
+  }
+}
+@media desktop and (min-width: 800px) {
+  .sidenav {
+    width: 0;
+  }
+}
+@media desktop and (max-width: 800px) {
+  .sidenav {
+    width: 100%;
+  }
+}
+
+header * {
+  overflow: hidden;
+}
+
+header {
+  box-shadow: 0 0 25px 0 #000;
+  height: 4rem;
+  background: #1b1b1b;
+  z-index: 90;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+nav .topnav a {
+  height: 4rem;
+  background-color: #202020;
+  color: #fff;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 1.625rem;
+  line-height: 4rem;
+  padding: 7px 24px;
+  text-align: center;
+  text-decoration: none;
+  text-justify: inter-word;
 }
 
 /*!
@@ -6593,46 +6697,28 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
-@media screen and (max-width: 800px) {
-  header {
-    display: none;
-  }
+.disable-scrollbars {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
+.disable-scrollbars::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* Chrome/Safari/Webkit */
+}
+
 @media not screen and (max-width: 320px) {
   pre {
     line-break: normal;
   }
 }
-@media screen and (min-width: 800px) {
-  nav a {
-    background-color: #202020;
-    color: #fff;
-    font-family: "IBM Plex Sans", serif;
-    font-size: 1.625rem;
-    line-height: 1.285rem;
-    padding: 7px 24px;
-    text-align: center;
-    text-decoration: none;
-    text-justify: inter-word;
-  }
-  nav a:nth-child(even) {
-    background: #2d2d2d;
-  }
-  nav a:nth-child(even):hover {
-    color: #ff5900;
-  }
-  nav a:nth-child(odd) {
-    background: #252525;
-  }
-  nav a:nth-child(odd):hover {
-    color: #ff5900;
-  }
-}
 html {
   font-size: 62.5%;
-  margin: 4rem auto auto;
+  margin: 2rem auto auto;
   scroll-behavior: smooth;
-  scroll-padding-top: 4.6rem;
+  scroll-padding-top: 4rem;
   text-justify: inter-word;
 }
 html ::selection {
@@ -6782,20 +6868,6 @@ label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.5rem;
-}
-
-header * {
-  display: flex;
-  overflow: hidden;
-}
-
-header {
-  box-shadow: 0 0 25px 0 #000;
-  height: 4rem;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
 }
 
 .soft-shadow-box {

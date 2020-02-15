@@ -30,17 +30,25 @@ $color-temporary: #33c3f0;
 $color-link-hover: #ff327e;
 $gradient-h1-color-one: #eee;
 $gradient-h1-color-two: #8c9191;
-
-// Size + Dimension Variables
-$input-height: 38px;
 $warning: #ffeb3b;
 $info: #2196f3;
 $danger: #f44336;
 $success: #4caf50;
 $explanation: #65ffa0;
+// Size + Dimension Variables
+$input-height: 38px;
+
 // - Variable declaration END
-$navbar-top-margin: 4rem;
+$navbar-top-height: 4rem;
+$navbar-top-margin: $navbar-top-height;
 $share-button-font-size: 1.25rem;
+
+// - Z-Values
+$z-index-snackbar: 15;
+$z-index-sidenav: 20;
+$z-index-header: 90;
+$z-index-modal: 95;
+$z-index-tooltip: 100;
 
 // -- Media queriy breakpoints
 $media-screen-small: 800px;

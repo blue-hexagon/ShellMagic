@@ -17,8 +17,9 @@
 @import 'table-class';
 @import 'form';
 @import 'utilities';
+@import 'sidenav';
+@import 'header';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
-
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
@@ -26,47 +27,22 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
 
 // --------------------------------------------------
 // Display Rules
-@media screen and (max-width: 800px) {
-  header {
-    display: none;
+//@media screen and (max-width: 800px) {
+//  header {
+//    display: none;
+//  }
+//}
+.disable-scrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
   }
 }
-
 @media not screen and (max-width: $media-phone-portrait) {
   pre {
     line-break: normal;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  nav {
-    a {
-      background-color: $bg;
-      color: $white;
-      font-family: 'IBM Plex Sans', serif;
-      font-size: 1.625rem;
-      line-height: 1.285rem;
-      padding: 7px 24px;
-      text-align: center;
-      text-decoration: none;
-      text-justify: inter-word;
-
-      &:nth-child(even) {
-        background: lighten($bg, 5%);
-
-        &:hover {
-          color: $heading-one-bg;
-        }
-      }
-
-      &:nth-child(odd) {
-        background: lighten($bg, 2%);
-
-        &:hover {
-          color: $heading-one-bg;
-        }
-      }
-    }
   }
 }
 
@@ -75,9 +51,9 @@ $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/web
 
 html {
   font-size: 62.5%;
-  margin: $navbar-top-margin auto auto; // For navbar we need some top-margin
+  margin: $navbar-top-margin*0.5 auto auto; // For navbar we need some top-margin
   scroll-behavior: smooth;
-  scroll-padding-top: 4.6rem;
+  scroll-padding-top: $navbar-top-margin;
   text-justify: inter-word;
 
   ::selection {
@@ -93,7 +69,9 @@ body {
   font-weight: 400;
   line-height: 1.6;
 }
+main{
 
+}
 
 h1,
 h2,
@@ -244,19 +222,7 @@ label {
   margin-bottom: .5rem;
 }
 
-header * {
-  display: flex;
-  overflow: hidden;
-}
 
-header {
-  box-shadow: 0 0 25px 0 $black;
-  height: 4rem;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-}
 
 
 @mixin heading($border-radius, $font-size, $letter-spacing, $line-height, $margin-top, $padding) {
