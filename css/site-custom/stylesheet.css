@@ -724,22 +724,15 @@ label > .label-body {
   padding-top: 60px;
   height: 100%;
 }
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
 .sidenav a {
-  height: 4rem;
+  margin: auto;
   background-color: #202020;
   color: #fff;
   font-family: "IBM Plex Sans", serif;
   font-size: 1.625rem;
-  line-height: 4rem;
-  padding: 7px 24px;
-  text-align: center;
+  line-height: 3rem;
+  padding: 4px 24px;
+  text-align: left;
   text-decoration: none;
   text-justify: inter-word;
   display: block;
@@ -6732,6 +6725,10 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
+}
+
+main {
+  transition: margin-left 0.5s;
 }
 
 h1,

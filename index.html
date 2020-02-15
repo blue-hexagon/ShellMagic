@@ -38,15 +38,35 @@
     <script src="js/include-html.js"></script>
     <script>
         function toggleSideNavigation() {
+            var mediaQueryDesktop = window.matchMedia("(min-width: 800px)")
             var sideNavigation = document.getElementById("mySidenav");
+            var main = document.getElementsByTagName("main");
+
             if (sideNavigation.style.width >= '250') {
                 sideNavigation.style.width = '0';
-                document.getElementsByTagName("main").style.marginLeft = "0";
+                if (checkMediaDevice(mediaQueryDesktop)) {
+                    main[0].style.marginLeft = "0";
+                }
+
             } else {
                 sideNavigation.style.width = "250px";
-                document.getElementsByTagName("main").style.marginLeft = "250px";
+                if (checkMediaDevice(mediaQueryDesktop)) {
+                    main[0].style.marginLeft = "250px";
+                }
+
             }
         }
+
+        function checkMediaDevice(x) {
+            if (x.matches) { // If media query matches
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Call listener function at run time
+        //  mediaQueryDesktop.addListener(checkMediaDevice) // Attach listener function on state changes
     </script>
     <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">
     <script src="node_modules/highlight.js/lib/highlight.js"></script>
