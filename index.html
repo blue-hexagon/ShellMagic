@@ -84,26 +84,26 @@
 </header>
 <main>
     <section>
-      <!--  <pre><code class="bash">
-            #!/bin/sh
-# validalAlphaNum - Ensures that input only consists of alphabetical
-#              and numeric characters.
+        <!--  <pre><code class="bash">
+              #!/bin/sh
+  # validalAlphaNum - Ensures that input only consists of alphabetical
+  #              and numeric characters.
 
-validAlphaNum()
-{
-  # validate arg: returns 0 if all upper+lower+digits, 1 otherwise
+  validAlphaNum()
+  {
+    # validate arg: returns 0 if all upper+lower+digits, 1 otherwise
 
-  # Remove all unacceptable chars
-  compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
+    # Remove all unacceptable chars
+    compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
 
-  if [ "$compressed" != "$input" ] ; then
-    return 1
-  else
-    return 0
-  fi
-}
+    if [ "$compressed" != "$input" ] ; then
+      return 1
+    else
+      return 0
+    fi
+  }
 
-        </code></pre> -->
+          </code></pre> -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
@@ -220,15 +220,15 @@ validAlphaNum()
                             <td>file modified since it was last read</td>
                         </tr>
                         <tr>
-                            <td><code>f1 -nt f2</code></td>
+                            <td><code>f1&nbsp;-nt&nbsp;f2</code></td>
                             <td>file f1 is newer than f2</td>
                         </tr>
                         <tr>
-                            <td><code>f1 -ot f2</code></td>
+                            <td><code>f1&nbsp;-ot&nbsp;f2</code></td>
                             <td>file f1 is older than f2</td>
                         </tr>
                         <tr>
-                            <td><code>f1 -ef f2</code></td>
+                            <td><code>f1&nbsp;-ef&nbsp;f2</code></td>
                             <td>files f1 and f2 are hard links to the same file</td>
                         </tr>
                         <tr>
@@ -283,9 +283,8 @@ validAlphaNum()
                         </tr>
                         </tbody>
                     </table>
-                    <h3 id="signals">Signals</h3>
-                    <div class="shadow-box">
-                        <p class="info-box info shadow-box">UNIX System V Signals.</p></div>
+                    <h3 id="signals" class="shadow-box">Signals</h3>
+                    <p class="info-box info shadow-box">UNIX System V Signals.</p>
                     <table class="four-column-table">
                         <thead>
                         <tr>
@@ -390,8 +389,7 @@ validAlphaNum()
                     </table>
                 </div>
                 <div class="six columns">
-                    <div class="shadow-box">
-                        <h3 id="integer-comparison-operators">Integer Comparison Operators</h3></div>
+                    <h3 id="integer-comparison-operators" class="shadow-box">Integer Comparison Operators</h3>
                     <p class="info-box info shadow-box">How to compare integers or arithmetic expressions in shell
                         scripts.</p>
                     <table class="two-column-table">
@@ -444,8 +442,7 @@ validAlphaNum()
                         </tr>
                         </tbody>
                     </table>
-                    <div class="shadow-box">
-                        <h3 id="string-comparison-operators">String Comparison Operators</h3></div>
+                        <h3 id="string-comparison-operators" class="shadow-box">String Comparison Operators</h3>
                     <p class="info-box info shadow-box">String comparison in Bash.</p>
                     <table class="two-column-table">
                         <thead>
@@ -494,8 +491,7 @@ validAlphaNum()
                         </tr>
                         </tbody>
                     </table>
-                    <div class="shadow-box">
-                        <h3 id="compound-operators">Compound Operators</h3></div>
+                        <h3 id="compound-operators" class="shadow-box">Compound Operators</h3>
                     <p class="info-box info shadow-box">Useful for boolean expressions and is similar to <code>&&</code>
                         and
                         <code>||</code>.
@@ -522,10 +518,8 @@ validAlphaNum()
                     <div class="shadow-box">
                         <h3 id="list-constructs">List Constructs</h3>
                     </div>
-                    <p class="info-box info shadow-box">Provides a means of processing commands consecutively, alas
-                        effectively
-                        being able
-                        to replace complex if/then/case structures.</p>
+                    <p class="info-box info shadow-box">Provides a means of processing commands consecutively and in
+                        effect is able to replace complex if/then/case structures.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -915,7 +909,7 @@ validAlphaNum()
                             <td>Name of the script itself</td>
                         </tr>
                         <tr>
-                            <td><code>$1 ... $9</code></td>
+                            <td><code>$1&nbsp;&hellip;&nbsp;$9</code></td>
                             <td>Parameter 1 ... 9</td>
                         </tr>
                         <tr>
@@ -1112,15 +1106,15 @@ validAlphaNum()
                         </tr>
                         <tr>
                             <td><code>[:CharClass:]</code></td>
-                            <td>A character class is a set of predefined patterns and comprpised of the following
-                                which:
-
-                                [:alnum:] [:alpha:]
-                                [:digit:] [:lower:]
-                                [:upper:] [:space:]
-                                [:punct:] [:print:]
-                                [:blank:] [:graph:]
-                                [:cntrl:] [:xdigit:]
+                            <td>A character class is a set of predefined patterns and comprpised of the following:
+                                <code>
+                                    [:alnum:] [:alpha:]<br>
+                                    [:digit:] [:lower:]<br>
+                                    [:upper:] [:space:]<br>
+                                    [:punct:] [:print:]<br>
+                                    [:blank:] [:graph:]<br>
+                                    [:cntrl:] [:xdigit:]
+                                </code>
                             </td>
                         </tr>
                         </tbody>
@@ -1744,8 +1738,7 @@ validAlphaNum()
                 <div class="twelve columns">
                     <div class="email-input">
                         <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Be informed about
-                            groundbreaking content updates and site development. One email/month – and only if something
-                            is worth telling about.</label>
+                            groundbreaking content updates and site development. One email/month – max.</label>
                         <form action="https://formspree.io/xoqdnqak" method="POST">
                             <div class="input-container">
                                 <i class="fas fa-user icon"></i>
