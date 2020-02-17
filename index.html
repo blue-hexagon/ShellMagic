@@ -12,7 +12,7 @@
 
     <!-- Open Graph Tags -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@shellmagicxyz"/>
+    <meta name="twitter:site" content="@ShellMagicxyz"/>
     <meta name="twitter:title" content="Shell Magic - The Ultimate Bash Reference"/>
     <meta name="twitter:description"
           content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
@@ -32,21 +32,21 @@
     <meta property="og:image:type" content="image/jpeg"/>
     <meta property="og:url" content="https://shellmagic.xyz/index.html"/>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
-    <script src="js/snackbar.js"></script>
+    <!--    <script src="js/snackbar.js"></script>-->
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
     <script src="js/navigation.js"></script>
-    <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">
-    <script src="node_modules/highlight.js/lib/highlight.js"></script>
-    <script>
-        hljs.initHighlightingOnLoad();</script>
+    <!--    <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">-->
+    <!--    <script src="node_modules/highlight.js/lib/highlight.js"></script>-->
+    <!--    <script>-->
+    <!--        hljs.initHighlightingOnLoad();</script>-->
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel=“canonical” href=“https://shellmagic.xyz/index.html”/>
     <link rel="shortcut icon" href="./resources/graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 
-<body onload="       setNavbarLinkProperties();">
+<body onload="setNavbarLinkProperties();">
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
@@ -789,137 +789,137 @@
                     </table>
                 </div>
             </div>
-            <div class="row">
-                <div class="twelve columns">
-                    <div class="shadow-box">
-                        <h3 id="string-manipulation">String Manipulation</h3></div>
-                    <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!
-                        Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,
-                        and others fall under the functionality of the UNIX expr command. This results in inconsistent
-                        command syntax and overlap of functionality.</p>
-                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of
-                        these.</p>
-                    <table class="two-column-table code-no-wrap">
-                        <thead>
-                        <tr>
-                            <th>Pattern</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><code>${#var}</code></td>
-                            <td>Find the length of the string</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var%pattern}</code></td>
-                            <td>Remove from shortest rear (end) pattern</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var%%pattern}</code></td>
-                            <td>Remove from longest rear (end) pattern</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var:position}</code></td>
-                            <td>Extract substring from $var at $position</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var:num1:num2}</code></td>
-                            <td>Substring</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var#pattern}</code></td>
-                            <td>Remove from shortest front pattern</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var##pattern}</code></td>
-                            <td>Remove from longest front pattern</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var/pattern/string}</code></td>
-                            <td>Find and replace (only replace first occurrence)</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var//pattern/string}</code></td>
-                            <td>Find and replace all occurrences</td>
-                        </tr>
-                        <tr>
-                            <td><code>${!prefix*}</code></td>
-                            <td>Expands to the names of variables whose names begin with prefix.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>${var,}</code><br><code>${var,pattern}</code></td>
-                            <td>Convert first character to lowercase.</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>
-                            <td>Convert all characters to lowercase.</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var^}</code><br><code>${var^pattern}</code></td>
-                            <td>Convert first character to uppercase.</td>
-                        </tr>
-                        <tr>
-                            <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>
-                            <td>Convert all character to uppercase.</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string/substring/replacement}</code></td>
-                            <td>Replace first match of $substring with $replacement</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string//substring/replacement}</code></td>
-                            <td>Replace all matches of $substring with $replacement</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string/#substring/replacement}</code></td>
-                            <td>If $substring matches front end of $string, substitute $replacement for $substring</td>
-                        </tr>
-                        <tr>
-                            <td><code>${string/%substring/replacement}</code></td>
-                            <td>If $substring matches back end of $string, substitute $replacement for $substring</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr match "$string" '$substring'</code></td>
-                            <td>Length of matching $substring* at beginning of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr "$string" : '$substring'</code></td>
-                            <td>Length of matching $substring* at beginning of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr index "$string" $substring</code></td>
-                            <td>Numerical position in $string of first character in $substring* that matches [0 if no
-                                match, first character counts as position 1]
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>expr substr $string $position $length</code></td>
-                            <td>Extract $length characters from $string starting at $position [0 if no match, first
-                                character counts as position 1]
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>expr match "$string" '\($substring\)'</code></td>
-                            <td>Extract $substring*, searching from beginning of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr "$string" : '\($substring\)'</code></td>
-                            <td>Extract $substring* , searching from beginning of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr match "$string" '.*\($substring\)'</code></td>
-                            <td>Extract $substring*, searching from end of $string</td>
-                        </tr>
-                        <tr>
-                            <td><code>expr "$string" : '.*\($substring\)'</code></td>
-                            <td>Extract $substring*, searching from end of $string</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="twelve columns">-->
+<!--                    <div class="shadow-box">-->
+<!--                        <h3 id="string-manipulation">String Manipulation</h3></div>-->
+<!--                    <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!-->
+<!--                        Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,-->
+<!--                        and others fall under the functionality of the UNIX expr command. This results in inconsistent-->
+<!--                        command syntax and overlap of functionality.</p>-->
+<!--                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of-->
+<!--                        these.</p>-->
+<!--                    <table class="two-column-table code-no-wrap">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Pattern</th>-->
+<!--                            <th>Description</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <td><code>${#var}</code></td>-->
+<!--                            <td>Find the length of the string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var%pattern}</code></td>-->
+<!--                            <td>Remove from shortest rear (end) pattern</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var%%pattern}</code></td>-->
+<!--                            <td>Remove from longest rear (end) pattern</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var:position}</code></td>-->
+<!--                            <td>Extract substring from $var at $position</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var:num1:num2}</code></td>-->
+<!--                            <td>Substring</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var#pattern}</code></td>-->
+<!--                            <td>Remove from shortest front pattern</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var##pattern}</code></td>-->
+<!--                            <td>Remove from longest front pattern</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var/pattern/string}</code></td>-->
+<!--                            <td>Find and replace (only replace first occurrence)</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var//pattern/string}</code></td>-->
+<!--                            <td>Find and replace all occurrences</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${!prefix*}</code></td>-->
+<!--                            <td>Expands to the names of variables whose names begin with prefix.-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var,}</code><br><code>${var,pattern}</code></td>-->
+<!--                            <td>Convert first character to lowercase.</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>-->
+<!--                            <td>Convert all characters to lowercase.</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var^}</code><br><code>${var^pattern}</code></td>-->
+<!--                            <td>Convert first character to uppercase.</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>-->
+<!--                            <td>Convert all character to uppercase.</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${string/substring/replacement}</code></td>-->
+<!--                            <td>Replace first match of $substring with $replacement</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${string//substring/replacement}</code></td>-->
+<!--                            <td>Replace all matches of $substring with $replacement</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${string/#substring/replacement}</code></td>-->
+<!--                            <td>If $substring matches front end of $string, substitute $replacement for $substring</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>${string/%substring/replacement}</code></td>-->
+<!--                            <td>If $substring matches back end of $string, substitute $replacement for $substring</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr match "$string" '$substring'</code></td>-->
+<!--                            <td>Length of matching $substring* at beginning of $string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr "$string" : '$substring'</code></td>-->
+<!--                            <td>Length of matching $substring* at beginning of $string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr index "$string" $substring</code></td>-->
+<!--                            <td>Numerical position in $string of first character in $substring* that matches [0 if no-->
+<!--                                match, first character counts as position 1]-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr substr $string $position $length</code></td>-->
+<!--                            <td>Extract $length characters from $string starting at $position [0 if no match, first-->
+<!--                                character counts as position 1]-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr match "$string" '\($substring\)'</code></td>-->
+<!--                            <td>Extract $substring*, searching from beginning of $string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr "$string" : '\($substring\)'</code></td>-->
+<!--                            <td>Extract $substring* , searching from beginning of $string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr match "$string" '.*\($substring\)'</code></td>-->
+<!--                            <td>Extract $substring*, searching from end of $string</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><code>expr "$string" : '.*\($substring\)'</code></td>-->
+<!--                            <td>Extract $substring*, searching from end of $string</td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
