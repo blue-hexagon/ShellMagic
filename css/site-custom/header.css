@@ -4,36 +4,29 @@ header * {
 
 header {
   box-shadow: 0 0 25px 0 #000;
+  height: 4rem;
+  background: #1b1b1b;
+  z-index: 90;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
 }
 
-@media screen and (min-width: 800px) {
-  nav a {
-    background-color: #202020;
-    color: #fff;
-    font-family: "IBM Plex Sans", serif;
-    font-size: 1.625rem;
-    line-height: 1.285rem;
-    padding: 7px 24px;
-    text-align: center;
-    text-decoration: none;
-    text-justify: inter-word;
-  }
-  nav a:nth-child(even) {
-    background: #2d2d2d;
-  }
-  nav a:nth-child(even):hover {
-    color: #ff5900;
-  }
-  nav a:nth-child(odd) {
-    background: #252525;
-  }
-  nav a:nth-child(odd):hover {
-    color: #ff5900;
-  }
+.topnav a {
+  height: 4rem;
+  background-color: #202020;
+  color: #fff;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 1.625rem;
+  line-height: 4rem;
+  padding: 7px 24px;
+  text-align: center;
+  text-decoration: none;
+  text-justify: inter-word;
+}
+.topnav a:hover {
+  color: #ff5900;
 }
 
 /*# sourceMappingURL=header.css.map */

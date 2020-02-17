@@ -1,9 +1,6 @@
 .one-column-table td:nth-child(1) {
   min-width: 10%;
 }
-.one-column-table td:nth-child(1):hover {
-  background: #3a3a3a;
-}
 .one-column-table tr:nth-child(even) td {
   border-bottom: 1px dashed #d34a00;
 }
@@ -15,17 +12,10 @@
   background: #202020;
   min-width: 10%;
 }
-.two-column-table td:nth-child(1):hover {
-  background: #3a3a3a;
-}
 .two-column-table td:nth-child(2) {
   background: #202020;
   min-width: 60%;
 }
-.two-column-table td:nth-child(2):hover {
-  background: #3a3a3a;
-}
-
 .four-column-table td {
   border-bottom: 1px dashed #d34a00;
 }

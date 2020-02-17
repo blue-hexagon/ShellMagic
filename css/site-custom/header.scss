@@ -16,7 +16,8 @@ header {
   top: 0;
 }
 
-  nav .topnav {
+  .topnav {
+    display: inline;
     a {
       height: $navbar-top-height;
       background-color: $bg;
@@ -28,5 +29,12 @@ header {
       text-align: center;
       text-decoration: none;
       text-justify: inter-word;
+      &:hover{
+        color: $color-primary-1;
+      }
+      #theme-selection{
+        display: inline;
+      }
     }
+
   }

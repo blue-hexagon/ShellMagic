@@ -1,4 +1,0 @@
-<span class="tooltip explanation-tooltip">the text that needs a tooltip<span class="tooltiptext">The tooltip</span></span>
-
-( ‒ ) ( – ) ( — ) ( ― )
-

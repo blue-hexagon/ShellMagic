@@ -7,7 +7,7 @@
     <meta name="description"
           content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
     <meta name="keywords"
-          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to,example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt,arch,arch linux,cli,commandline,compare,test,operator,stack overflow"/>
+          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to in bash,bash example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt,arch,arch linux,cli,commandline,compare,test,operator,manjaro"/>
     <title>Shell Magic - The Ultimate Bash Cheatsheet!</title>
 
     <!-- Open Graph Tags -->
@@ -36,99 +36,87 @@
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
-    <script>
-        function toggleSideNavigation() {
-            var mediaQueryDesktop = window.matchMedia("(min-width: 800px)")
-            var sideNavigation = document.getElementById("mySidenav");
-            var main = document.getElementsByTagName("main");
-
-            if (sideNavigation.style.width >= '250') {
-                sideNavigation.style.width = '0';
-                if (checkMediaDevice(mediaQueryDesktop)) {
-                    main[0].style.marginLeft = "0";
-                }
-
-            } else {
-                sideNavigation.style.width = "250px";
-                if (checkMediaDevice(mediaQueryDesktop)) {
-                    main[0].style.marginLeft = "250px";
-                }
-
-            }
-        }
-
-        function checkMediaDevice(x) {
-            if (x.matches) { // If media query matches
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        // Call listener function at run time
-        //  mediaQueryDesktop.addListener(checkMediaDevice) // Attach listener function on state changes
-    </script>
+    <script src="js/navigation.js"></script>
     <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">
     <script src="node_modules/highlight.js/lib/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
     <link rel=“canonical” href=“https://shellmagic.xyz/index.html”/>
     <link rel="shortcut icon" href="./resources/graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
 </head>
 
-<body onload="snackbar();">
+<body onload="       setNavbarLinkProperties();">
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
-<!--<div id="snackbar">We use <u style="text-decoration: dotted; color: #ff327e;">Google Analytics</u> for website analytics
-    and we use <u style="text-decoration: dotted; color: #ff327e;">Freeform.io</u> for mail collection.
-    <u style="text-decoration: dotted; color: #65ffa0;">We don't collect cookies</u> and we have <u
-            style="text-decoration: dotted; color: #65ffa0;">no intention of selling or distributing <b
-            style="color: darkorange;">any</b> of your data.</u>
-    <br><i>For more information, please refer to our simple privacy policy in the footer at the bottom of the
-        page.</i>
-    <br><b style="font-family: 'Source Code Pro', serif;">[You may click anywhere on this popup to close it - autocloses
-        in 15 seconds]</b>
-</div>-->
-
-<div id="simpleModal_1" class="modal">
-    <div class="modal-window">
-        <div w3-include-html="./resources/code-examples/00-testing/example.sh"></div>
-    </div>
-</div>
+<!--<div id="simpleModal_1" class="modal">-->
+<!--    <div class="modal-window">-->
+<!--        <div w3-include-html="./resources/code-examples/00-testing/example.sh"></div>-->
+<!--    </div>-->
+<!--</div>-->
 <header>
     <nav>
-        <!-- Operators for comparison could be grouperd under a "conditionals" tab-->
         <div class="topnav">
-            <a href="javascript:void(0)" class="openbtn" onclick="toggleSideNavigation()">&#9776;</a>
+            <a href="javascript:void(0);" onclick="toggleSideNavigation()">&#9776;</a>
+            <div id="theme-selection">
+                <!--<input type="radio" name="theme" id="solarized"><label for="solarized"></label>
+                <input type="radio" name="theme" id="dracula"><label for="dracula"></label>
+                <input type="radio" name="theme" id="a-11-y-dark"><label for="a-11-y-dark"></label>
+                <input type="radio" name="theme" id="agate"><label for="agate"></label>
+                <input type="radio" name="theme" id="gml"><label for="gml"></label>
+                <input type="radio" name="theme" id="gruvbox-dark"><label for="gruvbox-dark"></label>
+                <input type="radio" name="theme" id="hopscoth"><label for="hopscoth"></label>
+                <input type="radio" name="theme" id="hybrid"><label for="hybrid"></label>
+                <input type="radio" name="theme" id="ir-black"><label for="ir-black"></label>
+                <input type="radio" name="theme" id="isbl-editor-dark"><label for="isbl-editor-dark"></label>
+                <input type="radio" name="theme" id="kimbie-dark"><label for="kimbie-dark"></label>
+                <input type="radio" name="theme" id="monokai-sublime"><label for="monokai-sublime"></label>
+                <input type="radio" name="theme" id="monokai"><label for="monokai"></label>
+                <input type="radio" name="theme" id="nord"><label for="nord"></label>
+                <input type="radio" name="theme" id="obsidian"><label for="obsidian"></label>
+                <input type="radio" name="theme" id="pojoaque"><label for="pojoaque"></label>
+                <input type="radio" name="theme" id="railscast"><label for="railscast"></label>
+                <input type="radio" name="theme" id="sunburst"><label for="sunburst"></label>
+                <input type="radio" name="theme" id="tomorrow-night-bright"><label for="tomorrow-night-bright"></label>-->
+            </div>
+            <!-- <div class="search-container">
+                 <form action="">
+                     <label>
+                         <input type="text" placeholder="Quick Find" name="search">
+                     </label>
+                     <button type="submit"><i class="fas fa-search"></i></button>
+                 </form>
+             </div>-->
         </div>
-
     </nav>
 </header>
-<div id="mySidenav" class="sidenav u-max-full-width disable-scrollbars">
-    <a href="#file-test-operators">File&nbsp;Testing</a>
-    <a href="#integer-comparison-operators">Integer&nbsp;Comparison</a>
-    <a href="#string-comparison-operators">String&nbsp;Comparison</a>
-    <a href="#compound-operators">Compound&nbsp;Operators</a>
-    <a href="#job-identifiers">Job&nbsp;Identifiers</a>
-    <a href="#list-constructs">List&nbsp;Constructs</a>
-    <a href="#reserved-exit-codes">Reserved&nbsp;Exit&nbsp;Codes</a>
-    <a href="#signals">Signals</a>
-    <a href="#sending-control-signals">Sending&nbsp;Control&nbsp;Signals</a>
-    <a href="#signals">File Types</a>
-    <a href="#signals">Permissions</a>
-    <a href="#string-manipulation">String&nbsp;Manipulation</a>
-    <a href="#command-parameters">Command&nbsp;Parameters</a>
-    <a href="#history-expansion">History&nbsp;Expansion</a>
-    <a href="#variable-operations">Variable Operations</a>
-    <a href="#bash-globbing">Bash&nbsp;Globbing</a>
-    <a href="#regular-expressions">Regular&nbsp;Expressions</a>
-    <a href="#shell-builtins">Shell&nbsp;Builtins</a>
-    <a href="#overview-of-symbols">Symbol&nbsp;Overview</a>
-</div>
+<section>
+    <div id="sideNavigation" class="sidenav">
+        <a href="#file-test-operators">File&nbsp;Testing</a>
+        <a href="#integer-comparison-operators">Integer&nbsp;Comparison</a>
+        <a href="#string-comparison-operators">String&nbsp;Comparison</a>
+        <a href="#compound-operators">Compound&nbsp;Operators</a>
+        <a href="#job-identifiers">Job&nbsp;Identifiers</a>
+        <a href="#list-constructs">List&nbsp;Constructs</a>
+        <a href="#reserved-exit-codes">Reserved&nbsp;Exit&nbsp;Codes</a>
+        <a href="#signals">Signals</a>
+        <a href="#sending-control-signals">Sending&nbsp;Control&nbsp;Signals</a>
+        <a href="#file-types">File&nbsp;Types</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#string-manipulation">String&nbsp;Manipulation</a>
+        <a href="#command-parameters">Command&nbsp;Parameters</a>
+        <a href="#history-expansion">History&nbsp;Expansion</a>
+        <a href="#variable-operations">Variable&nbsp;Operations</a>
+        <a href="#bash-globbing">Bash&nbsp;Globbing</a>
+        <a href="#regular-expressions">Regular&nbsp;Expressions</a>
+        <a href="#shell-builtins">Shell&nbsp;Builtins</a>
+        <a href="#overview-of-symbols">Symbol&nbsp;Overview</a>
+    </div>
+</section>
 <main>
     <section>
-
+        <!-- Operators for comparison could be grouperd under a "conditionals" tab-->
         <!--  <pre><code class="bash">
               #!/bin/sh
   # validalAlphaNum - Ensures that input only consists of alphabetical
@@ -147,7 +135,6 @@
       return 0
     fi
   }
-
           </code></pre> -->
         <div class="container">
             <div class="row">
@@ -674,7 +661,7 @@
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h3>File Types</h3></div>
+                        <h3 id="file-types">File Types</h3></div>
                     <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
                         get it. I'll expand this section soon with more context.</p>
                     <table class="two-column-table">
@@ -718,7 +705,7 @@
                 </div>
                 <div class="six columns">
                     <div class="shadow-box">
-                        <h3>Permissions</h3>
+                        <h3 id="permissions">Permissions</h3>
                     </div>
                     <p class="info-box info shadow-box">Now you may know what that arcane looking string
                         <code>rwxrwxrwx</code>
@@ -1740,11 +1727,11 @@
                         </tr>
                         <tr>
                             <td><code>.</code></td>
-                            <td>expands to the current directory.</td>
+                            <td>represents the current directory.</td>
                         </tr>
                         <tr>
                             <td><code>..</code></td>
-                            <td>expands to parent directory.</td>
+                            <td>represents parent directory.</td>
                         </tr>
                         <tr>
                             <td><code>~</code></td>

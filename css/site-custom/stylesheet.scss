@@ -7,6 +7,8 @@
 // sass-lint:disable no-qualifying-elements
 // sass-lint:disable force-pseudo-nesting
 // sass-lint:disable no-url-domains, no-url-protocols
+// sass-lint:disable no-misspelled-properties, no-ids
+
 @import 'snackbar';
 @import 'modal';
 @import 'load-fonts';
@@ -19,39 +21,35 @@
 @import 'utilities';
 @import 'sidenav';
 @import 'header';
+@import 'theme';
+
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
+
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/brands';
 
-// --------------------------------------------------
-// Display Rules
-//@media screen and (max-width: 800px) {
-//  header {
-//    display: none;
-//  }
-//}
+
 .disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE 10+
+
   &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* Chrome/Safari/Webkit */
+    width: 0;
+    background: transparent; // Chrome/Safari/Webkit
   }
 }
+
 @media not screen and (max-width: $media-phone-portrait) {
   pre {
     line-break: normal;
   }
 }
 
-
-// --------------------------------------------------
-
 html {
   font-size: 62.5%;
-  margin: $navbar-top-margin*0.5 auto auto; // For navbar we need some top-margin
+  margin: $navbar-top-margin * .5 auto auto; // For navbar we need some top-margin
   scroll-behavior: smooth;
   scroll-padding-top: $navbar-top-margin;
   text-justify: inter-word;
@@ -68,33 +66,12 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
-}
-main{
   transition: margin-left .5s;
   //padding: 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  background: darken($headings-bg, 10%);
-  color: #e8f0ff;
-  text-transform: capitalize;
-  padding: .725rem 0;
-  box-sizing: border-box;
-  font-family: 'Cabin', sans-serif;
-  letter-spacing: 0.9rem;
-  font-weight: 300;
-  margin: 0 auto .25rem 0;
-  text-align: center;
-  width: 100%;
-}
+main {
 
-h1 {
-  font-family: 'IBM Plex Serif', serif;
 }
 
 a {
@@ -139,6 +116,9 @@ footer {
 
 p {
   background: lighten($bg, 10%);
+  font-family: 'PT Mono', sans, serif;
+  font-size: .525rem;
+  line-height: 1.4;
 
   &.explanation {
     border-left: 6px solid $explanation;
@@ -162,7 +142,7 @@ p {
 }
 
 p.info-box {
-  padding: 1ex 1ex;
+  padding: 1ex;
 }
 
 .block {
@@ -199,13 +179,7 @@ p.info-box {
   margin-bottom: 0;
 }
 
-.input-field {
-  outline: none;
-  padding: 10px;
-  width: 100%;
-}
 
-// Tables
 table {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -217,13 +191,11 @@ table {
 
 }
 
-label {
+.email-input > label {
   display: block;
   font-weight: 600;
   margin-bottom: .5rem;
 }
-
-
 
 
 @mixin heading($border-radius, $font-size, $letter-spacing, $line-height, $margin-top, $padding) {
@@ -247,8 +219,28 @@ label {
   box-shadow: 1px 1px 4px 1px darken($bg, 7%);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: darken($headings-bg, 10%);
+  color: #e8f0ff; //TODO
+  text-transform: capitalize;
+  padding: .725rem 0;
+  box-sizing: border-box;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: .9rem;
+  font-weight: 300;
+  margin: 0 auto .25rem 0;
+  text-align: center;
+  width: 100%;
+}
+
 h1 {
   @include heading(.5rem, 4rem, -.1rem, 1.2, 1.6rem, 0 1rem);
+  font-family: 'IBM Plex Serif', serif;
 }
 
 h2 {
@@ -271,11 +263,6 @@ h6 {
   @include heading(.5rem, 1.5rem, 0, 1.6, .1rem, 0 1rem);
 }
 
-p {
-  font-family: 'PT Mono', sans, serif;
-  font-size: .525rem;
-  line-height: 1.4;
-}
 
 p,
 ul,
@@ -310,29 +297,7 @@ code {
 }
 
 @media (min-width: 880px) {
-  button,
-  .button {
-    margin-bottom: 1rem;
-  }
-
-  input,
-  textarea,
-  select,
-  fieldset {
-    margin-bottom: 1.5rem;
-  }
-
-
-  p,
-  ul,
-  ol,
-  form {
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  pre{
+  pre {
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;

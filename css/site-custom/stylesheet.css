@@ -514,9 +514,6 @@ tt-code {
 .one-column-table td:nth-child(1) {
   min-width: 10%;
 }
-.one-column-table td:nth-child(1):hover {
-  background: #3a3a3a;
-}
 .one-column-table tr:nth-child(even) td {
   border-bottom: 1px dashed #d34a00;
 }
@@ -528,17 +525,10 @@ tt-code {
   background: #202020;
   min-width: 10%;
 }
-.two-column-table td:nth-child(1):hover {
-  background: #3a3a3a;
-}
 .two-column-table td:nth-child(2) {
   background: #202020;
   min-width: 60%;
 }
-.two-column-table td:nth-child(2):hover {
-  background: #3a3a3a;
-}
-
 .four-column-table td {
   border-bottom: 1px dashed #d34a00;
 }
@@ -584,7 +574,6 @@ input[type=button].button-primary:focus {
   color: #fff;
 }
 
-.button,
 button,
 input[type=submit],
 input[type=reset],
@@ -595,13 +584,7 @@ input[type=button] {
   box-sizing: border-box;
   color: #555;
   cursor: pointer;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  height: 38px;
   letter-spacing: 0.1rem;
-  line-height: 38px;
-  padding: 0 30px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -624,21 +607,23 @@ input[type=button]:focus {
 }
 
 input[type=email],
-input[type=number],
 input[type=search],
-input[type=text],
-input[type=tel],
-input[type=url],
-input[type=password],
-textarea,
-select {
+input[type=text] {
   background-color: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
-  box-shadow: none;
   box-sizing: border-box;
-  height: 38px;
-  padding: 6px 10px;
+}
+
+.search-container {
+  box-sizing: border-box;
+  display: inline-flex;
+}
+
+input[type=email]:focus,
+input[type=search]:focus {
+  border: 2px solid #343434;
+  outline: 0;
 }
 
 input[type=email],
@@ -650,30 +635,6 @@ input[type=url],
 input[type=password],
 textarea {
   appearance: none;
-}
-
-input[type=email]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=text]:focus,
-input[type=tel]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-textarea:focus,
-select:focus {
-  border: 2px solid #343434;
-  outline: 0;
-}
-
-input[type=checkbox],
-input[type=radio] {
-  display: inline;
-}
-
-label > .label-body {
-  display: inline-block;
-  font-weight: normal;
-  margin-left: 0.5rem;
 }
 
 .u-full-width {
@@ -700,16 +661,8 @@ label > .label-body {
   display: table;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 .sidenav {
+  display: block;
   width: 0px;
   border-right: solid #555 2px;
   position: fixed;
@@ -717,35 +670,32 @@ label > .label-body {
   top: 0;
   left: 0;
   height: 100%;
+  max-height: 100%;
+  overscroll-behavior-y: none;
+  max-width: 100vw;
   background: #2d2d2d;
   overflow-x: hidden;
-  overflow-y: scroll;
   transition: 0.5s;
-  padding-top: 60px;
-  height: 100%;
+  padding-top: 4.25rem;
 }
 .sidenav a {
-  margin: auto;
   background-color: #202020;
   color: #fff;
   font-family: "IBM Plex Sans", serif;
-  font-size: 1.625rem;
-  line-height: 3rem;
-  padding: 4px 24px;
-  text-align: left;
+  font-size: 2rem;
+  line-height: 3.5rem;
   text-decoration: none;
-  text-justify: inter-word;
   display: block;
   transition: 0.3s;
 }
 .sidenav a:nth-child(even) {
-  background: #2d2d2d;
+  background: #252525;
 }
 .sidenav a:nth-child(even):hover {
   color: #ff5900;
 }
 .sidenav a:nth-child(odd) {
-  background: #252525;
+  background: #2d2d2d;
 }
 .sidenav a:nth-child(odd):hover {
   color: #ff5900;
@@ -753,19 +703,14 @@ label > .label-body {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-@media mobile, tablet {
+@media screen and (max-width: 800px) {
   .sidenav {
-    width: 100%;
+    text-align: center;
   }
 }
-@media desktop and (min-width: 800px) {
+@media screen and (min-width: 800px) {
   .sidenav {
-    width: 0;
-  }
-}
-@media desktop and (max-width: 800px) {
-  .sidenav {
-    width: 100%;
+    text-align: left;
   }
 }
 
@@ -784,7 +729,10 @@ header {
   top: 0;
 }
 
-nav .topnav a {
+.topnav {
+  display: inline;
+}
+.topnav a {
   height: 4rem;
   background-color: #202020;
   color: #fff;
@@ -796,7 +744,18 @@ nav .topnav a {
   text-decoration: none;
   text-justify: inter-word;
 }
+.topnav a:hover {
+  color: #ff5900;
+}
+.topnav a #theme-selection {
+  display: inline;
+}
 
+#theme-selection {
+  display: inline;
+}
+
+/*# sourceMappingURL=theme.css.map */
 /*!
  * Font Awesome Free 5.12.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -6692,14 +6651,11 @@ readers do not read off random characters that represent icons */
 
 .disable-scrollbars {
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE 10+ */
 }
 .disable-scrollbars::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
   background: transparent;
-  /* Chrome/Safari/Webkit */
 }
 
 @media not screen and (max-width: 320px) {
@@ -6725,33 +6681,7 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
-}
-
-main {
   transition: margin-left 0.5s;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  background: #3c3c3c;
-  color: #e8f0ff;
-  text-transform: capitalize;
-  padding: 0.725rem 0;
-  box-sizing: border-box;
-  font-family: "Cabin", sans-serif;
-  letter-spacing: 0.9rem;
-  font-weight: 300;
-  margin: 0 auto 0.25rem 0;
-  text-align: center;
-  width: 100%;
-}
-
-h1 {
-  font-family: "IBM Plex Serif", serif;
 }
 
 a {
@@ -6793,6 +6723,9 @@ footer a:hover {
 
 p {
   background: #3a3a3a;
+  font-family: "PT Mono", sans, serif;
+  font-size: 0.525rem;
+  line-height: 1.4;
 }
 p.explanation {
   border-left: 6px solid #65ffa0;
@@ -6811,7 +6744,7 @@ p.success {
 }
 
 p.info-box {
-  padding: 1ex 1ex;
+  padding: 1ex;
 }
 
 .block {
@@ -6846,12 +6779,6 @@ p.info-box {
   margin-bottom: 0;
 }
 
-.input-field {
-  outline: none;
-  padding: 10px;
-  width: 100%;
-}
-
 table {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -6861,7 +6788,7 @@ table th {
   text-align: left;
 }
 
-label {
+.email-input > label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -6879,6 +6806,25 @@ label {
   box-shadow: 1px 1px 4px 1px #0e0e0e;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: #3c3c3c;
+  color: #e8f0ff;
+  text-transform: capitalize;
+  padding: 0.725rem 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+  letter-spacing: 0.9rem;
+  font-weight: 300;
+  margin: 0 auto 0.25rem 0;
+  text-align: center;
+  width: 100%;
+}
+
 h1 {
   border-radius: 0.5rem;
   font-size: 4rem;
@@ -6886,6 +6832,7 @@ h1 {
   line-height: 1.2;
   margin-top: 1.6rem;
   padding: 0 1rem;
+  font-family: "IBM Plex Serif", serif;
 }
 
 h2 {
@@ -6933,12 +6880,6 @@ h6 {
   padding: 0 1rem;
 }
 
-p {
-  font-family: "PT Mono", sans, serif;
-  font-size: 0.525rem;
-  line-height: 1.4;
-}
-
 p,
 ul,
 li,
@@ -6970,28 +6911,6 @@ code {
 }
 
 @media (min-width: 880px) {
-  button,
-.button {
-    margin-bottom: 1rem;
-  }
-
-  input,
-textarea,
-select,
-fieldset {
-    margin-bottom: 1.5rem;
-  }
-
-  p,
-ul,
-ol,
-form {
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
   pre {
     margin-bottom: 1.5rem;
     margin-left: auto;
