@@ -46,6 +46,37 @@
   }
 }
 
+.three-column-table {
+  td {
+    border-bottom: 1px dashed $color-border;
+
+    &:nth-child(1) {
+      background: $td-bg;
+      min-width: 10%;
+
+      //&:hover {
+      //  background: lighten($bg, 10%);
+      //}
+    }
+
+    &:nth-child(2) {
+      background: $td-bg;
+      min-width: 20%;
+
+      //&:hover {
+      //  background: lighten($bg, 10%);
+      //}
+    }
+    &:nth-child(3) {
+      background: $td-bg;
+      min-width: 60%;
+
+      //&:hover {
+      //  background: lighten($bg, 10%);
+      //}
+    }
+  }
+}
 .four-column-table {
   td {
     border-bottom: 1px dashed $color-border;

@@ -22,9 +22,7 @@
 @import 'sidenav';
 @import 'header';
 @import 'theme';
-
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
-
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
@@ -287,13 +285,17 @@ code {
   font-family: 'Source Code Pro', monospace;
   font-size: 105%;
   margin: 0 .01rem;
-  padding: .2rem .5rem;
-}
-
-.code-no-wrap {
-  code {
+  padding: .2rem 0;
+  &.code-no-wrap {
     white-space: nowrap;
   }
+}
+
+.text-align-center{
+  text-align: center;
+}
+pre{
+  overflow-x: auto;
 }
 
 @media (min-width: 880px) {

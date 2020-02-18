@@ -2,53 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="author" content="SmokingCuke"/>
-    <meta name="description"
-          content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
-    <meta name="keywords"
-          content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to in bash,bash example,cheatsheet,cheat,sheet,how to, help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt,arch,arch linux,cli,commandline,compare,test,operator,manjaro"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <meta content="SmokingCuke" name="author"/>
+    <meta content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."
+          name="description"/>
+    <meta content="bash,shellscript,sh,dash,ksh,zsh,csh,shell,terminal,script,how to in bash,bash example,cheatsheet,cheat,sheet,how to,
+          help, stack overflow, stackoverflow, terminal, xterm, urxvt, rxvt-unicode, rxvt,arch,arch linux,cli,commandline,compare,test,operator,manjaro"
+          name="keywords"/>
     <title>Shell Magic - The Ultimate Bash Cheatsheet!</title>
 
     <!-- Open Graph Tags -->
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@ShellMagicxyz"/>
-    <meta name="twitter:title" content="Shell Magic - The Ultimate Bash Reference"/>
-    <meta name="twitter:description"
-          content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."/>
-    <meta name="twitter:image"
-          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg"/>
-    <meta name="twitter:image:width" content="1852"/>
-    <meta name="twitter:image:height" content="970"/>
-    <meta property="og:image:width" content="1852"/>
-    <meta property="og:image:height" content="970"/>
-    <meta property="og:title" content="Shell Magic"/>
-    <meta property="og:description" content="The Ultimate Bash Cheat Sheet!"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:image"
-          content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg">
-    <meta property="og:image:alt" content="Screenshot displaying website content"/>
-    <meta property="og:image:type" content="image/jpeg"/>
-    <meta property="og:url" content="https://shellmagic.xyz/index.html"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="@ShellMagicxyz" name="twitter:site"/>
+    <meta content="Shell Magic - The Ultimate Bash Reference" name="twitter:title"/>
+    <meta content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."
+          name="twitter:description"/>
+    <meta content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg" name="twitter:image"/>
+    <meta content="1852" name="twitter:image:width"/>
+    <meta content="970" name="twitter:image:height"/>
+    <meta content="1852" property="og:image:width"/>
+    <meta content="970" property="og:image:height"/>
+    <meta content="Shell Magic" property="og:title"/>
+    <meta content="The Ultimate Bash Cheat Sheet!" property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="en_US" property="og:locale"/>
+    <meta content="https://raw.githubusercontent.com/smokingcuke/ShellMagic/master/resources/graphic/og/og-image.jpg" property="og:image">
+    <meta content="Screenshot displaying website content" property="og:image:alt"/>
+    <meta content="image/jpeg" property="og:image:type"/>
+    <meta content="https://shellmagic.xyz/index.html" property="og:url"/>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157938008-1"></script>
     <!--    <script src="js/snackbar.js"></script>-->
     <script src="js/modal.js"></script>
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
     <script src="js/navigation.js"></script>
-    <!--    <link rel="stylesheet" href="node_modules/highlight.js/scss/zenburn.scss">-->
-    <!--    <script src="node_modules/highlight.js/lib/highlight.js"></script>-->
-    <!--    <script>-->
-    <!--        hljs.initHighlightingOnLoad();</script>-->
-    <link rel="stylesheet" href="./css/site-custom/stylesheet.css">
-    <link rel=“canonical” href=“https://shellmagic.xyz/index.html”/>
-    <link rel="shortcut icon" href="./resources/graphic/icon/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="node_modules/highlight.js/scss/a11y-dark.scss" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/agate.min.css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link href="./css/site-custom/stylesheet.css" rel="stylesheet">
+    <link href=“https://shellmagic.xyz/index.html”/ rel=“canonical”>
+    <link href="./resources/graphic/icon/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 </head>
 
 <body onload="setNavbarLinkProperties();">
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
+<script async crossorigin="anonymous" defer
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
 <!--<div id="simpleModal_1" class="modal">-->
 <!--    <div class="modal-window">-->
@@ -92,7 +91,7 @@
     </nav>
 </header>
 <section>
-    <div id="sideNavigation" class="sidenav">
+    <div class="sidenav" id="sideNavigation">
         <a href="#file-test-operators">File&nbsp;Testing</a>
         <a href="#integer-comparison-operators">Integer&nbsp;Comparison</a>
         <a href="#string-comparison-operators">String&nbsp;Comparison</a>
@@ -117,25 +116,6 @@
 <main>
     <section>
         <!-- Operators for comparison could be grouperd under a "conditionals" tab-->
-        <!--  <pre><code class="bash">
-              #!/bin/sh
-  # validalAlphaNum - Ensures that input only consists of alphabetical
-  #              and numeric characters.
-
-  validAlphaNum()
-  {
-    # validate arg: returns 0 if all upper+lower+digits, 1 otherwise
-
-    # Remove all unacceptable chars
-    compressed="$(echo $1 | sed -e 's/[^[:alnum:]]//g')"
-
-    if [ "$compressed" != "$input" ] ; then
-      return 1
-    else
-      return 0
-    fi
-  }
-          </code></pre> -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
@@ -154,6 +134,7 @@
                         starts to show its glory! In Bash you can do file testing for permissions, size, date, filetype
                         or
                         existence.</p>
+                    <!--                    <p class="info-box success shadow-box text-align-center"><code class="code-no-wrap">[[ -&lt;flag&gt; &lt;argument&gt; ]]</code><br/><code class="code-no-wrap">[[ &lt;file1&gt; -&lt;flag&gt; &lt;file2&gt; ]]</code> </p>-->
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -252,15 +233,15 @@
                             <td>file modified since it was last read</td>
                         </tr>
                         <tr>
-                            <td><code>f1&nbsp;-nt&nbsp;f2</code></td>
+                            <td><code class="code-no-wrap">f1&nbsp;-nt&nbsp;f2</code></td>
                             <td>file f1 is newer than f2</td>
                         </tr>
                         <tr>
-                            <td><code>f1&nbsp;-ot&nbsp;f2</code></td>
+                            <td><code class="code-no-wrap">f1&nbsp;-ot&nbsp;f2</code></td>
                             <td>file f1 is older than f2</td>
                         </tr>
                         <tr>
-                            <td><code>f1&nbsp;-ef&nbsp;f2</code></td>
+                            <td><code class="code-no-wrap">f1&nbsp;-ef&nbsp;f2</code></td>
                             <td>files f1 and f2 are hard links to the same file</td>
                         </tr>
                         <tr>
@@ -315,7 +296,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3 id="signals" class="shadow-box">Signals</h3>
+                    <h3 class="shadow-box" id="signals">Signals</h3>
                     <p class="info-box info shadow-box">UNIX System V Signals.</p>
                     <table class="four-column-table">
                         <thead>
@@ -421,7 +402,7 @@
                     </table>
                 </div>
                 <div class="six columns">
-                    <h3 id="integer-comparison-operators" class="shadow-box">Integer Comparison Operators</h3>
+                    <h3 class="shadow-box" id="integer-comparison-operators">Integer Comparison Operators</h3>
                     <p class="info-box info shadow-box">How to compare integers or arithmetic expressions in shell
                         scripts.</p>
                     <table class="two-column-table">
@@ -474,7 +455,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3 id="string-comparison-operators" class="shadow-box">String Comparison Operators</h3>
+                    <h3 class="shadow-box" id="string-comparison-operators">String Comparison Operators</h3>
                     <p class="info-box info shadow-box">String comparison in Bash.</p>
                     <table class="two-column-table">
                         <thead>
@@ -486,14 +467,7 @@
                         <tbody>
                         <tr>
                             <td>
-                                <code>
-                                <span class="tooltip explanation-tooltip">
-                                    =
-                                    <span class="tooltiptext">
-                                            if [ "$birthday_cake" = "$favorite_cake" ]
-                            </span>
-                            </span>
-                                </code>
+                                <code>=</code>
                             </td>
                             <td>is equal to</td>
                         </tr>
@@ -523,7 +497,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3 id="compound-operators" class="shadow-box">Compound Operators</h3>
+                    <h3 class="shadow-box" id="compound-operators">Compound Operators</h3>
                     <p class="info-box info shadow-box">Useful for boolean expressions and is similar to <code>&&</code>
                         and
                         <code>||</code>.
@@ -616,7 +590,7 @@
                     <div class="shadow-box">
                         <h3 id="sending-control-signals">Sending Control Signals</h3></div>
                     <p class="info-box info shadow-box">You can use these key-combinations to send <dfn
-                            title="A signal is a software interrupt which indicates that an important event has occured.">signals</dfn>
+                            title="A signal is a software interrupt which indicates that an important event has occurred.">signals</dfn>
                     </p>
                     <table class="two-column-table">
                         <thead>
@@ -662,7 +636,8 @@
                 <div class="six columns">
                     <div class="shadow-box">
                         <h3 id="file-types">File Types</h3></div>
-                    <p class="info-box info shadow-box">This is very different from Windows but straightforward once you
+                    <p class="info-box info shadow-box">This is very different from Windows but straight forward once
+                        you
                         get it. I'll expand this section soon with more context.</p>
                     <table class="two-column-table">
                         <thead>
@@ -710,7 +685,7 @@
                     <p class="info-box info shadow-box">Now you may know what that arcane looking string
                         <code>rwxrwxrwx</code>
                         is when
-                        you invoke <code>ls -l</code></p>
+                        you invoke <code class="code-no-wrap">ls -l</code></p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -789,137 +764,137 @@
                     </table>
                 </div>
             </div>
-<!--            <div class="row">-->
-<!--                <div class="twelve columns">-->
-<!--                    <div class="shadow-box">-->
-<!--                        <h3 id="string-manipulation">String Manipulation</h3></div>-->
-<!--                    <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!-->
-<!--                        Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,-->
-<!--                        and others fall under the functionality of the UNIX expr command. This results in inconsistent-->
-<!--                        command syntax and overlap of functionality.</p>-->
-<!--                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of-->
-<!--                        these.</p>-->
-<!--                    <table class="two-column-table code-no-wrap">-->
-<!--                        <thead>-->
-<!--                        <tr>-->
-<!--                            <th>Pattern</th>-->
-<!--                            <th>Description</th>-->
-<!--                        </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody>-->
-<!--                        <tr>-->
-<!--                            <td><code>${#var}</code></td>-->
-<!--                            <td>Find the length of the string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var%pattern}</code></td>-->
-<!--                            <td>Remove from shortest rear (end) pattern</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var%%pattern}</code></td>-->
-<!--                            <td>Remove from longest rear (end) pattern</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var:position}</code></td>-->
-<!--                            <td>Extract substring from $var at $position</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var:num1:num2}</code></td>-->
-<!--                            <td>Substring</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var#pattern}</code></td>-->
-<!--                            <td>Remove from shortest front pattern</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var##pattern}</code></td>-->
-<!--                            <td>Remove from longest front pattern</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var/pattern/string}</code></td>-->
-<!--                            <td>Find and replace (only replace first occurrence)</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var//pattern/string}</code></td>-->
-<!--                            <td>Find and replace all occurrences</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${!prefix*}</code></td>-->
-<!--                            <td>Expands to the names of variables whose names begin with prefix.-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var,}</code><br><code>${var,pattern}</code></td>-->
-<!--                            <td>Convert first character to lowercase.</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var,,}</code><br><code>${var,,pattern}</code></td>-->
-<!--                            <td>Convert all characters to lowercase.</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var^}</code><br><code>${var^pattern}</code></td>-->
-<!--                            <td>Convert first character to uppercase.</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${var^^}</code><br><code>${var^^pattern}</code></td>-->
-<!--                            <td>Convert all character to uppercase.</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${string/substring/replacement}</code></td>-->
-<!--                            <td>Replace first match of $substring with $replacement</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${string//substring/replacement}</code></td>-->
-<!--                            <td>Replace all matches of $substring with $replacement</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${string/#substring/replacement}</code></td>-->
-<!--                            <td>If $substring matches front end of $string, substitute $replacement for $substring</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>${string/%substring/replacement}</code></td>-->
-<!--                            <td>If $substring matches back end of $string, substitute $replacement for $substring</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr match "$string" '$substring'</code></td>-->
-<!--                            <td>Length of matching $substring* at beginning of $string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr "$string" : '$substring'</code></td>-->
-<!--                            <td>Length of matching $substring* at beginning of $string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr index "$string" $substring</code></td>-->
-<!--                            <td>Numerical position in $string of first character in $substring* that matches [0 if no-->
-<!--                                match, first character counts as position 1]-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr substr $string $position $length</code></td>-->
-<!--                            <td>Extract $length characters from $string starting at $position [0 if no match, first-->
-<!--                                character counts as position 1]-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr match "$string" '\($substring\)'</code></td>-->
-<!--                            <td>Extract $substring*, searching from beginning of $string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr "$string" : '\($substring\)'</code></td>-->
-<!--                            <td>Extract $substring* , searching from beginning of $string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr match "$string" '.*\($substring\)'</code></td>-->
-<!--                            <td>Extract $substring*, searching from end of $string</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td><code>expr "$string" : '.*\($substring\)'</code></td>-->
-<!--                            <td>Extract $substring*, searching from end of $string</td>-->
-<!--                        </tr>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="row">
+                <div class="twelve columns">
+                    <div class="shadow-box">
+                        <h3 id="string-manipulation">String Manipulation</h3></div>
+                    <p class="info-box info shadow-box">Bash supports a surprisingly big number of string operations!
+                        Unfortunately, these tools lack a unified focus. Some are a subset of parameter substitution,
+                        and others fall under the functionality of the UNIX expr command. This results in inconsistent
+                        command syntax and overlap of functionality.</p>
+                    <p class="info-box warning shadow-box">MacOS built-in bash is from 2007 and won't support many of
+                        these.</p>
+                    <table class="two-column-table code-no-wrap">
+                        <thead>
+                        <tr>
+                            <th>Pattern</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>${#var}</code></td>
+                            <td>Find the length of the string</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%pattern}</code></td>
+                            <td>Remove from shortest rear (end) pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var%%pattern}</code></td>
+                            <td>Remove from longest rear (end) pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:position}</code></td>
+                            <td>Extract substring from $var at $position</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var:num1:num2}</code></td>
+                            <td>Substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var#pattern}</code></td>
+                            <td>Remove from shortest front pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var##pattern}</code></td>
+                            <td>Remove from longest front pattern</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var/pattern/string}</code></td>
+                            <td>Find and replace (only replace first occurrence)</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var//pattern/string}</code></td>
+                            <td>Find and replace all occurrences</td>
+                        </tr>
+                        <tr>
+                            <td><code>${!prefix*}</code></td>
+                            <td>Expands to the names of variables whose names begin with prefix.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>${var,}</code><br/><code>${var,pattern}</code></td>
+                            <td>Convert first character to lowercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var,,}</code><br/><code>${var,,pattern}</code></td>
+                            <td>Convert all characters to lowercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var^}</code><br/><code>${var^pattern}</code></td>
+                            <td>Convert first character to uppercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${var^^}</code><br/><code>${var^^pattern}</code></td>
+                            <td>Convert all character to uppercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/substring/replacement}</code></td>
+                            <td>Replace first match of $substring with $replacement</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string//substring/replacement}</code></td>
+                            <td>Replace all matches of $substring with $replacement</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/#substring/replacement}</code></td>
+                            <td>If $substring matches front end of $string, substitute $replacement for $substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>${string/%substring/replacement}</code></td>
+                            <td>If $substring matches back end of $string, substitute $replacement for $substring</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '$substring'</code></td>
+                            <td>Length of matching $substring* at beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '$substring'</code></td>
+                            <td>Length of matching $substring* at beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr index "$string" $substring</code></td>
+                            <td>Numerical position in $string of first character in $substring* that matches [0 if no
+                                match, first character counts as position 1]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>expr substr $string $position $length</code></td>
+                            <td>Extract $length characters from $string starting at $position [0 if no match, first
+                                character counts as position 1]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '\($substring\)'</code></td>
+                            <td>Extract $substring* , searching from beginning of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr match "$string" '.*\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from end of $string</td>
+                        </tr>
+                        <tr>
+                            <td><code>expr "$string" : '.*\($substring\)'</code></td>
+                            <td>Extract $substring*, searching from end of $string</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
@@ -1136,18 +1111,79 @@
                             <td><code>!</code></td>
                             <td>Negates any pattern matches — reverses the pattern so to speak</td>
                         </tr>
+                        </tbody>
+                    </table>
+                    <h3>Character Classes in BRE</h3>
+                    <!--                 https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions   -->
+                    <p class="info-box info shadow-box">A character class <code>[:CharClass:]</code> is a set of predefined patterns and comprpised of the following:</p>
+                    <table class="three-column-table">
+                        <thead>
                         <tr>
-                            <td><code>[:CharClass:]</code></td>
-                            <td>A character class is a set of predefined patterns and comprpised of the following:
-                                <code>
-                                    [:alnum:] [:alpha:]<br>
-                                    [:digit:] [:lower:]<br>
-                                    [:upper:] [:space:]<br>
-                                    [:punct:] [:print:]<br>
-                                    [:blank:] [:graph:]<br>
-                                    [:cntrl:] [:xdigit:]
-                                </code>
-                            </td>
+                            <th>Character Class</th>
+                            <th>Equivalent</th>
+                            <th>Explanation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code class="code-no-wrap">[:lower:]</code></td>
+                            <td><code class="code-no-wrap">[a-z]</code></td>
+                            <td>Lowercase letters.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:upper:]</code></td>
+                            <td><code class="code-no-wrap">[A-Z]</code></td>
+                            <td>Uppercase letters.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:alpha:]</code></td>
+                            <td><code class="code-no-wrap">[A-Za-z]</code></td>
+                            <td>Alphabetic letters, both upper- and lowercase.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:digit:]</code></td>
+                            <td><code class="code-no-wrap">[0-9]</code></td>
+                            <td>Numbers 0-9.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:alnum:]</code></td>
+                            <td><code class="code-no-wrap">[a-zA-Z0-9]</code></td>
+                            <td>Alphanumeric: both letters (upper- + lowercase) and digits.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:xdigit:]</code></td>
+                            <td><code class="code-no-wrap">[0-9A-Fa-f]</code></td>
+                            <td>Hexadecimal digits.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:space:]</code></td>
+                            <td><code class="code-no-wrap">[ \t\n\r\f\v]</code></td>
+                            <td>Whitespace. Spaces, tabs, newline and similar.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:punct:]</code></td>
+                            <td><code></code></td>
+                            <td>Symbols (minus digits and letters).</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:print:]</code></td>
+                            <td><code class="code-no-wrap">[[:graph] ] </code></td>
+                            <td>Printable characters (spaces included).</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:blank:]</code></td>
+                            <td><code class="code-no-wrap">[ \t]</code></td>
+                            <td>Space and tab characters only.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:graph:]</code></td>
+                            <td><code class="code-no-wrap">[^ [:cntrl:]]</code></td>
+                            <td>Graphically printable characters excluding space.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-no-wrap">[:cntrl:]</code></td>
+                            <td><code></code></td>
+                            <td>Control characters. Non-printable characters.</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1519,7 +1555,7 @@
                         </tr>
                         <tr>
                             <td><code>wait</code></td>
-                            <td>Make the shell wait for a job to finish.</def></td>
+                            <td>Make the shell wait for a job to finish.</td>
                         </tr>
                         <tr>
                             <td><code>while</code></td>
@@ -1746,6 +1782,89 @@
                 </div>
             </div>
             <div class="row">
+                <div class="twelve columns">
+                    <div class="shadow-box">
+                        <h2 id="control-flow">Flow Control</h2></div>
+                    <p class="info-box info shadow-box">Flow control structures in Bash are straight forward, albeit
+                        Bash is unforgiving if you get the syntax wrong.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th class="text-align-center">Syntax Structure</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <pre><code class="bash">
+if [ &lt;something-is-true&gt; ]; then
+    &lt;do something&gt;
+fi
+                                </code></pre>
+                            </td>
+                            <!--                            <td><p class="info-box info shadow">You can ...</p></td>-->
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre><code class="bash">
+if [ &lt;something-is-true&gt; ]; then
+    &lt;do something&gt;
+else
+    &lt;do something else&gt;
+fi
+                                </code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre><code class="shell">
+if [ : ]; then
+    echo "Remember that : is a builtin which evaluates to true?"
+else
+    echo ": always evaluates to true and this code will never be reached!"
+fi
+                                </code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre><code class="bash">
+for i in $( ls ); do
+    echo item: $i
+done
+                                    </code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre><code class="bash">
+for i in `seq 1 10`;
+do
+    echo $i
+done
+                                    </code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre><code>
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+    echo The counter is $COUNTER
+    let COUNTER=COUNTER+1
+done
+                                    </code></pre>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
                 <div class="eight columns offset-by-two">
                 </div>
             </div>
@@ -1753,7 +1872,7 @@
                 <div class="six columns">
                     <p class="info-box success shadow-box" style="font-size: 1.5rem; color: azure;">If you find this
                         site helpful,
-                        please consider sharing it with a friend!<br>
+                        please consider sharing it with a friend!<br/>
                         The more people start using the site, the faster improvements will come along
                         <i class="fas fa-smile-beam"></i>
                 </div>
@@ -1769,14 +1888,14 @@
             <div class="row">
                 <div class="twelve columns">
                     <div class="email-input">
-                        <label style="text-align: center; font-size: 1.4rem;" for="exampleEmailInput">Be informed about
+                        <label for="exampleEmailInput" style="text-align: center; font-size: 1.4rem;">Be informed about
                             groundbreaking content updates and site development. One email/month – max.</label>
                         <form action="https://formspree.io/xoqdnqak" method="POST">
                             <div class="input-container">
                                 <i class="fas fa-user icon"></i>
-                                <input class="u-full-width" style="text-align: center;" type="email"
-                                       placeholder="your@awesome-mailaddress.com"
-                                       id="exampleEmailInput">
+                                <input class="u-full-width" id="exampleEmailInput" placeholder="your@awesome-mailaddress.com"
+                                       style="text-align: center;"
+                                       type="email">
                                 <input class="button-primary" type="submit" value="Send">
                             </div>
                         </form>
@@ -1784,42 +1903,42 @@
                     <ul class="icon-container">
                         <li>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
-                               target="_blank"><i class="tooltip fab fa-facebook-f fa-2x"
-                                                  aria-hidden="true"><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip fab fa-facebook-f fa-2x"><span
                                     class="tooltiptext">Share on Facebook!</span></i><span
                                     class="sr-only">Share on Facebook</span></a></li>
                         <li>
                             <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
-                               target="_blank"><i class="tooltip  fab fa-twitter fa-2x"
-                                                  aria-hidden="true"><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip  fab fa-twitter fa-2x"><span
                                     class="tooltiptext">Tweet!</span></i><span
                                     class="sr-only">Tweet</span></a></li>
                         <li>
                             <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
-                               target="_blank"><i class="tooltip  fab fa-pinterest fa-2x"
-                                                  aria-hidden="true"><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip  fab fa-pinterest fa-2x"><span
                                     class="tooltiptext">Pin it!</span></i><span
                                     class="sr-only">Pin it</span></a></li>
                         <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank"><i class="tooltip  fab fa-get-pocket fa-2x"
-                                                  aria-hidden="true"><span class="tooltiptext">Add to Pocket!</span></i><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip  fab fa-get-pocket fa-2x"><span class="tooltiptext">Add to Pocket!</span></i><span
                                 class="sr-only">Add to Pocket</span></a></li>
                         <li>
                             <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank"><i class="tooltip fab fa-reddit-alien fa-2x"
-                                                  aria-hidden="true"><span class="tooltiptext">Submit to Reddit!</span></i><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip fab fa-reddit-alien fa-2x"><span class="tooltiptext">Submit to Reddit!</span></i><span
                                     class="sr-only">Submit to Reddit</span></a></li>
                         <li>
                             <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
-                               target="_blank"><i class="tooltip fab fa-linkedin fa-2x"
-                                                  aria-hidden="true"><span
+                               target="_blank"><i aria-hidden="true"
+                                                  class="tooltip fab fa-linkedin fa-2x"><span
                                     class="tooltiptext">Share on LinkedIn!</span></i><span
                                     class="sr-only">Share on LinkedIn</span></a></li>
                         <li>
                             <a href="mailto:?subject=Shell%20Magic&body=Ultimate%20Bash%20Reference%20Notes:%20http%3A%2F%2Fwww.shellmagic.xyz"
                                target="_blank">
-                                <i class="tooltip fas fa-envelope fa-2x "
-                                   aria-hidden="true"><span class="tooltiptext">Send email!</span></i><span
+                                <i aria-hidden="true"
+                                   class="tooltip fas fa-envelope fa-2x "><span class="tooltiptext">Send email!</span></i><span
                                     class="sr-only">Send email</span></a>
                     </ul>
                 </div>
@@ -1840,21 +1959,21 @@
                 Policy</a>
             </footer>
             <footer>
-                <a target="_blank" rel="noopener noreferrer"
-                   href="https://github.com/smokingcuke/ShellMagic"><img
-                        class="soft-shadow-box"
-                        src="https://camo.githubusercontent.com/72f84692f9f89555c176bb9e0eca9cf08d97fec9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6e747269627574696f6e732d77656c636f6d652d6f72616e67652e737667"
+                <a href="https://github.com/smokingcuke/ShellMagic" rel="noopener noreferrer"
+                   target="_blank"><img
                         alt="Contributions welcome"
+                        class="soft-shadow-box"
                         data-canonical-src="https://img.shields.io/badge/contributions-welcome-orange.svg"
+                        src="https://camo.githubusercontent.com/72f84692f9f89555c176bb9e0eca9cf08d97fec9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6e747269627574696f6e732d77656c636f6d652d6f72616e67652e737667"
                         style="max-width:100%;"></a>
                 <a href="https://github.com/smokingcuke/ShellMagic/stargazers"><img class="soft-shadow-box"
-                                                                                    src="https://camo.githubusercontent.com/01e87a996f053501d13e468e10ab4d01c25c64ee/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f736d6f6b696e6763756b652f416476616e6365642d5368656c6c2d4e6f7465732e7376673f7374796c653d706c617374696372"
                                                                                     data-canonical-src="https://img.shields.io/github/stars/smokingcuke/ShellMagic.svg?style=plasticr"
-                                                                                    style="max-width:100%;"></a>
+                                                                                    src="https://camo.githubusercontent.com/01e87a996f053501d13e468e10ab4d01c25c64ee/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f736d6f6b696e6763756b652f416476616e6365642d5368656c6c2d4e6f7465732e7376673f7374796c653d706c617374696372"
+                                                                                    style="max-width:100%;" alt="How many people have bookmarked the website on Github."></a>
                 <a href="https://github.com/smokingcuke/ShellMagic/commits/master"><img class="soft-shadow-box"
-                                                                                        src="https://camo.githubusercontent.com/0de804f70e75ad6ae8e484295bf4ad5b9ddc414c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6173742d636f6d6d69742f736d6f6b696e6763756b652f416476616e6365642d5368656c6c2d4e6f7465732e7376673f7374796c653d706c617374696372"
                                                                                         data-canonical-src="https://img.shields.io/github/last-commit/smokingcuke/ShellMagic.svg?style=plasticr"
-                                                                                        style="max-width:100%;"></a>
+                                                                                        src="https://camo.githubusercontent.com/0de804f70e75ad6ae8e484295bf4ad5b9ddc414c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6173742d636f6d6d69742f736d6f6b696e6763756b652f416476616e6365642d5368656c6c2d4e6f7465732e7376673f7374796c653d706c617374696372"
+                                                                                        style="max-width:100%;" alt="Information about when the site was last updated."></a>
             </footer>
         </div>
     </div>

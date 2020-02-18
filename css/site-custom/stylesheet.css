@@ -522,6 +522,22 @@
   min-width: 60%;
 }
 
+.three-column-table td {
+  border-bottom: 1px dashed #d34a00;
+}
+.three-column-table td:nth-child(1) {
+  background: #202020;
+  min-width: 10%;
+}
+.three-column-table td:nth-child(2) {
+  background: #202020;
+  min-width: 20%;
+}
+.three-column-table td:nth-child(3) {
+  background: #202020;
+  min-width: 60%;
+}
+
 .four-column-table td {
   border-bottom: 1px dashed #d34a00;
 }
@@ -6895,11 +6911,18 @@ code {
   font-family: "Source Code Pro", monospace;
   font-size: 105%;
   margin: 0 0.01rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0;
+}
+code.code-no-wrap {
+  white-space: nowrap;
 }
 
-.code-no-wrap code {
-  white-space: nowrap;
+.text-align-center {
+  text-align: center;
+}
+
+pre {
+  overflow-x: auto;
 }
 
 @media (min-width: 880px) {

@@ -1,4 +1,3 @@
-
 // Color Vars
 $fg: rgba(255, 255, 255, .9);
 $bg: #202020;
@@ -25,6 +24,12 @@ $color-linkedin-logo: #0077b5;
 $color-pocket-logo: #ef4056;
 $color-mail-logo: #505264;
 
+// - Informational
+$warning: #ffeb3b;
+$info: #2196f3;
+$danger: #f44336;
+$success: #4caf50;
+$explanation: #65ffa0;
 
 // Color Assignment
 $headings-bg: $grey-two;
@@ -40,11 +45,7 @@ $color-temporary: #33c3f0;
 $color-link-hover: #ff327e;
 $gradient-h1-color-one: #eee;
 $gradient-h1-color-two: #8c9191;
-$warning: #ffeb3b;
-$info: #2196f3;
-$danger: #f44336;
-$success: #4caf50;
-$explanation: #65ffa0;
+
 // Size + Dimension Variables
 $input-height: 38px;
 

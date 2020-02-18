@@ -2,9 +2,15 @@
   <dictionary name="s5uso">
     <words>
       <w>cheatsheet</w>
+      <w>hljs</w>
       <w>navbar</w>
+      <w>pinterest</w>
+      <w>reddit</w>
       <w>shellscripting</w>
+      <w>stty</w>
       <w>tooltiptext</w>
+      <w>topnav</w>
+      <w>zenburn</w>
     </words>
   </dictionary>
 </component>

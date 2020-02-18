@@ -1,3 +1,7 @@
+/**
+ * These functions handle the opening and closing of the navigation bar at the left side.
+ * */
+
 let windowWidthBig = window.matchMedia("(min-width: 800px)").matches;
 let windowWidthMedium = window.matchMedia("(min-width: 600px), (max-width: 800px )").matches;
 let windowWidthSmall = window.matchMedia("(max-width: 400)").matches;
@@ -12,7 +16,6 @@ setNavbarLinkProperties = function clickCloseNavigationBar() {
     }
 };
 
-//document.getElementById("sideNavigation").style.maxHeight = 100%;
 let sideNavigationWidth = function determineDeviceWidth() {
     if (windowWidthBig) {
         return '250px';
@@ -25,8 +28,6 @@ function toggleSideNavigation() {
     let sideNavigation = document.getElementById("sideNavigation");
     let main = document.getElementsByTagName("body");
 
-    //sideNavigation.style.height = "100%";
-    //sideNavigation.style.maxHeight = screen.availHeight.toString();
     if (sideNavigation.style.width >= sideNavigationWidth()) {
         sideNavigation.style.width = '0';
         if (windowWidthBig) {
