@@ -1,11 +1,12 @@
+// sass-lint:disable shorthand-values
 @import 'variables';
 
 
 .icon-container {
   font-size: $share-button-font-size;
   list-style: none;
-  text-align: center;
   margin: 1rem auto 0 auto;
+  text-align: center;
 
 
   li {
@@ -17,22 +18,22 @@
   }
 
   @mixin some-btn {
+    border-radius: 8px;
+    border-width: 0;
     box-shadow: 1px 1px 14px 2px darken($bg, 6.5%);
+    height: 32px;
     line-height: 32px;
-    margin:auto;
+    margin: auto;
     padding: 8px;
     width: 32px;
-    border-width: 0;
-    border-radius: 8px;
-    height: 32px;
   }
 
   .fa-facebook-f {
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #3b5998;
+      background: $color-fb-logo;
+      color: $white;
     }
   }
 
@@ -40,8 +41,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #1da1f2;
+      background: $color-twitter-logo;
+      color: $white;
     }
   }
 
@@ -49,8 +50,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #bd081c;
+      background: $color-pinterest-logo;
+      color: $white;
     }
   }
 
@@ -58,8 +59,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #0077b5;
+      background: $color-linkedin-logo;
+      color: $white;
     }
   }
 
@@ -67,8 +68,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #ff4500;
+      background: $color-reddit-logo;
+      color: $white;
     }
   }
 
@@ -76,8 +77,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #ef4056;
+      background: $color-pocket-logo;
+      color: $white;
     }
   }
 
@@ -85,8 +86,8 @@
     @include some-btn;
 
     &:hover {
-      color: #fff;
-      background: #505264;
+      background: $color-mail-logo;
+      color: $white;
     }
   }
 }

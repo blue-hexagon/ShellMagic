@@ -1,3 +1,4 @@
+// sass-lint:disable no-duplicate-properties
 @import 'variables';
 
 // source-sans-pro-regular - latin
@@ -70,7 +71,7 @@
   url('../../resources/typography/fonts/pt-mono-v7-latin-regular.svg#PTMono') format('svg'); // Legacy iOS
 }
 
-// libre-baskerville-regular - latin
+// Libre-baskerville-regular - latin
 @font-face {
   font-family: 'Libre Baskerville';
   font-style: normal;
@@ -84,16 +85,16 @@
   url('../../resources/typography/fonts/libre-baskerville-v7-latin-regular.svg#LibreBaskerville') format('svg'); // Legacy iOS
 }
 
-/* cabin-regular - latin */
+// cabin-regular - latin
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
   font-weight: 400;
-  src: url('../../resources/typography/fonts/cabin-v14-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('../../resources/typography/fonts/cabin-v14-latin-regular.eot'); // IE9 Compat Modes
   src: local($site-font-path),
-  url('../../resources/typography/fonts/cabin-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../../resources/typography/fonts/cabin-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-  url('../../resources/typography/fonts/cabin-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
-  url('../../resources/typography/fonts/cabin-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-  url('../../resources/typography/fonts/cabin-v14-latin-regular.svg#Cabin') format('svg'); /* Legacy iOS */
+  url('../../resources/typography/fonts/cabin-v14-latin-regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+  url('../../resources/typography/fonts/cabin-v14-latin-regular.woff2') format('woff2'), // Super Modern Browsers
+  url('../../resources/typography/fonts/cabin-v14-latin-regular.woff') format('woff'), // Modern Browsers
+  url('../../resources/typography/fonts/cabin-v14-latin-regular.ttf') format('truetype'), // Safari, Android, iOS
+  url('../../resources/typography/fonts/cabin-v14-latin-regular.svg#Cabin') format('svg'); // Legacy iOS
 }

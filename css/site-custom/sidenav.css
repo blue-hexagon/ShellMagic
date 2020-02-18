@@ -1,57 +1,53 @@
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 .sidenav {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background: white;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  transition: 0.5s;
-  padding-top: 60px;
+  background: #2d2d2d;
+  border-right: solid #555 2px;
+  display: block;
   height: 100%;
-}
-.sidenav .closebtn {
-  position: absolute;
+  left: 0;
+  max-height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  padding-top: 4.25rem;
+  position: fixed;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  transition: 0.5s;
+  width: 0;
+  z-index: 20;
 }
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  margin: auto auto;
-  text-decoration: none;
-  text-wrap: none;
-  font-size: 2rem;
-  color: #818181;
+  background-color: #202020;
+  color: #fff;
   display: block;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  text-decoration: none;
   transition: 0.3s;
 }
+.sidenav a:nth-child(even) {
+  background: #252525;
+}
+.sidenav a:nth-child(even):hover {
+  color: #ff5900;
+}
+.sidenav a:nth-child(odd) {
+  background: #2d2d2d;
+}
+.sidenav a:nth-child(odd):hover {
+  color: #ff5900;
+}
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #fff;
 }
-@media mobile, tablet {
+@media screen and (max-width: 800px) {
   .sidenav {
-    width: 100%;
+    text-align: center;
   }
 }
-@media desktop and (min-width: 800px) {
+@media screen and (min-width: 800px) {
   .sidenav {
-    width: 0;
-  }
-}
-@media desktop and (max-width: 800px) {
-  .sidenav {
-    width: 100%;
+    text-align: left;
   }
 }
 

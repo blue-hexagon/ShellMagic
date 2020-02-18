@@ -1,15 +1,15 @@
 @import 'variables';
 
 .explanation-tooltip {
-  text-decoration: underline dotted;
   cursor: help;
   font-size: 1.5rem;
+  text-decoration: underline dotted;
 }
 
-tt-code {
-  text-decoration: none;
-  text-decoration-color: $explanation;
-}
+//tt-code {
+//  text-decoration: none;
+//  text-decoration-color: $explanation;
+//}
 
 .tooltip {
   display: inline-block;
@@ -18,9 +18,8 @@ tt-code {
   &:hover {
     .tooltiptext {
       opacity: 1;
-      visibility: visible;
       overflow: visible;
-
+      visibility: visible;
     }
   }
 

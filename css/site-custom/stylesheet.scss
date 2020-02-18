@@ -70,9 +70,9 @@ body {
   //padding: 16px;
 }
 
-main {
-
-}
+//main {
+//
+//}
 
 a {
   color: $fg;
@@ -226,7 +226,7 @@ h4,
 h5,
 h6 {
   background: darken($headings-bg, 10%);
-  color: #e8f0ff; //TODO
+  color: $white;
   text-transform: capitalize;
   padding: .725rem 0;
   box-sizing: border-box;

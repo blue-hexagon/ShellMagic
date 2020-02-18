@@ -1,3 +1,8 @@
+// sass-lint:disable force-attribute-nesting
+// sass-lint:disable no-qualifying-elements
+// sass-lint:disable force-element-nesting
+// sass-lint:disable force-pseudo-nesting
+
 @import 'variables';
 
 .button.button-primary,
@@ -61,13 +66,13 @@ input[type='button']:focus {
 // Forms
 input[type='email'],
 input[type='search'],
-input[type='text'],
-{
+input[type='text'], {
   background-color: $white;
   border: 1px solid $border-color-cream;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .search-container {
   box-sizing: border-box;
   display: inline-flex;
@@ -79,9 +84,9 @@ input[type='search']:focus, {
   outline: 0;
 }
 
-input[type='radio'] {
-  //display: inline;
-}
+//input[type='radio'] {
+//  display: inline;
+//}
 
 // - Base
 input[type='email'],
@@ -92,6 +97,5 @@ input[type='tel'],
 input[type='url'],
 input[type='password'],
 textarea {
-  //Removes awkward default styles on some inputs for iOS
-  appearance: none;
+  appearance: none; //Removes awkward default styles on some inputs for iOS
 }

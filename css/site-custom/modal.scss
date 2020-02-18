@@ -1,6 +1,7 @@
 @import 'variables';
+
 .modal {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $black;
   bottom: 0;
   display: none;
   left: 0;
@@ -13,7 +14,7 @@
 
 .modal-window {
   background-color: $bg;
-  border: black solid 2px;
+  border: $black solid 2px;
   border-radius: 2rem;
   height: auto;
   margin: 5% auto;
@@ -32,19 +33,18 @@
 
 
 .close {
-  color: rgba(0, 0, 0, .3);
+  color: $bg;
   font-size: 30px;
   height: 30px;
   line-height: 30px;
   position: absolute;
   right: 0;
- // text-align: center;
   top: 0;
   width: 30px;
 
   &:hover,
   &:focus {
-    color: #000000;
+    color: $black;
     cursor: pointer;
   }
 }

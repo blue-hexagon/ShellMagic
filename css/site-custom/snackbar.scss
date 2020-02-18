@@ -1,16 +1,19 @@
+// sass-lint:disable no-ids
+// sass-lint:disable force-element-nesting
+
 @import 'variables';
 $bottom: 15px;
 $color1: #fff;
 $color2: #333;
 
 #snackbar {
-  font-family: "IBM Plex Serif", serif;
-  font-size: 1.625rem;
-  display: block;
   background-color: $color2;
   border-radius: 2px;
   bottom: $bottom;
   color: $color1;
+  display: block;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.625rem;
   margin-left: 10%;
   margin-right: 10%;
   min-width: 80%;
@@ -32,6 +35,7 @@ $color2: #333;
     bottom: 0;
     opacity: 0;
   }
+
   to {
     bottom: $bottom;
     opacity: 1;
@@ -43,6 +47,7 @@ $color2: #333;
     bottom: $bottom;
     opacity: 1;
   }
+
   to {
     bottom: 0;
     opacity: 0;
