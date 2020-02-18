@@ -58,6 +58,8 @@
     <nav>
         <div class="topnav">
             <a href="javascript:void(0);" onclick="toggleSideNavigation()">&#9776;</a>
+            <a href="https://shellmagic.xyz"><i class="fa fa-home" aria-hidden="true"></i></a>
+
             <div id="theme-selection">
                 <!--<input type="radio" name="theme" id="solarized"><label for="solarized"></label>
                 <input type="radio" name="theme" id="dracula"><label for="dracula"></label>
@@ -1113,7 +1115,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3>Character Classes in BRE</h3>
+                    <h3>Character Classes in <span class="tooltip"><a href="./content/explanations/bre.html">BRE</a><span class="tooltiptext">Wha is BRE?</span> </span></h3>
                     <!--                 https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions   -->
                     <p class="info-box info shadow-box">A character class <code>[:CharClass:]</code> is a set of predefined patterns and comprpised of the following:</p>
                     <table class="three-column-table">
@@ -1791,73 +1793,104 @@
             </div>
             <div class="row">
                 <div class="twelve columns">
-                    <table class="two-column-table">
+                    <table class="three-column-table">
                         <thead>
                         <tr>
                             <th class="text-align-center">Syntax Structure</th>
+                            <th class="text-align-center">Associated Keywords or Key Symbols</th>
+                            <th class="text-align-center">Description</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td>
-                                <pre><code class="bash">
-if [ &lt;something-is-true&gt; ]; then
-    &lt;do something&gt;
-fi
-                                </code></pre>
+                                If
                             </td>
-                            <!--                            <td><p class="info-box info shadow">You can ...</p></td>-->
-                        </tr>
-                        <tr>
                             <td>
-                                <pre><code class="bash">
-if [ &lt;something-is-true&gt; ]; then
-    &lt;do something&gt;
-else
-    &lt;do something else&gt;
-fi
-                                </code></pre>
+                                if then fi
+                            </td>
+                            <td>
+                                Test a condition.
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <pre><code class="shell">
-if [ : ]; then
-    echo "Remember that : is a builtin which evaluates to true?"
-else
-    echo ": always evaluates to true and this code will never be reached!"
-fi
-                                </code></pre>
+                                If-else
+                            </td>
+                            <td>
+                                if then else fi
+                            </td>
+                            <td>
+                                Test a condition and use a fallback if the test fails.
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <pre><code class="bash">
-for i in $( ls ); do
-    echo item: $i
-done
-                                    </code></pre>
+                                If-elif-else
+                            </td>
+                            <td>
+                                if then elif else fi
+                            </td>
+                            <td>
+                                Provides additional testing plus a fallback if all tests fail. You may skip the elif conditions or add as many in-between as you like.
+                                Similarly, you may skip the else fallback.
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <pre><code class="bash">
-for i in `seq 1 10`;
-do
-    echo $i
-done
-                                    </code></pre>
+                                For
+                            </td>
+                            <td>
+                                for do done
+                            </td>
+                            <td>
+                                Iterate over a sequence, a list or anything as far as the imagination goes.
+                            </td>
+                            <td>
+
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <pre><code>
-COUNTER=0
-while [  $COUNTER -lt 10 ]; do
-    echo The counter is $COUNTER
-    let COUNTER=COUNTER+1
-done
-                                    </code></pre>
+                                While
+                            </td>
+                            <td>
+                                while do done
+                            </td>
+                            <td>While a condition is true - repeat until that condition is no longer true</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Until
+                            </td>
+                            <td>
+                                until do done
+                            </td>
+                            <td>
+                                The inverse of the while loop - as long as the test-command fails, the until-loop
+                                continues.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Select
+                            </td>
+                            <td>
+                                select in do done
+                            </td>
+                            <td>
+                                Used for easy menu generation. Any statement within can be another select construct, thus enabling sub-menu creation.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Case
+                            </td>
+                            <td>
+                                case ) ;; esac
+                            </td>
+                            <td>
+                                Alternative if-branching. Each case is an expression which matches a given pattern (i.e., a case).
                             </td>
                         </tr>
                         </tbody>
@@ -1981,3 +2014,6 @@ done
 <script>includeHTML();</script>
 </body>
 </html>
+<!--<i class="far fa-clone"></i>-->
+<!--<i class="fas fa-bug"></i>-->
+<!--<i class="fas fa-sort-down"></i>-->

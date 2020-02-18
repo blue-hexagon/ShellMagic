@@ -6692,6 +6692,10 @@ body {
   transition: margin-left 0.5s;
 }
 
+main {
+  overflow-x: auto;
+}
+
 a {
   color: rgba(255, 255, 255, 0.9);
   outline: 0;
@@ -6922,7 +6926,8 @@ code.code-no-wrap {
 }
 
 pre {
-  overflow-x: auto;
+  max-width: 100vw;
+  overflow-x: scroll;
 }
 
 @media (min-width: 880px) {

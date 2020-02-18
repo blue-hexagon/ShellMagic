@@ -68,9 +68,9 @@ body {
   //padding: 16px;
 }
 
-//main {
-//
-//}
+main {
+overflow-x: auto;
+}
 
 a {
   color: $fg;
@@ -234,6 +234,7 @@ h6 {
   margin: 0 auto .25rem 0;
   text-align: center;
   width: 100%;
+
 }
 
 h1 {
@@ -260,7 +261,6 @@ h5 {
 h6 {
   @include heading(.5rem, 1.5rem, 0, 1.6, .1rem, 0 1rem);
 }
-
 
 p,
 ul,
@@ -295,7 +295,8 @@ code {
   text-align: center;
 }
 pre{
-  overflow-x: auto;
+  max-width: 100vw;
+  overflow-x: scroll;
 }
 
 @media (min-width: 880px) {
