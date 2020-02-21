@@ -6683,6 +6683,14 @@ html ::selection {
   color: #fff;
 }
 
+nav {
+  display: block;
+}
+
+.align-right {
+  float: right;
+}
+
 body {
   background: #202020;
   color: rgba(255, 255, 255, 0.9);
@@ -6927,7 +6935,6 @@ code.code-no-wrap {
 
 pre {
   max-width: 100vw;
-  overflow-x: scroll;
 }
 
 @media (min-width: 880px) {

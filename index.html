@@ -13,7 +13,7 @@
 
     <!-- Open Graph Tags -->
     <meta content="summary_large_image" name="twitter:card"/>
-    <meta content="@ShellMagicxyz" name="twitter:site"/>
+    <meta content="@ShellMagicXyz" name="twitter:site"/>
     <meta content="Shell Magic - The Ultimate Bash Reference" name="twitter:title"/>
     <meta content="This is the Ultimate and Final Resource on Linux shell scripting. This Site is THE Compilation of Bash Commands - It's The Only Resource You Will Need for Reference on Bash Syntax."
           name="twitter:description"/>
@@ -37,6 +37,7 @@
     <script src="js/third-party.js"></script>
     <script src="js/include-html.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/ajax-spa.js"></script>
     <link href="node_modules/highlight.js/scss/a11y-dark.scss" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/agate.min.css">
@@ -56,41 +57,47 @@
 <!--    </div>-->
 <!--</div>-->
 <header>
-    <nav>
-        <div class="topnav">
-            <a href="javascript:void(0);" onclick="toggleSideNavigation()">&#9776;</a>
-            <a href="https://shellmagic.xyz"><i class="fa fa-home" aria-hidden="true"></i></a>
+    <nav class="topnav">
 
-            <div id="theme-selection">
-                <!--<input type="radio" name="theme" id="solarized"><label for="solarized"></label>
-                <input type="radio" name="theme" id="dracula"><label for="dracula"></label>
-                <input type="radio" name="theme" id="a-11-y-dark"><label for="a-11-y-dark"></label>
-                <input type="radio" name="theme" id="agate"><label for="agate"></label>
-                <input type="radio" name="theme" id="gml"><label for="gml"></label>
-                <input type="radio" name="theme" id="gruvbox-dark"><label for="gruvbox-dark"></label>
-                <input type="radio" name="theme" id="hopscoth"><label for="hopscoth"></label>
-                <input type="radio" name="theme" id="hybrid"><label for="hybrid"></label>
-                <input type="radio" name="theme" id="ir-black"><label for="ir-black"></label>
-                <input type="radio" name="theme" id="isbl-editor-dark"><label for="isbl-editor-dark"></label>
-                <input type="radio" name="theme" id="kimbie-dark"><label for="kimbie-dark"></label>
-                <input type="radio" name="theme" id="monokai-sublime"><label for="monokai-sublime"></label>
-                <input type="radio" name="theme" id="monokai"><label for="monokai"></label>
-                <input type="radio" name="theme" id="nord"><label for="nord"></label>
-                <input type="radio" name="theme" id="obsidian"><label for="obsidian"></label>
-                <input type="radio" name="theme" id="pojoaque"><label for="pojoaque"></label>
-                <input type="radio" name="theme" id="railscast"><label for="railscast"></label>
-                <input type="radio" name="theme" id="sunburst"><label for="sunburst"></label>
-                <input type="radio" name="theme" id="tomorrow-night-bright"><label for="tomorrow-night-bright"></label>-->
-            </div>
-            <!-- <div class="search-container">
-                 <form action="">
-                     <label>
-                         <input type="text" placeholder="Quick Find" name="search">
-                     </label>
-                     <button type="submit"><i class="fas fa-search"></i></button>
-                 </form>
-             </div>-->
+        <a href="javascript:void(0);" onclick="toggleSideNavigation()">&#9776;</a>
+        <!--            <a href="javascript:void(0);" onclick="loadDoc('./content/main/flow-control.html');">About</a>-->
+        <!--            <a href="https://shellmagic.xyz"><i class="far fa-clone" aria-hidden="true"></i></a>-->
+
+        <a href="https://bellard.org/jslinux/vm.html?url=buildroot-x86.cfg"><i class="fas fa-terminal" aria-hidden="true"></i></a>
+        <!--            <a href="javascript:void(0);"><i class="fas fa-sort-down"></i></a>-->
+        <div class="align-right">
+            <a href="https://github.com/smokingcuke/ShellMagic/issues"><i class="fas fa-bug" aria-hidden="true"></i></a>
+            <a href="https://shellmagic.xyz"><i class="fa fa-home" aria-hidden="true"></i></a>
         </div>
+        <div id="theme-selection">
+            <!--<input type="radio" name="theme" id="solarized"><label for="solarized"></label>
+            <input type="radio" name="theme" id="dracula"><label for="dracula"></label>
+            <input type="radio" name="theme" id="a-11-y-dark"><label for="a-11-y-dark"></label>
+            <input type="radio" name="theme" id="agate"><label for="agate"></label>
+            <input type="radio" name="theme" id="gml"><label for="gml"></label>
+            <input type="radio" name="theme" id="gruvbox-dark"><label for="gruvbox-dark"></label>
+            <input type="radio" name="theme" id="hopscoth"><label for="hopscoth"></label>
+            <input type="radio" name="theme" id="hybrid"><label for="hybrid"></label>
+            <input type="radio" name="theme" id="ir-black"><label for="ir-black"></label>
+            <input type="radio" name="theme" id="isbl-editor-dark"><label for="isbl-editor-dark"></label>
+            <input type="radio" name="theme" id="kimbie-dark"><label for="kimbie-dark"></label>
+            <input type="radio" name="theme" id="monokai-sublime"><label for="monokai-sublime"></label>
+            <input type="radio" name="theme" id="monokai"><label for="monokai"></label>
+            <input type="radio" name="theme" id="nord"><label for="nord"></label>
+            <input type="radio" name="theme" id="obsidian"><label for="obsidian"></label>
+            <input type="radio" name="theme" id="pojoaque"><label for="pojoaque"></label>
+            <input type="radio" name="theme" id="railscast"><label for="railscast"></label>
+            <input type="radio" name="theme" id="sunburst"><label for="sunburst"></label>
+            <input type="radio" name="theme" id="tomorrow-night-bright"><label for="tomorrow-night-bright"></label>-->
+        </div>
+        <!-- <div class="search-container">
+             <form action="">
+                 <label>
+                     <input type="text" placeholder="Quick Find" name="search">
+                 </label>
+                 <button type="submit"><i class="fas fa-search"></i></button>
+             </form>
+         </div>-->
     </nav>
 </header>
 <section>
@@ -118,22 +125,24 @@
 </section>
 <main>
     <section>
-        <!-- Operators for comparison could be grouperd under a "conditionals" tab-->
-        <div class="container">
+        <!-- Operators for comparison could be grouped under a "conditionals" or "testing" tab -->
+        <div id="super-container" class="container">
             <div class="row">
                 <div class="twelve columns">
                     <h1 id="gradient-h1">Bash Quick References</h1>
                 </div>
                 <div class="ten columns offset-by-one">
                     <p class="explanation info-box shadow-box">
-                        Bash (Bourne Again Shell) is a shell language build on-top of the orignal Bourne Shell which was distributed with V7 Unix in 1979 and became the standard for writing shell scripts. Today it is primary to most Linux distributions, MacOS and it has even recently been enabled to run on Windows through something called WSL (Windows Subsystem for Linux).
+                        Bash (Bourne Again Shell) is a shell language build on-top of the orignal Bourne Shell which was distributed with V7 Unix in 1979 and became the standard for writing shell
+                        scripts. Today it is primary to most Linux distributions, MacOS and it has even recently been enabled to run on Windows through something called WSL (Windows Subsystem for
+                        Linux).
                         <br><br>
-                        This reference sheet should cover most syntax, tips and other tricks there is to Bash scripting. At this moment however (because the site was only recently released) I haven't gotten around to any explanations! But hopefully a lot of examples should be available in a few months as I'd have had the time to write explanations and script examples by then.
+                        This reference sheet should cover most syntax, tips and other tricks there is to Bash scripting. At this moment however (because the site was only recently released) I haven't
+                        gotten around to any explanations! But hopefully a lot of examples should be available in a few months as I'd have had the time to write explanations and script examples by
+                        then.
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="container">
             <div class="row">
                 <div class="six columns">
                     <div class="shadow-box">
@@ -689,10 +698,9 @@
                     </table>
 
 
-
-                <div class="shadow-box">
-                    <h3 id="special-files">Special Files</h3></div>
-                <p class="info-box info shadow-box">Files that are read by the shell. Listed in order of their execution.</p>
+                    <div class="shadow-box">
+                        <h3 id="special-files">Special Files</h3></div>
+                    <p class="info-box info shadow-box">Files that are read by the shell. Listed in order of their execution.</p>
                     <table class="two-column-table">
                         <thead>
                         <tr>
@@ -939,6 +947,82 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <div class="shadow-box">
+                        <h3 id="quoting">Quoting</h3></div>
+                    <p class="info-box info shadow-box">The following text shows characters or that need to be quoted if you want to use their literal symbols and not their special meaning.</p>
+
+                    <table class="two-column-table">
+                        <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Literal Meaning</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>;</code></td>
+                            <td>Command seperator</td>
+                        </tr>
+                        <tr>
+                            <td><code>&</code></td>
+                            <td>Background execution</td>
+                        </tr>
+                        <tr>
+                            <td><code>()</code></td>
+                            <td>Command grouping</td>
+                        </tr>
+                        <tr>
+                            <td><code>|</code></td>
+                            <td>Pipe</td>
+                        </tr>
+                        <tr>
+                            <td><code>< > &</code></td>
+                            <td>Redirection symbols</td>
+                        </tr>
+                        <tr>
+                            <td><code>* ? [ ] ~ + - @ !</code></td>
+                            <td>Filename metacharacters</td>
+                        </tr>
+                        <tr>
+                            <td><code>" ' \</code></td>
+                            <td>Used in quoting characters</td>
+                        </tr>
+                        <tr>
+                            <td><code>$</code></td>
+                            <td>Variable, command or arithmetic substituion</td>
+                        </tr>
+                        <tr>
+                            <td><code>#</code></td>
+                            <td>Start a command that ends on a linebreak</td>
+                        </tr>
+                        <tr>
+                            <td><code>space tab newline</code></td>
+                            <td>Word seperators</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="warning info-box shadow-box">
+                        Everything between <code>"..."</code> is taken literally, except <code>$</code> (dollar) <code>`</code> (backtick) and <code>"</code> (double-quotation).<br/>
+                    </p>
+                    <p class="warning info-box shadow-box">
+                        Everything between <code>'...'</code> is taken literally, except <code>'</code> (single-quote).<br/>
+                    </p>
+                    <p class="info info-box shadow-box">
+                        The characters following <code>\</code> is taken literally.<br/> Use <code>\</code> to escape anything in <code>"..."</code> or <code>'...'</code><br/>
+                    </p>
+                    <p class="danger info-box shadow-box">
+                        Using <code>$</code> before <code>"..."</code> or <code>'...'</code> causes some special behavior. <code>$"..."</code> is the same as <code>"..."</code> except that locale
+                        translation is done. Likewise, <code>$'...'</code> is similar to <code>$'...'</code> except that the quoted string is processed for <a href="#escape-sequences">escape
+                        sequences</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
                 </div>
             </div>
             <div class="row">
@@ -1963,70 +2047,67 @@
                     </span>.</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="twelve columns">
-                    <div class="email-input">
-                        <label for="exampleEmailInput" style="text-align: center; font-size: 1.4rem;">Be informed about
-                            groundbreaking content updates and site development. One email/month – max.</label>
-                        <form action="https://formspree.io/xoqdnqak" method="POST">
-                            <div class="input-container">
-                                <i class="fas fa-user icon"></i>
-                                <input class="u-full-width" id="exampleEmailInput" placeholder="your@awesome-mailaddress.com"
-                                       style="text-align: center;"
-                                       type="email">
-                                <input class="button-primary" type="submit" value="Send">
-                            </div>
-                        </form>
-                    </div>
-                    <ul class="icon-container">
-                        <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip fab fa-facebook-f fa-2x"><span
-                                    class="tooltiptext">Share on Facebook!</span></i><span
-                                    class="sr-only">Share on Facebook</span></a></li>
-                        <li>
-                            <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip  fab fa-twitter fa-2x"><span
-                                    class="tooltiptext">Tweet!</span></i><span
-                                    class="sr-only">Tweet</span></a></li>
-                        <li>
-                            <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip  fab fa-pinterest fa-2x"><span
-                                    class="tooltiptext">Pin it!</span></i><span
-                                    class="sr-only">Pin it</span></a></li>
-                        <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip  fab fa-get-pocket fa-2x"><span class="tooltiptext">Add to Pocket!</span></i><span
-                                class="sr-only">Add to Pocket</span></a></li>
-                        <li>
-                            <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip fab fa-reddit-alien fa-2x"><span class="tooltiptext">Submit to Reddit!</span></i><span
-                                    class="sr-only">Submit to Reddit</span></a></li>
-                        <li>
-                            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
-                               target="_blank"><i aria-hidden="true"
-                                                  class="tooltip fab fa-linkedin fa-2x"><span
-                                    class="tooltiptext">Share on LinkedIn!</span></i><span
-                                    class="sr-only">Share on LinkedIn</span></a></li>
-                        <li>
-                            <a href="mailto:?subject=Shell%20Magic&body=Ultimate%20Bash%20Reference%20Notes:%20http%3A%2F%2Fwww.shellmagic.xyz"
-                               target="_blank">
-                                <i aria-hidden="true"
-                                   class="tooltip fas fa-envelope fa-2x "><span class="tooltiptext">Send email!</span></i><span
-                                    class="sr-only">Send email</span></a>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </section>
 </main>
 <div class="container">
     <div class="row">
         <div class="twelve columns">
+            <div class="email-input">
+                <label for="exampleEmailInput" style="text-align: center; font-size: 1.4rem;">Be informed about
+                    groundbreaking content updates and site development. One email/month – max.</label>
+                <form action="https://formspree.io/xoqdnqak" method="POST">
+                    <div class="input-container">
+                        <i class="fas fa-user icon"></i>
+                        <input class="u-full-width" id="exampleEmailInput" placeholder="your@awesome-mailaddress.com"
+                               style="text-align: center;"
+                               type="email">
+                        <input class="button-primary" type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+            <ul class="icon-container">
+                <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.shellmagic.xyz&quote=Shell%20Magic"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip fab fa-facebook-f fa-2x"><span
+                            class="tooltiptext">Share on Facebook!</span></i><span
+                            class="sr-only">Share on Facebook</span></a></li>
+                <li>
+                    <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.shellmagic.xyz&text=Shell%20Magic:%20http%3A%2F%2Fwww.shellmagic.xyz&via=shellmagic1"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip  fab fa-twitter fa-2x"><span
+                            class="tooltiptext">Tweet!</span></i><span
+                            class="sr-only">Tweet</span></a></li>
+                <li>
+                    <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.shellmagic.xyz&description=Ultimate%20Bash%20Reference%20Notes"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip  fab fa-pinterest fa-2x"><span
+                            class="tooltiptext">Pin it!</span></i><span
+                            class="sr-only">Pin it</span></a></li>
+                <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip  fab fa-get-pocket fa-2x"><span class="tooltiptext">Add to Pocket!</span></i><span
+                        class="sr-only">Add to Pocket</span></a></li>
+                <li>
+                    <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip fab fa-reddit-alien fa-2x"><span class="tooltiptext">Submit to Reddit!</span></i><span
+                            class="sr-only">Submit to Reddit</span></a></li>
+                <li>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.shellmagic.xyz&title=Shell%20Magic&summary=Ultimate%20Bash%20Reference%20Notes&source=http%3A%2F%2Fwww.shellmagic.xyz"
+                       target="_blank"><i aria-hidden="true"
+                                          class="tooltip fab fa-linkedin fa-2x"><span
+                            class="tooltiptext">Share on LinkedIn!</span></i><span
+                            class="sr-only">Share on LinkedIn</span></a></li>
+                <li>
+                    <a href="mailto:?subject=Shell%20Magic&body=Ultimate%20Bash%20Reference%20Notes:%20http%3A%2F%2Fwww.shellmagic.xyz"
+                       target="_blank">
+                        <i aria-hidden="true"
+                           class="tooltip fas fa-envelope fa-2x "><span class="tooltiptext">Send email!</span></i><span
+                            class="sr-only">Send email</span></a>
+            </ul>
             <footer>
                 <a href="https://github.com/smokingcuke/shellmagic/blob/master/md/License.md">&copy;2020</a> | <a
                     href="https://github.com/smokingcuke/ShellMagic/issues">Suggest an Enhancement</a>, <a
@@ -2059,6 +2140,3 @@
 <script>includeHTML();</script>
 </body>
 </html>
-<!--<i class="far fa-clone"></i>-->
-<!--<i class="fas fa-bug"></i>-->
-<!--<i class="fas fa-sort-down"></i>-->

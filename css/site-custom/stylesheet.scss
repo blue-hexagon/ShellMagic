@@ -23,6 +23,7 @@
 @import 'header';
 @import 'theme';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/css/all.css';
+
 $fa-font-path: '../../resources/typography/fonts/fontawesome-free-5.12.1-web/webfonts';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/fontawesome';
 @import '../../resources/typography/fonts/fontawesome-free-5.12.1-web/scss/solid';
@@ -58,6 +59,14 @@ html {
   }
 }
 
+nav {
+  display: block;
+}
+
+.align-right {
+ float:right;
+}
+
 body {
   background: $bg;
   color: $fg;
@@ -69,7 +78,7 @@ body {
 }
 
 main {
-overflow-x: auto;
+  overflow-x: auto;
 }
 
 a {
@@ -286,17 +295,19 @@ code {
   font-size: 105%;
   margin: 0 .01rem;
   padding: .2rem 0;
+
   &.code-no-wrap {
     white-space: nowrap;
   }
 }
 
-.text-align-center{
+.text-align-center {
   text-align: center;
 }
-pre{
+
+pre {
   max-width: 100vw;
-  overflow-x: scroll;
+  //  overflow-x: scroll;
 }
 
 @media (min-width: 880px) {
