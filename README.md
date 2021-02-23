@@ -1,4 +1,8 @@
 <h1 align="center">
 New website
 </h1>
-This website is no longer updated. Please visit [www.cheatsheet.wtf](https://www.cheatsheet.wtf) instead.
+<p>This website is no longer updated. A new version is available at: https://www.cheatsheet.wtf </p>
+
+Please visit [CheatSheet.Wtf](https://www.cheatsheet.wtf) instead.
+
+![New Website](./new_website.PNG "https://www.cheatsheet.wtf")
